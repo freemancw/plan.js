@@ -79,23 +79,42 @@ PLAN.Circle2 = function(c, r) {
 };
 
 //=============================================================================
+// Circle2 BVH
+//=============================================================================
+
+//=============================================================================
+// kD tree
+//=============================================================================
+
+PLAN.kDNode = function(point, splitAxis, splitDist, leftChild, rightChild) {
+    this.point = point;
+    this.splitAxis = splitAxis;
+    this.splitDist = splitDist;
+    this.leftChild = leftChild;
+    this.rightChild = rightChild;
+};
+
+PLAN.BuildkDTree = function(points) {
+
+
+
+};
+
+//=============================================================================
 // Intersection tests
 //=============================================================================
 
 PLAN.Point2InCircle2 = function(point, circle) {
-    //console.log('testing circle: ');
-    //console.log(circle);
 
     var distSqr = PLAN.Point2DistSqr(point, circle.c);
     var radSqr = circle.r*circle.r;
-
-    //console.log('distSqr: ' + distSqr + ', radSqr: ' + radSqr);
 
     if (distSqr <= radSqr) {
         return true;
     } else {
         return false;
     }
+
 };
 
 /**
@@ -126,6 +145,7 @@ PLAN.Point2InCircle2 = function(point, circle) {
  * (4) (O + tD - C) dot (O + tD - C) = r^2
  */
 PLAN.Segment2InCircle2 = function(segment, circle) {
+ 
     var vPQ = PLAN.Point2Sub(segment.q, segment.p);
     var m = PLAN.Point2Sub(circle.c, segment.p);
     var a = PLAN.Vector2Dot(vPQ, vPQ);
@@ -153,6 +173,7 @@ PLAN.Segment2InCircle2 = function(segment, circle) {
     }
 
     return true;
+
 };
 
 //=============================================================================
@@ -164,7 +185,6 @@ PLAN.Segment2InCircle2 = function(segment, circle) {
  * Output: true if the point is in free space, false otherwise.
  */
 PLAN.Clear = function(point, obstacles) {
-    //console.log(point);
 
     for (var i = 0; i < obstacles.length; ++i) {
         if (PLAN.Point2InCircle2(point, obstacles[i])) {
@@ -173,6 +193,7 @@ PLAN.Clear = function(point, obstacles) {
     }
 
     return true;
+
 };
 
 /**
@@ -180,7 +201,7 @@ PLAN.Clear = function(point, obstacles) {
  * Output: true if the segment is in free space, false otherwise.
  */
 PLAN.Link = function(segment, obstacles) {
-    
+
     for (var i = 0; i < obstacles.length; ++i) {
         if (PLAN.Segment2InCircle2(segment, obstacles[i])) {
             return false;
@@ -188,4 +209,29 @@ PLAN.Link = function(segment, obstacles) {
     }
 
     return true;
+
+};
+
+//=============================================================================
+// PRM 
+//=============================================================================
+
+PLAN.BuildPRM = function(start, goal, obstacles, n, m, workspace) {
+    var milestones = [];
+
+    // construct milestones
+    for (var i = 0; i < n; ++i) {
+        var samplePoint = new PLAN.Point2(
+            Math.random()*256, Math.random()*256
+        );
+
+        if (PLAN.Clear(samplePoint, obstacles)) {
+            milestones.push(samplePoint);
+        }
+    }
+
+    // connect milestones
+    var pointTree = PLAN.BuildkDTree(milestones);
+    
+
 };

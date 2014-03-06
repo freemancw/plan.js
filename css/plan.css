@@ -1,3 +1,7 @@
 /**
  * @author Clinton Freeman <freeman@cs.unc.edu>
  */
+
+header {
+	border-bottom: 1px solid #ccc;
+}

@@ -7,69 +7,93 @@
 </head>
 
 <body>
+
+	<header>
+		<h1>Robotics Assignment #2</h1>
+		<h2>Clinton Freeman</h2>
+	</header>
+
+	<h2>Clear</h2>
+	<p>clear does blah</p>
+	<canvas id="canvas-clear"></canvas>
+
+	<h2>Link</h2>
+	<p>link does...</p>
+	<canvas id="canvas-link"></canvas>
+
+	<h2>PRM</h2>
+	<p>prm does...</p>
+	<canvas id="canvas-prm"></canvas>
+
 	<script src="js/plan.js"></script>
 	<script>
 	
-	var canvas = document.createElement('canvas');
+		// all canvas's are just assigned a uniform square size
+		var workspace_size = 512;
+
+		var canvas_clear = document.getElementById('canvas-clear');
+		var ctx_clear = canvas_clear.getContext('2d');
+		var canvas_link = document.getElementById('canvas-link');
+		var ctx_link = canvas_link.getContext('2d');
+		var canvas_prm = document.getElementById('canvas-prm');
+		var ctx_prm = canvas_prm.getContext('2d');
 	
-	window.requestAnimationFrame = window.requestAnimationFrame || 
-								   window.mozRequestAnimationFrame ||
-                              	   window.webkitRequestAnimationFrame || 
-                              	   window.msRequestAnimationFrame;
+		window.requestAnimationFrame = window.requestAnimationFrame || 
+									   window.mozRequestAnimationFrame ||
+            	                  	   window.webkitRequestAnimationFrame || 
+                	              	   window.msRequestAnimationFrame;
 
-	function renderFrame(timestamp) {
-    	requestAnimationFrame(renderFrame);
-	}
-
-	window.onload = function() {
-		canvas.width = 512;
-		canvas.height = 512;
-		canvas.style.background = '#aaa';
-		document.body.appendChild(canvas);
-		var ctx = canvas.getContext('2d');
-
-		// uniformly distribute disks within the canvas
-		var numDisks = 32;
-		var disks = [];
-		for (var i = 0; i < numDisks; ++i) {
-			var center = new PLAN.Point2(Math.random()*512, Math.random()*512);
-			var radius = Math.random()*64;
-			disks.push(new PLAN.Circle2(center, radius));
-
-			ctx.beginPath();
-        	ctx.arc(center.x, center.y, radius, 0, 2*Math.PI);
-          	ctx.fill();
+		function renderFrame(timestamp) {
+    		requestAnimationFrame(renderFrame);
 		}
 
-		// randomly generate test point
-		var testPoint = new PLAN.Point2(Math.random()*256, Math.random()*256);
+		window.onload = function() {
+			canvas_clear.width = canvas_clear.height = workspace_size;
+			canvas_link.width = canvas_link.height = workspace_size;	
+			canvas_prm.width = canvas_prm.height = workspace_size;
 
-		if (PLAN.Clear(testPoint, disks)) {
-			ctx.fillStyle = "rgba(0, 255, 0, 1)";
-		} else {
-			ctx.fillStyle = "rgba(255, 0, 0, 1)";
-		}
+			// // uniformly distribute disks within the canvas
+			// var numDisks = 32;
+			// var disks = [];
+			// for (var i = 0; i < numDisks; ++i) {
+			// 	var center = new PLAN.Point2(Math.random()*512, Math.random()*512);
+			// 	var radius = Math.random()*64;
+			// 	disks.push(new PLAN.Circle2(center, radius));
 
-		ctx.fillRect(testPoint.x, testPoint.y, 2, 2);
+			// 	ctx.beginPath();
+   //      		ctx.arc(center.x, center.y, radius, 0, 2*Math.PI);
+   //        		ctx.fill();
+			// }
 
-		// randomly generate test segment
-		var testSegP = new PLAN.Point2(Math.random()*256, Math.random()*256);
-		var testSegQ = new PLAN.Point2(testSegP.x+Math.random()*16, testSegP.y+Math.random()*16);
-		var testSegment = new PLAN.Segment2(testSegP, testSegQ);
+			// // randomly generate test point
+			// var testPoint = new PLAN.Point2(Math.random()*256, Math.random()*256);
 
-		if (PLAN.Link(testSegment, disks)) {
-			ctx.strokeStyle = "rgba(0, 255, 0, 1)";
-		} else {
-			ctx.strokeStyle = "rgba(255, 0, 0, 1)";
-		}
+			// if (PLAN.Clear(testPoint, disks)) {
+			// 	ctx.fillStyle = "rgba(0, 255, 0, 1)";
+			// } else {
+			// 	ctx.fillStyle = "rgba(255, 0, 0, 1)";
+			// }
 
-		ctx.beginPath();
-    	ctx.moveTo(testSegP.x, testSegP.y);
-    	ctx.lineTo(testSegQ.x, testSegQ.y);
-    	ctx.closePath();
-    	ctx.stroke();
+			// ctx.fillRect(testPoint.x, testPoint.y, 2, 2);
 
-		requestAnimationFrame(renderFrame);
+			// // randomly generate test segment
+			// var testSegP = new PLAN.Point2(Math.random()*256, Math.random()*256);
+			// var testSegQ = new PLAN.Point2(testSegP.x+Math.random()*16, testSegP.y+Math.random()*16);
+			// var testSegment = new PLAN.Segment2(testSegP, testSegQ);
+
+			// if (PLAN.Link(testSegment, disks)) {
+			// 	ctx.strokeStyle = "rgba(0, 255, 0, 1)";
+			// } else {
+			// 	ctx.strokeStyle = "rgba(255, 0, 0, 1)";
+			// }
+
+			// ctx.beginPath();
+	  //   	ctx.moveTo(testSegP.x, testSegP.y);
+	  //   	ctx.lineTo(testSegQ.x, testSegQ.y);
+	  //   	ctx.closePath();
+	  //   	ctx.stroke();
+
+			// requestAnimationFrame(renderFrame);
 	};
 
 	</script>
