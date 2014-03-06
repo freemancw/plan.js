@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>plan.js</title>
+	<link rel="stylesheet" href="css/plan.css" />
+</head>
+
+<body>
+	<script src="js/plan.js"></script>
+	<script>
+	
+	var canvas = document.createElement('canvas');
+	
+	window.requestAnimationFrame = window.requestAnimationFrame || 
+								   window.mozRequestAnimationFrame ||
+                              	   window.webkitRequestAnimationFrame || 
+                              	   window.msRequestAnimationFrame;
+
+	function renderFrame(timestamp) {
+    	requestAnimationFrame(renderFrame);
+	}
+
+	window.onload = function() {
+		canvas.width = 512;
+		canvas.height = 512;
+		canvas.style.background = '#aaa';
+		document.body.appendChild(canvas);
+		var ctx = canvas.getContext('2d');
+
+		// uniformly distribute disks within the canvas
+		var numDisks = 32;
+		var disks = [];
+		for (var i = 0; i < numDisks; ++i) {
+			var center = new PLAN.Point2(Math.random()*512, Math.random()*512);
+			var radius = Math.random()*64;
+			disks.push(new PLAN.Circle2(center, radius));
+
+			ctx.beginPath();
+        	ctx.arc(center.x, center.y, radius, 0, 2*Math.PI);
+          	ctx.fill();
+		}
+
+		// randomly generate test point
+		var testPoint = new PLAN.Point2(Math.random()*256, Math.random()*256);
+
+		if (PLAN.Clear(testPoint, disks)) {
+			ctx.fillStyle = "rgba(0, 255, 0, 1)";
+		} else {
+			ctx.fillStyle = "rgba(255, 0, 0, 1)";
+		}
+
+		ctx.fillRect(testPoint.x, testPoint.y, 2, 2);
+
+		// randomly generate test segment
+		var testSegP = new PLAN.Point2(Math.random()*256, Math.random()*256);
+		var testSegQ = new PLAN.Point2(testSegP.x+Math.random()*16, testSegP.y+Math.random()*16);
+		var testSegment = new PLAN.Segment2(testSegP, testSegQ);
+
+		if (PLAN.Link(testSegment, disks)) {
+			ctx.strokeStyle = "rgba(0, 255, 0, 1)";
+		} else {
+			ctx.strokeStyle = "rgba(255, 0, 0, 1)";
+		}
+
+		ctx.beginPath();
+    	ctx.moveTo(testSegP.x, testSegP.y);
+    	ctx.lineTo(testSegQ.x, testSegQ.y);
+    	ctx.closePath();
+    	ctx.stroke();
+
+		requestAnimationFrame(renderFrame);
+	};
+
+	</script>
+</body>
+
+</html>
