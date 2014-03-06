@@ -2,6 +2,33 @@
  * @author Clinton Freeman <freeman@cs.unc.edu>
  */
 
+body {
+	/*background: #eee;*/
+}
+
 header {
-	border-bottom: 1px solid #ccc;
+	border-bottom: 1px solid #ddd;
+}
+
+canvas {
+	background: #ccc;
+	box-shadow: 0px 0px 8px #000;
+}
+
+.chart {
+
+}
+
+.main text {
+    font: 10px sans-serif;	
+}
+
+.axis line, .axis path {
+    shape-rendering: crispEdges;
+    stroke: black;
+    fill: none;
+}
+
+circle {
+    fill: steelblue;
 }

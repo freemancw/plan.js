@@ -86,6 +86,33 @@ PLAN.Circle2 = function(c, r) {
 // kD tree
 //=============================================================================
 
+PLAN.AABB2 = function(min, max) {
+    this.min = min;
+    this.max = max;
+};
+
+PLAN.AABB2FromPoints = function(points) {
+    var min = points[0];
+    var max = points[0];
+
+    for (var i = 0; i < points.length; ++i) {
+        if (points[i].x < min.x) {
+            min.x = points[i].x;
+        }
+        if (points[i].y < min.y) {
+            min.y = points[i].y;
+        }
+        if (points[i].x > max.x) {
+            max.x = points[i].x;
+        }
+        if (points[i].y > max.y) {
+            max.y = points[i].y;
+        }
+    }
+
+    return new PLAN.AABB2(min, max);
+};
+
 PLAN.kDNode = function(point, splitAxis, splitDist, leftChild, rightChild) {
     this.point = point;
     this.splitAxis = splitAxis;
@@ -94,9 +121,55 @@ PLAN.kDNode = function(point, splitAxis, splitDist, leftChild, rightChild) {
     this.rightChild = rightChild;
 };
 
-PLAN.BuildkDTree = function(points) {
+PLAN.BuildkDTree = function(points, bbox) {
 
+    if (points.length == 1) {
+        return new PLAN.kDNode(points[0], '', 0, null, null);
+    }
 
+    // choose longest dimension as split axis
+    var bbox_widthX = bbox.max.x - bbox.min.x;
+    var bbox_widthY = bbox.max.y - bbox.min.y;
+    
+    var bbox_max = bbox_widthX;
+    var split_axis = 'x';
+    if (bbox_widthY > bbox_widthX) {
+        bbox_max = bbox_widthY;
+        split_axis = 'y';
+    }
+
+    // sort points along that axis and choose median value
+    points.sort(function(a, b) {
+        return a[split_axis] - b[split_axis];
+    });
+
+    var median_idx = Math.floor(points.length/2);
+    var split_dist = points[median_idx][split_axis];
+
+    var left_bbox = bbox;
+    left_bbox.max[split_axis] = split_dist;
+    var right_bbox = bbox;
+    right_bbox.min[split_axis] = split_dist;
+
+    var left_points = [];
+    var right_points = [];
+    for (var i = 0; i < points.length; ++i) {
+        if (i < median_idx) {
+            left_points.push(points[i]);
+        } else if (i > median_idx) {
+            right_points.push(points[i]);
+        }
+    }
+
+    var left_node = PLAN.BuildkDTree(left_points, left_bbox);
+    var right_node = PLAN.BuildkDTree(right_points, right_bbox);
+    return new PLAN.kDNode(
+        points[median_idx], 
+        split_axis, 
+        split_dist, 
+        left_node, 
+        right_node
+    );
 
 };
 
@@ -232,6 +305,14 @@ PLAN.BuildPRM = function(start, goal, obstacles, n, m, workspace) {
 
     // connect milestones
     var pointTree = PLAN.BuildkDTree(milestones);
-    
+    for (var i = 0; i < milestones.length; ++i) {
+        var neighborPoints = PLAN.GetKNearestNeighbors(pointTree, milestones[i], 15);
+        for (var j = 0; j < neighborPoints.length; ++j) {
+            var neighborSeg = new PLAN.Segment2(milestones[i], neighborPoints[j]);
+            if (PLAN.Link(neighborSeg, obstacles)) {
+                
+            }
+        }
+    }
 
 };

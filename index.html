@@ -4,28 +4,146 @@
 <head>
 	<title>plan.js</title>
 	<link rel="stylesheet" href="css/plan.css" />
+
+	<script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+          tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]},
+          TeX: {
+            Macros: {
+              bvec: ['{\\vec{\\mathrm{#1}}}', 1]
+            },
+            equationNumbers: { autoNumber: "AMS" },
+            extensions: ["noErrors.js","noUndefined.js"]
+          }
+        });
+	</script>
+	<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+	<script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
 </head>
 
 <body>
 
 	<header>
 		<h1>Robotics Assignment #2</h1>
-		<h2>Clinton Freeman</h2>
+		<h3>Clinton Freeman</h3>
 	</header>
 
-	<h2>Clear</h2>
-	<p>clear does blah</p>
-	<canvas id="canvas-clear"></canvas>
+	<h2>3. Clear and Link for Motion Planning (20 points)</h2>
+	<div class="function-section">
+		<canvas id="canvas-clear"></canvas>
+		<div class="canvas-controls">
+			<button id="ctrl-clear-gen-point">Generate Test Point</button>
+			<button id="ctrl-clear-gen-obstacles">Generate Obstacles</button>
+		</div>
+		<p>Clear uses the $\text{InCircle}$ predicate.</p>
+	</div>
 
-	<h2>Link</h2>
-	<p>link does...</p>
-	<canvas id="canvas-link"></canvas>
+	<div class="function-section">
+		<canvas id="canvas-link"></canvas>
+		<div class="canvas-controls">
+			<button id="ctrl-link-gen-segment">Generate Test Segment</button>
+			<button id="ctrl-link-gen-obstacles">Generate Obstacles</button>
+		</div>
+		<p>Link does...</p>
+	</div>
+	
+	<h2>4. Implement and Evaluate the PRM Algorithm (40 points)</h2>
+	<div class="function-section">
+		<canvas id="canvas-prm"></canvas>
+		<div class="canvas-controls">
+			<button id="ctrl-prm-reset">Reset</button>
+			<button id="ctrl-prm-gen-obstacles">Generate Obstacles</button>
+			<button id="ctrl-prm-test-obstacles1">Use Test Obstacles 1</button>
+			<button id="ctrl-prm-test-obstacles2">Use Test Obstacles 2</button>
+		</div>
+		<p>PRM does...</p>
+		<div id="prm-analysis">
 
-	<h2>PRM</h2>
-	<p>prm does...</p>
-	<canvas id="canvas-prm"></canvas>
+		</div>
+	</div>
 
 	<script src="js/plan.js"></script>
+	<script>
+
+// data that you want to plot, I've used separate arrays for x and y values
+var xdata = [5, 10, 15, 20],
+    ydata = [3, 17, 4, 6];
+
+// size and margins for the chart
+var margin = {top: 20, right: 15, bottom: 60, left: 60}
+  , width = 960 - margin.left - margin.right
+  , height = 500 - margin.top - margin.bottom;
+
+// x and y scales, I've used linear here but there are other options
+// the scales translate data values to pixel values for you
+var x = d3.scale.linear()
+          .domain([0, d3.max(xdata)])  // the range of the values to plot
+          .range([ 0, width ]);        // the pixel range of the x-axis
+
+var y = d3.scale.linear()
+          .domain([0, d3.max(ydata)])
+          .range([ height, 0 ]);
+
+// the chart object, includes all margins
+var chart = d3.select('body')
+.append('svg:svg')
+.attr('width', width + margin.right + margin.left)
+.attr('height', height + margin.top + margin.bottom)
+.attr('class', 'chart')
+
+// the main object where the chart and axis will be drawn
+var main = chart.append('g')
+.attr('transform', 'translate(' + margin.left + ',' + margin.top + ')')
+.attr('width', width)
+.attr('height', height)
+.attr('class', 'main')   
+
+// draw the x axis
+var xAxis = d3.svg.axis()
+.scale(x)
+.orient('bottom');
+
+main.append("text")
+    .attr("class", "x label")
+    .attr("text-anchor", "end")
+    .attr("x", width)
+    .attr("y", height - 6)
+    .text("number of samples (n)");
+
+    main.append("text")
+    .attr("class", "y label")
+    .attr("text-anchor", "end")
+    .attr("y", 6)
+    .attr("dy", ".75em")
+    .attr("transform", "rotate(-90)")
+    .text("shortest path length");
+
+main.append('g')
+.attr('transform', 'translate(0,' + height + ')')
+.attr('class', 'main axis date')
+.call(xAxis);
+
+// draw the y axis
+var yAxis = d3.svg.axis()
+.scale(y)
+.orient('left');
+
+main.append('g')
+.attr('transform', 'translate(0,0)')
+.attr('class', 'main axis date')
+.call(yAxis);
+
+// draw the graph object
+var g = main.append("svg:g"); 
+
+g.selectAll("scatter-dots")
+  .data(ydata)  // using the values in the ydata array
+  .enter().append("svg:circle")  // create a new circle for each value
+      .attr("cy", function (d) { return y(d); } ) // translate y value to a pixel
+      .attr("cx", function (d,i) { return x(xdata[i]); } ) // translate x value
+      .attr("r", 10) // radius of circle
+      .style("opacity", 0.6); // opacity of circle
+	</script>
 	<script>
 	
 		// all canvas's are just assigned a uniform square size
@@ -33,8 +151,11 @@
 
 		var canvas_clear = document.getElementById('canvas-clear');
 		var ctx_clear = canvas_clear.getContext('2d');
+		var obstacles_clear = [];
+
 		var canvas_link = document.getElementById('canvas-link');
 		var ctx_link = canvas_link.getContext('2d');
+		
 		var canvas_prm = document.getElementById('canvas-prm');
 		var ctx_prm = canvas_prm.getContext('2d');
 	
@@ -47,23 +168,56 @@
     		requestAnimationFrame(renderFrame);
 		}
 
+		function generateTestPoint(context) {
+			//randomly generate test point
+			var testPoint = new PLAN.Point2(Math.random()*256, Math.random()*256);
+
+			//if (PLAN.Clear(testPoint, disks)) {
+			// 	ctx.fillStyle = "rgba(0, 255, 0, 1)";
+			// } else {
+			// 	ctx.fillStyle = "rgba(255, 0, 0, 1)";
+			// }
+
+			// ctx.fillRect(testPoint.x, testPoint.y, 2, 2);
+		}
+
+		function generateObstacles(context, n, minR, maxR) {
+			var obstacles = [];
+			context.fillStyle = '#555';
+			context.shadowColor = '#000';
+      		context.shadowBlur = 2;
+      		context.shadowOffsetX = 0;
+      		context.shadowOffsetY = 0;
+
+			for (var i = 0; i < n; ++i) {
+				var center = new PLAN.Point2(Math.random() * 512, Math.random() * 512);
+				var radius = minR + Math.random() * maxR;
+				obstacles.push(new PLAN.Circle2(center, radius));
+
+			 	context.beginPath();
+         		context.arc(center.x, center.y, radius, 0, 2 * Math.PI);
+           		context.fill();
+			}
+
+			return obstacles;
+		}
+
+		document.getElementById('ctrl-clear-gen-obstacles').onclick = function() {
+			obstacles_clear = generateObstacles(ctx_clear, 32, 2, 64);
+		};
+
+		document.getElementById('ctrl-link-gen-obstacles').onclick = function() {
+			obstacles_clear = generateObstacles(ctx_link, 32, 2, 64);
+		};
+
+		document.getElementById('ctrl-prm-gen-obstacles').onclick = function() {
+			obstacles_clear = generateObstacles(ctx_prm, 32, 2, 64);
+		};
+
 		window.onload = function() {
 			canvas_clear.width = canvas_clear.height = workspace_size;
 			canvas_link.width = canvas_link.height = workspace_size;	
 			canvas_prm.width = canvas_prm.height = workspace_size;
-
-			// // uniformly distribute disks within the canvas
-			// var numDisks = 32;
-			// var disks = [];
-			// for (var i = 0; i < numDisks; ++i) {
-			// 	var center = new PLAN.Point2(Math.random()*512, Math.random()*512);
-			// 	var radius = Math.random()*64;
-			// 	disks.push(new PLAN.Circle2(center, radius));
-
-			// 	ctx.beginPath();
-   //      		ctx.arc(center.x, center.y, radius, 0, 2*Math.PI);
-   //        		ctx.fill();
-			// }
 
 			// // randomly generate test point
 			// var testPoint = new PLAN.Point2(Math.random()*256, Math.random()*256);
@@ -93,7 +247,7 @@
 	  //   	ctx.closePath();
 	  //   	ctx.stroke();
 
-			// requestAnimationFrame(renderFrame);
+			requestAnimationFrame(renderFrame);
 	};
 
 	</script>
