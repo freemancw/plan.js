@@ -1,0 +1,155 @@
+.TH "FDP" 3 "24 Jul 2003" "Motion Strategy Library" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+FDP \- A dynamic programming approach to nonholonomic planning, as proposed by Barraquand, Latombe, Algorithmica 10:6, pp. 121-155, 1993. 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <fdp.h>\fP
+.PP
+Inherits \fBIncrementalPlanner\fP.
+.PP
+Inherited by \fBFDPBestFirst\fP, \fBFDPBi\fP, and \fBFDPStar\fP.
+.PP
+.SS "Public Methods"
+
+.in +1c
+.ti -1c
+.RI "\fBFDP\fP (\fBProblem\fP *problem)"
+.br
+.RI "\fIA constructor that initializes data members.\fP"
+.ti -1c
+.RI "\fB~FDP\fP ()"
+.br
+.RI "\fIEmpty destructor.\fP"
+.ti -1c
+.RI "virtual void \fBReset\fP ()"
+.br
+.RI "\fIReset the planner.\fP"
+.ti -1c
+.RI "virtual bool \fBPlan\fP ()"
+.br
+.RI "\fIAttempt to solve an Initial-Goal query by growing an FDP tree.\fP"
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "int \fBSatisfiedCount\fP"
+.br
+.RI "\fINumber of times the collision checker has been called.\fP"
+.in -1c
+.SS "Protected Methods"
+
+.in +1c
+.ti -1c
+.RI "virtual double \fBSearchCost\fP (double initcost, \fBMSLNode\fP *&n, \fBMSLNode\fP *&nn)"
+.br
+.ti -1c
+.RI "virtual vector< int > \fBStateToIndices\fP (const \fBMSLVector\fP &\fBx\fP)"
+.br
+.ti -1c
+.RI "virtual \fBMSLVector\fP \fBIndicesToState\fP (const vector< int > &indices)"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "priority_queue< \fBMSLNode\fP *, vector< \fBMSLNode\fP * >, \fBMSLNodeGreater\fP > \fBQ\fP"
+.br
+.RI "\fIPriority queue of nodes.\fP"
+.ti -1c
+.RI "\fBMultiArray\fP< int > * \fBGrid\fP"
+.br
+.RI "\fIA quantized state space.\fP"
+.ti -1c
+.RI "vector< int > \fBGridDimensions\fP"
+.br
+.RI "\fIDimensions for the grid.\fP"
+.ti -1c
+.RI "int \fBGridDefaultResolution\fP"
+.br
+.RI "\fIDefault size for each axis of the grid.\fP"
+.ti -1c
+.RI "\fBMSLVector\fP \fBQuantization\fP"
+.br
+.RI "\fIThe quantized step size for each axis (computed automatically).\fP"
+.in -1c
+.SH "DETAILED DESCRIPTION"
+.PP 
+A dynamic programming approach to nonholonomic planning, as proposed by Barraquand, Latombe, Algorithmica 10:6, pp. 121-155, 1993.
+.PP
+Forward Dynamic Programming, as proposed by Barraquand, Latombe,  Algorithmica 10:6, pp. 121-155, 1993. The solutions should be optimized  with respect to time, although problems can be caused by quantization  errors.
+.PP
+When an instance is constructed, a grid is initialized and each element of checked for collision. The test point for collision is the center of the cell. The current version does not use distance computations; therefore, a large value for PlannerDeltaT might cause collisions to be missed.
+.PP
+Make sure that PlannerDeltaT is large enough to allow the state to move from one cell to another without in a single step. For example, if the quantization leads to a grid boundary every 2.0 units, then PlannerDeltaT could be set to cause the state to change by 3.0 units.
+.PP
+GridDimensions sets the resolution of the grid and can be read from a file. For high-dimensional problems an error message may occur due to a grid that is too large. To enable larger grids, set the MaxSize to a desirable size in the \fBMultiArray\fP class (in \fBmarray.C\fP). 
+.PP
+.SH "CONSTRUCTOR & DESTRUCTOR DOCUMENTATION"
+.PP 
+.SS "FDP::FDP (\fBProblem\fP * problem)"
+.PP
+A constructor that initializes data members.
+.PP
+.SS "FDP::~FDP ()\fC [inline]\fP"
+.PP
+Empty destructor.
+.PP
+.SH "MEMBER FUNCTION DOCUMENTATION"
+.PP 
+.SS "\fBMSLVector\fP FDP::IndicesToState (const vector< int > & indices)\fC [protected, virtual]\fP"
+.PP
+.SS "bool FDP::Plan ()\fC [virtual]\fP"
+.PP
+Attempt to solve an Initial-Goal query by growing an FDP tree.
+.PP
+Implements \fBPlanner\fP.
+.PP
+Reimplemented in \fBFDPBi\fP.
+.SS "void FDP::Reset ()\fC [virtual]\fP"
+.PP
+Reset the planner.
+.PP
+Reimplemented from \fBPlanner\fP.
+.PP
+Reimplemented in \fBFDPBi\fP.
+.SS "double FDP::SearchCost (double initcost, \fBMSLNode\fP *& n, \fBMSLNode\fP *& nn)\fC [protected, virtual]\fP"
+.PP
+Reimplemented in \fBFDPStar\fP.
+.SS "vector< int > FDP::StateToIndices (const \fBMSLVector\fP & x)\fC [protected, virtual]\fP"
+.PP
+.SH "MEMBER DATA DOCUMENTATION"
+.PP 
+.SS "\fBMultiArray\fP<int>* FDP::Grid\fC [protected]\fP"
+.PP
+A quantized state space.
+.PP
+.SS "int FDP::GridDefaultResolution\fC [protected]\fP"
+.PP
+Default size for each axis of the grid.
+.PP
+.SS "vector<int> FDP::GridDimensions\fC [protected]\fP"
+.PP
+Dimensions for the grid.
+.PP
+.SS "priority_queue<\fBMSLNode\fP*,vector<\fBMSLNode\fP*>,\fBMSLNodeGreater\fP> FDP::Q\fC [protected]\fP"
+.PP
+Priority queue of nodes.
+.PP
+.SS "\fBMSLVector\fP FDP::Quantization\fC [protected]\fP"
+.PP
+The quantized step size for each axis (computed automatically).
+.PP
+.SS "int FDP::SatisfiedCount"
+.PP
+Number of times the collision checker has been called.
+.PP
+
+
+.SH "AUTHOR"
+.PP 
+Generated automatically by Doxygen for Motion Strategy Library from the source code.

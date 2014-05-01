@@ -1,0 +1,96 @@
+.TH "defs.h" 3 "8 Nov 2001" "Motion Strategy Library" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+defs.h \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <fstream.h>\fR
+.br
+.SS Defines
+
+.in +1c
+.ti -1c
+.RI "#define \fBPI\fR  3.1415926535897932385"
+.br
+.ti -1c
+.RI "#define \fBINFINITY\fR  1.0e40"
+.br
+.ti -1c
+.RI "#define \fBsqr\fR(x)  ((x)*(x))"
+.br
+.ti -1c
+.RI "#define \fBmin\fR(x, y)  ((x<y) ? x : y)"
+.br
+.ti -1c
+.RI "#define \fBmax\fR(x, y)  ((x>y) ? x : y)"
+.br
+.ti -1c
+.RI "#define \fBREAD_OPTIONAL_PARAMETER\fR(F)"
+.br
+.ti -1c
+.RI "#define \fBREAD_PARAMETER_OR_DEFAULT\fR(F, D)"
+.br
+.ti -1c
+.RI "#define \fBREAD_PARAMETER_OR_ERROR\fR(F)"
+.br
+.ti -1c
+.RI "#define \fBforall\fR(x, S)"
+.br
+.in -1c
+.SH DEFINE DOCUMENTATION
+.PP 
+.SS #define INFINITY  1.0e40
+.PP
+.SS #define PI  3.1415926535897932385
+.PP
+.SS #define READ_OPTIONAL_PARAMETER(F)
+.PP
+\fBValue:\fR
+.PP
+.nf
+_msl_fin.open((FilePath+""#F"").c_str());\
+if (_msl_fin) {_msl_fin >> F;}\
+_msl_fin.close();\
+
+.fi
+.SS #define READ_PARAMETER_OR_DEFAULT(F, D)
+.PP
+\fBValue:\fR
+.PP
+.nf
+_msl_fin.open((FilePath+""#F"").c_str());\
+if (_msl_fin) {_msl_fin >> F;}\
+else F = D;\
+_msl_fin.close();\
+
+.fi
+.SS #define READ_PARAMETER_OR_ERROR(F)
+.PP
+\fBValue:\fR
+.PP
+.nf
+_msl_fin.open((FilePath+""#F"").c_str());\
+if (_msl_fin) {_msl_fin >> F; _msl_fin.close();}\
+else {cerr << "Error reading "#F"\n"; exit(-1);}\
+_msl_fin.close();\
+  
+.fi
+.SS #define forall(x, S)
+.PP
+\fBValue:\fR
+.PP
+.nf
+for (x = S.begin(); x != S.end(); x++)\
+
+.fi
+.SS #define max(x, y)  ((x>y) ? x : y)
+.PP
+.SS #define min(x, y)  ((x<y) ? x : y)
+.PP
+.SS #define sqr(x)  ((x)*(x))
+.PP
+.SH AUTHOR
+.PP 
+Generated automatically by Doxygen for Motion Strategy Library from the source code.

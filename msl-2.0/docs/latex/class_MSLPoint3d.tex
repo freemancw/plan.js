@@ -1,0 +1,185 @@
+\section{MSLPoint3d  Class Reference}
+\label{class_MSLPoint3d}\index{MSLPoint3d@{MSLPoint3d}}
+{\tt \#include $<$point3d.h$>$}
+
+\subsection*{Public Methods}
+\begin{CompactItemize}
+\item 
+{\bf MSLPoint3d} ()
+\item 
+{\bf MSLPoint3d} (double x, double y, double z)
+\item 
+{\bf $\sim$MSLPoint3d} ()
+\item 
+double {\bf xcoord} () const
+\item 
+double {\bf ycoord} () const
+\item 
+double {\bf zcoord} () const
+\item 
+double {\bf W} () const
+\item 
+double {\bf WD} () const
+\item 
+int {\bf dim} () const
+\item 
+double {\bf sqr\_\-dist} (const MSLPoint3d \&q) const
+\item 
+double {\bf xdist} (const MSLPoint3d \&q) const
+\item 
+double {\bf ydist} (const MSLPoint3d \&q) const
+\item 
+double {\bf zdist} (const MSLPoint3d \&q) const
+\item 
+double {\bf distance} (const MSLPoint3d \&q) const
+\item 
+MSLPoint3d {\bf translate} (double dx, double dy, double dz) const
+\item 
+MSLPoint3d {\bf reflect} (const MSLPoint3d \&q, const MSLPoint3d \&r, const MSLPoint3d \&s) const
+\item 
+MSLPoint3d {\bf reflect} (const MSLPoint3d \&q) const
+\item 
+bool {\bf operator==} (const MSLPoint3d \&q) const
+\item 
+bool {\bf operator!=} (const MSLPoint3d \&q) const
+\end{CompactItemize}
+\subsection*{Friends}
+\begin{CompactItemize}
+\item 
+ostream\& {\bf operator$<$$<$} (ostream \&O, const MSLPoint3d \&p)
+\item 
+istream\& {\bf operator$>$$>$} (istream \&I, MSLPoint3d \&p)
+\item 
+istream\& {\bf operator$>$$>$} (istream \&is, list$<$ MSLPoint3d $>$ \&vl)
+\item 
+ostream\& {\bf operator$<$$<$} (ostream \&os, const list$<$ MSLPoint3d $>$ \&vl)
+\end{CompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{MSLPoint3d@{MSLPoint3d}!MSLPoint3d@{MSLPoint3d}}
+\index{MSLPoint3d@{MSLPoint3d}!MSLPoint3d@{MSLPoint3d}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}MSLPoint3d::MSLPoint3d ()}\label{class_MSLPoint3d_a0}
+
+
+\index{MSLPoint3d@{MSLPoint3d}!MSLPoint3d@{MSLPoint3d}}
+\index{MSLPoint3d@{MSLPoint3d}!MSLPoint3d@{MSLPoint3d}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}MSLPoint3d::MSLPoint3d (double {\em x}, double {\em y}, double {\em z})}\label{class_MSLPoint3d_a1}
+
+
+\index{MSLPoint3d@{MSLPoint3d}!~MSLPoint3d@{$\sim$MSLPoint3d}}
+\index{~MSLPoint3d@{$\sim$MSLPoint3d}!MSLPoint3d@{MSLPoint3d}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}MSLPoint3d::$\sim$MSLPoint3d ()\hspace{0.3cm}{\tt  [inline]}}\label{class_MSLPoint3d_a2}
+
+
+
+
+\subsection{Member Function Documentation}
+\index{MSLPoint3d@{MSLPoint3d}!W@{W}}
+\index{W@{W}!MSLPoint3d@{MSLPoint3d}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}double MSLPoint3d::W () const\hspace{0.3cm}{\tt  [inline]}}\label{class_MSLPoint3d_a6}
+
+
+\index{MSLPoint3d@{MSLPoint3d}!WD@{WD}}
+\index{WD@{WD}!MSLPoint3d@{MSLPoint3d}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}double MSLPoint3d::WD () const\hspace{0.3cm}{\tt  [inline]}}\label{class_MSLPoint3d_a7}
+
+
+\index{MSLPoint3d@{MSLPoint3d}!dim@{dim}}
+\index{dim@{dim}!MSLPoint3d@{MSLPoint3d}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int MSLPoint3d::dim () const\hspace{0.3cm}{\tt  [inline]}}\label{class_MSLPoint3d_a8}
+
+
+\index{MSLPoint3d@{MSLPoint3d}!distance@{distance}}
+\index{distance@{distance}!MSLPoint3d@{MSLPoint3d}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}double MSLPoint3d::distance (const MSLPoint3d \& {\em q}) const}\label{class_MSLPoint3d_a13}
+
+
+\index{MSLPoint3d@{MSLPoint3d}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!MSLPoint3d@{MSLPoint3d}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}bool MSLPoint3d::operator!= (const MSLPoint3d \& {\em q}) const\hspace{0.3cm}{\tt  [inline]}}\label{class_MSLPoint3d_a18}
+
+
+\index{MSLPoint3d@{MSLPoint3d}!operator==@{operator==}}
+\index{operator==@{operator==}!MSLPoint3d@{MSLPoint3d}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}bool MSLPoint3d::operator== (const MSLPoint3d \& {\em q}) const}\label{class_MSLPoint3d_a17}
+
+
+\index{MSLPoint3d@{MSLPoint3d}!reflect@{reflect}}
+\index{reflect@{reflect}!MSLPoint3d@{MSLPoint3d}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}MSLPoint3d MSLPoint3d::reflect (const MSLPoint3d \& {\em q}) const}\label{class_MSLPoint3d_a16}
+
+
+\index{MSLPoint3d@{MSLPoint3d}!reflect@{reflect}}
+\index{reflect@{reflect}!MSLPoint3d@{MSLPoint3d}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}MSLPoint3d MSLPoint3d::reflect (const MSLPoint3d \& {\em q}, const MSLPoint3d \& {\em r}, const MSLPoint3d \& {\em s}) const}\label{class_MSLPoint3d_a15}
+
+
+\index{MSLPoint3d@{MSLPoint3d}!sqr_dist@{sqr\_\-dist}}
+\index{sqr_dist@{sqr\_\-dist}!MSLPoint3d@{MSLPoint3d}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}double MSLPoint3d::sqr\_\-dist (const MSLPoint3d \& {\em q}) const}\label{class_MSLPoint3d_a9}
+
+
+\index{MSLPoint3d@{MSLPoint3d}!translate@{translate}}
+\index{translate@{translate}!MSLPoint3d@{MSLPoint3d}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}MSLPoint3d MSLPoint3d::translate (double {\em dx}, double {\em dy}, double {\em dz}) const}\label{class_MSLPoint3d_a14}
+
+
+\index{MSLPoint3d@{MSLPoint3d}!xcoord@{xcoord}}
+\index{xcoord@{xcoord}!MSLPoint3d@{MSLPoint3d}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}double MSLPoint3d::xcoord () const\hspace{0.3cm}{\tt  [inline]}}\label{class_MSLPoint3d_a3}
+
+
+\index{MSLPoint3d@{MSLPoint3d}!xdist@{xdist}}
+\index{xdist@{xdist}!MSLPoint3d@{MSLPoint3d}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}double MSLPoint3d::xdist (const MSLPoint3d \& {\em q}) const}\label{class_MSLPoint3d_a10}
+
+
+\index{MSLPoint3d@{MSLPoint3d}!ycoord@{ycoord}}
+\index{ycoord@{ycoord}!MSLPoint3d@{MSLPoint3d}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}double MSLPoint3d::ycoord () const\hspace{0.3cm}{\tt  [inline]}}\label{class_MSLPoint3d_a4}
+
+
+\index{MSLPoint3d@{MSLPoint3d}!ydist@{ydist}}
+\index{ydist@{ydist}!MSLPoint3d@{MSLPoint3d}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}double MSLPoint3d::ydist (const MSLPoint3d \& {\em q}) const}\label{class_MSLPoint3d_a11}
+
+
+\index{MSLPoint3d@{MSLPoint3d}!zcoord@{zcoord}}
+\index{zcoord@{zcoord}!MSLPoint3d@{MSLPoint3d}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}double MSLPoint3d::zcoord () const\hspace{0.3cm}{\tt  [inline]}}\label{class_MSLPoint3d_a5}
+
+
+\index{MSLPoint3d@{MSLPoint3d}!zdist@{zdist}}
+\index{zdist@{zdist}!MSLPoint3d@{MSLPoint3d}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}double MSLPoint3d::zdist (const MSLPoint3d \& {\em q}) const}\label{class_MSLPoint3d_a12}
+
+
+
+
+\subsection{Friends And Related Function Documentation}
+\index{MSLPoint3d@{MSLPoint3d}!operator<<@{operator$<$$<$}}
+\index{operator<<@{operator$<$$<$}!MSLPoint3d@{MSLPoint3d}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}ostream\& operator$<$$<$ (ostream \& {\em out}, const list$<$ MSLPoint3d $>$ \& {\em L})\hspace{0.3cm}{\tt  [friend]}}\label{class_MSLPoint3d_l3}
+
+
+\index{MSLPoint3d@{MSLPoint3d}!operator<<@{operator$<$$<$}}
+\index{operator<<@{operator$<$$<$}!MSLPoint3d@{MSLPoint3d}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}ostream\& operator$<$$<$ (ostream \& {\em out}, const MSLPoint3d \& {\em p})\hspace{0.3cm}{\tt  [friend]}}\label{class_MSLPoint3d_l0}
+
+
+\index{MSLPoint3d@{MSLPoint3d}!operator>>@{operator$>$$>$}}
+\index{operator>>@{operator$>$$>$}!MSLPoint3d@{MSLPoint3d}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}istream\& operator$>$$>$ (istream \& {\em in}, list$<$ MSLPoint3d $>$ \& {\em L})\hspace{0.3cm}{\tt  [friend]}}\label{class_MSLPoint3d_l2}
+
+
+\index{MSLPoint3d@{MSLPoint3d}!operator>>@{operator$>$$>$}}
+\index{operator>>@{operator$>$$>$}!MSLPoint3d@{MSLPoint3d}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}istream\& operator$>$$>$ (istream \& {\em in}, MSLPoint3d \& {\em p})\hspace{0.3cm}{\tt  [friend]}}\label{class_MSLPoint3d_l1}
+
+
+
+
+The documentation for this class was generated from the following file:\begin{CompactItemize}
+\item 
+{\bf point3d.h}\end{CompactItemize}

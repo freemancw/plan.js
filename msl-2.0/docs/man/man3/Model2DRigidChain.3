@@ -1,0 +1,105 @@
+.TH "Model2DRigidChain" 3 "24 Jul 2003" "Motion Strategy Library" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Model2DRigidChain \- A 2D kinematic chain of bodies. 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <model2d.h>\fP
+.PP
+Inherits \fBModel2DRigid\fP.
+.PP
+.SS "Public Methods"
+
+.in +1c
+.ti -1c
+.RI "\fBModel2DRigidChain\fP (string path)"
+.br
+.ti -1c
+.RI "virtual \fB~Model2DRigidChain\fP ()"
+.br
+.ti -1c
+.RI "virtual \fBMSLVector\fP \fBStateToConfiguration\fP (const \fBMSLVector\fP &\fBx\fP)"
+.br
+.RI "\fIA method that converts a \fBModel\fP state in to a \fBGeom\fP configuration.\fP"
+.ti -1c
+.RI "virtual \fBMSLVector\fP \fBStateTransitionEquation\fP (const \fBMSLVector\fP &\fBx\fP, const \fBMSLVector\fP &u)"
+.br
+.RI "\fIThe state transition equation, or equations of motion, xdot=f(x,u).\fP"
+.ti -1c
+.RI "virtual double \fBMetric\fP (const \fBMSLVector\fP &x1, const \fBMSLVector\fP &x2)"
+.br
+.RI "\fIA distance metric, which is Euclidean in the base class.\fP"
+.ti -1c
+.RI "virtual bool \fBSatisfied\fP (const \fBMSLVector\fP &\fBx\fP)"
+.br
+.RI "\fITest whether global state-space constraints are satisfied.\fP"
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "int \fBNumBodies\fP"
+.br
+.RI "\fINumber of bodies in the chain.\fP"
+.ti -1c
+.RI "\fBMSLVector\fP \fBA\fP"
+.br
+.RI "\fIThe distances between joints ('a' parameters in kinematics).\fP"
+.ti -1c
+.RI "double \fBStopAngle\fP"
+.br
+.RI "\fIThe default joint limits (must be in 0,PI).\fP"
+.in -1c
+.SH "DETAILED DESCRIPTION"
+.PP 
+A 2D kinematic chain of bodies.
+.PP
+.SH "CONSTRUCTOR & DESTRUCTOR DOCUMENTATION"
+.PP 
+.SS "Model2DRigidChain::Model2DRigidChain (string path)"
+.PP
+.SS "virtual Model2DRigidChain::~Model2DRigidChain ()\fC [inline, virtual]\fP"
+.PP
+.SH "MEMBER FUNCTION DOCUMENTATION"
+.PP 
+.SS "double Model2DRigidChain::Metric (const \fBMSLVector\fP & x1, const \fBMSLVector\fP & x2)\fC [virtual]\fP"
+.PP
+A distance metric, which is Euclidean in the base class.
+.PP
+Reimplemented from \fBModel2DRigid\fP.
+.SS "bool Model2DRigidChain::Satisfied (const \fBMSLVector\fP & x)\fC [virtual]\fP"
+.PP
+Test whether global state-space constraints are satisfied.
+.PP
+Reimplemented from \fBModel\fP.
+.SS "\fBMSLVector\fP Model2DRigidChain::StateToConfiguration (const \fBMSLVector\fP & x)\fC [virtual]\fP"
+.PP
+A method that converts a \fBModel\fP state in to a \fBGeom\fP configuration.
+.PP
+Reimplemented from \fBModel2DRigid\fP.
+.SS "\fBMSLVector\fP Model2DRigidChain::StateTransitionEquation (const \fBMSLVector\fP & x, const \fBMSLVector\fP & u)\fC [virtual]\fP"
+.PP
+The state transition equation, or equations of motion, xdot=f(x,u).
+.PP
+Reimplemented from \fBModel2DRigid\fP.
+.SH "MEMBER DATA DOCUMENTATION"
+.PP 
+.SS "\fBMSLVector\fP Model2DRigidChain::A"
+.PP
+The distances between joints ('a' parameters in kinematics).
+.PP
+.SS "int Model2DRigidChain::NumBodies"
+.PP
+Number of bodies in the chain.
+.PP
+.SS "double Model2DRigidChain::StopAngle"
+.PP
+The default joint limits (must be in 0,PI).
+.PP
+
+
+.SH "AUTHOR"
+.PP 
+Generated automatically by Doxygen for Motion Strategy Library from the source code.

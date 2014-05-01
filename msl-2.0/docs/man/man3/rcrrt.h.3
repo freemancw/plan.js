@@ -1,0 +1,41 @@
+.TH "rcrrt.h" 3 "24 Jul 2003" "Motion Strategy Library" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+rcrrt.h \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'rrt.h'\fP
+.br
+.SS "Compounds"
+
+.in +1c
+.ti -1c
+.RI "class \fBRCRRT\fP"
+.br
+.RI "\fIResolution Complete Rapidly-Exploring Random Trees , by Peng Cheng and Steven M. LaValle, submitted to 2002 IEEE International Conference on Robotics and Automation. Techniques applied to improve the performance: (1) Combining systematic search with random search such that it has both the completeness of the systematic search and fast searching of the random search. (2) Constraint violation tendency to avoid obstacles This basic planner is used to do the experiment with dynamic car model in the virtual town. The rolling effect of the car and the nonlinear tire model are considered in the model.\fP"
+.ti -1c
+.RI "class \fBRCRRTBall\fP"
+.br
+.RI "\fI\fBRCRRT\fP planner using ball neighborhood to exclude the repeated states.\fP"
+.ti -1c
+.RI "class \fBRCRRTBallDual\fP"
+.br
+.RI "\fIBasic dual tree version of \fBRCRRTBall\fP.\fP"
+.ti -1c
+.RI "class \fBRCRRTBallExtExt\fP"
+.br
+.RI "\fIDual tree version of \fBRCRRTBall\fP with ExtExt method.\fP"
+.ti -1c
+.RI "class \fBRCRRTDual\fP"
+.br
+.RI "\fIBasic dual tree version of \fBRCRRT\fP.\fP"
+.ti -1c
+.RI "class \fBRCRRTExtExt\fP"
+.br
+.RI "\fIDual tree version of \fBRCRRT\fP with ExtExt method, which is used to do experiments with spacecraft model in 3D grid environment considering the dynamic constraints .\fP"
+.in -1c
+.SH "AUTHOR"
+.PP 
+Generated automatically by Doxygen for Motion Strategy Library from the source code.

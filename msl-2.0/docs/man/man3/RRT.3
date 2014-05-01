@@ -1,0 +1,164 @@
+.TH "RRT" 3 "24 Jul 2003" "Motion Strategy Library" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+RRT \- The base class, which generates a single Rapidly-exploring Random Tree. 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <rrt.h>\fP
+.PP
+Inherits \fBIncrementalPlanner\fP.
+.PP
+Inherited by \fBRandomTree\fP, \fBRRTDual\fP, \fBRRTGoalBias\fP, \fBRRTGoalZoom\fP, \fBRRTHull\fP, and \fBRRTPolar\fP.
+.PP
+.SS "Public Methods"
+
+.in +1c
+.ti -1c
+.RI "\fBRRT\fP (\fBProblem\fP *problem)"
+.br
+.RI "\fIA constructor that initializes data members.\fP"
+.ti -1c
+.RI "virtual \fB~RRT\fP ()"
+.br
+.RI "\fIEmpty destructor.\fP"
+.ti -1c
+.RI "virtual void \fBReset\fP ()"
+.br
+.RI "\fIReset the planner.\fP"
+.ti -1c
+.RI "virtual bool \fBPlan\fP ()"
+.br
+.RI "\fIAttempt to solve an Initial-Goal query by growing an RRT.\fP"
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "bool \fBUseANN\fP"
+.br
+.RI "\fIIf true, then the ANN package is used for nearest neighbors. It assumes R^n topology and Euclidean metric. The default is false.\fP"
+.ti -1c
+.RI "double \fBGoalDist\fP"
+.br
+.RI "\fIThe distance of the closest RRT \fBMSLNode\fP to the goal.\fP"
+.ti -1c
+.RI "\fBMSLVector\fP \fBBestState\fP"
+.br
+.RI "\fIThe closest state to the goal so far (not used in dual-tree planners).\fP"
+.ti -1c
+.RI "double \fBConnectTimeLimit\fP"
+.br
+.RI "\fIThe maximum amount of time to move in a Connect step (default = INFINITY).\fP"
+.ti -1c
+.RI "int \fBSatisfiedCount\fP"
+.br
+.RI "\fINumber of times the collision checker has been called.\fP"
+.in -1c
+.SS "Protected Methods"
+
+.in +1c
+.ti -1c
+.RI "virtual \fBMSLVector\fP \fBSelectInput\fP (const \fBMSLVector\fP &x1, const \fBMSLVector\fP &x2, \fBMSLVector\fP &nx_best, bool &success, bool forward)"
+.br
+.RI "\fISelect the input that gets closest to x2 from x1.\fP"
+.ti -1c
+.RI "virtual \fBMSLNode\fP * \fBSelectNode\fP (const \fBMSLVector\fP &\fBx\fP, \fBMSLTree\fP *t, bool forward)"
+.br
+.RI "\fIReturn the nearest neighbor in the graph.\fP"
+.ti -1c
+.RI "virtual bool \fBExtend\fP (const \fBMSLVector\fP &\fBx\fP, \fBMSLTree\fP *t, \fBMSLNode\fP *&nn, bool forward)"
+.br
+.RI "\fIIncrementally extend the RRT.\fP"
+.ti -1c
+.RI "virtual bool \fBConnect\fP (const \fBMSLVector\fP &\fBx\fP, \fBMSLTree\fP *t, \fBMSLNode\fP *&nn, bool forward)"
+.br
+.RI "\fIIterated Extend.\fP"
+.ti -1c
+.RI "virtual \fBMSLVector\fP \fBChooseState\fP ()"
+.br
+.RI "\fIPick a state using some sampling technique.\fP"
+.in -1c
+.SH "DETAILED DESCRIPTION"
+.PP 
+The base class, which generates a single Rapidly-exploring Random Tree.
+.PP
+The base class for the planners based on Rapidly-exploring  Random Trees. In the base class, a single tree is generated without any regard to the GoalState. The best planners to try are  \fBRRTGoalBias\fP and \fBRRTGoalZoom\fP for single trees, and \fBRRTConCon\fP and  \fBRRTExtExt\fP for dual trees. Dual tree approaches are much more efficient than single tree approaches, assuming dual trees can be applied. 
+.PP
+.SH "CONSTRUCTOR & DESTRUCTOR DOCUMENTATION"
+.PP 
+.SS "RRT::RRT (\fBProblem\fP * problem)"
+.PP
+A constructor that initializes data members.
+.PP
+.SS "virtual RRT::~RRT ()\fC [inline, virtual]\fP"
+.PP
+Empty destructor.
+.PP
+.SH "MEMBER FUNCTION DOCUMENTATION"
+.PP 
+.SS "\fBMSLVector\fP RRT::ChooseState ()\fC [protected, virtual]\fP"
+.PP
+Pick a state using some sampling technique.
+.PP
+Reimplemented in \fBRRTGoalBias\fP.
+.SS "bool RRT::Connect (const \fBMSLVector\fP & x, \fBMSLTree\fP * t, \fBMSLNode\fP *& nn, bool forward)\fC [protected, virtual]\fP"
+.PP
+Iterated Extend.
+.PP
+Reimplemented in \fBRRTSlide\fP.
+.SS "bool RRT::Extend (const \fBMSLVector\fP & x, \fBMSLTree\fP * t, \fBMSLNode\fP *& nn, bool forward)\fC [protected, virtual]\fP"
+.PP
+Incrementally extend the RRT.
+.PP
+Reimplemented in \fBRCRRT\fP.
+.SS "bool RRT::Plan ()\fC [virtual]\fP"
+.PP
+Attempt to solve an Initial-Goal query by growing an RRT.
+.PP
+Implements \fBPlanner\fP.
+.PP
+Reimplemented in \fBRCRRT\fP.
+.SS "void RRT::Reset ()\fC [virtual]\fP"
+.PP
+Reset the planner.
+.PP
+Reimplemented from \fBPlanner\fP.
+.SS "\fBMSLVector\fP RRT::SelectInput (const \fBMSLVector\fP & x1, const \fBMSLVector\fP & x2, \fBMSLVector\fP & nx_best, bool & success, bool forward)\fC [protected, virtual]\fP"
+.PP
+Select the input that gets closest to x2 from x1.
+.PP
+Reimplemented in \fBRRTSlide\fP.
+.SS "\fBMSLNode\fP * RRT::SelectNode (const \fBMSLVector\fP & x, \fBMSLTree\fP * t, bool forward)\fC [protected, virtual]\fP"
+.PP
+Return the nearest neighbor in the graph.
+.PP
+Reimplemented in \fBRCRRT\fP.
+.SH "MEMBER DATA DOCUMENTATION"
+.PP 
+.SS "\fBMSLVector\fP RRT::BestState"
+.PP
+The closest state to the goal so far (not used in dual-tree planners).
+.PP
+.SS "double RRT::ConnectTimeLimit"
+.PP
+The maximum amount of time to move in a Connect step (default = INFINITY).
+.PP
+.SS "double RRT::GoalDist"
+.PP
+The distance of the closest RRT \fBMSLNode\fP to the goal.
+.PP
+.SS "int RRT::SatisfiedCount"
+.PP
+Number of times the collision checker has been called.
+.PP
+.SS "bool RRT::UseANN"
+.PP
+If true, then the ANN package is used for nearest neighbors. It assumes R^n topology and Euclidean metric. The default is false.
+.PP
+
+
+.SH "AUTHOR"
+.PP 
+Generated automatically by Doxygen for Motion Strategy Library from the source code.

@@ -1,0 +1,200 @@
+\section{MSLPoint  Class Reference}
+\label{classMSLPoint}\index{MSLPoint@{MSLPoint}}
+{\tt \#include $<$point.h$>$}
+
+\subsection*{Public Methods}
+\begin{CompactItemize}
+\item 
+{\bf MSLPoint} ()
+\item 
+{\bf MSLPoint} (double {\bf x}, double {\bf y})
+\item 
+{\bf $\sim$MSLPoint} ()
+\item 
+double {\bf xcoord} () const
+\item 
+double {\bf ycoord} () const
+\item 
+void {\bf normalize} () const
+\item 
+int {\bf dim} () const
+\item 
+double {\bf sqr\_\-dist} (const MSLPoint \&q) const
+\item 
+double {\bf xdist} (const MSLPoint \&q) const
+\item 
+double {\bf ydist} (const MSLPoint \&q) const
+\item 
+double {\bf distance} (const MSLPoint \&q) const
+\item 
+double {\bf distance} () const
+\item 
+double {\bf angle} (const MSLPoint \&q, const MSLPoint \&r) const
+\item 
+MSLPoint {\bf translate\_\-by\_\-angle} (double alpha, double d) const
+\item 
+MSLPoint {\bf translate} (double dx, double dy) const
+\item 
+MSLPoint {\bf rotate} (const MSLPoint \&q, double a) const
+\item 
+MSLPoint {\bf rotate} (double a) const
+\item 
+MSLPoint {\bf rotate90} (const MSLPoint \&q) const
+\item 
+MSLPoint {\bf rotate90} () const
+\item 
+MSLPoint {\bf reflect} (const MSLPoint \&q, const MSLPoint \&r) const
+\item 
+MSLPoint {\bf reflect} (const MSLPoint \&q) const
+\item 
+bool {\bf operator==} (const MSLPoint \&q) const
+\item 
+bool {\bf operator!=} (const MSLPoint \&q) const
+\end{CompactItemize}
+\subsection*{Friends}
+\begin{CompactItemize}
+\item 
+ostream \& {\bf operator$<$$<$} (ostream \&O, const MSLPoint \&p)
+\item 
+istream \& {\bf operator$>$$>$} (istream \&I, MSLPoint \&p)
+\end{CompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{MSLPoint@{MSLPoint}!MSLPoint@{MSLPoint}}
+\index{MSLPoint@{MSLPoint}!MSLPoint@{MSLPoint}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}MSLPoint::MSLPoint ()}\label{classMSLPoint_a0}
+
+
+\index{MSLPoint@{MSLPoint}!MSLPoint@{MSLPoint}}
+\index{MSLPoint@{MSLPoint}!MSLPoint@{MSLPoint}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}MSLPoint::MSLPoint (double {\em x}, double {\em y})}\label{classMSLPoint_a1}
+
+
+\index{MSLPoint@{MSLPoint}!~MSLPoint@{$\sim$MSLPoint}}
+\index{~MSLPoint@{$\sim$MSLPoint}!MSLPoint@{MSLPoint}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}MSLPoint::$\sim$MSLPoint ()\hspace{0.3cm}{\tt  [inline]}}\label{classMSLPoint_a2}
+
+
+
+
+\subsection{Member Function Documentation}
+\index{MSLPoint@{MSLPoint}!angle@{angle}}
+\index{angle@{angle}!MSLPoint@{MSLPoint}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}double MSLPoint::angle (const MSLPoint \& {\em q}, const MSLPoint \& {\em r}) const}\label{classMSLPoint_a12}
+
+
+\index{MSLPoint@{MSLPoint}!dim@{dim}}
+\index{dim@{dim}!MSLPoint@{MSLPoint}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int MSLPoint::dim () const\hspace{0.3cm}{\tt  [inline]}}\label{classMSLPoint_a6}
+
+
+\index{MSLPoint@{MSLPoint}!distance@{distance}}
+\index{distance@{distance}!MSLPoint@{MSLPoint}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}double MSLPoint::distance () const\hspace{0.3cm}{\tt  [inline]}}\label{classMSLPoint_a11}
+
+
+\index{MSLPoint@{MSLPoint}!distance@{distance}}
+\index{distance@{distance}!MSLPoint@{MSLPoint}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}double MSLPoint::distance (const MSLPoint \& {\em q}) const}\label{classMSLPoint_a10}
+
+
+\index{MSLPoint@{MSLPoint}!normalize@{normalize}}
+\index{normalize@{normalize}!MSLPoint@{MSLPoint}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void MSLPoint::normalize () const\hspace{0.3cm}{\tt  [inline]}}\label{classMSLPoint_a5}
+
+
+\index{MSLPoint@{MSLPoint}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!MSLPoint@{MSLPoint}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}bool MSLPoint::operator!= (const MSLPoint \& {\em q}) const\hspace{0.3cm}{\tt  [inline]}}\label{classMSLPoint_a22}
+
+
+\index{MSLPoint@{MSLPoint}!operator==@{operator==}}
+\index{operator==@{operator==}!MSLPoint@{MSLPoint}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}bool MSLPoint::operator== (const MSLPoint \& {\em q}) const}\label{classMSLPoint_a21}
+
+
+\index{MSLPoint@{MSLPoint}!reflect@{reflect}}
+\index{reflect@{reflect}!MSLPoint@{MSLPoint}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}MSLPoint MSLPoint::reflect (const MSLPoint \& {\em q}) const}\label{classMSLPoint_a20}
+
+
+\index{MSLPoint@{MSLPoint}!reflect@{reflect}}
+\index{reflect@{reflect}!MSLPoint@{MSLPoint}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}MSLPoint MSLPoint::reflect (const MSLPoint \& {\em q}, const MSLPoint \& {\em r}) const}\label{classMSLPoint_a19}
+
+
+\index{MSLPoint@{MSLPoint}!rotate@{rotate}}
+\index{rotate@{rotate}!MSLPoint@{MSLPoint}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}MSLPoint MSLPoint::rotate (double {\em a}) const}\label{classMSLPoint_a16}
+
+
+\index{MSLPoint@{MSLPoint}!rotate@{rotate}}
+\index{rotate@{rotate}!MSLPoint@{MSLPoint}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}MSLPoint MSLPoint::rotate (const MSLPoint \& {\em q}, double {\em a}) const}\label{classMSLPoint_a15}
+
+
+\index{MSLPoint@{MSLPoint}!rotate90@{rotate90}}
+\index{rotate90@{rotate90}!MSLPoint@{MSLPoint}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}MSLPoint MSLPoint::rotate90 () const}\label{classMSLPoint_a18}
+
+
+\index{MSLPoint@{MSLPoint}!rotate90@{rotate90}}
+\index{rotate90@{rotate90}!MSLPoint@{MSLPoint}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}MSLPoint MSLPoint::rotate90 (const MSLPoint \& {\em q}) const}\label{classMSLPoint_a17}
+
+
+\index{MSLPoint@{MSLPoint}!sqr_dist@{sqr\_\-dist}}
+\index{sqr_dist@{sqr\_\-dist}!MSLPoint@{MSLPoint}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}double MSLPoint::sqr\_\-dist (const MSLPoint \& {\em q}) const}\label{classMSLPoint_a7}
+
+
+\index{MSLPoint@{MSLPoint}!translate@{translate}}
+\index{translate@{translate}!MSLPoint@{MSLPoint}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}MSLPoint MSLPoint::translate (double {\em dx}, double {\em dy}) const}\label{classMSLPoint_a14}
+
+
+\index{MSLPoint@{MSLPoint}!translate_by_angle@{translate\_\-by\_\-angle}}
+\index{translate_by_angle@{translate\_\-by\_\-angle}!MSLPoint@{MSLPoint}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}MSLPoint MSLPoint::translate\_\-by\_\-angle (double {\em alpha}, double {\em d}) const}\label{classMSLPoint_a13}
+
+
+\index{MSLPoint@{MSLPoint}!xcoord@{xcoord}}
+\index{xcoord@{xcoord}!MSLPoint@{MSLPoint}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}double MSLPoint::xcoord () const\hspace{0.3cm}{\tt  [inline]}}\label{classMSLPoint_a3}
+
+
+\index{MSLPoint@{MSLPoint}!xdist@{xdist}}
+\index{xdist@{xdist}!MSLPoint@{MSLPoint}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}double MSLPoint::xdist (const MSLPoint \& {\em q}) const}\label{classMSLPoint_a8}
+
+
+\index{MSLPoint@{MSLPoint}!ycoord@{ycoord}}
+\index{ycoord@{ycoord}!MSLPoint@{MSLPoint}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}double MSLPoint::ycoord () const\hspace{0.3cm}{\tt  [inline]}}\label{classMSLPoint_a4}
+
+
+\index{MSLPoint@{MSLPoint}!ydist@{ydist}}
+\index{ydist@{ydist}!MSLPoint@{MSLPoint}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}double MSLPoint::ydist (const MSLPoint \& {\em q}) const}\label{classMSLPoint_a9}
+
+
+
+
+\subsection{Friends And Related Function Documentation}
+\index{MSLPoint@{MSLPoint}!operator<<@{operator$<$$<$}}
+\index{operator<<@{operator$<$$<$}!MSLPoint@{MSLPoint}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}ostream\& operator$<$$<$ (ostream \& {\em O}, const MSLPoint \& {\em p})\hspace{0.3cm}{\tt  [friend]}}\label{classMSLPoint_l0}
+
+
+\index{MSLPoint@{MSLPoint}!operator>>@{operator$>$$>$}}
+\index{operator>>@{operator$>$$>$}!MSLPoint@{MSLPoint}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}istream\& operator$>$$>$ (istream \& {\em I}, MSLPoint \& {\em p})\hspace{0.3cm}{\tt  [friend]}}\label{classMSLPoint_l1}
+
+
+
+
+The documentation for this class was generated from the following files:\begin{CompactItemize}
+\item 
+{\bf point.h}\item 
+{\bf point.C}\end{CompactItemize}

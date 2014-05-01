@@ -1,0 +1,310 @@
+.TH "Model" 3 "24 Jul 2003" "Motion Strategy Library" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Model \- The incremental simulator model. 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <model.h>\fP
+.PP
+Inherited by \fBModel1D\fP, \fBModel2D\fP, \fBModel3D\fP, \fBModelLinear\fP, \fBModelND\fP, and \fBModelNintegrator\fP.
+.PP
+.SS "Public Methods"
+
+.in +1c
+.ti -1c
+.RI "\fBModel\fP (string path)"
+.br
+.RI "\fIEmpty constructor.\fP"
+.ti -1c
+.RI "virtual \fB~Model\fP ()"
+.br
+.RI "\fIEmpty destructor.\fP"
+.ti -1c
+.RI "virtual list< \fBMSLVector\fP > \fBGetInputs\fP (const \fBMSLVector\fP &\fBx\fP)"
+.br
+.RI "\fIReturn a list of inputs, which may depend on state.\fP"
+.ti -1c
+.RI "virtual \fBMSLVector\fP \fBStateTransitionEquation\fP (const \fBMSLVector\fP &\fBx\fP, const \fBMSLVector\fP &u)=0"
+.br
+.RI "\fIThe state transition equation, or equations of motion, xdot=f(x,u).\fP"
+.ti -1c
+.RI "virtual bool \fBSatisfied\fP (const \fBMSLVector\fP &\fBx\fP)"
+.br
+.RI "\fITest whether global state-space constraints are satisfied.\fP"
+.ti -1c
+.RI "virtual \fBMSLVector\fP \fBIntegrate\fP (const \fBMSLVector\fP &\fBx\fP, const \fBMSLVector\fP &u, const double &h)=0"
+.br
+.RI "\fIPerform integration from state x, using input u, over time step h.\fP"
+.ti -1c
+.RI "virtual \fBMSLVector\fP \fBLinearInterpolate\fP (const \fBMSLVector\fP &x1, const \fBMSLVector\fP &x2, const double &a)"
+.br
+.RI "\fILinearly interpolate two state while respecting topology.\fP"
+.ti -1c
+.RI "virtual \fBMSLVector\fP \fBStateDifference\fP (const \fBMSLVector\fP &x1, const \fBMSLVector\fP &x2)"
+.br
+.RI "\fICompute a \fBMSLVector\fP based on x2-x1. In R^n, the states are simply subtracted to make the \fBMSLVector\fP. This method exists to make things work correctly for other state-space topologies.\fP"
+.ti -1c
+.RI "virtual \fBMSLVector\fP \fBStateToConfiguration\fP (const \fBMSLVector\fP &\fBx\fP)"
+.br
+.RI "\fIA method that converts a Model state in to a \fBGeom\fP configuration.\fP"
+.ti -1c
+.RI "virtual double \fBMetric\fP (const \fBMSLVector\fP &x1, const \fBMSLVector\fP &x2)"
+.br
+.RI "\fIA distance metric, which is Euclidean in the base class.\fP"
+.ti -1c
+.RI "virtual void \fBPartialf_x\fP (const \fBMSLVector\fP &\fBx\fP, const \fBMSLVector\fP &u, \fBMSLMatrix\fP &m)"
+.br
+.RI "\fIPartial with respect to x of the state transition equation.\fP"
+.ti -1c
+.RI "virtual void \fBPartialf_u\fP (const \fBMSLVector\fP &\fBx\fP, const \fBMSLVector\fP &u, \fBMSLMatrix\fP &m)"
+.br
+.RI "\fIPartial with respect to u of the state transition equation.\fP"
+.ti -1c
+.RI "virtual void \fBL\fP (const \fBMSLVector\fP &\fBx\fP, const \fBMSLVector\fP &u, double &l)"
+.br
+.RI "\fIA cost or loss function, to be used in optimization problems.\fP"
+.ti -1c
+.RI "virtual void \fBPartialL_x\fP (const \fBMSLVector\fP &\fBx\fP, const \fBMSLVector\fP &u, \fBMSLMatrix\fP &m)"
+.br
+.RI "\fIPartial of the loss with respect to x.\fP"
+.ti -1c
+.RI "virtual void \fBPartialL_u\fP (const \fBMSLVector\fP &\fBx\fP, const \fBMSLVector\fP &u, \fBMSLMatrix\fP &m)"
+.br
+.RI "\fIPartial of the loss with respect to u.\fP"
+.ti -1c
+.RI "virtual void \fBPhi\fP (const \fBMSLVector\fP &\fBx\fP, const \fBMSLVector\fP &u, const \fBMSLVector\fP &goalstate, double &phi)"
+.br
+.RI "\fIThe final-state cost or loss.\fP"
+.ti -1c
+.RI "virtual void \fBPartialPhi_x\fP (const \fBMSLVector\fP &\fBx\fP, const \fBMSLVector\fP &u, const \fBMSLVector\fP &goalstate, \fBMSLMatrix\fP &m)"
+.br
+.RI "\fIPartial of the final-state loss with respect to x.\fP"
+.ti -1c
+.RI "virtual void \fBPartialPhi_t\fP (const \fBMSLVector\fP &\fBx\fP, const \fBMSLVector\fP &u, const \fBMSLVector\fP &goalstate, \fBMSLMatrix\fP &m)"
+.br
+.RI "\fIPartial of the final-state loss with respect to u.\fP"
+.ti -1c
+.RI "virtual void \fBPsi\fP (const \fBMSLVector\fP &\fBx\fP, const \fBMSLVector\fP &goalstate, \fBMSLVector\fP &psi)"
+.br
+.RI "\fIAn error \fBMSLVector\fP that compares a goal state to a given state.\fP"
+.ti -1c
+.RI "virtual void \fBPartialPsi_x\fP (const \fBMSLVector\fP &\fBx\fP, const \fBMSLVector\fP &u, \fBMSLMatrix\fP &m)"
+.br
+.RI "\fIPartial of the error \fBMSLVector\fP with respect to x.\fP"
+.ti -1c
+.RI "virtual void \fBPartialPsi_t\fP (const \fBMSLVector\fP &\fBx\fP, const \fBMSLVector\fP &u, \fBMSLMatrix\fP &m)"
+.br
+.RI "\fIPartial of the error \fBMSLVector\fP with respect to time.\fP"
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "string \fBFilePath\fP"
+.br
+.RI "\fIThis file path is used for all file reads.\fP"
+.ti -1c
+.RI "\fBMSLVector\fP \fBLowerState\fP"
+.br
+.RI "\fI\fBMSLVector\fP of minimum values for each state variable.\fP"
+.ti -1c
+.RI "\fBMSLVector\fP \fBUpperState\fP"
+.br
+.RI "\fI\fBMSLVector\fP of maximum values for each state variable.\fP"
+.ti -1c
+.RI "\fBMSLVector\fP \fBLowerInput\fP"
+.br
+.RI "\fI\fBMSLVector\fP of minimum values for each input variable.\fP"
+.ti -1c
+.RI "\fBMSLVector\fP \fBUpperInput\fP"
+.br
+.RI "\fI\fBMSLVector\fP of maximum values for each input variable.\fP"
+.ti -1c
+.RI "int \fBStateDim\fP"
+.br
+.RI "\fIThe dimension of the state space.\fP"
+.ti -1c
+.RI "int \fBInputDim\fP"
+.br
+.RI "\fIThe dimension of the input space.\fP"
+.in -1c
+.SS "Protected Methods"
+
+.in +1c
+.ti -1c
+.RI "\fBMSLVector\fP \fBRungeKuttaIntegrate\fP (const \fBMSLVector\fP &\fBx\fP, const \fBMSLVector\fP &u, const double &h)"
+.br
+.RI "\fIIntegrate xdot using 4th-order Runge-Kutta.\fP"
+.ti -1c
+.RI "\fBMSLVector\fP \fBEulerIntegrate\fP (const \fBMSLVector\fP &\fBx\fP, const \fBMSLVector\fP &u, const double &h)"
+.br
+.RI "\fIIntegrate xdot using Euler integration.\fP"
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "double \fBModelDeltaT\fP"
+.br
+.RI "\fIThe time interval to use for numerical integration (affects accuracy).\fP"
+.ti -1c
+.RI "list< \fBMSLVector\fP > \fBInputs\fP"
+.br
+.RI "\fIThe complete set of inputs.\fP"
+.in -1c
+.SH "DETAILED DESCRIPTION"
+.PP 
+The incremental simulator model.
+.PP
+The Model classes contain incremental simulators that model the kinematics and dynamics of a variety of mechanical systems. The methods allow planning algorithms to compute the future system state, given the current state, an interval of time, and a control input applied over that interval. (The planning algorithms select the appropriate inputs using this information.) Using object-oriented class derivations, a wide variety of simulators can be included. 
+.PP
+.SH "CONSTRUCTOR & DESTRUCTOR DOCUMENTATION"
+.PP 
+.SS "Model::Model (string path)"
+.PP
+Empty constructor.
+.PP
+.SS "virtual Model::~Model ()\fC [inline, virtual]\fP"
+.PP
+Empty destructor.
+.PP
+.SH "MEMBER FUNCTION DOCUMENTATION"
+.PP 
+.SS "\fBMSLVector\fP Model::EulerIntegrate (const \fBMSLVector\fP & x, const \fBMSLVector\fP & u, const double & h)\fC [protected]\fP"
+.PP
+Integrate xdot using Euler integration.
+.PP
+.SS "list< \fBMSLVector\fP > Model::GetInputs (const \fBMSLVector\fP & x)\fC [virtual]\fP"
+.PP
+Return a list of inputs, which may depend on state.
+.PP
+.SS "virtual \fBMSLVector\fP Model::Integrate (const \fBMSLVector\fP & x, const \fBMSLVector\fP & u, const double & h)\fC [pure virtual]\fP"
+.PP
+Perform integration from state x, using input u, over time step h.
+.PP
+Implemented in \fBModel3DRigidHelical\fP.
+.SS "virtual void Model::L (const \fBMSLVector\fP & x, const \fBMSLVector\fP & u, double & l)\fC [inline, virtual]\fP"
+.PP
+A cost or loss function, to be used in optimization problems.
+.PP
+.SS "\fBMSLVector\fP Model::LinearInterpolate (const \fBMSLVector\fP & x1, const \fBMSLVector\fP & x2, const double & a)\fC [virtual]\fP"
+.PP
+Linearly interpolate two state while respecting topology.
+.PP
+If a=0, then x1 is returned; if a=1, then x2 is returned. All intermediate values of $a \\in [0,1]$ yield intermediate states. This method is defined by Model. 
+.PP
+Reimplemented in \fBModel2DRigid\fP.
+.SS "double Model::Metric (const \fBMSLVector\fP & x1, const \fBMSLVector\fP & x2)\fC [virtual]\fP"
+.PP
+A distance metric, which is Euclidean in the base class.
+.PP
+Reimplemented in \fBModel2DPoint\fP.
+.SS "virtual void Model::Partialf_u (const \fBMSLVector\fP & x, const \fBMSLVector\fP & u, \fBMSLMatrix\fP & m)\fC [inline, virtual]\fP"
+.PP
+Partial with respect to u of the state transition equation.
+.PP
+.SS "virtual void Model::Partialf_x (const \fBMSLVector\fP & x, const \fBMSLVector\fP & u, \fBMSLMatrix\fP & m)\fC [inline, virtual]\fP"
+.PP
+Partial with respect to x of the state transition equation.
+.PP
+.SS "virtual void Model::PartialL_u (const \fBMSLVector\fP & x, const \fBMSLVector\fP & u, \fBMSLMatrix\fP & m)\fC [inline, virtual]\fP"
+.PP
+Partial of the loss with respect to u.
+.PP
+.SS "virtual void Model::PartialL_x (const \fBMSLVector\fP & x, const \fBMSLVector\fP & u, \fBMSLMatrix\fP & m)\fC [inline, virtual]\fP"
+.PP
+Partial of the loss with respect to x.
+.PP
+.SS "virtual void Model::PartialPhi_t (const \fBMSLVector\fP & x, const \fBMSLVector\fP & u, const \fBMSLVector\fP & goalstate, \fBMSLMatrix\fP & m)\fC [inline, virtual]\fP"
+.PP
+Partial of the final-state loss with respect to u.
+.PP
+.SS "virtual void Model::PartialPhi_x (const \fBMSLVector\fP & x, const \fBMSLVector\fP & u, const \fBMSLVector\fP & goalstate, \fBMSLMatrix\fP & m)\fC [inline, virtual]\fP"
+.PP
+Partial of the final-state loss with respect to x.
+.PP
+.SS "virtual void Model::PartialPsi_t (const \fBMSLVector\fP & x, const \fBMSLVector\fP & u, \fBMSLMatrix\fP & m)\fC [inline, virtual]\fP"
+.PP
+Partial of the error \fBMSLVector\fP with respect to time.
+.PP
+.SS "virtual void Model::PartialPsi_x (const \fBMSLVector\fP & x, const \fBMSLVector\fP & u, \fBMSLMatrix\fP & m)\fC [inline, virtual]\fP"
+.PP
+Partial of the error \fBMSLVector\fP with respect to x.
+.PP
+.SS "virtual void Model::Phi (const \fBMSLVector\fP & x, const \fBMSLVector\fP & u, const \fBMSLVector\fP & goalstate, double & phi)\fC [inline, virtual]\fP"
+.PP
+The final-state cost or loss.
+.PP
+.SS "virtual void Model::Psi (const \fBMSLVector\fP & x, const \fBMSLVector\fP & goalstate, \fBMSLVector\fP & psi)\fC [inline, virtual]\fP"
+.PP
+An error \fBMSLVector\fP that compares a goal state to a given state.
+.PP
+.SS "\fBMSLVector\fP Model::RungeKuttaIntegrate (const \fBMSLVector\fP & x, const \fBMSLVector\fP & u, const double & h)\fC [protected]\fP"
+.PP
+Integrate xdot using 4th-order Runge-Kutta.
+.PP
+.SS "bool Model::Satisfied (const \fBMSLVector\fP & x)\fC [virtual]\fP"
+.PP
+Test whether global state-space constraints are satisfied.
+.PP
+Reimplemented in \fBModel2DRigidCarSmooth\fP.
+.SS "\fBMSLVector\fP Model::StateDifference (const \fBMSLVector\fP & x1, const \fBMSLVector\fP & x2)\fC [virtual]\fP"
+.PP
+Compute a \fBMSLVector\fP based on x2-x1. In R^n, the states are simply subtracted to make the \fBMSLVector\fP. This method exists to make things work correctly for other state-space topologies.
+.PP
+Reimplemented in \fBModel2DRigid\fP.
+.SS "\fBMSLVector\fP Model::StateToConfiguration (const \fBMSLVector\fP & x)\fC [virtual]\fP"
+.PP
+A method that converts a Model state in to a \fBGeom\fP configuration.
+.PP
+Reimplemented in \fBModel2D\fP.
+.SS "virtual \fBMSLVector\fP Model::StateTransitionEquation (const \fBMSLVector\fP & x, const \fBMSLVector\fP & u)\fC [pure virtual]\fP"
+.PP
+The state transition equation, or equations of motion, xdot=f(x,u).
+.PP
+Implemented in \fBModel3DRigidHelical\fP.
+.SH "MEMBER DATA DOCUMENTATION"
+.PP 
+.SS "string Model::FilePath"
+.PP
+This file path is used for all file reads.
+.PP
+.SS "int Model::InputDim"
+.PP
+The dimension of the input space.
+.PP
+.SS "list<\fBMSLVector\fP> Model::Inputs\fC [protected]\fP"
+.PP
+The complete set of inputs.
+.PP
+.SS "\fBMSLVector\fP Model::LowerInput"
+.PP
+\fBMSLVector\fP of minimum values for each input variable.
+.PP
+.SS "\fBMSLVector\fP Model::LowerState"
+.PP
+\fBMSLVector\fP of minimum values for each state variable.
+.PP
+.SS "double Model::ModelDeltaT\fC [protected]\fP"
+.PP
+The time interval to use for numerical integration (affects accuracy).
+.PP
+.SS "int Model::StateDim"
+.PP
+The dimension of the state space.
+.PP
+.SS "\fBMSLVector\fP Model::UpperInput"
+.PP
+\fBMSLVector\fP of maximum values for each input variable.
+.PP
+.SS "\fBMSLVector\fP Model::UpperState"
+.PP
+\fBMSLVector\fP of maximum values for each state variable.
+.PP
+
+
+.SH "AUTHOR"
+.PP 
+Generated automatically by Doxygen for Motion Strategy Library from the source code.

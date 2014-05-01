@@ -1,0 +1,47 @@
+.TH "RCRRTBallExtExt" 3 "24 Jul 2003" "Motion Strategy Library" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+RCRRTBallExtExt \- Dual tree version of \fBRCRRTBall\fP with ExtExt method. 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <rcrrt.h>\fP
+.PP
+Inherits \fBRCRRTBallDual\fP.
+.PP
+.SS "Public Methods"
+
+.in +1c
+.ti -1c
+.RI "\fBRCRRTBallExtExt\fP (\fBProblem\fP *p)"
+.br
+.ti -1c
+.RI "virtual \fB~RCRRTBallExtExt\fP ()"
+.br
+.ti -1c
+.RI "virtual bool \fBPlan\fP ()"
+.br
+.RI "\fIAttempt to solve an Initial-Goal query by growing an \fBRRT\fP.\fP"
+.in -1c
+.SH "DETAILED DESCRIPTION"
+.PP 
+Dual tree version of \fBRCRRTBall\fP with ExtExt method.
+.PP
+.SH "CONSTRUCTOR & DESTRUCTOR DOCUMENTATION"
+.PP 
+.SS "RCRRTBallExtExt::RCRRTBallExtExt (\fBProblem\fP * p)"
+.PP
+.SS "virtual RCRRTBallExtExt::~RCRRTBallExtExt ()\fC [inline, virtual]\fP"
+.PP
+.SH "MEMBER FUNCTION DOCUMENTATION"
+.PP 
+.SS "bool RCRRTBallExtExt::Plan ()\fC [virtual]\fP"
+.PP
+Attempt to solve an Initial-Goal query by growing an \fBRRT\fP.
+.PP
+Reimplemented from \fBRCRRTBallDual\fP.
+
+.SH "AUTHOR"
+.PP 
+Generated automatically by Doxygen for Motion Strategy Library from the source code.

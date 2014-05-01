@@ -1,0 +1,79 @@
+.TH "IncrementalPlanner" 3 "24 Jul 2003" "Motion Strategy Library" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+IncrementalPlanner \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <planner.h>\fP
+.PP
+Inherits \fBPlanner\fP.
+.PP
+Inherited by \fBFDP\fP, and \fBRRT\fP.
+.PP
+.SS "Public Methods"
+
+.in +1c
+.ti -1c
+.RI "\fBIncrementalPlanner\fP (\fBProblem\fP *problem)"
+.br
+.RI "\fIA constructor that initializes data members.\fP"
+.ti -1c
+.RI "\fB~IncrementalPlanner\fP ()"
+.br
+.ti -1c
+.RI "virtual void \fBConstruct\fP ()"
+.br
+.RI "\fIEssentially do nothing (no precomputation for incremental planners).\fP"
+.ti -1c
+.RI "void \fBRecordSolution\fP (const list< \fBMSLNode\fP * > &glist, const list< \fBMSLNode\fP * > &g2list)"
+.br
+.RI "\fIConvert a path in the graph to Path and Policy.\fP"
+.ti -1c
+.RI "void \fBRecordSolution\fP (const list< \fBMSLNode\fP * > &glist)"
+.br
+.ti -1c
+.RI "virtual void \fBWriteGraphs\fP (ofstream &fout)"
+.br
+.RI "\fIWrite trees to a file.\fP"
+.ti -1c
+.RI "virtual void \fBReadGraphs\fP (ifstream &fin)"
+.br
+.RI "\fIRead trees from a file.\fP"
+.in -1c
+.SH "CONSTRUCTOR & DESTRUCTOR DOCUMENTATION"
+.PP 
+.SS "IncrementalPlanner::IncrementalPlanner (\fBProblem\fP * problem)"
+.PP
+A constructor that initializes data members.
+.PP
+.SS "IncrementalPlanner::~IncrementalPlanner ()\fC [inline]\fP"
+.PP
+.SH "MEMBER FUNCTION DOCUMENTATION"
+.PP 
+.SS "void IncrementalPlanner::Construct ()\fC [virtual]\fP"
+.PP
+Essentially do nothing (no precomputation for incremental planners).
+.PP
+Implements \fBPlanner\fP.
+.SS "void IncrementalPlanner::ReadGraphs (ifstream & fin)\fC [virtual]\fP"
+.PP
+Read trees from a file.
+.PP
+Implements \fBPlanner\fP.
+.SS "void IncrementalPlanner::RecordSolution (const list< \fBMSLNode\fP * > & glist)"
+.PP
+.SS "void IncrementalPlanner::RecordSolution (const list< \fBMSLNode\fP * > & glist, const list< \fBMSLNode\fP * > & g2list)"
+.PP
+Convert a path in the graph to Path and Policy.
+.PP
+.SS "void IncrementalPlanner::WriteGraphs (ofstream & fout)\fC [virtual]\fP"
+.PP
+Write trees to a file.
+.PP
+Implements \fBPlanner\fP.
+
+.SH "AUTHOR"
+.PP 
+Generated automatically by Doxygen for Motion Strategy Library from the source code.

@@ -1,0 +1,133 @@
+.TH "Model2DRigidLander" 3 "24 Jul 2003" "Motion Strategy Library" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Model2DRigidLander \- A rigid body with two small side thrusters, and a larger lower thruster. The goal is to navigate and softly 'land' the craft by firing thrusters, in spite of gravity. 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <model2d.h>\fP
+.PP
+Inherits \fBModel2DRigid\fP.
+.PP
+.SS "Public Methods"
+
+.in +1c
+.ti -1c
+.RI "\fBModel2DRigidLander\fP (string path)"
+.br
+.ti -1c
+.RI "virtual \fB~Model2DRigidLander\fP ()"
+.br
+.ti -1c
+.RI "virtual \fBMSLVector\fP \fBStateToConfiguration\fP (const \fBMSLVector\fP &\fBx\fP)"
+.br
+.RI "\fIA method that converts a \fBModel\fP state in to a \fBGeom\fP configuration.\fP"
+.ti -1c
+.RI "virtual \fBMSLVector\fP \fBStateTransitionEquation\fP (const \fBMSLVector\fP &\fBx\fP, const \fBMSLVector\fP &u)"
+.br
+.RI "\fIThe state transition equation, or equations of motion, xdot=f(x,u).\fP"
+.ti -1c
+.RI "virtual \fBMSLVector\fP \fBIntegrate\fP (const \fBMSLVector\fP &\fBx\fP, const \fBMSLVector\fP &u, const double &h)"
+.br
+.RI "\fIPerform integration from state x, using input u, over time step h.\fP"
+.ti -1c
+.RI "\fBMSLVector\fP \fBLinearInterpolate\fP (const \fBMSLVector\fP &x1, const \fBMSLVector\fP &x2, const double &a)"
+.br
+.RI "\fILinearly interpolate two state while respecting topology.\fP"
+.ti -1c
+.RI "virtual \fBMSLVector\fP \fBStateDifference\fP (const \fBMSLVector\fP &x1, const \fBMSLVector\fP &x2)"
+.br
+.RI "\fICompute a \fBMSLVector\fP based on x2-x1. In R^n, the states are simply subtracted to make the \fBMSLVector\fP. This method exists to make things work correctly for other state-space topologies.\fP"
+.ti -1c
+.RI "virtual double \fBMetric\fP (const \fBMSLVector\fP &x1, const \fBMSLVector\fP &x2)"
+.br
+.RI "\fIA distance metric, which is Euclidean in the base class.\fP"
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "double \fBMass\fP"
+.br
+.RI "\fIMass in kg.\fP"
+.ti -1c
+.RI "double \fBG\fP"
+.br
+.RI "\fIAccel of gravity (m/s^2).\fP"
+.ti -1c
+.RI "double \fBFs\fP"
+.br
+.RI "\fISide thruster force.\fP"
+.ti -1c
+.RI "double \fBFu\fP"
+.br
+.RI "\fIUpward thruster force.\fP"
+.in -1c
+.SH "DETAILED DESCRIPTION"
+.PP 
+A rigid body with two small side thrusters, and a larger lower thruster. The goal is to navigate and softly 'land' the craft by firing thrusters, in spite of gravity.
+.PP
+.SH "CONSTRUCTOR & DESTRUCTOR DOCUMENTATION"
+.PP 
+.SS "Model2DRigidLander::Model2DRigidLander (string path)"
+.PP
+.SS "virtual Model2DRigidLander::~Model2DRigidLander ()\fC [inline, virtual]\fP"
+.PP
+.SH "MEMBER FUNCTION DOCUMENTATION"
+.PP 
+.SS "\fBMSLVector\fP Model2DRigidLander::Integrate (const \fBMSLVector\fP & x, const \fBMSLVector\fP & u, const double & h)\fC [virtual]\fP"
+.PP
+Perform integration from state x, using input u, over time step h.
+.PP
+Reimplemented from \fBModel2DRigid\fP.
+.SS "\fBMSLVector\fP Model2DRigidLander::LinearInterpolate (const \fBMSLVector\fP & x1, const \fBMSLVector\fP & x2, const double & a)\fC [virtual]\fP"
+.PP
+Linearly interpolate two state while respecting topology.
+.PP
+If a=0, then x1 is returned; if a=1, then x2 is returned. All intermediate values of $a \\in [0,1]$ yield intermediate states. This method is defined by \fBModel\fP. 
+.PP
+Reimplemented from \fBModel2DRigid\fP.
+.SS "double Model2DRigidLander::Metric (const \fBMSLVector\fP & x1, const \fBMSLVector\fP & x2)\fC [virtual]\fP"
+.PP
+A distance metric, which is Euclidean in the base class.
+.PP
+Reimplemented from \fBModel2DRigid\fP.
+.SS "\fBMSLVector\fP Model2DRigidLander::StateDifference (const \fBMSLVector\fP & x1, const \fBMSLVector\fP & x2)\fC [virtual]\fP"
+.PP
+Compute a \fBMSLVector\fP based on x2-x1. In R^n, the states are simply subtracted to make the \fBMSLVector\fP. This method exists to make things work correctly for other state-space topologies.
+.PP
+Reimplemented from \fBModel2DRigid\fP.
+.SS "\fBMSLVector\fP Model2DRigidLander::StateToConfiguration (const \fBMSLVector\fP & x)\fC [virtual]\fP"
+.PP
+A method that converts a \fBModel\fP state in to a \fBGeom\fP configuration.
+.PP
+Reimplemented from \fBModel2DRigid\fP.
+.SS "\fBMSLVector\fP Model2DRigidLander::StateTransitionEquation (const \fBMSLVector\fP & x, const \fBMSLVector\fP & u)\fC [virtual]\fP"
+.PP
+The state transition equation, or equations of motion, xdot=f(x,u).
+.PP
+Reimplemented from \fBModel2DRigid\fP.
+.SH "MEMBER DATA DOCUMENTATION"
+.PP 
+.SS "double Model2DRigidLander::Fs"
+.PP
+Side thruster force.
+.PP
+.SS "double Model2DRigidLander::Fu"
+.PP
+Upward thruster force.
+.PP
+.SS "double Model2DRigidLander::G"
+.PP
+Accel of gravity (m/s^2).
+.PP
+.SS "double Model2DRigidLander::Mass"
+.PP
+Mass in kg.
+.PP
+
+
+.SH "AUTHOR"
+.PP 
+Generated automatically by Doxygen for Motion Strategy Library from the source code.

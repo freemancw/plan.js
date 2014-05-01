@@ -1,0 +1,67 @@
+.TH "rrt.h" 3 "24 Jul 2003" "Motion Strategy Library" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+rrt.h \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'planner.h'\fP
+.br
+\fC#include 'util.h'\fP
+.br
+.SS "Compounds"
+
+.in +1c
+.ti -1c
+.RI "class \fBRandomTree\fP"
+.br
+.RI "\fINaively extend the tree by random node selection (not really an \fBRRT\fP).\fP"
+.ti -1c
+.RI "class \fBRRT\fP"
+.br
+.RI "\fIThe base class, which generates a single Rapidly-exploring Random Tree.\fP"
+.ti -1c
+.RI "class \fBRRTBidirBalanced\fP"
+.br
+.RI "\fIBalanced Bidirectional \fBRRTConCon\fP planner.\fP"
+.ti -1c
+.RI "class \fBRRTCon\fP"
+.br
+.RI "\fIReplaces Extend with Connect.\fP"
+.ti -1c
+.RI "class \fBRRTConCon\fP"
+.br
+.RI "\fIUse Connect for both exploration and connecting of trees.\fP"
+.ti -1c
+.RI "class \fBRRTDual\fP"
+.br
+.RI "\fIPlanners that grow trees from the initial and goal.\fP"
+.ti -1c
+.RI "class \fBRRTExtCon\fP"
+.br
+.RI "\fIUse Connect instead of Extend to connect the two trees.\fP"
+.ti -1c
+.RI "class \fBRRTExtExt\fP"
+.br
+.RI "\fIBalance between growing trees toward each other and exploring.\fP"
+.ti -1c
+.RI "class \fBRRTGoalBias\fP"
+.br
+.RI "\fIWith some probability, choose the goal instead of a random sample.\fP"
+.ti -1c
+.RI "class \fBRRTGoalZoom\fP"
+.br
+.RI "\fIBias the samples toward the goal as the tree gets closer.\fP"
+.ti -1c
+.RI "class \fBRRTHull\fP"
+.br
+.RI "\fIGrow a Rapidly-exploring Random Tree in a large disc.\fP"
+.ti -1c
+.RI "class \fBRRTPolar\fP"
+.br
+.RI "\fIGradually bias the sampling towards the goal.\fP"
+.in -1c
+.SH "AUTHOR"
+.PP 
+Generated automatically by Doxygen for Motion Strategy Library from the source code.

@@ -1,0 +1,75 @@
+.TH "RRTGoalZoom" 3 "24 Jul 2003" "Motion Strategy Library" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+RRTGoalZoom \- Bias the samples toward the goal as the tree gets closer. 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <rrt.h>\fP
+.PP
+Inherits \fBRRT\fP.
+.PP
+.SS "Public Methods"
+
+.in +1c
+.ti -1c
+.RI "\fBRRTGoalZoom\fP (\fBProblem\fP *p)"
+.br
+.ti -1c
+.RI "virtual \fB~RRTGoalZoom\fP ()"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "double \fBGoalProb\fP"
+.br
+.ti -1c
+.RI "double \fBZoomProb\fP"
+.br
+.ti -1c
+.RI "double \fBZoomFactor\fP"
+.br
+.in -1c
+.SS "Protected Methods"
+
+.in +1c
+.ti -1c
+.RI "virtual \fBMSLVector\fP \fBChooseState\fP ()"
+.br
+.RI "\fIPick a state using some sampling technique.\fP"
+.in -1c
+.SH "DETAILED DESCRIPTION"
+.PP 
+Bias the samples toward the goal as the tree gets closer.
+.PP
+This planner biases the sampling towards a region that contains  the goal. The region shrinks around the goal as the tree comes nearer.  This planner is based on a class project at Iowa State by Jun Qu in 1999. 
+.PP
+.SH "CONSTRUCTOR & DESTRUCTOR DOCUMENTATION"
+.PP 
+.SS "RRTGoalZoom::RRTGoalZoom (\fBProblem\fP * p)"
+.PP
+.SS "virtual RRTGoalZoom::~RRTGoalZoom ()\fC [inline, virtual]\fP"
+.PP
+.SH "MEMBER FUNCTION DOCUMENTATION"
+.PP 
+.SS "\fBMSLVector\fP RRTGoalZoom::ChooseState ()\fC [protected, virtual]\fP"
+.PP
+Pick a state using some sampling technique.
+.PP
+Reimplemented from \fBRRT\fP.
+.SH "MEMBER DATA DOCUMENTATION"
+.PP 
+.SS "double RRTGoalZoom::GoalProb"
+.PP
+.SS "double RRTGoalZoom::ZoomFactor"
+.PP
+.SS "double RRTGoalZoom::ZoomProb"
+.PP
+
+
+.SH "AUTHOR"
+.PP 
+Generated automatically by Doxygen for Motion Strategy Library from the source code.

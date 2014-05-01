@@ -1,0 +1,244 @@
+\section{renderpf.h File Reference}
+\label{renderpf_8h}\index{renderpf.h@{renderpf.h}}
+{\tt \#include \char`\"{}triangle.h\char`\"{}}\par
+{\tt \#include \char`\"{}render.h\char`\"{}}\par
+{\tt \#include $<$Performer/pf/pf\-Channel.h$>$}\par
+{\tt \#include $<$Performer/pf/pf\-Earth\-Sky.h$>$}\par
+{\tt \#include $<$Performer/pf/pf\-Light\-Source.h$>$}\par
+{\tt \#include $<$Performer/pf/pf\-Node.h$>$}\par
+{\tt \#include $<$Performer/pf/pf\-Geode.h$>$}\par
+{\tt \#include $<$Performer/pf/pf\-Text.h$>$}\par
+{\tt \#include $<$Performer/pf/pf\-Scene.h$>$}\par
+{\tt \#include $<$Performer/pf/pf\-Group.h$>$}\par
+{\tt \#include $<$Performer/pf/pf\-Switch.h$>$}\par
+{\tt \#include $<$Performer/pf/pf\-DCS.h$>$}\par
+{\tt \#include $<$Performer/pf/pf\-SCS.h$>$}\par
+{\tt \#include $<$Performer/pr/pf\-Geo\-Set.h$>$}\par
+{\tt \#include $<$Performer/pr/pf\-Geo\-State.h$>$}\par
+{\tt \#include $<$Performer/pr/pf\-String.h$>$}\par
+{\tt \#include $<$Performer/pr/pf\-Font.h$>$}\par
+{\tt \#include $<$Performer/pr/pf\-Material.h$>$}\par
+{\tt \#include $<$Performer/pfui.h$>$}\par
+{\tt \#include $<$Performer/pfutil.h$>$}\par
+{\tt \#include $<$Performer/pfdu.h$>$}\par
+{\tt \#include $<$Performer/pr.h$>$}\par
+\subsection*{Compounds}
+\begin{CompactItemize}
+\item 
+class {\bf Render\-Performer}
+\begin{CompactList}\small\item\em Perform 3D rendering using the SGI IRIS Performer library.\item\end{CompactList}\end{CompactItemize}
+\subsection*{Typedefs}
+\begin{CompactItemize}
+\item 
+typedef pf\-Pipe\-Window $\ast$ {\bf PW}
+\end{CompactItemize}
+\subsection*{Variables}
+\begin{CompactItemize}
+\item 
+pf\-Channel $\ast$ {\bf Chan}
+\item 
+pf\-Channel $\ast$ {\bf Chan\-Eye}
+\item 
+pf\-Switch $\ast$ {\bf Show\-Case}
+\item 
+pf\-Group $\ast$ {\bf Control\-Panel}
+\item 
+pf\-DCS $\ast$ {\bf Control\-Pad}
+\item 
+pf\-DCS $\ast$ {\bf Bodies\-DCS}
+\item 
+pf\-Group $\ast$ {\bf Env}
+\item 
+pf\-Geode $\ast$ {\bf Bounding\-Box}
+\item 
+pf\-Switch $\ast$ {\bf Work\-Env}
+\item 
+pf\-DCS $\ast$ {\bf World\-DCS}
+\item 
+pfu\-Mouse $\ast$ {\bf Mouse}
+\item 
+pfu\-Event\-Stream $\ast$ {\bf Input\-Events}
+\item 
+double {\bf Tran\-X}
+\item 
+double {\bf Tran\-Y}
+\item 
+double {\bf Tran\-Z}
+\item 
+double {\bf Rot\-X}
+\item 
+double {\bf Rot\-Y}
+\item 
+double {\bf Rot\-Z}
+\item 
+bool {\bf Hold\-Right\-Mouse}
+\item 
+bool {\bf Hold\-Left\-Mouse}
+\item 
+bool {\bf Hold\-Middle\-Mouse}
+\item 
+double {\bf Mouse\-XOld}
+\item 
+double {\bf Mouse\-YOld}
+\item 
+pf\-Matrix {\bf Eye\-Mat}
+\item 
+bool {\bf Control\-Panel\-On}
+\item 
+bool {\bf Focus\-On\-Control\-Pad}
+\item 
+double {\bf Pad\-X}
+\item 
+{\bf Shared\-Data}
+\end{CompactItemize}
+
+
+\subsection{Typedef Documentation}
+\index{renderpf.h@{renderpf.h}!PW@{PW}}
+\index{PW@{PW}!renderpf.h@{renderpf.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}typedef struct pf\-Pipe\-Window$\ast$ PW}\label{renderpf_8h_a0}
+
+
+
+
+\subsection{Variable Documentation}
+\index{renderpf.h@{renderpf.h}!BodiesDCS@{BodiesDCS}}
+\index{BodiesDCS@{BodiesDCS}!renderpf.h@{renderpf.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}pf\-DCS$\ast$ Bodies\-DCS}\label{renderpf_8h_a6}
+
+
+\index{renderpf.h@{renderpf.h}!BoundingBox@{BoundingBox}}
+\index{BoundingBox@{BoundingBox}!renderpf.h@{renderpf.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}pf\-Geode$\ast$ Bounding\-Box}\label{renderpf_8h_a8}
+
+
+\index{renderpf.h@{renderpf.h}!Chan@{Chan}}
+\index{Chan@{Chan}!renderpf.h@{renderpf.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}pf\-Channel$\ast$ Chan}\label{renderpf_8h_a1}
+
+
+\index{renderpf.h@{renderpf.h}!ChanEye@{ChanEye}}
+\index{ChanEye@{ChanEye}!renderpf.h@{renderpf.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}pf\-Channel$\ast$ Chan\-Eye}\label{renderpf_8h_a2}
+
+
+\index{renderpf.h@{renderpf.h}!ControlPad@{ControlPad}}
+\index{ControlPad@{ControlPad}!renderpf.h@{renderpf.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}pf\-DCS$\ast$ Control\-Pad}\label{renderpf_8h_a5}
+
+
+\index{renderpf.h@{renderpf.h}!ControlPanel@{ControlPanel}}
+\index{ControlPanel@{ControlPanel}!renderpf.h@{renderpf.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}pf\-Group$\ast$ Control\-Panel}\label{renderpf_8h_a4}
+
+
+\index{renderpf.h@{renderpf.h}!ControlPanelOn@{ControlPanelOn}}
+\index{ControlPanelOn@{ControlPanelOn}!renderpf.h@{renderpf.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}bool Control\-Panel\-On}\label{renderpf_8h_a25}
+
+
+\index{renderpf.h@{renderpf.h}!Env@{Env}}
+\index{Env@{Env}!renderpf.h@{renderpf.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}pf\-Group$\ast$ Env}\label{renderpf_8h_a7}
+
+
+\index{renderpf.h@{renderpf.h}!EyeMat@{EyeMat}}
+\index{EyeMat@{EyeMat}!renderpf.h@{renderpf.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}pf\-Matrix Eye\-Mat}\label{renderpf_8h_a24}
+
+
+\index{renderpf.h@{renderpf.h}!FocusOnControlPad@{FocusOnControlPad}}
+\index{FocusOnControlPad@{FocusOnControlPad}!renderpf.h@{renderpf.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}bool Focus\-On\-Control\-Pad}\label{renderpf_8h_a26}
+
+
+\index{renderpf.h@{renderpf.h}!HoldLeftMouse@{HoldLeftMouse}}
+\index{HoldLeftMouse@{HoldLeftMouse}!renderpf.h@{renderpf.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}bool Hold\-Left\-Mouse}\label{renderpf_8h_a20}
+
+
+\index{renderpf.h@{renderpf.h}!HoldMiddleMouse@{HoldMiddleMouse}}
+\index{HoldMiddleMouse@{HoldMiddleMouse}!renderpf.h@{renderpf.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}bool Hold\-Middle\-Mouse}\label{renderpf_8h_a21}
+
+
+\index{renderpf.h@{renderpf.h}!HoldRightMouse@{HoldRightMouse}}
+\index{HoldRightMouse@{HoldRightMouse}!renderpf.h@{renderpf.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}bool Hold\-Right\-Mouse}\label{renderpf_8h_a19}
+
+
+\index{renderpf.h@{renderpf.h}!InputEvents@{InputEvents}}
+\index{InputEvents@{InputEvents}!renderpf.h@{renderpf.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}pfu\-Event\-Stream$\ast$ Input\-Events}\label{renderpf_8h_a12}
+
+
+\index{renderpf.h@{renderpf.h}!Mouse@{Mouse}}
+\index{Mouse@{Mouse}!renderpf.h@{renderpf.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}pfu\-Mouse$\ast$ Mouse}\label{renderpf_8h_a11}
+
+
+\index{renderpf.h@{renderpf.h}!MouseXOld@{MouseXOld}}
+\index{MouseXOld@{MouseXOld}!renderpf.h@{renderpf.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}double Mouse\-XOld}\label{renderpf_8h_a22}
+
+
+\index{renderpf.h@{renderpf.h}!MouseYOld@{MouseYOld}}
+\index{MouseYOld@{MouseYOld}!renderpf.h@{renderpf.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}double Mouse\-YOld}\label{renderpf_8h_a23}
+
+
+\index{renderpf.h@{renderpf.h}!PadX@{PadX}}
+\index{PadX@{PadX}!renderpf.h@{renderpf.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}double Pad\-X}\label{renderpf_8h_a27}
+
+
+\index{renderpf.h@{renderpf.h}!RotX@{RotX}}
+\index{RotX@{RotX}!renderpf.h@{renderpf.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}double Rot\-X}\label{renderpf_8h_a16}
+
+
+\index{renderpf.h@{renderpf.h}!RotY@{RotY}}
+\index{RotY@{RotY}!renderpf.h@{renderpf.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}double Rot\-Y}\label{renderpf_8h_a17}
+
+
+\index{renderpf.h@{renderpf.h}!RotZ@{RotZ}}
+\index{RotZ@{RotZ}!renderpf.h@{renderpf.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}double Rot\-Z}\label{renderpf_8h_a18}
+
+
+\index{renderpf.h@{renderpf.h}!SharedData@{SharedData}}
+\index{SharedData@{SharedData}!renderpf.h@{renderpf.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}Shared\-Data}\label{renderpf_8h_a28}
+
+
+\index{renderpf.h@{renderpf.h}!ShowCase@{ShowCase}}
+\index{ShowCase@{ShowCase}!renderpf.h@{renderpf.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}pf\-Switch$\ast$ Show\-Case}\label{renderpf_8h_a3}
+
+
+\index{renderpf.h@{renderpf.h}!TranX@{TranX}}
+\index{TranX@{TranX}!renderpf.h@{renderpf.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}double Tran\-X}\label{renderpf_8h_a13}
+
+
+\index{renderpf.h@{renderpf.h}!TranY@{TranY}}
+\index{TranY@{TranY}!renderpf.h@{renderpf.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}double Tran\-Y}\label{renderpf_8h_a14}
+
+
+\index{renderpf.h@{renderpf.h}!TranZ@{TranZ}}
+\index{TranZ@{TranZ}!renderpf.h@{renderpf.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}double Tran\-Z}\label{renderpf_8h_a15}
+
+
+\index{renderpf.h@{renderpf.h}!WorkEnv@{WorkEnv}}
+\index{WorkEnv@{WorkEnv}!renderpf.h@{renderpf.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}pf\-Switch$\ast$ Work\-Env}\label{renderpf_8h_a9}
+
+
+\index{renderpf.h@{renderpf.h}!WorldDCS@{WorldDCS}}
+\index{WorldDCS@{WorldDCS}!renderpf.h@{renderpf.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}pf\-DCS$\ast$ World\-DCS}\label{renderpf_8h_a10}
+
+

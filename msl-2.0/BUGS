@@ -1,0 +1,16 @@
+For some reason, the correct NumNodes is not getting used
+in fdp.C.  Only the base class value gets used.  
+
+The Performer renderer has some problems compiling that seem to
+occur because of conflicts caused by compiler options required
+by other libraries.  Better makefiles should solve this.
+
+Segmentation faults if planner is switched from the menu on
+some platforms.  I can't reproduce it...
+
+The animation sticks on some platforms.  One has to the jiggle
+the mouse to get the frames to advance.
+
+There are no intermediate frames shown for the PRM planner 
+solutions.  The frames jump from vertex to vertex.
+

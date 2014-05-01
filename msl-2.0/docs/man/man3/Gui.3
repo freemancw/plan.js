@@ -1,0 +1,127 @@
+.TH "Gui" 3 "24 Jul 2003" "Motion Strategy Library" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Gui \- A generic class for designing graphical user interfaces (GUIs). 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <gui.h>\fP
+.PP
+Inherited by \fBGuiPlanner\fP.
+.PP
+.SS "Public Methods"
+
+.in +1c
+.ti -1c
+.RI "\fBGui\fP (\fBRender\fP *render)"
+.br
+.RI "\fIThe window.\fP"
+.ti -1c
+.RI "virtual \fB~Gui\fP ()"
+.br
+.ti -1c
+.RI "virtual void \fBStart\fP ()"
+.br
+.RI "\fIStart running the Gui.\fP"
+.ti -1c
+.RI "virtual void \fBHandleEvents\fP ()=0"
+.br
+.RI "\fIProcess any IO events (may be used by \fBRender\fP).\fP"
+.ti -1c
+.RI "virtual void \fBButtonHandle\fP (int b)"
+.br
+.RI "\fIFigure out what actions to take based on menu choices.\fP"
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBRender\fP * \fBR\fP"
+.br
+.ti -1c
+.RI "bool \fBFinished\fP"
+.br
+.RI "\fISet to true if you want to main loop to terminate.\fP"
+.in -1c
+.SS "Protected Methods"
+
+.in +1c
+.ti -1c
+.RI "virtual void \fBCreateWindow\fP ()"
+.br
+.RI "\fIMake the menu window.\fP"
+.ti -1c
+.RI "virtual void \fBInit\fP ()"
+.br
+.RI "\fIInitialize Gui and \fBRender\fP.\fP"
+.ti -1c
+.RI "virtual void \fBMainLoop\fP ()"
+.br
+.RI "\fIThe main event processing loop.\fP"
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "string \fBFilePath\fP"
+.br
+.in -1c
+.SH "DETAILED DESCRIPTION"
+.PP 
+A generic class for designing graphical user interfaces (GUIs).
+.PP
+The graphical user interface (GUI) is designed as a hierarchy of classes to enable specific user interfaces to be designed for a variety of different motion strategy problems and planning algorithms. Currently, there is one derived class which serves as the GUI for all of the \fBRRT\fP-based planners. Each instance of Gui includes an instance of an \fBRRT\fP \fBPlanner\fP class and an instance of a \fBRender\fP class. Using this design, the same basic GUI design can be used, regardless of the particular rendering methods. 
+.PP
+.SH "CONSTRUCTOR & DESTRUCTOR DOCUMENTATION"
+.PP 
+.SS "Gui::Gui (\fBRender\fP * render)"
+.PP
+The window.
+.PP
+.SS "virtual Gui::~Gui ()\fC [inline, virtual]\fP"
+.PP
+.SH "MEMBER FUNCTION DOCUMENTATION"
+.PP 
+.SS "virtual void Gui::ButtonHandle (int b)\fC [inline, virtual]\fP"
+.PP
+Figure out what actions to take based on menu choices.
+.PP
+Reimplemented in \fBGuiPlanner\fP.
+.SS "virtual void Gui::CreateWindow ()\fC [inline, protected, virtual]\fP"
+.PP
+Make the menu window.
+.PP
+.SS "virtual void Gui::HandleEvents ()\fC [pure virtual]\fP"
+.PP
+Process any IO events (may be used by \fBRender\fP).
+.PP
+Implemented in \fBGuiPlanner\fP.
+.SS "void Gui::Init ()\fC [protected, virtual]\fP"
+.PP
+Initialize Gui and \fBRender\fP.
+.PP
+Reimplemented in \fBGuiPlanner\fP.
+.SS "void Gui::MainLoop ()\fC [protected, virtual]\fP"
+.PP
+The main event processing loop.
+.PP
+.SS "void Gui::Start ()\fC [virtual]\fP"
+.PP
+Start running the Gui.
+.PP
+.SH "MEMBER DATA DOCUMENTATION"
+.PP 
+.SS "string Gui::FilePath\fC [protected]\fP"
+.PP
+.SS "bool Gui::Finished"
+.PP
+Set to true if you want to main loop to terminate.
+.PP
+.SS "\fBRender\fP* Gui::R"
+.PP
+
+
+.SH "AUTHOR"
+.PP 
+Generated automatically by Doxygen for Motion Strategy Library from the source code.

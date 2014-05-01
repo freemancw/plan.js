@@ -1,0 +1,74 @@
+.TH "MSLNodeInfo" 3 "26 Feb 2002" "Motion Strategy Library" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+MSLNodeInfo \- The information holded in this class is explained in 'Reducing Metric Sensitivity in Randomized Trajectory Design' in IEEE/RSJ International Conference on Intelligent Robots and Systems, 2001. 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <nodeinfo.h>\fP
+.PP
+.SS "Public Methods"
+
+.in +1c
+.ti -1c
+.RI "\fBMSLVector\fP \fBGetExplorationInfo\fP ()"
+.br
+.RI "\fIGet the exploration information.\fP"
+.ti -1c
+.RI "void \fBSetExplorationInfo\fP (\fBMSLVector\fP &exploreinfo)"
+.br
+.RI "\fISet the exploration information.\fP"
+.ti -1c
+.RI "double \fBGetCollisionTendency\fP ()"
+.br
+.RI "\fIGet the collision tendency information.\fP"
+.ti -1c
+.RI "void \fBSetCollisionTendency\fP (double &collisioninfo)"
+.br
+.RI "\fISet the collision tendency information.\fP"
+.ti -1c
+.RI "\fBMSLNodeInfo\fP ()"
+.br
+.ti -1c
+.RI "\fBMSLNodeInfo\fP (const \fBMSLVector\fP &exploreinfo, const double &collisioninfo)"
+.br
+.ti -1c
+.RI "\fB~MSLNodeInfo\fP ()"
+.br
+.in -1c
+.SH "DETAILED DESCRIPTION"
+.PP 
+The information holded in this class is explained in 'Reducing Metric Sensitivity in Randomized Trajectory Design' in IEEE/RSJ International Conference on Intelligent Robots and Systems, 2001.
+.PP
+.SH "CONSTRUCTOR & DESTRUCTOR DOCUMENTATION"
+.PP 
+.SS "MSLNodeInfo::MSLNodeInfo ()\fC [inline]\fP"
+.PP
+.SS "MSLNodeInfo::MSLNodeInfo (const \fBMSLVector\fP & exploreinfo, const double & collisioninfo)\fC [inline]\fP"
+.PP
+.SS "MSLNodeInfo::~MSLNodeInfo ()"
+.PP
+.SH "MEMBER FUNCTION DOCUMENTATION"
+.PP 
+.SS "double MSLNodeInfo::GetCollisionTendency ()\fC [inline]\fP"
+.PP
+Get the collision tendency information.
+.PP
+.SS "\fBMSLVector\fP MSLNodeInfo::GetExplorationInfo ()\fC [inline]\fP"
+.PP
+Get the exploration information.
+.PP
+.SS "void MSLNodeInfo::SetCollisionTendency (double & collisioninfo)\fC [inline]\fP"
+.PP
+Set the collision tendency information.
+.PP
+.SS "void MSLNodeInfo::SetExplorationInfo (\fBMSLVector\fP & exploreinfo)\fC [inline]\fP"
+.PP
+Set the exploration information.
+.PP
+
+
+.SH "AUTHOR"
+.PP 
+Generated automatically by Doxygen for Motion Strategy Library from the source code.

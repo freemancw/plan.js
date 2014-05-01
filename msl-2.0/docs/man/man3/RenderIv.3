@@ -1,0 +1,415 @@
+.TH "RenderIv" 3 "24 Jul 2003" "Motion Strategy Library" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+RenderIv \- Perform 3D rendering using the OpenInventor library. 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <renderiv.h>\fP
+.PP
+Inherits \fBRender\fP.
+.PP
+.SS "Public Methods"
+
+.in +1c
+.ti -1c
+.RI "\fBRenderIv\fP ()"
+.br
+.ti -1c
+.RI "\fBRenderIv\fP (string filepath)"
+.br
+.ti -1c
+.RI "\fBRenderIv\fP (\fBScene\fP *s, string filepath)"
+.br
+.ti -1c
+.RI "virtual \fB~RenderIv\fP ()"
+.br
+.ti -1c
+.RI "virtual void \fBReset\fP ()"
+.br
+.RI "\fIReset the renderer.\fP"
+.ti -1c
+.RI "virtual void \fBInit\fP ()"
+.br
+.RI "\fIInitialized the renderer.\fP"
+.ti -1c
+.RI "virtual void \fBMainLoop\fP (\fBGui\fP *g)"
+.br
+.RI "\fIIf ControlFreak = true, then MainLoop is entered here.\fP"
+.in -1c
+.SS "Protected Methods"
+
+.in +1c
+.ti -1c
+.RI "void \fB_IdleFunction\fP ()"
+.br
+.ti -1c
+.RI "SoSeparator * \fB_ReadIvFile\fP (const char *filename)"
+.br
+.ti -1c
+.RI "SoSeparator * \fB_InitObject\fP (const string &fname)"
+.br
+.ti -1c
+.RI "bool \fB_InitBoundsDisplay\fP ()"
+.br
+.ti -1c
+.RI "bool \fB_InitPathDisplay\fP ()"
+.br
+.ti -1c
+.RI "SoSeparator * \fB_InitTriangleGeom\fP (list< \fBMSLTriangle\fP > &triangles)"
+.br
+.ti -1c
+.RI "bool \fB_InitData\fP ()"
+.br
+.ti -1c
+.RI "void \fB_SetSwitch\fP (SoSwitch *pSwitch, bool bFlag)"
+.br
+.ti -1c
+.RI "void \fB_UpdatePathDisplay\fP ()"
+.br
+.ti -1c
+.RI "void \fB_SetTransform\fP (SoTransform *pTrans, double tx, double ty, double tz, double rx, double ry, double rz)"
+.br
+.ti -1c
+.RI "void \fB_UpdateBodies\fP (const \fBMSLVector\fP &qConfig)"
+.br
+.in -1c
+.SS "Static Protected Methods"
+
+.in +1c
+.ti -1c
+.RI "void \fB_TimerCB\fP (void *userData, SoSensor *)"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "SoXtExaminerViewer * \fB_viewer\fP"
+.br
+.ti -1c
+.RI "\fBGui\fP * \fB_pGui\fP"
+.br
+.ti -1c
+.RI "SoSeparator * \fB_ivRoot\fP"
+.br
+.ti -1c
+.RI "SoSeparator * \fB_ivData\fP"
+.br
+.ti -1c
+.RI "SoSwitch * \fB_ivBoundsSwitch\fP"
+.br
+.ti -1c
+.RI "bool \fB_bDisplayBounds\fP"
+.br
+.ti -1c
+.RI "SoSwitch * \fB_ivPathSwitch\fP"
+.br
+.ti -1c
+.RI "SoVertexProperty * \fB_pPathVertexProp\fP"
+.br
+.ti -1c
+.RI "int \fB_pathFrames\fP"
+.br
+.ti -1c
+.RI "bool \fB_bDisplayPath\fP"
+.br
+.ti -1c
+.RI "list< SoTransform * > \fB_bodyTrans\fP"
+.br
+.ti -1c
+.RI "int \fBcamToggle\fP"
+.br
+.ti -1c
+.RI "bool \fB_bAttachedCamera\fP"
+.br
+.ti -1c
+.RI "SoSwitch * \fBCamSwitch\fP"
+.br
+.ti -1c
+.RI "SoPerspectiveCamera * \fBdefCam\fP"
+.br
+.ti -1c
+.RI "SoPerspectiveCamera * \fBattachedCam\fP"
+.br
+.ti -1c
+.RI "SoPointLight * \fBlightSource\fP"
+.br
+.ti -1c
+.RI "float \fB_ivPosition\fP [3]"
+.br
+.ti -1c
+.RI "float \fB_ivOrientation\fP [3]"
+.br
+.ti -1c
+.RI "float \fB_ivBoundingBoxMin\fP [3]"
+.br
+.ti -1c
+.RI "float \fB_ivBoundingBoxMax\fP [3]"
+.br
+.ti -1c
+.RI "float \fB_ivSceneCenter\fP [3]"
+.br
+.ti -1c
+.RI "float \fBCamPosX\fP"
+.br
+.ti -1c
+.RI "float \fBCamPosY\fP"
+.br
+.ti -1c
+.RI "float \fBCamPosZ\fP"
+.br
+.ti -1c
+.RI "float \fBCamViewX\fP"
+.br
+.ti -1c
+.RI "float \fBCamViewY\fP"
+.br
+.ti -1c
+.RI "float \fBCamViewZ\fP"
+.br
+.ti -1c
+.RI "float \fB_ivViewLength\fP"
+.br
+.ti -1c
+.RI "float \fB_ivFocalDist\fP"
+.br
+.ti -1c
+.RI "float \fB_ivNearDist\fP"
+.br
+.ti -1c
+.RI "float \fB_ivFarDist\fP"
+.br
+.ti -1c
+.RI "float \fBLightPosX\fP"
+.br
+.ti -1c
+.RI "float \fBLightPosY\fP"
+.br
+.ti -1c
+.RI "float \fBLightPosZ\fP"
+.br
+.ti -1c
+.RI "float \fBCamUpX\fP"
+.br
+.ti -1c
+.RI "float \fBCamUpY\fP"
+.br
+.ti -1c
+.RI "float \fBCamUpZ\fP"
+.br
+.ti -1c
+.RI "bool \fB_bMultipleViews\fP"
+.br
+.ti -1c
+.RI "SoSeparator * \fB_ivTopLeftObject\fP"
+.br
+.ti -1c
+.RI "SoSeparator * \fB_ivTopRightObject\fP"
+.br
+.ti -1c
+.RI "SoSeparator * \fB_ivBottomLeftObject\fP"
+.br
+.ti -1c
+.RI "SoSeparator * \fB_ivBottomRightObject\fP"
+.br
+.ti -1c
+.RI "int \fBMultipleViewsToggle\fP"
+.br
+.ti -1c
+.RI "SoXtExaminerViewer * \fBTopLeftViewer\fP"
+.br
+.ti -1c
+.RI "SoXtExaminerViewer * \fBTopRightViewer\fP"
+.br
+.ti -1c
+.RI "SoXtExaminerViewer * \fBBottomLeftViewer\fP"
+.br
+.ti -1c
+.RI "SoXtExaminerViewer * \fBBottomRightViewer\fP"
+.br
+.ti -1c
+.RI "Widget \fBmainWindow\fP"
+.br
+.ti -1c
+.RI "SoOrthographicCamera * \fBTopLeftCamera\fP"
+.br
+.ti -1c
+.RI "SoOrthographicCamera * \fBTopRightCamera\fP"
+.br
+.ti -1c
+.RI "SoOrthographicCamera * \fBBottomLeftCamera\fP"
+.br
+.ti -1c
+.RI "SoPerspectiveCamera * \fBBottomRightCamera\fP"
+.br
+.in -1c
+.SH "DETAILED DESCRIPTION"
+.PP 
+Perform 3D rendering using the OpenInventor library.
+.PP
+.SH "CONSTRUCTOR & DESTRUCTOR DOCUMENTATION"
+.PP 
+.SS "RenderIv::RenderIv ()"
+.PP
+.SS "RenderIv::RenderIv (string filepath)"
+.PP
+.SS "RenderIv::RenderIv (\fBScene\fP * s, string filepath)"
+.PP
+.SS "RenderIv::~RenderIv ()\fC [virtual]\fP"
+.PP
+.SH "MEMBER FUNCTION DOCUMENTATION"
+.PP 
+.SS "void RenderIv::_IdleFunction ()\fC [inline, protected]\fP"
+.PP
+.SS "bool RenderIv::_InitBoundsDisplay ()\fC [protected]\fP"
+.PP
+.SS "bool RenderIv::_InitData ()\fC [protected]\fP"
+.PP
+.SS "SoSeparator * RenderIv::_InitObject (const string & fname)\fC [protected]\fP"
+.PP
+.SS "bool RenderIv::_InitPathDisplay ()\fC [protected]\fP"
+.PP
+.SS "SoSeparator * RenderIv::_InitTriangleGeom (list< \fBMSLTriangle\fP > & triangles)\fC [protected]\fP"
+.PP
+.SS "SoSeparator * RenderIv::_ReadIvFile (const char * filename)\fC [protected]\fP"
+.PP
+.SS "void RenderIv::_SetSwitch (SoSwitch * pSwitch, bool bFlag)\fC [inline, protected]\fP"
+.PP
+.SS "void RenderIv::_SetTransform (SoTransform * pTrans, double tx, double ty, double tz, double rx, double ry, double rz)\fC [inline, protected]\fP"
+.PP
+.SS "void RenderIv::_TimerCB (void * userData, SoSensor *)\fC [static, protected]\fP"
+.PP
+.SS "void RenderIv::_UpdateBodies (const \fBMSLVector\fP & qConfig)\fC [inline, protected]\fP"
+.PP
+.SS "void RenderIv::_UpdatePathDisplay ()\fC [inline, protected]\fP"
+.PP
+.SS "void RenderIv::Init ()\fC [virtual]\fP"
+.PP
+Initialized the renderer.
+.PP
+Reimplemented from \fBRender\fP.
+.SS "void RenderIv::MainLoop (\fBGui\fP * g)\fC [virtual]\fP"
+.PP
+If ControlFreak = true, then MainLoop is entered here.
+.PP
+Reimplemented from \fBRender\fP.
+.SS "void RenderIv::Reset ()\fC [virtual]\fP"
+.PP
+Reset the renderer.
+.PP
+Reimplemented from \fBRender\fP.
+.SH "MEMBER DATA DOCUMENTATION"
+.PP 
+.SS "bool RenderIv::_bAttachedCamera\fC [protected]\fP"
+.PP
+.SS "bool RenderIv::_bDisplayBounds\fC [protected]\fP"
+.PP
+.SS "bool RenderIv::_bDisplayPath\fC [protected]\fP"
+.PP
+.SS "bool RenderIv::_bMultipleViews\fC [protected]\fP"
+.PP
+.SS "list<SoTransform*> RenderIv::_bodyTrans\fC [protected]\fP"
+.PP
+.SS "SoSeparator* RenderIv::_ivBottomLeftObject\fC [protected]\fP"
+.PP
+.SS "SoSeparator* RenderIv::_ivBottomRightObject\fC [protected]\fP"
+.PP
+.SS "float RenderIv::_ivBoundingBoxMax[3]\fC [protected]\fP"
+.PP
+.SS "float RenderIv::_ivBoundingBoxMin[3]\fC [protected]\fP"
+.PP
+.SS "SoSwitch* RenderIv::_ivBoundsSwitch\fC [protected]\fP"
+.PP
+.SS "SoSeparator* RenderIv::_ivData\fC [protected]\fP"
+.PP
+.SS "float RenderIv::_ivFarDist\fC [protected]\fP"
+.PP
+.SS "float RenderIv::_ivFocalDist\fC [protected]\fP"
+.PP
+.SS "float RenderIv::_ivNearDist\fC [protected]\fP"
+.PP
+.SS "float RenderIv::_ivOrientation[3]\fC [protected]\fP"
+.PP
+.SS "SoSwitch* RenderIv::_ivPathSwitch\fC [protected]\fP"
+.PP
+.SS "float RenderIv::_ivPosition[3]\fC [protected]\fP"
+.PP
+.SS "SoSeparator* RenderIv::_ivRoot\fC [protected]\fP"
+.PP
+.SS "float RenderIv::_ivSceneCenter[3]\fC [protected]\fP"
+.PP
+.SS "SoSeparator* RenderIv::_ivTopLeftObject\fC [protected]\fP"
+.PP
+.SS "SoSeparator* RenderIv::_ivTopRightObject\fC [protected]\fP"
+.PP
+.SS "float RenderIv::_ivViewLength\fC [protected]\fP"
+.PP
+.SS "int RenderIv::_pathFrames\fC [protected]\fP"
+.PP
+.SS "\fBGui\fP* RenderIv::_pGui\fC [protected]\fP"
+.PP
+.SS "SoVertexProperty* RenderIv::_pPathVertexProp\fC [protected]\fP"
+.PP
+.SS "SoXtExaminerViewer* RenderIv::_viewer\fC [protected]\fP"
+.PP
+.SS "SoPerspectiveCamera* RenderIv::attachedCam\fC [protected]\fP"
+.PP
+.SS "SoOrthographicCamera* RenderIv::BottomLeftCamera\fC [protected]\fP"
+.PP
+.SS "SoXtExaminerViewer* RenderIv::BottomLeftViewer\fC [protected]\fP"
+.PP
+.SS "SoPerspectiveCamera* RenderIv::BottomRightCamera\fC [protected]\fP"
+.PP
+.SS "SoXtExaminerViewer* RenderIv::BottomRightViewer\fC [protected]\fP"
+.PP
+.SS "float RenderIv::CamPosX\fC [protected]\fP"
+.PP
+.SS "float RenderIv::CamPosY\fC [protected]\fP"
+.PP
+.SS "float RenderIv::CamPosZ\fC [protected]\fP"
+.PP
+.SS "SoSwitch* RenderIv::CamSwitch\fC [protected]\fP"
+.PP
+.SS "int RenderIv::camToggle\fC [protected]\fP"
+.PP
+.SS "float RenderIv::CamUpX\fC [protected]\fP"
+.PP
+.SS "float RenderIv::CamUpY\fC [protected]\fP"
+.PP
+.SS "float RenderIv::CamUpZ\fC [protected]\fP"
+.PP
+.SS "float RenderIv::CamViewX\fC [protected]\fP"
+.PP
+.SS "float RenderIv::CamViewY\fC [protected]\fP"
+.PP
+.SS "float RenderIv::CamViewZ\fC [protected]\fP"
+.PP
+.SS "SoPerspectiveCamera* RenderIv::defCam\fC [protected]\fP"
+.PP
+.SS "float RenderIv::LightPosX\fC [protected]\fP"
+.PP
+.SS "float RenderIv::LightPosY\fC [protected]\fP"
+.PP
+.SS "float RenderIv::LightPosZ\fC [protected]\fP"
+.PP
+.SS "SoPointLight* RenderIv::lightSource\fC [protected]\fP"
+.PP
+.SS "Widget RenderIv::mainWindow\fC [protected]\fP"
+.PP
+.SS "int RenderIv::MultipleViewsToggle\fC [protected]\fP"
+.PP
+.SS "SoOrthographicCamera* RenderIv::TopLeftCamera\fC [protected]\fP"
+.PP
+.SS "SoXtExaminerViewer* RenderIv::TopLeftViewer\fC [protected]\fP"
+.PP
+.SS "SoOrthographicCamera* RenderIv::TopRightCamera\fC [protected]\fP"
+.PP
+.SS "SoXtExaminerViewer* RenderIv::TopRightViewer\fC [protected]\fP"
+.PP
+
+
+.SH "AUTHOR"
+.PP 
+Generated automatically by Doxygen for Motion Strategy Library from the source code.

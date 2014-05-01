@@ -1,0 +1,160 @@
+.TH "MSLPlannerWindow" 3 "24 Jul 2003" "Motion Strategy Library" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+MSLPlannerWindow \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <guiplanner.h>\fP
+.PP
+.SS "Public Methods"
+
+.in +1c
+.ti -1c
+.RI "\fBMSLPlannerWindow\fP ()"
+.br
+.ti -1c
+.RI "\fBMSLPlannerWindow\fP (\fBGuiPlanner\fP *gp)"
+.br
+.ti -1c
+.RI "virtual \fB~MSLPlannerWindow\fP ()"
+.br
+.ti -1c
+.RI "void \fBcreate\fP ()"
+.br
+.ti -1c
+.RI "void \fBRestart\fP ()"
+.br
+.ti -1c
+.RI "long \fBonCmdTimer\fP (FXObject *, FXSelector, void *)"
+.br
+.ti -1c
+.RI "long \fBGeneralHandler\fP (FXObject *, FXSelector, void *)"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "FXMenubar * \fBmenubar\fP"
+.br
+.ti -1c
+.RI "FXMenubar * \fBvcrbar\fP"
+.br
+.ti -1c
+.RI "FXMenubar * \fBbuttonbar\fP"
+.br
+.ti -1c
+.RI "FXMenuPane * \fBloadmenu\fP"
+.br
+.ti -1c
+.RI "FXMenuPane * \fBsavemenu\fP"
+.br
+.ti -1c
+.RI "FXMenuPane * \fBplotmenu\fP"
+.br
+.ti -1c
+.RI "FXMenuPane * \fBplannermenu\fP"
+.br
+.ti -1c
+.RI "FXMatrix * \fBmatrix\fP"
+.br
+.ti -1c
+.RI "FXDataTarget \fBplannerdeltat_target\fP"
+.br
+.ti -1c
+.RI "FXDataTarget \fBnumnodes_target\fP"
+.br
+.ti -1c
+.RI "FXDataTarget \fBdrawindexx_target\fP"
+.br
+.ti -1c
+.RI "FXDataTarget \fBdrawindexy_target\fP"
+.br
+.ti -1c
+.RI "FXDataTarget \fBanimationtimescale_target\fP"
+.br
+.ti -1c
+.RI "FXDataTarget \fBrealAnimationtimescale_target\fP"
+.br
+.ti -1c
+.RI "FXDataTarget \fBambientlight_target\fP"
+.br
+.ti -1c
+.RI "\fBGuiPlanner\fP * \fBGP\fP"
+.br
+.in -1c
+.SS "Friends"
+
+.in +1c
+.ti -1c
+.RI "class \fBGuiPlanner\fP"
+.br
+.ti -1c
+.RI "class \fBMSLPlotWindow\fP"
+.br
+.in -1c
+.SH "CONSTRUCTOR & DESTRUCTOR DOCUMENTATION"
+.PP 
+.SS "MSLPlannerWindow::MSLPlannerWindow ()\fC [inline]\fP"
+.PP
+.SS "MSLPlannerWindow::MSLPlannerWindow (\fBGuiPlanner\fP * gp)"
+.PP
+.SS "MSLPlannerWindow::~MSLPlannerWindow ()\fC [virtual]\fP"
+.PP
+.SH "MEMBER FUNCTION DOCUMENTATION"
+.PP 
+.SS "void MSLPlannerWindow::create ()"
+.PP
+.SS "long MSLPlannerWindow::GeneralHandler (FXObject *, FXSelector, void *)"
+.PP
+.SS "long MSLPlannerWindow::onCmdTimer (FXObject *, FXSelector, void *)"
+.PP
+.SS "void MSLPlannerWindow::Restart ()"
+.PP
+.SH "FRIENDS AND RELATED FUNCTION DOCUMENTATION"
+.PP 
+.SS "friend class GuiPlanner\fC [friend]\fP"
+.PP
+.SS "friend class MSLPlotWindow\fC [friend]\fP"
+.PP
+.SH "MEMBER DATA DOCUMENTATION"
+.PP 
+.SS "FXDataTarget MSLPlannerWindow::ambientlight_target\fC [protected]\fP"
+.PP
+.SS "FXDataTarget MSLPlannerWindow::animationtimescale_target\fC [protected]\fP"
+.PP
+.SS "FXMenubar* MSLPlannerWindow::buttonbar\fC [protected]\fP"
+.PP
+.SS "FXDataTarget MSLPlannerWindow::drawindexx_target\fC [protected]\fP"
+.PP
+.SS "FXDataTarget MSLPlannerWindow::drawindexy_target\fC [protected]\fP"
+.PP
+.SS "\fBGuiPlanner\fP* MSLPlannerWindow::GP\fC [protected]\fP"
+.PP
+.SS "FXMenuPane* MSLPlannerWindow::loadmenu\fC [protected]\fP"
+.PP
+.SS "FXMatrix* MSLPlannerWindow::matrix\fC [protected]\fP"
+.PP
+.SS "FXMenubar* MSLPlannerWindow::menubar\fC [protected]\fP"
+.PP
+.SS "FXDataTarget MSLPlannerWindow::numnodes_target\fC [protected]\fP"
+.PP
+.SS "FXDataTarget MSLPlannerWindow::plannerdeltat_target\fC [protected]\fP"
+.PP
+.SS "FXMenuPane* MSLPlannerWindow::plannermenu\fC [protected]\fP"
+.PP
+.SS "FXMenuPane* MSLPlannerWindow::plotmenu\fC [protected]\fP"
+.PP
+.SS "FXDataTarget MSLPlannerWindow::realAnimationtimescale_target\fC [protected]\fP"
+.PP
+.SS "FXMenuPane* MSLPlannerWindow::savemenu\fC [protected]\fP"
+.PP
+.SS "FXMenubar* MSLPlannerWindow::vcrbar\fC [protected]\fP"
+.PP
+
+
+.SH "AUTHOR"
+.PP 
+Generated automatically by Doxygen for Motion Strategy Library from the source code.

@@ -1,0 +1,71 @@
+.TH "GeomPQP2D" 3 "24 Jul 2003" "Motion Strategy Library" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+GeomPQP2D \- A parent class for 2D PQP geometries. 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <geomPQP.h>\fP
+.PP
+Inherits \fBGeomPQP\fP.
+.PP
+Inherited by \fBGeomPQP2DRigid\fP.
+.PP
+.SS "Public Methods"
+
+.in +1c
+.ti -1c
+.RI "\fBGeomPQP2D\fP (string path)"
+.br
+.ti -1c
+.RI "virtual \fB~GeomPQP2D\fP ()"
+.br
+.ti -1c
+.RI "virtual void \fBLoadEnvironment\fP (string path)"
+.br
+.ti -1c
+.RI "virtual void \fBLoadRobot\fP (string path)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "list< \fBMSLPolygon\fP > \fBObstPolygons\fP"
+.br
+.ti -1c
+.RI "list< \fBMSLPolygon\fP > \fBRobotPolygons\fP"
+.br
+.in -1c
+.SH "DETAILED DESCRIPTION"
+.PP 
+A parent class for 2D PQP geometries.
+.PP
+.SH "CONSTRUCTOR & DESTRUCTOR DOCUMENTATION"
+.PP 
+.SS "GeomPQP2D::GeomPQP2D (string path)"
+.PP
+.SS "virtual GeomPQP2D::~GeomPQP2D ()\fC [inline, virtual]\fP"
+.PP
+.SH "MEMBER FUNCTION DOCUMENTATION"
+.PP 
+.SS "void GeomPQP2D::LoadEnvironment (string path)\fC [virtual]\fP"
+.PP
+Reimplemented from \fBGeomPQP\fP.
+.SS "void GeomPQP2D::LoadRobot (string path)\fC [virtual]\fP"
+.PP
+Reimplemented from \fBGeomPQP\fP.
+.PP
+Reimplemented in \fBGeomPQP2DRigidMulti\fP.
+.SH "MEMBER DATA DOCUMENTATION"
+.PP 
+.SS "list<\fBMSLPolygon\fP> GeomPQP2D::ObstPolygons"
+.PP
+.SS "list<\fBMSLPolygon\fP> GeomPQP2D::RobotPolygons"
+.PP
+
+
+.SH "AUTHOR"
+.PP 
+Generated automatically by Doxygen for Motion Strategy Library from the source code.

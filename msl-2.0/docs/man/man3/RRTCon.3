@@ -1,0 +1,54 @@
+.TH "RRTCon" 3 "24 Jul 2003" "Motion Strategy Library" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+RRTCon \- Replaces Extend with Connect. 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <rrt.h>\fP
+.PP
+Inherits \fBRRTGoalBias\fP.
+.PP
+Inherited by \fBRRTSlide\fP.
+.PP
+.SS "Public Methods"
+
+.in +1c
+.ti -1c
+.RI "\fBRRTCon\fP (\fBProblem\fP *p)"
+.br
+.ti -1c
+.RI "virtual \fB~RRTCon\fP ()"
+.br
+.RI "\fIAn empty desctructor.\fP"
+.ti -1c
+.RI "virtual bool \fBPlan\fP ()"
+.br
+.RI "\fIHere Extend is replaced by Connect. The tree is extended all the to the random sample, if possible.\fP"
+.in -1c
+.SH "DETAILED DESCRIPTION"
+.PP 
+Replaces Extend with Connect.
+.PP
+The \fBRRT\fP in the base class uses Extend to move a small amount in each step toward the random sample. In RRTCon, Extend is replaced by a method called Connect, which iterates the extension until the random sample is reached. Connect only adds the final  \fBMSLNode\fP to the tree (not the intermediate increments). Since RRTCon is derived from \fBRRTGoalBias\fP, a biasing probability can be set. By default, GoalProb = 0.0. 
+.PP
+.SH "CONSTRUCTOR & DESTRUCTOR DOCUMENTATION"
+.PP 
+.SS "RRTCon::RRTCon (\fBProblem\fP * p)"
+.PP
+.SS "virtual RRTCon::~RRTCon ()\fC [inline, virtual]\fP"
+.PP
+An empty desctructor.
+.PP
+.SH "MEMBER FUNCTION DOCUMENTATION"
+.PP 
+.SS "bool RRTCon::Plan ()\fC [virtual]\fP"
+.PP
+Here Extend is replaced by Connect. The tree is extended all the to the random sample, if possible.
+.PP
+Reimplemented from \fBRRT\fP.
+
+.SH "AUTHOR"
+.PP 
+Generated automatically by Doxygen for Motion Strategy Library from the source code.

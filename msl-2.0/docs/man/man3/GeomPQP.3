@@ -1,0 +1,125 @@
+.TH "GeomPQP" 3 "24 Jul 2003" "Motion Strategy Library" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+GeomPQP \- Parent class PQP-based list of Triangle models. 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <geomPQP.h>\fP
+.PP
+Inherits \fBGeom\fP.
+.PP
+Inherited by \fBGeomPQP2D\fP, and \fBGeomPQP3DRigid\fP.
+.PP
+.SS "Public Methods"
+
+.in +1c
+.ti -1c
+.RI "\fBGeomPQP\fP (string path)"
+.br
+.ti -1c
+.RI "virtual \fB~GeomPQP\fP ()"
+.br
+.ti -1c
+.RI "virtual void \fBLoadEnvironment\fP (string path)"
+.br
+.ti -1c
+.RI "virtual void \fBLoadRobot\fP (string path)"
+.br
+.ti -1c
+.RI "virtual bool \fBCollisionFree\fP (const \fBMSLVector\fP &q)"
+.br
+.RI "\fIReturn true if the robot(s) and obstacles are not in collision.\fP"
+.ti -1c
+.RI "virtual double \fBDistanceComp\fP (const \fBMSLVector\fP &q)"
+.br
+.RI "\fICompute the distance of the closest point on the robot to the obstacle region.\fP"
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "list< \fBMSLTriangle\fP > \fBObst\fP"
+.br
+.ti -1c
+.RI "list< \fBMSLTriangle\fP > \fBRobot\fP"
+.br
+.ti -1c
+.RI "PQP_Model \fBRo\fP"
+.br
+.ti -1c
+.RI "PQP_Model \fBOb\fP"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "PQP_REAL \fBRR\fP [3][3]"
+.br
+.ti -1c
+.RI "PQP_REAL \fBRO\fP [3][3]"
+.br
+.ti -1c
+.RI "PQP_REAL \fBTR\fP [3]"
+.br
+.ti -1c
+.RI "PQP_REAL \fBTO\fP [3]"
+.br
+.in -1c
+.SH "DETAILED DESCRIPTION"
+.PP 
+Parent class PQP-based list of Triangle models.
+.PP
+.SH "CONSTRUCTOR & DESTRUCTOR DOCUMENTATION"
+.PP 
+.SS "GeomPQP::GeomPQP (string path)"
+.PP
+.SS "virtual GeomPQP::~GeomPQP ()\fC [inline, virtual]\fP"
+.PP
+.SH "MEMBER FUNCTION DOCUMENTATION"
+.PP 
+.SS "virtual bool GeomPQP::CollisionFree (const \fBMSLVector\fP & q)\fC [inline, virtual]\fP"
+.PP
+Return true if the robot(s) and obstacles are not in collision.
+.PP
+Implements \fBGeom\fP.
+.PP
+Reimplemented in \fBGeomPQP2DRigid\fP.
+.SS "virtual double GeomPQP::DistanceComp (const \fBMSLVector\fP & q)\fC [inline, virtual]\fP"
+.PP
+Compute the distance of the closest point on the robot to the obstacle region.
+.PP
+Implements \fBGeom\fP.
+.PP
+Reimplemented in \fBGeomPQP2DRigid\fP.
+.SS "void GeomPQP::LoadEnvironment (string path)\fC [virtual]\fP"
+.PP
+Reimplemented in \fBGeomPQP2D\fP.
+.SS "void GeomPQP::LoadRobot (string path)\fC [virtual]\fP"
+.PP
+Reimplemented in \fBGeomPQP2D\fP.
+.SH "MEMBER DATA DOCUMENTATION"
+.PP 
+.SS "PQP_Model GeomPQP::Ob"
+.PP
+.SS "list<\fBMSLTriangle\fP> GeomPQP::Obst"
+.PP
+.SS "PQP_Model GeomPQP::Ro"
+.PP
+.SS "PQP_REAL GeomPQP::RO[3][3]\fC [protected]\fP"
+.PP
+.SS "list<\fBMSLTriangle\fP> GeomPQP::Robot"
+.PP
+.SS "PQP_REAL GeomPQP::RR[3][3]\fC [protected]\fP"
+.PP
+.SS "PQP_REAL GeomPQP::TO[3]\fC [protected]\fP"
+.PP
+.SS "PQP_REAL GeomPQP::TR[3]\fC [protected]\fP"
+.PP
+
+
+.SH "AUTHOR"
+.PP 
+Generated automatically by Doxygen for Motion Strategy Library from the source code.

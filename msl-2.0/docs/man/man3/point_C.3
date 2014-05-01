@@ -1,0 +1,70 @@
+.TH "point.C" 3 "8 Nov 2001" "Motion Strategy Library" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+point.C \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <math.h>\fR
+.br
+\fC#include <ctype.h>\fR
+.br
+\fC#include "point.h"\fR
+.br
+
+.SS Defines
+
+.in +1c
+.ti -1c
+.RI "#define \fBPI\fR  3.1415926535897932385"
+.br
+.in -1c
+.SS Functions
+
+.in +1c
+.ti -1c
+.RI "int \fBside_of_circle\fR (const \fBMSLPoint\fR &a, const \fBMSLPoint\fR &b, const \fBMSLPoint\fR &c, const \fBMSLPoint\fR &d)"
+.br
+.ti -1c
+.RI "ostream& \fBoperator<<\fR (ostream &out, const \fBMSLPoint\fR &p)"
+.br
+.ti -1c
+.RI "istream& \fBoperator>>\fR (istream &in, \fBMSLPoint\fR &p)"
+.br
+.ti -1c
+.RI "ostream& \fBoperator<<\fR (ostream &out, const list< \fBMSLPoint\fR > &L)"
+.br
+.ti -1c
+.RI "istream& \fBoperator>>\fR (istream &in, list< \fBMSLPoint\fR > &L)"
+.br
+.ti -1c
+.RI "ostream& \fBoperator<<\fR (ostream &out, const list< list< \fBMSLPoint\fR > > &L)"
+.br
+.ti -1c
+.RI "istream& \fBoperator>>\fR (istream &in, list< list< \fBMSLPoint\fR > > &L)"
+.br
+.in -1c
+.SH DEFINE DOCUMENTATION
+.PP 
+.SS #define PI  3.1415926535897932385
+.PP
+.SH FUNCTION DOCUMENTATION
+.PP 
+.SS ostream& operator<< (ostream & out, const list< list< \fBMSLPoint\fR > > & L)
+.PP
+.SS ostream& operator<< (ostream & out, const list< \fBMSLPoint\fR > & L)
+.PP
+.SS ostream& operator<< (ostream & out, const \fBMSLPoint\fR & p)
+.PP
+.SS istream& operator>> (istream & in, list< list< \fBMSLPoint\fR > > & L)
+.PP
+.SS istream& operator>> (istream & in, list< \fBMSLPoint\fR > & L)
+.PP
+.SS istream& operator>> (istream & in, \fBMSLPoint\fR & p)
+.PP
+.SS int side_of_circle (const \fBMSLPoint\fR & a, const \fBMSLPoint\fR & b, const \fBMSLPoint\fR & c, const \fBMSLPoint\fR & d)
+.PP
+.SH AUTHOR
+.PP 
+Generated automatically by Doxygen for Motion Strategy Library from the source code.

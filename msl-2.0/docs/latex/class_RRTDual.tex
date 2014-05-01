@@ -1,0 +1,71 @@
+\section{RRTDual  Class Reference}
+\label{class_RRTDual}\index{RRTDual@{RRTDual}}
+Planners that grow trees from the initial and goal. 
+
+
+{\tt \#include $<$rrt.h$>$}
+
+Inheritance diagram for RRTDual::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=6cm]{class_RRTDual}
+\end{center}
+\end{figure}
+\subsection*{Public Methods}
+\begin{CompactItemize}
+\item 
+{\bf RRTDual} ({\bf Problem} $\ast$p)
+\item 
+virtual {\bf $\sim$RRTDual} ()
+\item 
+virtual bool {\bf Plan} ()
+\begin{CompactList}\small\item\em The dual-tree planner used in La\-Valle, Kuffner, ICRA 1999. Each tree is extended toward a randomly-sampled point. {\bf RRTExt\-Ext} {\rm (p.\,\pageref{class_RRTExtExt})} is generally better.\item\end{CompactList}\end{CompactItemize}
+\subsection*{Protected Methods}
+\begin{CompactItemize}
+\item 
+void {\bf Recover\-Solution} ({\bf MSLNode} $\ast$n1, {\bf MSLNode} $\ast$n2)
+\end{CompactItemize}
+
+
+\subsection{Detailed Description}
+Planners that grow trees from the initial and goal.
+
+This planner grows one tree, G, from the initial state,  and one tree, G2, from the goal state. When the closest pair of points between the two trees is within Gap\-Error, a solution path is returned. The planners in the derived classes also use two trees, and are generally more efficient than RRTDual. 
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{RRTDual@{RRTDual}!RRTDual@{RRTDual}}
+\index{RRTDual@{RRTDual}!RRTDual@{RRTDual}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}RRTDual::RRTDual ({\bf Problem} $\ast$ {\em p})}\label{class_RRTDual_a0}
+
+
+\index{RRTDual@{RRTDual}!~RRTDual@{$\sim$RRTDual}}
+\index{~RRTDual@{$\sim$RRTDual}!RRTDual@{RRTDual}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}RRTDual::$\sim$RRTDual ()\hspace{0.3cm}{\tt  [inline, virtual]}}\label{class_RRTDual_a1}
+
+
+
+
+\subsection{Member Function Documentation}
+\index{RRTDual@{RRTDual}!Plan@{Plan}}
+\index{Plan@{Plan}!RRTDual@{RRTDual}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}bool RRTDual::Plan ()\hspace{0.3cm}{\tt  [virtual]}}\label{class_RRTDual_a2}
+
+
+The dual-tree planner used in La\-Valle, Kuffner, ICRA 1999. Each tree is extended toward a randomly-sampled point. {\bf RRTExt\-Ext} {\rm (p.\,\pageref{class_RRTExtExt})} is generally better.
+
+
+
+Reimplemented from {\bf RRT} {\rm (p.\,\pageref{class_RRT_a3})}.
+
+Reimplemented in {\bf RRTExt\-Ext} {\rm (p.\,\pageref{class_RRTExtExt_a2})}, {\bf RRTExt\-Con} {\rm (p.\,\pageref{class_RRTExtCon_a2})}, and {\bf RRTCon\-Con} {\rm (p.\,\pageref{class_RRTConCon_a2})}.\index{RRTDual@{RRTDual}!RecoverSolution@{RecoverSolution}}
+\index{RecoverSolution@{RecoverSolution}!RRTDual@{RRTDual}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void RRTDual::Recover\-Solution ({\bf MSLNode} $\ast$ {\em n1}, {\bf MSLNode} $\ast$ {\em n2})\hspace{0.3cm}{\tt  [protected]}}\label{class_RRTDual_b0}
+
+
+
+
+The documentation for this class was generated from the following file:\begin{CompactItemize}
+\item 
+{\bf rrt.h}\end{CompactItemize}

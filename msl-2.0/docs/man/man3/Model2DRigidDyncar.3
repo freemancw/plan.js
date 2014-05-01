@@ -1,0 +1,185 @@
+.TH "Model2DRigidDyncar" 3 "24 Jul 2003" "Motion Strategy Library" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Model2DRigidDyncar \- A 5DOF dynamical model of a rigid car. This model uses a linear tire model, which is far from reality. The model was donated by Jim Bernard. 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <model2d.h>\fP
+.PP
+Inherits \fBModel2DRigid\fP.
+.PP
+Inherited by \fBModel2DRigidDyncarNtire\fP, and \fBModelCarDyn\fP.
+.PP
+.SS "Public Methods"
+
+.in +1c
+.ti -1c
+.RI "\fBModel2DRigidDyncar\fP (string path)"
+.br
+.ti -1c
+.RI "virtual \fB~Model2DRigidDyncar\fP ()"
+.br
+.ti -1c
+.RI "\fBMSLVector\fP \fBIntegrate\fP (const \fBMSLVector\fP &\fBx\fP, const \fBMSLVector\fP &u, const double &h)"
+.br
+.RI "\fIPerform integration from state x, using input u, over time step h.\fP"
+.ti -1c
+.RI "virtual \fBMSLVector\fP \fBStateToConfiguration\fP (const \fBMSLVector\fP &\fBx\fP)"
+.br
+.RI "\fIA method that converts a \fBModel\fP state in to a \fBGeom\fP configuration.\fP"
+.ti -1c
+.RI "virtual \fBMSLVector\fP \fBStateTransitionEquation\fP (const \fBMSLVector\fP &\fBx\fP, const \fBMSLVector\fP &u)"
+.br
+.RI "\fIThe state transition equation, or equations of motion, xdot=f(x,u).\fP"
+.ti -1c
+.RI "virtual double \fBMetric\fP (const \fBMSLVector\fP &x1, const \fBMSLVector\fP &x2)"
+.br
+.RI "\fIA distance metric, which is Euclidean in the base class.\fP"
+.ti -1c
+.RI "virtual \fBMSLVector\fP \fBLinearInterpolate\fP (const \fBMSLVector\fP &x1, const \fBMSLVector\fP &x2, const double &a)"
+.br
+.RI "\fILinearly interpolate two state while respecting topology.\fP"
+.ti -1c
+.RI "virtual \fBMSLVector\fP \fBStateDifference\fP (const \fBMSLVector\fP &x1, const \fBMSLVector\fP &x2)"
+.br
+.RI "\fICompute a \fBMSLVector\fP based on x2-x1. In R^n, the states are simply subtracted to make the \fBMSLVector\fP. This method exists to make things work correctly for other state-space topologies.\fP"
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "double \fBMass\fP"
+.br
+.RI "\fIMass in slugs (yuck! American customary units...).\fP"
+.ti -1c
+.RI "double \fBCAF\fP"
+.br
+.RI "\fIFront cornering stiffness.\fP"
+.ti -1c
+.RI "double \fBCAR\fP"
+.br
+.RI "\fIRear cornering stiffness.\fP"
+.ti -1c
+.RI "double \fBAdist\fP"
+.br
+.RI "\fIMass center to front tires - feet.\fP"
+.ti -1c
+.RI "double \fBBdist\fP"
+.br
+.RI "\fIMass center to rear tires - feet.\fP"
+.ti -1c
+.RI "double \fBIzz\fP"
+.br
+.RI "\fIYaw moment of interia - ft slugs^2.\fP"
+.ti -1c
+.RI "double \fBWorldScale\fP"
+.br
+.RI "\fIFeet per world unit (100x100 world).\fP"
+.ti -1c
+.RI "double \fBMaxSteeringAngle\fP"
+.br
+.RI "\fIMaximum steering angle in radians.\fP"
+.ti -1c
+.RI "double \fBSpeed\fP"
+.br
+.RI "\fIA forward speed of the car.\fP"
+.in -1c
+.SH "DETAILED DESCRIPTION"
+.PP 
+A 5DOF dynamical model of a rigid car. This model uses a linear tire model, which is far from reality. The model was donated by Jim Bernard.
+.PP
+.SH "CONSTRUCTOR & DESTRUCTOR DOCUMENTATION"
+.PP 
+.SS "Model2DRigidDyncar::Model2DRigidDyncar (string path)"
+.PP
+.SS "virtual Model2DRigidDyncar::~Model2DRigidDyncar ()\fC [inline, virtual]\fP"
+.PP
+.SH "MEMBER FUNCTION DOCUMENTATION"
+.PP 
+.SS "\fBMSLVector\fP Model2DRigidDyncar::Integrate (const \fBMSLVector\fP & x, const \fBMSLVector\fP & u, const double & h)\fC [virtual]\fP"
+.PP
+Perform integration from state x, using input u, over time step h.
+.PP
+Reimplemented from \fBModel2DRigid\fP.
+.PP
+Reimplemented in \fBModelCarDynRollover\fP.
+.SS "\fBMSLVector\fP Model2DRigidDyncar::LinearInterpolate (const \fBMSLVector\fP & x1, const \fBMSLVector\fP & x2, const double & a)\fC [virtual]\fP"
+.PP
+Linearly interpolate two state while respecting topology.
+.PP
+If a=0, then x1 is returned; if a=1, then x2 is returned. All intermediate values of $a \\in [0,1]$ yield intermediate states. This method is defined by \fBModel\fP. 
+.PP
+Reimplemented from \fBModel2DRigid\fP.
+.PP
+Reimplemented in \fBModelCarDynSmoothRollover\fP.
+.SS "double Model2DRigidDyncar::Metric (const \fBMSLVector\fP & x1, const \fBMSLVector\fP & x2)\fC [virtual]\fP"
+.PP
+A distance metric, which is Euclidean in the base class.
+.PP
+Reimplemented from \fBModel2DRigid\fP.
+.PP
+Reimplemented in \fBModelCarDyn\fP.
+.SS "\fBMSLVector\fP Model2DRigidDyncar::StateDifference (const \fBMSLVector\fP & x1, const \fBMSLVector\fP & x2)\fC [virtual]\fP"
+.PP
+Compute a \fBMSLVector\fP based on x2-x1. In R^n, the states are simply subtracted to make the \fBMSLVector\fP. This method exists to make things work correctly for other state-space topologies.
+.PP
+Reimplemented from \fBModel2DRigid\fP.
+.SS "\fBMSLVector\fP Model2DRigidDyncar::StateToConfiguration (const \fBMSLVector\fP & x)\fC [virtual]\fP"
+.PP
+A method that converts a \fBModel\fP state in to a \fBGeom\fP configuration.
+.PP
+Reimplemented from \fBModel2DRigid\fP.
+.PP
+Reimplemented in \fBModelCarDyn\fP.
+.SS "\fBMSLVector\fP Model2DRigidDyncar::StateTransitionEquation (const \fBMSLVector\fP & x, const \fBMSLVector\fP & u)\fC [virtual]\fP"
+.PP
+The state transition equation, or equations of motion, xdot=f(x,u).
+.PP
+Reimplemented from \fBModel2DRigid\fP.
+.PP
+Reimplemented in \fBModel2DRigidDyncarNtire\fP.
+.SH "MEMBER DATA DOCUMENTATION"
+.PP 
+.SS "double Model2DRigidDyncar::Adist"
+.PP
+Mass center to front tires - feet.
+.PP
+.SS "double Model2DRigidDyncar::Bdist"
+.PP
+Mass center to rear tires - feet.
+.PP
+.SS "double Model2DRigidDyncar::CAF"
+.PP
+Front cornering stiffness.
+.PP
+.SS "double Model2DRigidDyncar::CAR"
+.PP
+Rear cornering stiffness.
+.PP
+.SS "double Model2DRigidDyncar::Izz"
+.PP
+Yaw moment of interia - ft slugs^2.
+.PP
+.SS "double Model2DRigidDyncar::Mass"
+.PP
+Mass in slugs (yuck! American customary units...).
+.PP
+.SS "double Model2DRigidDyncar::MaxSteeringAngle"
+.PP
+Maximum steering angle in radians.
+.PP
+.SS "double Model2DRigidDyncar::Speed"
+.PP
+A forward speed of the car.
+.PP
+.SS "double Model2DRigidDyncar::WorldScale"
+.PP
+Feet per world unit (100x100 world).
+.PP
+
+
+.SH "AUTHOR"
+.PP 
+Generated automatically by Doxygen for Motion Strategy Library from the source code.

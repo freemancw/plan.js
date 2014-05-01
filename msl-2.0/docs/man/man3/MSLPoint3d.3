@@ -1,0 +1,134 @@
+.TH "MSLPoint3d" 3 "24 Jul 2003" "Motion Strategy Library" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+MSLPoint3d \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <point3d.h>\fP
+.PP
+.SS "Public Methods"
+
+.in +1c
+.ti -1c
+.RI "\fBMSLPoint3d\fP ()"
+.br
+.ti -1c
+.RI "\fBMSLPoint3d\fP (double \fBx\fP, double \fBy\fP, double \fBz\fP)"
+.br
+.ti -1c
+.RI "\fB~MSLPoint3d\fP ()"
+.br
+.ti -1c
+.RI "double \fBxcoord\fP () const"
+.br
+.ti -1c
+.RI "double \fBycoord\fP () const"
+.br
+.ti -1c
+.RI "double \fBzcoord\fP () const"
+.br
+.ti -1c
+.RI "double \fBW\fP () const"
+.br
+.ti -1c
+.RI "double \fBWD\fP () const"
+.br
+.ti -1c
+.RI "int \fBdim\fP () const"
+.br
+.ti -1c
+.RI "double \fBsqr_dist\fP (const MSLPoint3d &q) const"
+.br
+.ti -1c
+.RI "double \fBxdist\fP (const MSLPoint3d &q) const"
+.br
+.ti -1c
+.RI "double \fBydist\fP (const MSLPoint3d &q) const"
+.br
+.ti -1c
+.RI "double \fBzdist\fP (const MSLPoint3d &q) const"
+.br
+.ti -1c
+.RI "double \fBdistance\fP (const MSLPoint3d &q) const"
+.br
+.ti -1c
+.RI "MSLPoint3d \fBtranslate\fP (double dx, double dy, double dz) const"
+.br
+.ti -1c
+.RI "MSLPoint3d \fBreflect\fP (const MSLPoint3d &q, const MSLPoint3d &r, const MSLPoint3d &s) const"
+.br
+.ti -1c
+.RI "MSLPoint3d \fBreflect\fP (const MSLPoint3d &q) const"
+.br
+.ti -1c
+.RI "bool \fBoperator==\fP (const MSLPoint3d &q) const"
+.br
+.ti -1c
+.RI "bool \fBoperator!=\fP (const MSLPoint3d &q) const"
+.br
+.in -1c
+.SS "Friends"
+
+.in +1c
+.ti -1c
+.RI "ostream & \fBoperator<<\fP (ostream &O, const MSLPoint3d &p)"
+.br
+.ti -1c
+.RI "istream & \fBoperator>>\fP (istream &I, MSLPoint3d &p)"
+.br
+.in -1c
+.SH "CONSTRUCTOR & DESTRUCTOR DOCUMENTATION"
+.PP 
+.SS "MSLPoint3d::MSLPoint3d ()"
+.PP
+.SS "MSLPoint3d::MSLPoint3d (double x, double y, double z)"
+.PP
+.SS "MSLPoint3d::~MSLPoint3d ()\fC [inline]\fP"
+.PP
+.SH "MEMBER FUNCTION DOCUMENTATION"
+.PP 
+.SS "int MSLPoint3d::dim () const\fC [inline]\fP"
+.PP
+.SS "double MSLPoint3d::distance (const MSLPoint3d & q) const"
+.PP
+.SS "bool MSLPoint3d::operator!= (const MSLPoint3d & q) const\fC [inline]\fP"
+.PP
+.SS "bool MSLPoint3d::operator== (const MSLPoint3d & q) const"
+.PP
+.SS "MSLPoint3d MSLPoint3d::reflect (const MSLPoint3d & q) const"
+.PP
+.SS "MSLPoint3d MSLPoint3d::reflect (const MSLPoint3d & q, const MSLPoint3d & r, const MSLPoint3d & s) const"
+.PP
+.SS "double MSLPoint3d::sqr_dist (const MSLPoint3d & q) const"
+.PP
+.SS "MSLPoint3d MSLPoint3d::translate (double dx, double dy, double dz) const"
+.PP
+.SS "double MSLPoint3d::W () const\fC [inline]\fP"
+.PP
+.SS "double MSLPoint3d::WD () const\fC [inline]\fP"
+.PP
+.SS "double MSLPoint3d::xcoord () const\fC [inline]\fP"
+.PP
+.SS "double MSLPoint3d::xdist (const MSLPoint3d & q) const"
+.PP
+.SS "double MSLPoint3d::ycoord () const\fC [inline]\fP"
+.PP
+.SS "double MSLPoint3d::ydist (const MSLPoint3d & q) const"
+.PP
+.SS "double MSLPoint3d::zcoord () const\fC [inline]\fP"
+.PP
+.SS "double MSLPoint3d::zdist (const MSLPoint3d & q) const"
+.PP
+.SH "FRIENDS AND RELATED FUNCTION DOCUMENTATION"
+.PP 
+.SS "ostream& operator<< (ostream & O, const MSLPoint3d & p)\fC [friend]\fP"
+.PP
+.SS "istream& operator>> (istream & I, MSLPoint3d & p)\fC [friend]\fP"
+.PP
+
+
+.SH "AUTHOR"
+.PP 
+Generated automatically by Doxygen for Motion Strategy Library from the source code.

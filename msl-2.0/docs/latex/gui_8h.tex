@@ -1,0 +1,152 @@
+\section{gui.h File Reference}
+\label{gui_8h}\index{gui.h@{gui.h}}
+{\tt \#include \char`\"{}../../configs/config\-FOX.h\char`\"{}}\par
+{\tt \#include \char`\"{}problem.h\char`\"{}}\par
+{\tt \#include \char`\"{}scene.h\char`\"{}}\par
+{\tt \#include \char`\"{}render.h\char`\"{}}\par
+{\tt \#include \char`\"{}util.h\char`\"{}}\par
+\subsection*{Compounds}
+\begin{CompactItemize}
+\item 
+class {\bf Gui}
+\begin{CompactList}\small\item\em A generic class for designing graphical user interfaces (GUIs).\item\end{CompactList}\end{CompactItemize}
+\subsection*{Enumerations}
+\begin{CompactItemize}
+\item 
+enum \{ {\bf GID\_\-RENDER\_\-FIRST} =  FXMain\-Window::ID\_\-LAST, 
+{\bf GID\_\-TOGGLE\_\-SHOWPATH}, 
+{\bf GID\_\-TOGGLE\_\-BOUNDINGBOX}, 
+{\bf GID\_\-TOGGLE\_\-MULTIPLEVIEWS}, 
+{\bf GID\_\-TOGGLE\_\-ATTACHEDCAMERA}, 
+{\bf GID\_\-VCR\_\-STOP}, 
+{\bf GID\_\-VCR\_\-LAST}, 
+{\bf GID\_\-VCR\_\-PAUSE}, 
+{\bf GID\_\-VCR\_\-NEXT}, 
+{\bf GID\_\-VCR\_\-SLOWER}, 
+{\bf GID\_\-VCR\_\-PLAY}, 
+{\bf GID\_\-VCR\_\-FASTER}, 
+{\bf GID\_\-VCR\_\-RESET}, 
+{\bf GID\_\-RENDER\_\-LAST}, 
+{\bf GID\_\-CONSTRUCT}, 
+{\bf GID\_\-PLAN}, 
+{\bf GID\_\-CLEAR\_\-GRAPHS}, 
+{\bf GID\_\-2D\_\-GRAPH}, 
+{\bf GID\_\-SAVE\_\-GRAPHS}, 
+{\bf GID\_\-LOAD\_\-GRAPHS}, 
+{\bf GID\_\-SAVE\_\-FRAMES}, 
+{\bf GID\_\-LOAD\_\-FRAMES}, 
+{\bf GID\_\-SAVE\_\-POLICY}, 
+{\bf GID\_\-LOAD\_\-POLICY}, 
+{\bf GID\_\-DONE}, 
+{\bf GID\_\-RRT}, 
+{\bf GID\_\-RRTGOALBIAS}, 
+{\bf GID\_\-RRTCON}, 
+{\bf GID\_\-RRTDUAL}, 
+{\bf GID\_\-RRTEXTEXT}, 
+{\bf GID\_\-RRTEXTCON}, 
+{\bf GID\_\-RRTCONCON}, 
+{\bf GID\_\-RCRRT}, 
+{\bf GID\_\-RCRRTEXTEXT}, 
+{\bf GID\_\-RRTBIDIRBALANCED}, 
+{\bf GID\_\-PRM}, 
+{\bf GID\_\-FDP}, 
+{\bf GID\_\-FDPSTAR}, 
+{\bf GID\_\-FDPBESTFIRST}, 
+{\bf GID\_\-FDPBI}, 
+{\bf GID\_\-LAST}
+ \}
+\end{CompactItemize}
+
+
+\subsection{Enumeration Type Documentation}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}anonymous enum}\label{gui_8h_a41}
+
+
+\begin{Desc}
+\item[Enumeration values:]\par
+\begin{description}
+\index{GID_RENDER_FIRST@{GID\_\-RENDER\_\-FIRST}!gui.h@{gui.h}}\index{gui.h@{gui.h}!GID_RENDER_FIRST@{GID\_\-RENDER\_\-FIRST}}\item[{\em 
+{\em GID\_\-RENDER\_\-FIRST}\label{gui_8h_a41a0}
+}]\index{GID_TOGGLE_SHOWPATH@{GID\_\-TOGGLE\_\-SHOWPATH}!gui.h@{gui.h}}\index{gui.h@{gui.h}!GID_TOGGLE_SHOWPATH@{GID\_\-TOGGLE\_\-SHOWPATH}}\item[{\em 
+{\em GID\_\-TOGGLE\_\-SHOWPATH}\label{gui_8h_a41a1}
+}]\index{GID_TOGGLE_BOUNDINGBOX@{GID\_\-TOGGLE\_\-BOUNDINGBOX}!gui.h@{gui.h}}\index{gui.h@{gui.h}!GID_TOGGLE_BOUNDINGBOX@{GID\_\-TOGGLE\_\-BOUNDINGBOX}}\item[{\em 
+{\em GID\_\-TOGGLE\_\-BOUNDINGBOX}\label{gui_8h_a41a2}
+}]\index{GID_TOGGLE_MULTIPLEVIEWS@{GID\_\-TOGGLE\_\-MULTIPLEVIEWS}!gui.h@{gui.h}}\index{gui.h@{gui.h}!GID_TOGGLE_MULTIPLEVIEWS@{GID\_\-TOGGLE\_\-MULTIPLEVIEWS}}\item[{\em 
+{\em GID\_\-TOGGLE\_\-MULTIPLEVIEWS}\label{gui_8h_a41a3}
+}]\index{GID_TOGGLE_ATTACHEDCAMERA@{GID\_\-TOGGLE\_\-ATTACHEDCAMERA}!gui.h@{gui.h}}\index{gui.h@{gui.h}!GID_TOGGLE_ATTACHEDCAMERA@{GID\_\-TOGGLE\_\-ATTACHEDCAMERA}}\item[{\em 
+{\em GID\_\-TOGGLE\_\-ATTACHEDCAMERA}\label{gui_8h_a41a4}
+}]\index{GID_VCR_STOP@{GID\_\-VCR\_\-STOP}!gui.h@{gui.h}}\index{gui.h@{gui.h}!GID_VCR_STOP@{GID\_\-VCR\_\-STOP}}\item[{\em 
+{\em GID\_\-VCR\_\-STOP}\label{gui_8h_a41a5}
+}]\index{GID_VCR_LAST@{GID\_\-VCR\_\-LAST}!gui.h@{gui.h}}\index{gui.h@{gui.h}!GID_VCR_LAST@{GID\_\-VCR\_\-LAST}}\item[{\em 
+{\em GID\_\-VCR\_\-LAST}\label{gui_8h_a41a6}
+}]\index{GID_VCR_PAUSE@{GID\_\-VCR\_\-PAUSE}!gui.h@{gui.h}}\index{gui.h@{gui.h}!GID_VCR_PAUSE@{GID\_\-VCR\_\-PAUSE}}\item[{\em 
+{\em GID\_\-VCR\_\-PAUSE}\label{gui_8h_a41a7}
+}]\index{GID_VCR_NEXT@{GID\_\-VCR\_\-NEXT}!gui.h@{gui.h}}\index{gui.h@{gui.h}!GID_VCR_NEXT@{GID\_\-VCR\_\-NEXT}}\item[{\em 
+{\em GID\_\-VCR\_\-NEXT}\label{gui_8h_a41a8}
+}]\index{GID_VCR_SLOWER@{GID\_\-VCR\_\-SLOWER}!gui.h@{gui.h}}\index{gui.h@{gui.h}!GID_VCR_SLOWER@{GID\_\-VCR\_\-SLOWER}}\item[{\em 
+{\em GID\_\-VCR\_\-SLOWER}\label{gui_8h_a41a9}
+}]\index{GID_VCR_PLAY@{GID\_\-VCR\_\-PLAY}!gui.h@{gui.h}}\index{gui.h@{gui.h}!GID_VCR_PLAY@{GID\_\-VCR\_\-PLAY}}\item[{\em 
+{\em GID\_\-VCR\_\-PLAY}\label{gui_8h_a41a10}
+}]\index{GID_VCR_FASTER@{GID\_\-VCR\_\-FASTER}!gui.h@{gui.h}}\index{gui.h@{gui.h}!GID_VCR_FASTER@{GID\_\-VCR\_\-FASTER}}\item[{\em 
+{\em GID\_\-VCR\_\-FASTER}\label{gui_8h_a41a11}
+}]\index{GID_VCR_RESET@{GID\_\-VCR\_\-RESET}!gui.h@{gui.h}}\index{gui.h@{gui.h}!GID_VCR_RESET@{GID\_\-VCR\_\-RESET}}\item[{\em 
+{\em GID\_\-VCR\_\-RESET}\label{gui_8h_a41a12}
+}]\index{GID_RENDER_LAST@{GID\_\-RENDER\_\-LAST}!gui.h@{gui.h}}\index{gui.h@{gui.h}!GID_RENDER_LAST@{GID\_\-RENDER\_\-LAST}}\item[{\em 
+{\em GID\_\-RENDER\_\-LAST}\label{gui_8h_a41a13}
+}]\index{GID_CONSTRUCT@{GID\_\-CONSTRUCT}!gui.h@{gui.h}}\index{gui.h@{gui.h}!GID_CONSTRUCT@{GID\_\-CONSTRUCT}}\item[{\em 
+{\em GID\_\-CONSTRUCT}\label{gui_8h_a41a14}
+}]\index{GID_PLAN@{GID\_\-PLAN}!gui.h@{gui.h}}\index{gui.h@{gui.h}!GID_PLAN@{GID\_\-PLAN}}\item[{\em 
+{\em GID\_\-PLAN}\label{gui_8h_a41a15}
+}]\index{GID_CLEAR_GRAPHS@{GID\_\-CLEAR\_\-GRAPHS}!gui.h@{gui.h}}\index{gui.h@{gui.h}!GID_CLEAR_GRAPHS@{GID\_\-CLEAR\_\-GRAPHS}}\item[{\em 
+{\em GID\_\-CLEAR\_\-GRAPHS}\label{gui_8h_a41a16}
+}]\index{GID_2D_GRAPH@{GID\_\-2D\_\-GRAPH}!gui.h@{gui.h}}\index{gui.h@{gui.h}!GID_2D_GRAPH@{GID\_\-2D\_\-GRAPH}}\item[{\em 
+{\em GID\_\-2D\_\-GRAPH}\label{gui_8h_a41a17}
+}]\index{GID_SAVE_GRAPHS@{GID\_\-SAVE\_\-GRAPHS}!gui.h@{gui.h}}\index{gui.h@{gui.h}!GID_SAVE_GRAPHS@{GID\_\-SAVE\_\-GRAPHS}}\item[{\em 
+{\em GID\_\-SAVE\_\-GRAPHS}\label{gui_8h_a41a18}
+}]\index{GID_LOAD_GRAPHS@{GID\_\-LOAD\_\-GRAPHS}!gui.h@{gui.h}}\index{gui.h@{gui.h}!GID_LOAD_GRAPHS@{GID\_\-LOAD\_\-GRAPHS}}\item[{\em 
+{\em GID\_\-LOAD\_\-GRAPHS}\label{gui_8h_a41a19}
+}]\index{GID_SAVE_FRAMES@{GID\_\-SAVE\_\-FRAMES}!gui.h@{gui.h}}\index{gui.h@{gui.h}!GID_SAVE_FRAMES@{GID\_\-SAVE\_\-FRAMES}}\item[{\em 
+{\em GID\_\-SAVE\_\-FRAMES}\label{gui_8h_a41a20}
+}]\index{GID_LOAD_FRAMES@{GID\_\-LOAD\_\-FRAMES}!gui.h@{gui.h}}\index{gui.h@{gui.h}!GID_LOAD_FRAMES@{GID\_\-LOAD\_\-FRAMES}}\item[{\em 
+{\em GID\_\-LOAD\_\-FRAMES}\label{gui_8h_a41a21}
+}]\index{GID_SAVE_POLICY@{GID\_\-SAVE\_\-POLICY}!gui.h@{gui.h}}\index{gui.h@{gui.h}!GID_SAVE_POLICY@{GID\_\-SAVE\_\-POLICY}}\item[{\em 
+{\em GID\_\-SAVE\_\-POLICY}\label{gui_8h_a41a22}
+}]\index{GID_LOAD_POLICY@{GID\_\-LOAD\_\-POLICY}!gui.h@{gui.h}}\index{gui.h@{gui.h}!GID_LOAD_POLICY@{GID\_\-LOAD\_\-POLICY}}\item[{\em 
+{\em GID\_\-LOAD\_\-POLICY}\label{gui_8h_a41a23}
+}]\index{GID_DONE@{GID\_\-DONE}!gui.h@{gui.h}}\index{gui.h@{gui.h}!GID_DONE@{GID\_\-DONE}}\item[{\em 
+{\em GID\_\-DONE}\label{gui_8h_a41a24}
+}]\index{GID_RRT@{GID\_\-RRT}!gui.h@{gui.h}}\index{gui.h@{gui.h}!GID_RRT@{GID\_\-RRT}}\item[{\em 
+{\em GID\_\-RRT}\label{gui_8h_a41a25}
+}]\index{GID_RRTGOALBIAS@{GID\_\-RRTGOALBIAS}!gui.h@{gui.h}}\index{gui.h@{gui.h}!GID_RRTGOALBIAS@{GID\_\-RRTGOALBIAS}}\item[{\em 
+{\em GID\_\-RRTGOALBIAS}\label{gui_8h_a41a26}
+}]\index{GID_RRTCON@{GID\_\-RRTCON}!gui.h@{gui.h}}\index{gui.h@{gui.h}!GID_RRTCON@{GID\_\-RRTCON}}\item[{\em 
+{\em GID\_\-RRTCON}\label{gui_8h_a41a27}
+}]\index{GID_RRTDUAL@{GID\_\-RRTDUAL}!gui.h@{gui.h}}\index{gui.h@{gui.h}!GID_RRTDUAL@{GID\_\-RRTDUAL}}\item[{\em 
+{\em GID\_\-RRTDUAL}\label{gui_8h_a41a28}
+}]\index{GID_RRTEXTEXT@{GID\_\-RRTEXTEXT}!gui.h@{gui.h}}\index{gui.h@{gui.h}!GID_RRTEXTEXT@{GID\_\-RRTEXTEXT}}\item[{\em 
+{\em GID\_\-RRTEXTEXT}\label{gui_8h_a41a29}
+}]\index{GID_RRTEXTCON@{GID\_\-RRTEXTCON}!gui.h@{gui.h}}\index{gui.h@{gui.h}!GID_RRTEXTCON@{GID\_\-RRTEXTCON}}\item[{\em 
+{\em GID\_\-RRTEXTCON}\label{gui_8h_a41a30}
+}]\index{GID_RRTCONCON@{GID\_\-RRTCONCON}!gui.h@{gui.h}}\index{gui.h@{gui.h}!GID_RRTCONCON@{GID\_\-RRTCONCON}}\item[{\em 
+{\em GID\_\-RRTCONCON}\label{gui_8h_a41a31}
+}]\index{GID_RCRRT@{GID\_\-RCRRT}!gui.h@{gui.h}}\index{gui.h@{gui.h}!GID_RCRRT@{GID\_\-RCRRT}}\item[{\em 
+{\em GID\_\-RCRRT}\label{gui_8h_a41a32}
+}]\index{GID_RCRRTEXTEXT@{GID\_\-RCRRTEXTEXT}!gui.h@{gui.h}}\index{gui.h@{gui.h}!GID_RCRRTEXTEXT@{GID\_\-RCRRTEXTEXT}}\item[{\em 
+{\em GID\_\-RCRRTEXTEXT}\label{gui_8h_a41a33}
+}]\index{GID_RRTBIDIRBALANCED@{GID\_\-RRTBIDIRBALANCED}!gui.h@{gui.h}}\index{gui.h@{gui.h}!GID_RRTBIDIRBALANCED@{GID\_\-RRTBIDIRBALANCED}}\item[{\em 
+{\em GID\_\-RRTBIDIRBALANCED}\label{gui_8h_a41a34}
+}]\index{GID_PRM@{GID\_\-PRM}!gui.h@{gui.h}}\index{gui.h@{gui.h}!GID_PRM@{GID\_\-PRM}}\item[{\em 
+{\em GID\_\-PRM}\label{gui_8h_a41a35}
+}]\index{GID_FDP@{GID\_\-FDP}!gui.h@{gui.h}}\index{gui.h@{gui.h}!GID_FDP@{GID\_\-FDP}}\item[{\em 
+{\em GID\_\-FDP}\label{gui_8h_a41a36}
+}]\index{GID_FDPSTAR@{GID\_\-FDPSTAR}!gui.h@{gui.h}}\index{gui.h@{gui.h}!GID_FDPSTAR@{GID\_\-FDPSTAR}}\item[{\em 
+{\em GID\_\-FDPSTAR}\label{gui_8h_a41a37}
+}]\index{GID_FDPBESTFIRST@{GID\_\-FDPBESTFIRST}!gui.h@{gui.h}}\index{gui.h@{gui.h}!GID_FDPBESTFIRST@{GID\_\-FDPBESTFIRST}}\item[{\em 
+{\em GID\_\-FDPBESTFIRST}\label{gui_8h_a41a38}
+}]\index{GID_FDPBI@{GID\_\-FDPBI}!gui.h@{gui.h}}\index{gui.h@{gui.h}!GID_FDPBI@{GID\_\-FDPBI}}\item[{\em 
+{\em GID\_\-FDPBI}\label{gui_8h_a41a39}
+}]\index{GID_LAST@{GID\_\-LAST}!gui.h@{gui.h}}\index{gui.h@{gui.h}!GID_LAST@{GID\_\-LAST}}\item[{\em 
+{\em GID\_\-LAST}\label{gui_8h_a41a40}
+}]\end{description}
+\end{Desc}
+

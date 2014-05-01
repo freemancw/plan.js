@@ -1,0 +1,56 @@
+.TH "GeomNone" 3 "24 Jul 2003" "Motion Strategy Library" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+GeomNone \- A class with no geometry -- a collision never happens. 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <geom.h>\fP
+.PP
+Inherits \fBGeom\fP.
+.PP
+.SS "Public Methods"
+
+.in +1c
+.ti -1c
+.RI "\fBGeomNone\fP (string path)"
+.br
+.ti -1c
+.RI "virtual \fB~GeomNone\fP ()"
+.br
+.ti -1c
+.RI "virtual bool \fBCollisionFree\fP (const \fBMSLVector\fP &q)"
+.br
+.RI "\fIReturn true if the robot(s) and obstacles are not in collision.\fP"
+.ti -1c
+.RI "virtual double \fBDistanceComp\fP (const \fBMSLVector\fP &q)"
+.br
+.RI "\fICompute the distance of the closest point on the robot to the obstacle region.\fP"
+.in -1c
+.SH "DETAILED DESCRIPTION"
+.PP 
+A class with no geometry -- a collision never happens.
+.PP
+.SH "CONSTRUCTOR & DESTRUCTOR DOCUMENTATION"
+.PP 
+.SS "GeomNone::GeomNone (string path)"
+.PP
+.SS "virtual GeomNone::~GeomNone ()\fC [inline, virtual]\fP"
+.PP
+.SH "MEMBER FUNCTION DOCUMENTATION"
+.PP 
+.SS "virtual bool GeomNone::CollisionFree (const \fBMSLVector\fP & q)\fC [inline, virtual]\fP"
+.PP
+Return true if the robot(s) and obstacles are not in collision.
+.PP
+Implements \fBGeom\fP.
+.SS "virtual double GeomNone::DistanceComp (const \fBMSLVector\fP & q)\fC [inline, virtual]\fP"
+.PP
+Compute the distance of the closest point on the robot to the obstacle region.
+.PP
+Implements \fBGeom\fP.
+
+.SH "AUTHOR"
+.PP 
+Generated automatically by Doxygen for Motion Strategy Library from the source code.

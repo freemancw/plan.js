@@ -1,0 +1,57 @@
+.TH "RRTBidirBalanced" 3 "24 Jul 2003" "Motion Strategy Library" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+RRTBidirBalanced \- Balanced Bidirectional \fBRRTConCon\fP planner. 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <rrt.h>\fP
+.PP
+Inherits \fBRRTDual\fP.
+.PP
+.SS "Public Methods"
+
+.in +1c
+.ti -1c
+.RI "\fBRRTBidirBalanced\fP (\fBProblem\fP *p)"
+.br
+.ti -1c
+.RI "virtual \fB~RRTBidirBalanced\fP ()"
+.br
+.ti -1c
+.RI "virtual bool \fBPlan\fP ()"
+.br
+.RI "\fIFirst planner to solve the alpha 1.0 puzzle Very fast for holonomic planning.\fP"
+.in -1c
+.SH "DETAILED DESCRIPTION"
+.PP 
+Balanced Bidirectional \fBRRTConCon\fP planner.
+.PP
+This planner behaves similar to \fBRRTConCon\fP, except that a cardinality criteria is introduced to maintain relative balance between the number of nodes in each tree.
+.PP
+At each iteration, the tree with the fewest nodes is selected as the active tree. The planner attempts to add a new branch to the currently active tree using the Connect step.
+.PP
+Keeping the trees balanced has the dual effect of minimizing the overall number of nearest-neighbor calculations, and efficiently solving problems in which either of the initial or goal configurations is highly constrained relative to the other (as is often the case with assembly or disassembly planning).
+.PP
+This planner is able to consistently solve the original well-known alpha puzzle motion planning benchmark.
+.PP
+The planner is described in Kuffner, LaValle, Yang, 2002 
+.PP
+.SH "CONSTRUCTOR & DESTRUCTOR DOCUMENTATION"
+.PP 
+.SS "RRTBidirBalanced::RRTBidirBalanced (\fBProblem\fP * p)"
+.PP
+.SS "virtual RRTBidirBalanced::~RRTBidirBalanced ()\fC [inline, virtual]\fP"
+.PP
+.SH "MEMBER FUNCTION DOCUMENTATION"
+.PP 
+.SS "bool RRTBidirBalanced::Plan ()\fC [virtual]\fP"
+.PP
+First planner to solve the alpha 1.0 puzzle Very fast for holonomic planning.
+.PP
+Reimplemented from \fBRRTDual\fP.
+
+.SH "AUTHOR"
+.PP 
+Generated automatically by Doxygen for Motion Strategy Library from the source code.

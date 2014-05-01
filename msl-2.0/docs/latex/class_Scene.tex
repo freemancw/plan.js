@@ -1,0 +1,208 @@
+\section{Scene  Class Reference}
+\label{class_Scene}\index{Scene@{Scene}}
+An interface class that gives {\bf Problem} {\rm (p.\,\pageref{class_Problem})} information to {\bf Render} {\rm (p.\,\pageref{class_Render})}. It tells the renderer how the \char`\"{}scene\char`\"{} appears for rendering purposes, as opposed to collision-detection purposes. 
+
+
+{\tt \#include $<$scene.h$>$}
+
+\subsection*{Public Methods}
+\begin{CompactItemize}
+\item 
+{\bf Scene} ({\bf Problem} $\ast$problem, string path)
+\begin{CompactList}\small\item\em Scene must be initialized with the {\bf Problem} {\rm (p.\,\pageref{class_Problem})} that was passed to the planner.\item\end{CompactList}\item 
+virtual {\bf $\sim$Scene} ()
+\begin{CompactList}\small\item\em Empty destructor.\item\end{CompactList}\item 
+void {\bf Set\-Problem} ({\bf Problem} $\ast${\bf P})
+\begin{CompactList}\small\item\em A method for changing the associated {\bf Problem} {\rm (p.\,\pageref{class_Problem})}.\item\end{CompactList}\item 
+virtual {\bf MSLVector} {\bf State\-To\-Scene\-Configuration} (const {\bf MSLVector} \&x)
+\begin{CompactList}\small\item\em Convert the state into configurations for each body (a long {\bf MSLVector} {\rm (p.\,\pageref{class_MSLVector})}).\item\end{CompactList}\item 
+virtual {\bf MSLVector} {\bf Interpolated\-Scene\-Configuration} (const {\bf MSLVector} \&x1, const {\bf MSLVector} \&x2, const double \&a)
+\begin{CompactList}\small\item\em Interpolate the states; convert the result to a Scene\-Configuratrion.\item\end{CompactList}\end{CompactItemize}
+\subsection*{Public Attributes}
+\begin{CompactItemize}
+\item 
+string {\bf File\-Path}
+\begin{CompactList}\small\item\em A common filepath.\item\end{CompactList}\item 
+int {\bf Geom\-Dim}
+\begin{CompactList}\small\item\em The geometry dimension, 2 or 3.\item\end{CompactList}\item 
+int {\bf Num\-Bodies}
+\begin{CompactList}\small\item\em The number of bodies in the scene.\item\end{CompactList}\item 
+int {\bf Scene\-Configuration\-Dim}
+\begin{CompactList}\small\item\em Total degrees of freedom of the scene.\item\end{CompactList}\item 
+{\bf MSLVector} {\bf Lower\-World}
+\begin{CompactList}\small\item\em The smallest x,y,z world coordinates for the environment.\item\end{CompactList}\item 
+{\bf MSLVector} {\bf Upper\-World}
+\begin{CompactList}\small\item\em The largest x,y,z world coordinated for the environment.\item\end{CompactList}\item 
+{\bf MSLVector} {\bf Global\-Camera\-Position}
+\begin{CompactList}\small\item\em The location of the default camera in x,y,z.\item\end{CompactList}\item 
+{\bf MSLVector} {\bf Global\-Camera\-Direction}
+\begin{CompactList}\small\item\em The direction the default camera is pointing with respect to the model.\item\end{CompactList}\item 
+{\bf MSLVector} {\bf Global\-Camera\-Zenith}
+\begin{CompactList}\small\item\em The up direction of the default camera.\item\end{CompactList}\item 
+{\bf MSLVector} {\bf Attached\-Camera\-Position}
+\begin{CompactList}\small\item\em The location of the body-attached camera in x,y,z.\item\end{CompactList}\item 
+{\bf MSLVector} {\bf Attached\-Camera\-Direction}
+\begin{CompactList}\small\item\em The direction the body-attached camera is pointing.\item\end{CompactList}\item 
+{\bf MSLVector} {\bf Attached\-Camera\-Zenith}
+\begin{CompactList}\small\item\em The up direction of the body-attached camera.\item\end{CompactList}\item 
+int {\bf Attached\-Camera\-Body}
+\begin{CompactList}\small\item\em The index of the body to which the camera is attached (default = 0).\item\end{CompactList}\end{CompactItemize}
+\subsection*{Protected Attributes}
+\begin{CompactItemize}
+\item 
+{\bf Problem}$\ast$ {\bf P}
+\begin{CompactList}\small\item\em The {\bf Problem} {\rm (p.\,\pageref{class_Problem})} instance used by the planner/solver.\item\end{CompactList}\end{CompactItemize}
+
+
+\subsection{Detailed Description}
+An interface class that gives {\bf Problem} {\rm (p.\,\pageref{class_Problem})} information to {\bf Render} {\rm (p.\,\pageref{class_Render})}. It tells the renderer how the \char`\"{}scene\char`\"{} appears for rendering purposes, as opposed to collision-detection purposes.
+
+This is an interface class that computes configurations of all bodies to be displayed by a rendering method. Currently, configuration information is passed through an instance of {\bf Problem} {\rm (p.\,\pageref{class_Problem})}. Thus, the base class for Scene is simply a wrapper to {\bf Problem} {\rm (p.\,\pageref{class_Problem})}. 
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Scene@{Scene}!Scene@{Scene}}
+\index{Scene@{Scene}!Scene@{Scene}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}Scene::Scene ({\bf Problem} $\ast$ {\em problem}, string {\em path})}\label{class_Scene_a0}
+
+
+Scene must be initialized with the {\bf Problem} {\rm (p.\,\pageref{class_Problem})} that was passed to the planner.
+
+\index{Scene@{Scene}!~Scene@{$\sim$Scene}}
+\index{~Scene@{$\sim$Scene}!Scene@{Scene}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}Scene::$\sim$Scene ()\hspace{0.3cm}{\tt  [inline, virtual]}}\label{class_Scene_a1}
+
+
+Empty destructor.
+
+
+
+\subsection{Member Function Documentation}
+\index{Scene@{Scene}!InterpolatedSceneConfiguration@{InterpolatedSceneConfiguration}}
+\index{InterpolatedSceneConfiguration@{InterpolatedSceneConfiguration}!Scene@{Scene}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf MSLVector} Scene::Interpolated\-Scene\-Configuration (const {\bf MSLVector} \& {\em x1}, const {\bf MSLVector} \& {\em x2}, const double \& {\em a})\hspace{0.3cm}{\tt  [virtual]}}\label{class_Scene_a4}
+
+
+Interpolate the states; convert the result to a Scene\-Configuratrion.
+
+\index{Scene@{Scene}!SetProblem@{SetProblem}}
+\index{SetProblem@{SetProblem}!Scene@{Scene}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void Scene::Set\-Problem ({\bf Problem} $\ast$ {\em P})}\label{class_Scene_a2}
+
+
+A method for changing the associated {\bf Problem} {\rm (p.\,\pageref{class_Problem})}.
+
+\index{Scene@{Scene}!StateToSceneConfiguration@{StateToSceneConfiguration}}
+\index{StateToSceneConfiguration@{StateToSceneConfiguration}!Scene@{Scene}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf MSLVector} Scene::State\-To\-Scene\-Configuration (const {\bf MSLVector} \& {\em x})\hspace{0.3cm}{\tt  [virtual]}}\label{class_Scene_a3}
+
+
+Convert the state into configurations for each body (a long {\bf MSLVector} {\rm (p.\,\pageref{class_MSLVector})}).
+
+
+
+\subsection{Member Data Documentation}
+\index{Scene@{Scene}!AttachedCameraBody@{AttachedCameraBody}}
+\index{AttachedCameraBody@{AttachedCameraBody}!Scene@{Scene}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int Scene::Attached\-Camera\-Body}\label{class_Scene_m12}
+
+
+The index of the body to which the camera is attached (default = 0).
+
+\index{Scene@{Scene}!AttachedCameraDirection@{AttachedCameraDirection}}
+\index{AttachedCameraDirection@{AttachedCameraDirection}!Scene@{Scene}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf MSLVector} Scene::Attached\-Camera\-Direction}\label{class_Scene_m10}
+
+
+The direction the body-attached camera is pointing.
+
+\index{Scene@{Scene}!AttachedCameraPosition@{AttachedCameraPosition}}
+\index{AttachedCameraPosition@{AttachedCameraPosition}!Scene@{Scene}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf MSLVector} Scene::Attached\-Camera\-Position}\label{class_Scene_m9}
+
+
+The location of the body-attached camera in x,y,z.
+
+\index{Scene@{Scene}!AttachedCameraZenith@{AttachedCameraZenith}}
+\index{AttachedCameraZenith@{AttachedCameraZenith}!Scene@{Scene}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf MSLVector} Scene::Attached\-Camera\-Zenith}\label{class_Scene_m11}
+
+
+The up direction of the body-attached camera.
+
+\index{Scene@{Scene}!FilePath@{FilePath}}
+\index{FilePath@{FilePath}!Scene@{Scene}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}string Scene::File\-Path}\label{class_Scene_m0}
+
+
+A common filepath.
+
+\index{Scene@{Scene}!GeomDim@{GeomDim}}
+\index{GeomDim@{GeomDim}!Scene@{Scene}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int Scene::Geom\-Dim}\label{class_Scene_m1}
+
+
+The geometry dimension, 2 or 3.
+
+\index{Scene@{Scene}!GlobalCameraDirection@{GlobalCameraDirection}}
+\index{GlobalCameraDirection@{GlobalCameraDirection}!Scene@{Scene}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf MSLVector} Scene::Global\-Camera\-Direction}\label{class_Scene_m7}
+
+
+The direction the default camera is pointing with respect to the model.
+
+\index{Scene@{Scene}!GlobalCameraPosition@{GlobalCameraPosition}}
+\index{GlobalCameraPosition@{GlobalCameraPosition}!Scene@{Scene}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf MSLVector} Scene::Global\-Camera\-Position}\label{class_Scene_m6}
+
+
+The location of the default camera in x,y,z.
+
+\index{Scene@{Scene}!GlobalCameraZenith@{GlobalCameraZenith}}
+\index{GlobalCameraZenith@{GlobalCameraZenith}!Scene@{Scene}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf MSLVector} Scene::Global\-Camera\-Zenith}\label{class_Scene_m8}
+
+
+The up direction of the default camera.
+
+\index{Scene@{Scene}!LowerWorld@{LowerWorld}}
+\index{LowerWorld@{LowerWorld}!Scene@{Scene}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf MSLVector} Scene::Lower\-World}\label{class_Scene_m4}
+
+
+The smallest x,y,z world coordinates for the environment.
+
+\index{Scene@{Scene}!NumBodies@{NumBodies}}
+\index{NumBodies@{NumBodies}!Scene@{Scene}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int Scene::Num\-Bodies}\label{class_Scene_m2}
+
+
+The number of bodies in the scene.
+
+\index{Scene@{Scene}!P@{P}}
+\index{P@{P}!Scene@{Scene}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf Problem} $\ast$ Scene::P\hspace{0.3cm}{\tt  [protected]}}\label{class_Scene_n0}
+
+
+The {\bf Problem} {\rm (p.\,\pageref{class_Problem})} instance used by the planner/solver.
+
+\index{Scene@{Scene}!SceneConfigurationDim@{SceneConfigurationDim}}
+\index{SceneConfigurationDim@{SceneConfigurationDim}!Scene@{Scene}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int Scene::Scene\-Configuration\-Dim}\label{class_Scene_m3}
+
+
+Total degrees of freedom of the scene.
+
+\index{Scene@{Scene}!UpperWorld@{UpperWorld}}
+\index{UpperWorld@{UpperWorld}!Scene@{Scene}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf MSLVector} Scene::Upper\-World}\label{class_Scene_m5}
+
+
+The largest x,y,z world coordinated for the environment.
+
+
+
+The documentation for this class was generated from the following file:\begin{CompactItemize}
+\item 
+{\bf scene.h}\end{CompactItemize}

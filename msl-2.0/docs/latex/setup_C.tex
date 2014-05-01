@@ -1,0 +1,45 @@
+\section{setup.C File Reference}
+\label{setup_C}\index{setup.C@{setup.C}}
+{\tt \#include $<$math.h$>$}\par
+{\tt \#include $<$stdlib.h$>$}\par
+{\tt \#include \char`\"{}model.h\char`\"{}}\par
+{\tt \#include \char`\"{}modelmisc.h\char`\"{}}\par
+{\tt \#include \char`\"{}model2d.h\char`\"{}}\par
+{\tt \#include \char`\"{}model3d.h\char`\"{}}\par
+{\tt \#include \char`\"{}geom.h\char`\"{}}\par
+{\tt \#include \char`\"{}geom\-PQP.h\char`\"{}}\par
+{\tt \#include \char`\"{}util.h\char`\"{}}\par
+{\tt \#include \char`\"{}defs.h\char`\"{}}\par
+\subsection*{Defines}
+\begin{CompactItemize}
+\item 
+\#define {\bf MAKE\_\-MODEL}(\_\-m)\ if (is\_\-file(path+\char`\"{}\char`\"{}\#\_\-m\char`\"{}\char`\"{})) m = new \_\-m(path);
+\item 
+\#define {\bf MAKE\_\-GEOM}(\_\-g)\ if (is\_\-file(path+\char`\"{}\char`\"{}\#\_\-g\char`\"{}\char`\"{})) g = new \_\-g(path);
+\end{CompactItemize}
+\subsection*{Functions}
+\begin{CompactItemize}
+\item 
+void {\bf Setup\-Problem} ({\bf Model} $\ast$\&m, {\bf Geom} $\ast$\&g, string path)
+\end{CompactItemize}
+
+
+\subsection{Define Documentation}
+\index{setup.C@{setup.C}!MAKE_GEOM@{MAKE\_\-GEOM}}
+\index{MAKE_GEOM@{MAKE\_\-GEOM}!setup.C@{setup.C}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define MAKE\_\-GEOM(\_\-g)\ if (is\_\-file(path+\char`\"{}\char`\"{}\#\_\-g\char`\"{}\char`\"{})) g = new \_\-g(path);}\label{setup_C_a1}
+
+
+\index{setup.C@{setup.C}!MAKE_MODEL@{MAKE\_\-MODEL}}
+\index{MAKE_MODEL@{MAKE\_\-MODEL}!setup.C@{setup.C}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define MAKE\_\-MODEL(\_\-m)\ if (is\_\-file(path+\char`\"{}\char`\"{}\#\_\-m\char`\"{}\char`\"{})) m = new \_\-m(path);}\label{setup_C_a0}
+
+
+
+
+\subsection{Function Documentation}
+\index{setup.C@{setup.C}!SetupProblem@{SetupProblem}}
+\index{SetupProblem@{SetupProblem}!setup.C@{setup.C}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void Setup\-Problem ({\bf Model} $\ast$\& {\em m}, {\bf Geom} $\ast$\& {\em g}, string {\em path})}\label{setup_C_a2}
+
+

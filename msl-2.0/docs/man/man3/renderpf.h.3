@@ -1,0 +1,220 @@
+.TH "renderpf.h" 3 "24 Jul 2003" "Motion Strategy Library" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+renderpf.h \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'triangle.h'\fP
+.br
+\fC#include 'render.h'\fP
+.br
+\fC#include <Performer/pf/pfChannel.h>\fP
+.br
+\fC#include <Performer/pf/pfEarthSky.h>\fP
+.br
+\fC#include <Performer/pf/pfLightSource.h>\fP
+.br
+\fC#include <Performer/pf/pfNode.h>\fP
+.br
+\fC#include <Performer/pf/pfGeode.h>\fP
+.br
+\fC#include <Performer/pf/pfText.h>\fP
+.br
+\fC#include <Performer/pf/pfScene.h>\fP
+.br
+\fC#include <Performer/pf/pfGroup.h>\fP
+.br
+\fC#include <Performer/pf/pfSwitch.h>\fP
+.br
+\fC#include <Performer/pf/pfDCS.h>\fP
+.br
+\fC#include <Performer/pf/pfSCS.h>\fP
+.br
+\fC#include <Performer/pr/pfGeoSet.h>\fP
+.br
+\fC#include <Performer/pr/pfGeoState.h>\fP
+.br
+\fC#include <Performer/pr/pfString.h>\fP
+.br
+\fC#include <Performer/pr/pfFont.h>\fP
+.br
+\fC#include <Performer/pr/pfMaterial.h>\fP
+.br
+\fC#include <Performer/pfui.h>\fP
+.br
+\fC#include <Performer/pfutil.h>\fP
+.br
+\fC#include <Performer/pfdu.h>\fP
+.br
+\fC#include <Performer/pr.h>\fP
+.br
+.SS "Compounds"
+
+.in +1c
+.ti -1c
+.RI "class \fBRenderPerformer\fP"
+.br
+.RI "\fIPerform 3D rendering using the SGI IRIS Performer library.\fP"
+.in -1c
+.SS "Typedefs"
+
+.in +1c
+.ti -1c
+.RI "typedef pfPipeWindow * \fBPW\fP"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "pfChannel * \fBChan\fP"
+.br
+.ti -1c
+.RI "pfChannel * \fBChanEye\fP"
+.br
+.ti -1c
+.RI "pfSwitch * \fBShowCase\fP"
+.br
+.ti -1c
+.RI "pfGroup * \fBControlPanel\fP"
+.br
+.ti -1c
+.RI "pfDCS * \fBControlPad\fP"
+.br
+.ti -1c
+.RI "pfDCS * \fBBodiesDCS\fP"
+.br
+.ti -1c
+.RI "pfGroup * \fBEnv\fP"
+.br
+.ti -1c
+.RI "pfGeode * \fBBoundingBox\fP"
+.br
+.ti -1c
+.RI "pfSwitch * \fBWorkEnv\fP"
+.br
+.ti -1c
+.RI "pfDCS * \fBWorldDCS\fP"
+.br
+.ti -1c
+.RI "pfuMouse * \fBMouse\fP"
+.br
+.ti -1c
+.RI "pfuEventStream * \fBInputEvents\fP"
+.br
+.ti -1c
+.RI "double \fBTranX\fP"
+.br
+.ti -1c
+.RI "double \fBTranY\fP"
+.br
+.ti -1c
+.RI "double \fBTranZ\fP"
+.br
+.ti -1c
+.RI "double \fBRotX\fP"
+.br
+.ti -1c
+.RI "double \fBRotY\fP"
+.br
+.ti -1c
+.RI "double \fBRotZ\fP"
+.br
+.ti -1c
+.RI "bool \fBHoldRightMouse\fP"
+.br
+.ti -1c
+.RI "bool \fBHoldLeftMouse\fP"
+.br
+.ti -1c
+.RI "bool \fBHoldMiddleMouse\fP"
+.br
+.ti -1c
+.RI "double \fBMouseXOld\fP"
+.br
+.ti -1c
+.RI "double \fBMouseYOld\fP"
+.br
+.ti -1c
+.RI "pfMatrix \fBEyeMat\fP"
+.br
+.ti -1c
+.RI "bool \fBControlPanelOn\fP"
+.br
+.ti -1c
+.RI "bool \fBFocusOnControlPad\fP"
+.br
+.ti -1c
+.RI "double \fBPadX\fP"
+.br
+.ti -1c
+.RI "\fBSharedData\fP"
+.br
+.in -1c
+.SH "TYPEDEF DOCUMENTATION"
+.PP 
+.SS "typedef struct pfPipeWindow* PW"
+.PP
+.SH "VARIABLE DOCUMENTATION"
+.PP 
+.SS "pfDCS* BodiesDCS"
+.PP
+.SS "pfGeode* BoundingBox"
+.PP
+.SS "pfChannel* Chan"
+.PP
+.SS "pfChannel* ChanEye"
+.PP
+.SS "pfDCS* ControlPad"
+.PP
+.SS "pfGroup* ControlPanel"
+.PP
+.SS "bool ControlPanelOn"
+.PP
+.SS "pfGroup* Env"
+.PP
+.SS "pfMatrix EyeMat"
+.PP
+.SS "bool FocusOnControlPad"
+.PP
+.SS "bool HoldLeftMouse"
+.PP
+.SS "bool HoldMiddleMouse"
+.PP
+.SS "bool HoldRightMouse"
+.PP
+.SS "pfuEventStream* InputEvents"
+.PP
+.SS "pfuMouse* Mouse"
+.PP
+.SS "double MouseXOld"
+.PP
+.SS "double MouseYOld"
+.PP
+.SS "double PadX"
+.PP
+.SS "double RotX"
+.PP
+.SS "double RotY"
+.PP
+.SS "double RotZ"
+.PP
+.SS "SharedData"
+.PP
+.SS "pfSwitch* ShowCase"
+.PP
+.SS "double TranX"
+.PP
+.SS "double TranY"
+.PP
+.SS "double TranZ"
+.PP
+.SS "pfSwitch* WorkEnv"
+.PP
+.SS "pfDCS* WorldDCS"
+.PP
+.SH "AUTHOR"
+.PP 
+Generated automatically by Doxygen for Motion Strategy Library from the source code.

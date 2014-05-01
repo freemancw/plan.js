@@ -1,0 +1,89 @@
+.TH "FDPBi" 3 "24 Jul 2003" "Motion Strategy Library" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+FDPBi \- A bidirectional version of forward dynamic programming. 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <fdp.h>\fP
+.PP
+Inherits \fBFDP\fP.
+.PP
+.SS "Public Methods"
+
+.in +1c
+.ti -1c
+.RI "\fBFDPBi\fP (\fBProblem\fP *problem)"
+.br
+.RI "\fIA constructor that initializes data members.\fP"
+.ti -1c
+.RI "\fB~FDPBi\fP ()"
+.br
+.RI "\fIEmpty destructor.\fP"
+.ti -1c
+.RI "virtual void \fBReset\fP ()"
+.br
+.RI "\fIReset the planner.\fP"
+.ti -1c
+.RI "virtual bool \fBPlan\fP ()"
+.br
+.RI "\fIAttempt to solve an Initial-Goal query by growing an \fBFDP\fP.\fP"
+.in -1c
+.SS "Protected Methods"
+
+.in +1c
+.ti -1c
+.RI "void \fBRecoverSolution\fP (\fBMSLNode\fP *&n1, \fBMSLNode\fP *&n2)"
+.br
+.RI "\fIPull out the path and timings from the graphs.\fP"
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "priority_queue< \fBMSLNode\fP *, vector< \fBMSLNode\fP * >, \fBMSLNodeGreater\fP > \fBQ2\fP"
+.br
+.RI "\fIPriority queue of nodes.\fP"
+.in -1c
+.SH "DETAILED DESCRIPTION"
+.PP 
+A bidirectional version of forward dynamic programming.
+.PP
+.SH "CONSTRUCTOR & DESTRUCTOR DOCUMENTATION"
+.PP 
+.SS "FDPBi::FDPBi (\fBProblem\fP * problem)"
+.PP
+A constructor that initializes data members.
+.PP
+.SS "FDPBi::~FDPBi ()\fC [inline]\fP"
+.PP
+Empty destructor.
+.PP
+.SH "MEMBER FUNCTION DOCUMENTATION"
+.PP 
+.SS "bool FDPBi::Plan ()\fC [virtual]\fP"
+.PP
+Attempt to solve an Initial-Goal query by growing an \fBFDP\fP.
+.PP
+Reimplemented from \fBFDP\fP.
+.SS "void FDPBi::RecoverSolution (\fBMSLNode\fP *& n1, \fBMSLNode\fP *& n2)\fC [protected]\fP"
+.PP
+Pull out the path and timings from the graphs.
+.PP
+.SS "void FDPBi::Reset ()\fC [virtual]\fP"
+.PP
+Reset the planner.
+.PP
+Reimplemented from \fBFDP\fP.
+.SH "MEMBER DATA DOCUMENTATION"
+.PP 
+.SS "priority_queue<\fBMSLNode\fP*,vector<\fBMSLNode\fP*>,\fBMSLNodeGreater\fP> FDPBi::Q2\fC [protected]\fP"
+.PP
+Priority queue of nodes.
+.PP
+
+
+.SH "AUTHOR"
+.PP 
+Generated automatically by Doxygen for Motion Strategy Library from the source code.

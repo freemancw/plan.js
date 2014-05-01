@@ -1,0 +1,104 @@
+.TH "Model3DRigidChain" 3 "24 Jul 2003" "Motion Strategy Library" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Model3DRigidChain \- A 3D kinematic chain of bodies that uses DH parameters. 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <model3d.h>\fP
+.PP
+Inherits \fBModel3DRigid\fP.
+.PP
+.SS "Public Methods"
+
+.in +1c
+.ti -1c
+.RI "\fBModel3DRigidChain\fP (string path)"
+.br
+.ti -1c
+.RI "virtual \fB~Model3DRigidChain\fP ()"
+.br
+.ti -1c
+.RI "virtual \fBMSLVector\fP \fBStateTransitionEquation\fP (const \fBMSLVector\fP &\fBx\fP, const \fBMSLVector\fP &u)"
+.br
+.RI "\fIThe state transition equation, or equations of motion, xdot=f(x,u).\fP"
+.ti -1c
+.RI "virtual \fBMSLVector\fP \fBStateToConfiguration\fP (const \fBMSLVector\fP &\fBx\fP)"
+.br
+.RI "\fIA method that converts a \fBModel\fP state in to a \fBGeom\fP configuration.\fP"
+.ti -1c
+.RI "virtual double \fBMetric\fP (const \fBMSLVector\fP &x1, const \fBMSLVector\fP &x2)"
+.br
+.RI "\fIA distance metric, which is Euclidean in the base class.\fP"
+.ti -1c
+.RI "virtual bool \fBSatisfied\fP (const \fBMSLVector\fP &\fBx\fP)"
+.br
+.RI "\fITest whether global state-space constraints are satisfied.\fP"
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "int \fBNumBodies\fP"
+.br
+.RI "\fINumber of bodies in the chain.\fP"
+.ti -1c
+.RI "\fBMSLVector\fP \fBDH\fP"
+.br
+.RI "\fIThe distances between joints ('a' parameters in kinematics).\fP"
+.ti -1c
+.RI "vector< int > \fBStateIndices\fP"
+.br
+.in -1c
+.SH "DETAILED DESCRIPTION"
+.PP 
+A 3D kinematic chain of bodies that uses DH parameters.
+.PP
+A 3D kinematic chain of bodies that uses DH parameters that should be given in a DH file in the following order: Alpha(1,2...), Theta(1,2...), A(1,2...), D(1,2...). Some of these parameters change during the movement, and each of these parameters becomes a state variable. The indices of these parameters should be given in the file StateIndices (i.e., each entry corresponds to a state, and indicates which DH parameter is variable). 
+.PP
+.SH "CONSTRUCTOR & DESTRUCTOR DOCUMENTATION"
+.PP 
+.SS "Model3DRigidChain::Model3DRigidChain (string path)"
+.PP
+.SS "virtual Model3DRigidChain::~Model3DRigidChain ()\fC [inline, virtual]\fP"
+.PP
+.SH "MEMBER FUNCTION DOCUMENTATION"
+.PP 
+.SS "double Model3DRigidChain::Metric (const \fBMSLVector\fP & x1, const \fBMSLVector\fP & x2)\fC [virtual]\fP"
+.PP
+A distance metric, which is Euclidean in the base class.
+.PP
+Reimplemented from \fBModel3DRigid\fP.
+.SS "bool Model3DRigidChain::Satisfied (const \fBMSLVector\fP & x)\fC [virtual]\fP"
+.PP
+Test whether global state-space constraints are satisfied.
+.PP
+Reimplemented from \fBModel\fP.
+.SS "\fBMSLVector\fP Model3DRigidChain::StateToConfiguration (const \fBMSLVector\fP & x)\fC [virtual]\fP"
+.PP
+A method that converts a \fBModel\fP state in to a \fBGeom\fP configuration.
+.PP
+Reimplemented from \fBModel\fP.
+.SS "\fBMSLVector\fP Model3DRigidChain::StateTransitionEquation (const \fBMSLVector\fP & x, const \fBMSLVector\fP & u)\fC [virtual]\fP"
+.PP
+The state transition equation, or equations of motion, xdot=f(x,u).
+.PP
+Reimplemented from \fBModel3DRigid\fP.
+.SH "MEMBER DATA DOCUMENTATION"
+.PP 
+.SS "\fBMSLVector\fP Model3DRigidChain::DH"
+.PP
+The distances between joints ('a' parameters in kinematics).
+.PP
+.SS "int Model3DRigidChain::NumBodies"
+.PP
+Number of bodies in the chain.
+.PP
+.SS "vector<int> Model3DRigidChain::StateIndices"
+.PP
+
+
+.SH "AUTHOR"
+.PP 
+Generated automatically by Doxygen for Motion Strategy Library from the source code.

@@ -1,0 +1,82 @@
+.TH "Model2DRigidDyncarNtire" 3 "24 Jul 2003" "Motion Strategy Library" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Model2DRigidDyncarNtire \- A 5DOF dynamical model of a rigid car. This model uses a nonlinear tire model. The model was donated by Jim Bernard. 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <model2d.h>\fP
+.PP
+Inherits \fBModel2DRigidDyncar\fP.
+.PP
+Inherited by \fBModelCarDynNtire\fP.
+.PP
+.SS "Public Methods"
+
+.in +1c
+.ti -1c
+.RI "\fBModel2DRigidDyncarNtire\fP (string path)"
+.br
+.ti -1c
+.RI "virtual \fB~Model2DRigidDyncarNtire\fP ()"
+.br
+.ti -1c
+.RI "virtual \fBMSLVector\fP \fBStateTransitionEquation\fP (const \fBMSLVector\fP &\fBx\fP, const \fBMSLVector\fP &u)"
+.br
+.RI "\fIThe state transition equation, or equations of motion, xdot=f(x,u).\fP"
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "double \fBMu\fP"
+.br
+.RI "\fINonlinear tire model constant.\fP"
+.ti -1c
+.RI "double \fBNf\fP"
+.br
+.RI "\fILoad on the front tires.\fP"
+.ti -1c
+.RI "double \fBNr\fP"
+.br
+.RI "\fILoad on the rear tires.\fP"
+.in -1c
+.SH "DETAILED DESCRIPTION"
+.PP 
+A 5DOF dynamical model of a rigid car. This model uses a nonlinear tire model. The model was donated by Jim Bernard.
+.PP
+.SH "CONSTRUCTOR & DESTRUCTOR DOCUMENTATION"
+.PP 
+.SS "Model2DRigidDyncarNtire::Model2DRigidDyncarNtire (string path)"
+.PP
+.SS "virtual Model2DRigidDyncarNtire::~Model2DRigidDyncarNtire ()\fC [inline, virtual]\fP"
+.PP
+.SH "MEMBER FUNCTION DOCUMENTATION"
+.PP 
+.SS "\fBMSLVector\fP Model2DRigidDyncarNtire::StateTransitionEquation (const \fBMSLVector\fP & x, const \fBMSLVector\fP & u)\fC [virtual]\fP"
+.PP
+The state transition equation, or equations of motion, xdot=f(x,u).
+.PP
+Reimplemented from \fBModel2DRigidDyncar\fP.
+.PP
+Reimplemented in \fBModelCarDynRollover\fP.
+.SH "MEMBER DATA DOCUMENTATION"
+.PP 
+.SS "double Model2DRigidDyncarNtire::Mu"
+.PP
+Nonlinear tire model constant.
+.PP
+.SS "double Model2DRigidDyncarNtire::Nf"
+.PP
+Load on the front tires.
+.PP
+.SS "double Model2DRigidDyncarNtire::Nr"
+.PP
+Load on the rear tires.
+.PP
+
+
+.SH "AUTHOR"
+.PP 
+Generated automatically by Doxygen for Motion Strategy Library from the source code.

@@ -1,0 +1,104 @@
+\section{Model3DRigid\-Multi  Class Reference}
+\label{classModel3DRigidMulti}\index{Model3DRigidMulti@{Model3DRigid\-Multi}}
+A collection of free-floating bodies in a 3D world. 
+
+
+{\tt \#include $<$model3d.h$>$}
+
+Inheritance diagram for Model3DRigid\-Multi::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4cm]{classModel3DRigidMulti}
+\end{center}
+\end{figure}
+\subsection*{Public Methods}
+\begin{CompactItemize}
+\item 
+{\bf Model3DRigid\-Multi} (string path)
+\item 
+virtual {\bf $\sim$Model3DRigid\-Multi} ()
+\item 
+virtual double {\bf Metric} (const {\bf MSLVector} \&x1, const {\bf MSLVector} \&x2)
+\begin{CompactList}\small\item\em A distance metric, which is Euclidean in the base class.\item\end{CompactList}\item 
+virtual {\bf MSLVector} {\bf Integrate} (const {\bf MSLVector} \&{\bf x}, const {\bf MSLVector} \&u, const double \&h)
+\begin{CompactList}\small\item\em Perform integration from state x, using input u, over time step h.\item\end{CompactList}\item 
+virtual {\bf MSLVector} {\bf Linear\-Interpolate} (const {\bf MSLVector} \&x1, const {\bf MSLVector} \&x2, const double \&a)
+\begin{CompactList}\small\item\em Linearly interpolate two state while respecting topology.\item\end{CompactList}\item 
+virtual {\bf MSLVector} {\bf State\-Difference} (const {\bf MSLVector} \&x1, const {\bf MSLVector} \&x2)
+\begin{CompactList}\small\item\em Compute a {\bf MSLVector} {\rm (p.\,\pageref{classMSLVector})} based on x2-x1. In R$^\wedge$n, the states are simply subtracted to make the {\bf MSLVector} {\rm (p.\,\pageref{classMSLVector})}. This method exists to make things work correctly for other state-space topologies.\item\end{CompactList}\end{CompactItemize}
+\subsection*{Public Attributes}
+\begin{CompactItemize}
+\item 
+int {\bf Num\-Bodies}
+\end{CompactItemize}
+
+
+\subsection{Detailed Description}
+A collection of free-floating bodies in a 3D world.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Model3DRigidMulti@{Model3DRigid\-Multi}!Model3DRigidMulti@{Model3DRigidMulti}}
+\index{Model3DRigidMulti@{Model3DRigidMulti}!Model3DRigidMulti@{Model3DRigid\-Multi}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}Model3DRigid\-Multi::Model3DRigid\-Multi (string {\em path})}\label{classModel3DRigidMulti_a0}
+
+
+\index{Model3DRigidMulti@{Model3DRigid\-Multi}!~Model3DRigidMulti@{$\sim$Model3DRigidMulti}}
+\index{~Model3DRigidMulti@{$\sim$Model3DRigidMulti}!Model3DRigidMulti@{Model3DRigid\-Multi}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}virtual Model3DRigid\-Multi::$\sim$Model3DRigid\-Multi ()\hspace{0.3cm}{\tt  [inline, virtual]}}\label{classModel3DRigidMulti_a1}
+
+
+
+
+\subsection{Member Function Documentation}
+\index{Model3DRigidMulti@{Model3DRigid\-Multi}!Integrate@{Integrate}}
+\index{Integrate@{Integrate}!Model3DRigidMulti@{Model3DRigid\-Multi}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf MSLVector} Model3DRigid\-Multi::Integrate (const {\bf MSLVector} \& {\em x}, const {\bf MSLVector} \& {\em u}, const double \& {\em h})\hspace{0.3cm}{\tt  [virtual]}}\label{classModel3DRigidMulti_a3}
+
+
+Perform integration from state x, using input u, over time step h.
+
+
+
+Reimplemented from {\bf Model3DRigid} {\rm (p.\,\pageref{classModel3DRigid_a2})}.\index{Model3DRigidMulti@{Model3DRigid\-Multi}!LinearInterpolate@{LinearInterpolate}}
+\index{LinearInterpolate@{LinearInterpolate}!Model3DRigidMulti@{Model3DRigid\-Multi}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf MSLVector} Model3DRigid\-Multi::Linear\-Interpolate (const {\bf MSLVector} \& {\em x1}, const {\bf MSLVector} \& {\em x2}, const double \& {\em a})\hspace{0.3cm}{\tt  [virtual]}}\label{classModel3DRigidMulti_a4}
+
+
+Linearly interpolate two state while respecting topology.
+
+If a=0, then x1 is returned; if a=1, then x2 is returned. All intermediate values of \$a $\backslash$in [0,1]\$ yield intermediate states. This method is defined by {\bf Model} {\rm (p.\,\pageref{classModel})}. 
+
+Reimplemented from {\bf Model3DRigid} {\rm (p.\,\pageref{classModel3DRigid_a5})}.\index{Model3DRigidMulti@{Model3DRigid\-Multi}!Metric@{Metric}}
+\index{Metric@{Metric}!Model3DRigidMulti@{Model3DRigid\-Multi}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}double Model3DRigid\-Multi::Metric (const {\bf MSLVector} \& {\em x1}, const {\bf MSLVector} \& {\em x2})\hspace{0.3cm}{\tt  [virtual]}}\label{classModel3DRigidMulti_a2}
+
+
+A distance metric, which is Euclidean in the base class.
+
+
+
+Reimplemented from {\bf Model3DRigid} {\rm (p.\,\pageref{classModel3DRigid_a4})}.\index{Model3DRigidMulti@{Model3DRigid\-Multi}!StateDifference@{StateDifference}}
+\index{StateDifference@{StateDifference}!Model3DRigidMulti@{Model3DRigid\-Multi}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf MSLVector} Model3DRigid\-Multi::State\-Difference (const {\bf MSLVector} \& {\em x1}, const {\bf MSLVector} \& {\em x2})\hspace{0.3cm}{\tt  [virtual]}}\label{classModel3DRigidMulti_a5}
+
+
+Compute a {\bf MSLVector} {\rm (p.\,\pageref{classMSLVector})} based on x2-x1. In R$^\wedge$n, the states are simply subtracted to make the {\bf MSLVector} {\rm (p.\,\pageref{classMSLVector})}. This method exists to make things work correctly for other state-space topologies.
+
+
+
+Reimplemented from {\bf Model3DRigid} {\rm (p.\,\pageref{classModel3DRigid_a6})}.
+
+\subsection{Member Data Documentation}
+\index{Model3DRigidMulti@{Model3DRigid\-Multi}!NumBodies@{NumBodies}}
+\index{NumBodies@{NumBodies}!Model3DRigidMulti@{Model3DRigid\-Multi}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int Model3DRigid\-Multi::Num\-Bodies}\label{classModel3DRigidMulti_m0}
+
+
+
+
+The documentation for this class was generated from the following files:\begin{CompactItemize}
+\item 
+{\bf model3d.h}\item 
+{\bf model3d.C}\end{CompactItemize}

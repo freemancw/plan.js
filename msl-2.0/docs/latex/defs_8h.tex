@@ -1,0 +1,93 @@
+\section{defs.h File Reference}
+\label{defs_8h}\index{defs.h@{defs.h}}
+{\tt \#include $<$fstream$>$}\par
+{\tt \#include $<$iostream$>$}\par
+\subsection*{Defines}
+\begin{CompactItemize}
+\item 
+\#define {\bf PI}\ 3.1415926535897932385
+\item 
+\#define {\bf INFINITY}\ 1.0e40
+\item 
+\#define {\bf sqr}({\bf x})\ (({\bf x})$\ast$({\bf x}))
+\item 
+\#define {\bf min}({\bf x}, {\bf y})\ (({\bf x}$<${\bf y}) ? {\bf x} : {\bf y})
+\item 
+\#define {\bf max}({\bf x}, {\bf y})\ (({\bf x}$>${\bf y}) ? {\bf x} : {\bf y})
+\item 
+\#define {\bf READ\_\-OPTIONAL\_\-PARAMETER}(F)
+\item 
+\#define {\bf READ\_\-PARAMETER\_\-OR\_\-DEFAULT}(F, D)
+\item 
+\#define {\bf READ\_\-PARAMETER\_\-OR\_\-ERROR}(F)
+\item 
+\#define {\bf forall}({\bf x}, S)\ for ({\bf x} = S.begin(); {\bf x} != S.end(); {\bf x}++)$\backslash$
+\end{CompactItemize}
+
+
+\subsection{Define Documentation}
+\index{defs.h@{defs.h}!forall@{forall}}
+\index{forall@{forall}!defs.h@{defs.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define forall({\bf x}, S)\ for ({\bf x} = S.begin(); {\bf x} != S.end(); {\bf x}++)$\backslash$}\label{defs_8h_a8}
+
+
+\index{defs.h@{defs.h}!INFINITY@{INFINITY}}
+\index{INFINITY@{INFINITY}!defs.h@{defs.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define INFINITY\ 1.0e40}\label{defs_8h_a1}
+
+
+\index{defs.h@{defs.h}!max@{max}}
+\index{max@{max}!defs.h@{defs.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define max({\bf x}, {\bf y})\ (({\bf x}$>${\bf y}) ? {\bf x} : {\bf y})}\label{defs_8h_a4}
+
+
+\index{defs.h@{defs.h}!min@{min}}
+\index{min@{min}!defs.h@{defs.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define min({\bf x}, {\bf y})\ (({\bf x}$<${\bf y}) ? {\bf x} : {\bf y})}\label{defs_8h_a3}
+
+
+\index{defs.h@{defs.h}!PI@{PI}}
+\index{PI@{PI}!defs.h@{defs.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define PI\ 3.1415926535897932385}\label{defs_8h_a0}
+
+
+\index{defs.h@{defs.h}!READ_OPTIONAL_PARAMETER@{READ\_\-OPTIONAL\_\-PARAMETER}}
+\index{READ_OPTIONAL_PARAMETER@{READ\_\-OPTIONAL\_\-PARAMETER}!defs.h@{defs.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define READ\_\-OPTIONAL\_\-PARAMETER(F)}\label{defs_8h_a5}
+
+
+{\bf Value:}
+
+\footnotesize\begin{verbatim}_msl_fin.clear();\
+_msl_fin.open((FilePath+""#F"").c_str());\
+if (_msl_fin) {_msl_fin >> F;}\
+_msl_fin.close();\\end{verbatim}\normalsize 
+\index{defs.h@{defs.h}!READ_PARAMETER_OR_DEFAULT@{READ\_\-PARAMETER\_\-OR\_\-DEFAULT}}
+\index{READ_PARAMETER_OR_DEFAULT@{READ\_\-PARAMETER\_\-OR\_\-DEFAULT}!defs.h@{defs.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define READ\_\-PARAMETER\_\-OR\_\-DEFAULT(F, D)}\label{defs_8h_a6}
+
+
+{\bf Value:}
+
+\footnotesize\begin{verbatim}_msl_fin.clear();\
+_msl_fin.open((FilePath+""#F"").c_str());\
+if (_msl_fin) {_msl_fin >> F;}\
+else F = D;\
+_msl_fin.close();\\end{verbatim}\normalsize 
+\index{defs.h@{defs.h}!READ_PARAMETER_OR_ERROR@{READ\_\-PARAMETER\_\-OR\_\-ERROR}}
+\index{READ_PARAMETER_OR_ERROR@{READ\_\-PARAMETER\_\-OR\_\-ERROR}!defs.h@{defs.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define READ\_\-PARAMETER\_\-OR\_\-ERROR(F)}\label{defs_8h_a7}
+
+
+{\bf Value:}
+
+\footnotesize\begin{verbatim}_msl_fin.clear();\
+_msl_fin.open((FilePath+""#F"").c_str());\
+if (_msl_fin) {_msl_fin >> F; _msl_fin.close();}\
+else {cerr << "Error reading "#F"\n"; exit(-1);}\
+_msl_fin.close();\\end{verbatim}\normalsize 
+\index{defs.h@{defs.h}!sqr@{sqr}}
+\index{sqr@{sqr}!defs.h@{defs.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define sqr({\bf x})\ (({\bf x})$\ast$({\bf x}))}\label{defs_8h_a2}
+
+

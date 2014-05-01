@@ -1,0 +1,102 @@
+This directory contains some useful example programs.
+
+=========================================================================
+
+rrtshow.C shows how to use the code without the GUI.  It generates 
+several different RRTs.
+
+=========================================================================
+
+The helical.C and newmodel.* files illustrate the extensibility of MSL.  
+Suppose you would like to try RRT-based path planners on a particular 
+nonlinear system that does does not exist in the current code.  The example
+chosen here is a rigid body in R3 that moves in helical paths.  It can
+be imagined as a fictituous craft that has three inputs: 1) forward
+speed, 2) orientation change (i.e. steering while gliding), 3)
+increase or decrease altitude.  Suppose that momentum and dynamics are
+not modeled (they certainly can be, though).
+
+The first step is to find the class in the Model class hierachy that
+is most similar to the desired model.  A reasonable choice is
+Model3DRigid, which corresponds to a 3D rigid body that can translate
+or rotate in any possible direction (in case, there are six
+independent inputs).  The first task is to write code for the derived
+class, which we name Model3DRigidHelical to easily identify its parent
+class.
+
+The code modelnew.C and modelnew.h contain the code for our helical
+motion model.  The modelnew.h file includes whatever LEDA classes are
+used in the new class, and gives the class definition for
+Model3DRigidHelical.  In addition to the constructor and an empty
+destructor, we define two methods which override methods from the
+parent class, Model3DRigid.  
+
+Consider the code in "modelnew.C".  Note that it includes an "MSL.h"
+file, which includes all of the MSL header files.  The constructor
+defines the set of possible inputs, which is stored as a list of
+vectors in the member Inputs.  These inputs may either be read from a
+file named "Inputs", or constructed by default if the file does not
+exist.  By using the file "Inputs", the set of inputs can be easily
+changed without having to recompile.
+
+The method StateTransitionEquation defines the equations of motion for
+the fictituous craft.  The first three equations give x,y,z changes
+with respect to time, and the remain three give changes in roll,
+pitch, and yaw.  The final method, Integrate, selects the method 
+RungeKuttaIntegrate (defined in the Model base class) for improved
+integration accuracy over the integration method used in the parent
+class, which is EulerIntegrate.
+
+To use the new model, a simple test program is made in "helical.C".
+The only purpose of the program is to initialize the new model along
+with the other classes.  You might want to compare this program to
+rrtpf.C in the src directory, which makes the "rrtpf" program.  In
+addition to the initialization of Model3DRigidHelical, several other
+choices were made.  We use GeomPQP3DRigid, which is nicely compatible
+with 3D rigid body models.  This class selects PQP as the collision
+detection method, and it is assumed that the robot and obstacles are
+each represented as a list of triangles in 3D space.  The
+Performer-based graphical user interface (GUI) is selected, and
+initialized using a Scene that includes an instance of Problem (this
+in turn includes Model3DRigidHelical and GeomPQPRigid).  Note that
+five different constructors are passed a path.  This means that the
+same file path will be used for reading any parameters or data that
+are related to a particular problem.  The GuiRRT class is initialized
+using the Performer renderer, and a default RRT-based planner named
+RRTConCon.  The resulting program will initiate the Performer-based
+GUI for the RRT-based planner, and will use the new model.
+
+The directory "helical" represents a problem to which the new model
+may be applied.  The following ASCII files are included:
+
+GeomDim:      A necessary file that indicates the dimension of the geometry
+GoalState:    A necessary file that gives the desired goal state
+InitialState: A necessary file that gives the initial state
+LowerState:   A file that gives the smallest value of each state variable
+Obst:         Stationary obstacles that are used for collision detection.
+RRTExtExt:    Initialize the GUI with the RRTExtExt planner
+Robot:        A necessary file that gives the model of the robot.
+UpperState:   A file that gives the largest value of each state variable
+
+Both Obst and Robot are specified as a list of triangles in ASCII.  Each
+triangle is specified on a line as (x1 y1 z1) (x2 y2 z2) (x3 y3 z3).
+
+Once all of this has been made and the test program has been compiled,
+run "helical data" to try the example.  Clicking on Plan a few times
+ought to solve the included example.  After a solution is found, it
+can be animated to observe the helical motions.
+
+=========================================================================
+
+nogui.C is a simple example of how to run a planner without any
+graphical user interface.
+
+=========================================================================
+
+The files slide.C and rrtslide.* construct an RRT - based planner
+that attempts to slide along obstacle boundaries in each iteration.
+The performance is not too good, but it illustrates how to make
+a new planner by redefining some of the methods from an existing
+planner.
+
+

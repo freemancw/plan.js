@@ -1,0 +1,284 @@
+\section{MSLVector  Class Reference}
+\label{classMSLVector}\index{MSLVector@{MSLVector}}
+{\tt \#include $<$vector.h$>$}
+
+\subsection*{Public Methods}
+\begin{CompactItemize}
+\item 
+{\bf MSLVector} ()
+\item 
+{\bf MSLVector} (int d)
+\item 
+{\bf MSLVector} (double a, double b)
+\item 
+{\bf MSLVector} (double a, double b, double c)
+\item 
+{\bf MSLVector} (const MSLVector \&w, int prec)
+\item 
+{\bf MSLVector} (const MSLVector \&)
+\item 
+{\bf $\sim$MSLVector} ()
+\item 
+MSLVector \& {\bf operator=} (const MSLVector \&)
+\item 
+int {\bf dim} () const
+\item 
+double \& {\bf operator[$\,$]} (int i)
+\item 
+double {\bf operator[$\,$]} (int) const
+\item 
+double {\bf hcoord} (int i) const
+\item 
+double {\bf coord} (int i) const
+\item 
+double {\bf sqr\_\-length} () const
+\item 
+double {\bf length} () const
+\item 
+MSLVector {\bf norm} () const
+\item 
+double {\bf angle} (const MSLVector \&w) const
+\item 
+MSLVector {\bf rotate90} () const
+\item 
+MSLVector {\bf rotate} (double a) const
+\item 
+MSLVector \& {\bf operator+=} (const MSLVector \&)
+\item 
+MSLVector \& {\bf operator-=} (const MSLVector \&)
+\item 
+MSLVector {\bf operator+} (const MSLVector \&v1) const
+\item 
+MSLVector {\bf operator-} (const MSLVector \&v1) const
+\item 
+double {\bf operator $\ast$} (const MSLVector \&v1) const
+\item 
+MSLVector {\bf operator $\ast$} (double r) const
+\item 
+MSLVector {\bf operator-} () const
+\item 
+MSLVector {\bf operator/} (double) const
+\item 
+bool {\bf operator==} (const MSLVector \&w) const
+\item 
+bool {\bf operator!=} (const MSLVector \&w) const
+\item 
+void {\bf print} (ostream \&O)
+\item 
+void {\bf print} ()
+\item 
+void {\bf read} (istream \&I)
+\item 
+void {\bf read} ()
+\end{CompactItemize}
+\subsection*{Friends}
+\begin{CompactItemize}
+\item 
+class {\bf MSLMatrix}
+\item 
+MSLVector {\bf operator $\ast$} (double f, const MSLVector \&v)
+\item 
+ostream \& {\bf operator$<$$<$} (ostream \&O, const MSLVector \&v)
+\item 
+istream \& {\bf operator$>$$>$} (istream \&I, MSLVector \&v)
+\end{CompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{MSLVector@{MSLVector}!MSLVector@{MSLVector}}
+\index{MSLVector@{MSLVector}!MSLVector@{MSLVector}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}MSLVector::MSLVector ()}\label{classMSLVector_a0}
+
+
+\index{MSLVector@{MSLVector}!MSLVector@{MSLVector}}
+\index{MSLVector@{MSLVector}!MSLVector@{MSLVector}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}MSLVector::MSLVector (int {\em d})}\label{classMSLVector_a1}
+
+
+\index{MSLVector@{MSLVector}!MSLVector@{MSLVector}}
+\index{MSLVector@{MSLVector}!MSLVector@{MSLVector}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}MSLVector::MSLVector (double {\em a}, double {\em b})}\label{classMSLVector_a2}
+
+
+\index{MSLVector@{MSLVector}!MSLVector@{MSLVector}}
+\index{MSLVector@{MSLVector}!MSLVector@{MSLVector}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}MSLVector::MSLVector (double {\em a}, double {\em b}, double {\em c})}\label{classMSLVector_a3}
+
+
+\index{MSLVector@{MSLVector}!MSLVector@{MSLVector}}
+\index{MSLVector@{MSLVector}!MSLVector@{MSLVector}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}MSLVector::MSLVector (const MSLVector \& {\em w}, int {\em prec})}\label{classMSLVector_a4}
+
+
+\index{MSLVector@{MSLVector}!MSLVector@{MSLVector}}
+\index{MSLVector@{MSLVector}!MSLVector@{MSLVector}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}MSLVector::MSLVector (const MSLVector \&)}\label{classMSLVector_a5}
+
+
+\index{MSLVector@{MSLVector}!~MSLVector@{$\sim$MSLVector}}
+\index{~MSLVector@{$\sim$MSLVector}!MSLVector@{MSLVector}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}MSLVector::$\sim$MSLVector ()}\label{classMSLVector_a6}
+
+
+
+
+\subsection{Member Function Documentation}
+\index{MSLVector@{MSLVector}!angle@{angle}}
+\index{angle@{angle}!MSLVector@{MSLVector}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}double MSLVector::angle (const MSLVector \& {\em w}) const}\label{classMSLVector_a16}
+
+
+\index{MSLVector@{MSLVector}!coord@{coord}}
+\index{coord@{coord}!MSLVector@{MSLVector}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}double MSLVector::coord (int {\em i}) const\hspace{0.3cm}{\tt  [inline]}}\label{classMSLVector_a12}
+
+
+\index{MSLVector@{MSLVector}!dim@{dim}}
+\index{dim@{dim}!MSLVector@{MSLVector}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int MSLVector::dim () const\hspace{0.3cm}{\tt  [inline]}}\label{classMSLVector_a8}
+
+
+\index{MSLVector@{MSLVector}!hcoord@{hcoord}}
+\index{hcoord@{hcoord}!MSLVector@{MSLVector}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}double MSLVector::hcoord (int {\em i}) const\hspace{0.3cm}{\tt  [inline]}}\label{classMSLVector_a11}
+
+
+\index{MSLVector@{MSLVector}!length@{length}}
+\index{length@{length}!MSLVector@{MSLVector}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}double MSLVector::length () const}\label{classMSLVector_a14}
+
+
+\index{MSLVector@{MSLVector}!norm@{norm}}
+\index{norm@{norm}!MSLVector@{MSLVector}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}MSLVector MSLVector::norm () const\hspace{0.3cm}{\tt  [inline]}}\label{classMSLVector_a15}
+
+
+\index{MSLVector@{MSLVector}!operator *@{operator $\ast$}}
+\index{operator *@{operator $\ast$}!MSLVector@{MSLVector}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}MSLVector MSLVector::operator $\ast$ (double {\em r}) const}\label{classMSLVector_a24}
+
+
+\index{MSLVector@{MSLVector}!operator *@{operator $\ast$}}
+\index{operator *@{operator $\ast$}!MSLVector@{MSLVector}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}double MSLVector::operator $\ast$ (const MSLVector \& {\em v1}) const}\label{classMSLVector_a23}
+
+
+\index{MSLVector@{MSLVector}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!MSLVector@{MSLVector}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}bool MSLVector::operator!= (const MSLVector \& {\em w}) const\hspace{0.3cm}{\tt  [inline]}}\label{classMSLVector_a28}
+
+
+\index{MSLVector@{MSLVector}!operator+@{operator+}}
+\index{operator+@{operator+}!MSLVector@{MSLVector}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}MSLVector MSLVector::operator+ (const MSLVector \& {\em v1}) const}\label{classMSLVector_a21}
+
+
+\index{MSLVector@{MSLVector}!operator+=@{operator+=}}
+\index{operator+=@{operator+=}!MSLVector@{MSLVector}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}MSLVector \& MSLVector::operator+= (const MSLVector \&)}\label{classMSLVector_a19}
+
+
+\index{MSLVector@{MSLVector}!operator-@{operator-}}
+\index{operator-@{operator-}!MSLVector@{MSLVector}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}MSLVector MSLVector::operator- () const}\label{classMSLVector_a25}
+
+
+\index{MSLVector@{MSLVector}!operator-@{operator-}}
+\index{operator-@{operator-}!MSLVector@{MSLVector}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}MSLVector MSLVector::operator- (const MSLVector \& {\em v1}) const}\label{classMSLVector_a22}
+
+
+\index{MSLVector@{MSLVector}!operator-=@{operator-=}}
+\index{operator-=@{operator-=}!MSLVector@{MSLVector}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}MSLVector \& MSLVector::operator-= (const MSLVector \&)}\label{classMSLVector_a20}
+
+
+\index{MSLVector@{MSLVector}!operator/@{operator/}}
+\index{operator/@{operator/}!MSLVector@{MSLVector}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}MSLVector MSLVector::operator/ (double) const}\label{classMSLVector_a26}
+
+
+\index{MSLVector@{MSLVector}!operator=@{operator=}}
+\index{operator=@{operator=}!MSLVector@{MSLVector}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}MSLVector \& MSLVector::operator= (const MSLVector \&)}\label{classMSLVector_a7}
+
+
+\index{MSLVector@{MSLVector}!operator==@{operator==}}
+\index{operator==@{operator==}!MSLVector@{MSLVector}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}bool MSLVector::operator== (const MSLVector \& {\em w}) const}\label{classMSLVector_a27}
+
+
+\index{MSLVector@{MSLVector}!operator[]@{operator[]}}
+\index{operator[]@{operator[]}!MSLVector@{MSLVector}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}double MSLVector::operator[$\,$] (int) const}\label{classMSLVector_a10}
+
+
+\index{MSLVector@{MSLVector}!operator[]@{operator[]}}
+\index{operator[]@{operator[]}!MSLVector@{MSLVector}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}double \& MSLVector::operator[$\,$] (int {\em i})}\label{classMSLVector_a9}
+
+
+\index{MSLVector@{MSLVector}!print@{print}}
+\index{print@{print}!MSLVector@{MSLVector}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void MSLVector::print ()\hspace{0.3cm}{\tt  [inline]}}\label{classMSLVector_a30}
+
+
+\index{MSLVector@{MSLVector}!print@{print}}
+\index{print@{print}!MSLVector@{MSLVector}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void MSLVector::print (ostream \& {\em O})}\label{classMSLVector_a29}
+
+
+\index{MSLVector@{MSLVector}!read@{read}}
+\index{read@{read}!MSLVector@{MSLVector}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void MSLVector::read ()\hspace{0.3cm}{\tt  [inline]}}\label{classMSLVector_a32}
+
+
+\index{MSLVector@{MSLVector}!read@{read}}
+\index{read@{read}!MSLVector@{MSLVector}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void MSLVector::read (istream \& {\em I})}\label{classMSLVector_a31}
+
+
+\index{MSLVector@{MSLVector}!rotate@{rotate}}
+\index{rotate@{rotate}!MSLVector@{MSLVector}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}MSLVector MSLVector::rotate (double {\em a}) const}\label{classMSLVector_a18}
+
+
+\index{MSLVector@{MSLVector}!rotate90@{rotate90}}
+\index{rotate90@{rotate90}!MSLVector@{MSLVector}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}MSLVector MSLVector::rotate90 () const}\label{classMSLVector_a17}
+
+
+\index{MSLVector@{MSLVector}!sqr_length@{sqr\_\-length}}
+\index{sqr_length@{sqr\_\-length}!MSLVector@{MSLVector}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}double MSLVector::sqr\_\-length () const}\label{classMSLVector_a13}
+
+
+
+
+\subsection{Friends And Related Function Documentation}
+\index{MSLVector@{MSLVector}!MSLMatrix@{MSLMatrix}}
+\index{MSLMatrix@{MSLMatrix}!MSLVector@{MSLVector}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}friend class MSLMatrix\hspace{0.3cm}{\tt  [friend]}}\label{classMSLVector_l0}
+
+
+\index{MSLVector@{MSLVector}!operator *@{operator $\ast$}}
+\index{operator *@{operator $\ast$}!MSLVector@{MSLVector}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}MSLVector operator $\ast$ (double {\em f}, const MSLVector \& {\em v})\hspace{0.3cm}{\tt  [friend]}}\label{classMSLVector_l1}
+
+
+\index{MSLVector@{MSLVector}!operator<<@{operator$<$$<$}}
+\index{operator<<@{operator$<$$<$}!MSLVector@{MSLVector}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}ostream\& operator$<$$<$ (ostream \& {\em O}, const MSLVector \& {\em v})\hspace{0.3cm}{\tt  [friend]}}\label{classMSLVector_l2}
+
+
+\index{MSLVector@{MSLVector}!operator>>@{operator$>$$>$}}
+\index{operator>>@{operator$>$$>$}!MSLVector@{MSLVector}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}istream\& operator$>$$>$ (istream \& {\em I}, MSLVector \& {\em v})\hspace{0.3cm}{\tt  [friend]}}\label{classMSLVector_l3}
+
+
+
+
+The documentation for this class was generated from the following files:\begin{CompactItemize}
+\item 
+{\bf vector.h}\item 
+{\bf vector.C}\end{CompactItemize}

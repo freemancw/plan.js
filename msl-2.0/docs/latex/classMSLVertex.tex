@@ -1,0 +1,156 @@
+\section{MSLVertex  Class Reference}
+\label{classMSLVertex}\index{MSLVertex@{MSLVertex}}
+{\tt \#include $<$graph.h$>$}
+
+\subsection*{Public Methods}
+\begin{CompactItemize}
+\item 
+{\bf MSLVector} {\bf State} () const
+\begin{CompactList}\small\item\em The state to which this node corresponds.\item\end{CompactList}\item 
+list$<$ {\bf MSLEdge} $\ast$ $>$ {\bf Edges} () const
+\begin{CompactList}\small\item\em Return all of the incident edges.\item\end{CompactList}\item 
+double {\bf Cost} () const
+\begin{CompactList}\small\item\em A cost value, useful in some algorithms.\item\end{CompactList}\item 
+void {\bf Set\-Cost} (const double \&{\bf x})
+\begin{CompactList}\small\item\em A cost value, useful in some algorithms.\item\end{CompactList}\item 
+void {\bf Set\-ID} (const int \&i)
+\begin{CompactList}\small\item\em Change the vertex ID.\item\end{CompactList}\item 
+int {\bf ID} () const
+\begin{CompactList}\small\item\em Get the vertex ID.\item\end{CompactList}\item 
+void {\bf Mark} ()
+\begin{CompactList}\small\item\em A cost value, useful in some algorithms.\item\end{CompactList}\item 
+void {\bf Unmark} ()
+\begin{CompactList}\small\item\em A cost value, useful in some algorithms.\item\end{CompactList}\item 
+bool {\bf Is\-Marked} () const
+\begin{CompactList}\small\item\em A cost value, useful in some algorithms.\item\end{CompactList}\item 
+{\bf MSLVertex} ()
+\item 
+{\bf MSLVertex} (const {\bf MSLVector} \&{\bf x})
+\item 
+{\bf $\sim$MSLVertex} ()
+\end{CompactItemize}
+\subsection*{Friends}
+\begin{CompactItemize}
+\item 
+class {\bf MSLEdge}
+\item 
+class {\bf MSLGraph}
+\item 
+istream \& {\bf operator$>$$>$} (istream \&is, MSLVertex \&n)
+\item 
+ostream \& {\bf operator$<$$<$} (ostream \&os, const MSLVertex \&n)
+\end{CompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{MSLVertex@{MSLVertex}!MSLVertex@{MSLVertex}}
+\index{MSLVertex@{MSLVertex}!MSLVertex@{MSLVertex}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}MSLVertex::MSLVertex ()}\label{classMSLVertex_a9}
+
+
+\index{MSLVertex@{MSLVertex}!MSLVertex@{MSLVertex}}
+\index{MSLVertex@{MSLVertex}!MSLVertex@{MSLVertex}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}MSLVertex::MSLVertex (const {\bf MSLVector} \& {\em x})}\label{classMSLVertex_a10}
+
+
+\index{MSLVertex@{MSLVertex}!~MSLVertex@{$\sim$MSLVertex}}
+\index{~MSLVertex@{$\sim$MSLVertex}!MSLVertex@{MSLVertex}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}MSLVertex::$\sim$MSLVertex ()}\label{classMSLVertex_a11}
+
+
+
+
+\subsection{Member Function Documentation}
+\index{MSLVertex@{MSLVertex}!Cost@{Cost}}
+\index{Cost@{Cost}!MSLVertex@{MSLVertex}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}double MSLVertex::Cost () const\hspace{0.3cm}{\tt  [inline]}}\label{classMSLVertex_a2}
+
+
+A cost value, useful in some algorithms.
+
+\index{MSLVertex@{MSLVertex}!Edges@{Edges}}
+\index{Edges@{Edges}!MSLVertex@{MSLVertex}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}list$<${\bf MSLEdge}$\ast$$>$ MSLVertex::Edges () const\hspace{0.3cm}{\tt  [inline]}}\label{classMSLVertex_a1}
+
+
+Return all of the incident edges.
+
+\index{MSLVertex@{MSLVertex}!ID@{ID}}
+\index{ID@{ID}!MSLVertex@{MSLVertex}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int MSLVertex::ID () const\hspace{0.3cm}{\tt  [inline]}}\label{classMSLVertex_a5}
+
+
+Get the vertex ID.
+
+\index{MSLVertex@{MSLVertex}!IsMarked@{IsMarked}}
+\index{IsMarked@{IsMarked}!MSLVertex@{MSLVertex}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}bool MSLVertex::Is\-Marked () const\hspace{0.3cm}{\tt  [inline]}}\label{classMSLVertex_a8}
+
+
+A cost value, useful in some algorithms.
+
+\index{MSLVertex@{MSLVertex}!Mark@{Mark}}
+\index{Mark@{Mark}!MSLVertex@{MSLVertex}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void MSLVertex::Mark ()\hspace{0.3cm}{\tt  [inline]}}\label{classMSLVertex_a6}
+
+
+A cost value, useful in some algorithms.
+
+\index{MSLVertex@{MSLVertex}!SetCost@{SetCost}}
+\index{SetCost@{SetCost}!MSLVertex@{MSLVertex}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void MSLVertex::Set\-Cost (const double \& {\em x})\hspace{0.3cm}{\tt  [inline]}}\label{classMSLVertex_a3}
+
+
+A cost value, useful in some algorithms.
+
+\index{MSLVertex@{MSLVertex}!SetID@{SetID}}
+\index{SetID@{SetID}!MSLVertex@{MSLVertex}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void MSLVertex::Set\-ID (const int \& {\em i})\hspace{0.3cm}{\tt  [inline]}}\label{classMSLVertex_a4}
+
+
+Change the vertex ID.
+
+\index{MSLVertex@{MSLVertex}!State@{State}}
+\index{State@{State}!MSLVertex@{MSLVertex}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf MSLVector} MSLVertex::State () const\hspace{0.3cm}{\tt  [inline]}}\label{classMSLVertex_a0}
+
+
+The state to which this node corresponds.
+
+\index{MSLVertex@{MSLVertex}!Unmark@{Unmark}}
+\index{Unmark@{Unmark}!MSLVertex@{MSLVertex}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void MSLVertex::Unmark ()\hspace{0.3cm}{\tt  [inline]}}\label{classMSLVertex_a7}
+
+
+A cost value, useful in some algorithms.
+
+
+
+\subsection{Friends And Related Function Documentation}
+\index{MSLVertex@{MSLVertex}!MSLEdge@{MSLEdge}}
+\index{MSLEdge@{MSLEdge}!MSLVertex@{MSLVertex}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}friend class MSLEdge\hspace{0.3cm}{\tt  [friend]}}\label{classMSLVertex_l0}
+
+
+\index{MSLVertex@{MSLVertex}!MSLGraph@{MSLGraph}}
+\index{MSLGraph@{MSLGraph}!MSLVertex@{MSLVertex}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}friend class MSLGraph\hspace{0.3cm}{\tt  [friend]}}\label{classMSLVertex_l1}
+
+
+\index{MSLVertex@{MSLVertex}!operator<<@{operator$<$$<$}}
+\index{operator<<@{operator$<$$<$}!MSLVertex@{MSLVertex}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}ostream\& operator$<$$<$ (ostream \& {\em os}, const MSLVertex \& {\em n})\hspace{0.3cm}{\tt  [friend]}}\label{classMSLVertex_l3}
+
+
+\index{MSLVertex@{MSLVertex}!operator>>@{operator$>$$>$}}
+\index{operator>>@{operator$>$$>$}!MSLVertex@{MSLVertex}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}istream\& operator$>$$>$ (istream \& {\em is}, MSLVertex \& {\em n})\hspace{0.3cm}{\tt  [friend]}}\label{classMSLVertex_l2}
+
+
+
+
+The documentation for this class was generated from the following files:\begin{CompactItemize}
+\item 
+{\bf graph.h}\item 
+{\bf graph.C}\item 
+{\bf graph\_\-old.C}\end{CompactItemize}

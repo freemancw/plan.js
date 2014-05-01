@@ -1,0 +1,51 @@
+.TH "Model2D" 3 "24 Jul 2003" "Motion Strategy Library" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Model2D \- Base for all 2D models. 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <model2d.h>\fP
+.PP
+Inherits \fBModel\fP.
+.PP
+Inherited by \fBModel2DPoint\fP, and \fBModel2DRigid\fP.
+.PP
+.SS "Public Methods"
+
+.in +1c
+.ti -1c
+.RI "\fBModel2D\fP (string path)"
+.br
+.ti -1c
+.RI "virtual \fB~Model2D\fP ()"
+.br
+.ti -1c
+.RI "virtual \fBMSLVector\fP \fBStateToConfiguration\fP (const \fBMSLVector\fP &\fBx\fP)"
+.br
+.RI "\fIA method that converts a \fBModel\fP state in to a \fBGeom\fP configuration.\fP"
+.in -1c
+.SH "DETAILED DESCRIPTION"
+.PP 
+Base for all 2D models.
+.PP
+.SH "CONSTRUCTOR & DESTRUCTOR DOCUMENTATION"
+.PP 
+.SS "Model2D::Model2D (string path)"
+.PP
+.SS "virtual Model2D::~Model2D ()\fC [inline, virtual]\fP"
+.PP
+.SH "MEMBER FUNCTION DOCUMENTATION"
+.PP 
+.SS "\fBMSLVector\fP Model2D::StateToConfiguration (const \fBMSLVector\fP & x)\fC [virtual]\fP"
+.PP
+A method that converts a \fBModel\fP state in to a \fBGeom\fP configuration.
+.PP
+Reimplemented from \fBModel\fP.
+.PP
+Reimplemented in \fBModel2DRigid\fP.
+
+.SH "AUTHOR"
+.PP 
+Generated automatically by Doxygen for Motion Strategy Library from the source code.

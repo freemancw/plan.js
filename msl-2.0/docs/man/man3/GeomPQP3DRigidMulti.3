@@ -1,0 +1,80 @@
+.TH "GeomPQP3DRigidMulti" 3 "24 Jul 2003" "Motion Strategy Library" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+GeomPQP3DRigidMulti \- A collection of 3D rigid modies. 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <geomPQP.h>\fP
+.PP
+Inherits \fBGeomPQP3DRigid\fP.
+.PP
+.SS "Public Methods"
+
+.in +1c
+.ti -1c
+.RI "\fBGeomPQP3DRigidMulti\fP (string path)"
+.br
+.ti -1c
+.RI "virtual \fB~GeomPQP3DRigidMulti\fP ()"
+.br
+.ti -1c
+.RI "virtual bool \fBCollisionFree\fP (const \fBMSLVector\fP &q)"
+.br
+.RI "\fIReturn true if the robot(s) and obstacles are not in collision.\fP"
+.ti -1c
+.RI "virtual double \fBDistanceComp\fP (const \fBMSLVector\fP &q)"
+.br
+.RI "\fICompute the distance of the closest point on the robot to the obstacle region.\fP"
+.ti -1c
+.RI "virtual void \fBLoadRobot\fP (string path)"
+.br
+.ti -1c
+.RI "void \fBSetTransformation\fP (const \fBMSLVector\fP &q)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "bool \fBSelfCollisionCheck\fP"
+.br
+.in -1c
+.SH "DETAILED DESCRIPTION"
+.PP 
+A collection of 3D rigid modies.
+.PP
+.SH "CONSTRUCTOR & DESTRUCTOR DOCUMENTATION"
+.PP 
+.SS "GeomPQP3DRigidMulti::GeomPQP3DRigidMulti (string path)"
+.PP
+.SS "virtual GeomPQP3DRigidMulti::~GeomPQP3DRigidMulti ()\fC [inline, virtual]\fP"
+.PP
+.SH "MEMBER FUNCTION DOCUMENTATION"
+.PP 
+.SS "bool GeomPQP3DRigidMulti::CollisionFree (const \fBMSLVector\fP & q)\fC [virtual]\fP"
+.PP
+Return true if the robot(s) and obstacles are not in collision.
+.PP
+Reimplemented from \fBGeomPQP3DRigid\fP.
+.SS "double GeomPQP3DRigidMulti::DistanceComp (const \fBMSLVector\fP & q)\fC [virtual]\fP"
+.PP
+Compute the distance of the closest point on the robot to the obstacle region.
+.PP
+Reimplemented from \fBGeomPQP3DRigid\fP.
+.SS "void GeomPQP3DRigidMulti::LoadRobot (string path)\fC [virtual]\fP"
+.PP
+Reimplemented from \fBGeomPQP\fP.
+.SS "void GeomPQP3DRigidMulti::SetTransformation (const \fBMSLVector\fP & q)"
+.PP
+Reimplemented from \fBGeomPQP3DRigid\fP.
+.SH "MEMBER DATA DOCUMENTATION"
+.PP 
+.SS "bool GeomPQP3DRigidMulti::SelfCollisionCheck"
+.PP
+
+
+.SH "AUTHOR"
+.PP 
+Generated automatically by Doxygen for Motion Strategy Library from the source code.

@@ -1,0 +1,79 @@
+.TH "MSLRandomSource" 3 "24 Jul 2003" "Motion Strategy Library" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+MSLRandomSource \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <random.h>\fP
+.PP
+.SS "Public Types"
+
+.in +1c
+.ti -1c
+.RI "typedef unsigned long \fBuint32\fP"
+.br
+.in -1c
+.SS "Public Methods"
+
+.in +1c
+.ti -1c
+.RI "\fBMSLRandomSource\fP ()"
+.br
+.ti -1c
+.RI "\fBMSLRandomSource\fP (int a)"
+.br
+.ti -1c
+.RI "double \fBgetUniform\fP ()"
+.br
+.ti -1c
+.RI "double \fBgetGaussian\fP (double mean, double variance)"
+.br
+.ti -1c
+.RI "int \fBgetRangedInt\fP (int low, int high)"
+.br
+.ti -1c
+.RI "double \fBgetRangedDouble\fP (double low, double high)"
+.br
+.ti -1c
+.RI "float \fBgetRangedFloat\fP (float low, float high)"
+.br
+.ti -1c
+.RI "MSLRandomSource & \fBoperator>>\fP (double &\fBx\fP)"
+.br
+.ti -1c
+.RI "MSLRandomSource & \fBoperator>>\fP (float &\fBx\fP)"
+.br
+.in -1c
+.SH "MEMBER TYPEDEF DOCUMENTATION"
+.PP 
+.SS "typedef unsigned long MSLRandomSource::uint32"
+.PP
+.SH "CONSTRUCTOR & DESTRUCTOR DOCUMENTATION"
+.PP 
+.SS "MSLRandomSource::MSLRandomSource ()"
+.PP
+.SS "MSLRandomSource::MSLRandomSource (int a)"
+.PP
+.SH "MEMBER FUNCTION DOCUMENTATION"
+.PP 
+.SS "double MSLRandomSource::getGaussian (double mean, double variance)"
+.PP
+.SS "double MSLRandomSource::getRangedDouble (double low, double high)"
+.PP
+.SS "float MSLRandomSource::getRangedFloat (float low, float high)"
+.PP
+.SS "int MSLRandomSource::getRangedInt (int low, int high)"
+.PP
+.SS "double MSLRandomSource::getUniform ()"
+.PP
+.SS "MSLRandomSource & MSLRandomSource::operator>> (float & x)"
+.PP
+.SS "MSLRandomSource & MSLRandomSource::operator>> (double & x)"
+.PP
+
+
+.SH "AUTHOR"
+.PP 
+Generated automatically by Doxygen for Motion Strategy Library from the source code.

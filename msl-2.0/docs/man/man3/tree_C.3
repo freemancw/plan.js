@@ -1,0 +1,40 @@
+.TH "tree.C" 3 "8 Nov 2001" "Motion Strategy Library" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+tree.C \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include "tree.h"\fR
+.br
+
+.SS Functions
+
+.in +1c
+.ti -1c
+.RI "ostream& \fBoperator<<\fR (ostream &out, const \fBMSLNode\fR &n)"
+.br
+.ti -1c
+.RI "ostream& \fBoperator<<\fR (ostream &out, const list< \fBMSLNode\fR *> &L)"
+.br
+.ti -1c
+.RI "ostream& \fBoperator<<\fR (ostream &os, const \fBMSLTree\fR &T)"
+.br
+.ti -1c
+.RI "istream& \fBoperator>>\fR (istream &is, \fBMSLTree\fR &T)"
+.br
+.in -1c
+.SH FUNCTION DOCUMENTATION
+.PP 
+.SS ostream& operator<< (ostream & os, const \fBMSLTree\fR & T)
+.PP
+.SS ostream& operator<< (ostream & out, const list< \fBMSLNode\fR *> & L)
+.PP
+.SS ostream& operator<< (ostream & out, const \fBMSLNode\fR & n)
+.PP
+.SS istream& operator>> (istream & is, \fBMSLTree\fR & T)
+.PP
+.SH AUTHOR
+.PP 
+Generated automatically by Doxygen for Motion Strategy Library from the source code.

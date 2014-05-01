@@ -1,0 +1,120 @@
+\section{Multi\-Array  Class Template Reference}
+\label{class_MultiArray}\index{MultiArray@{Multi\-Array}}
+A multidimensional array made from a 1D vector. 
+
+
+{\tt \#include $<$marray.h$>$}
+
+\subsection*{Public Methods}
+\begin{CompactItemize}
+\item 
+{\bf Multi\-Array} (const vector$<$ int $>$ \&dims, const E \&x)
+\begin{CompactList}\small\item\em Constructor with default assignment of x to each element.\item\end{CompactList}\item 
+{\bf Multi\-Array} (const vector$<$ int $>$ \&dims)
+\begin{CompactList}\small\item\em Constructor with no default assignment.\item\end{CompactList}\item 
+{\bf Multi\-Array} ()
+\begin{CompactList}\small\item\em Constructor with no initialization.\item\end{CompactList}\item 
+{\bf $\sim$Multi\-Array} ()
+\item 
+E\& {\bf operator[$\,$]} (const vector$<$ int $>$ \&indices)
+\begin{CompactList}\small\item\em This can be used for access or assignment (e.g., ma[indices] = 1).\item\end{CompactList}\item 
+bool {\bf Increment} (vector$<$ int $>$ \&indices)
+\begin{CompactList}\small\item\em Get the next element (used as an iterator). Return true if at end.\item\end{CompactList}\end{CompactItemize}
+\subsection*{Public Attributes}
+\begin{CompactItemize}
+\item 
+int {\bf Max\-Size}
+\begin{CompactList}\small\item\em Maximum allowable array size (default = 10 million).\item\end{CompactList}\end{CompactItemize}
+\subsection*{Friends}
+\begin{CompactItemize}
+\item 
+istream\& {\bf operator$>$$>$} (istream \&is, Multi\-Array \&ma)
+\begin{CompactList}\small\item\em This will not work correctly unless dimensions are preset correctly.\item\end{CompactList}\item 
+ostream\& {\bf operator$<$$<$} (ostream \&os, const Multi\-Array \&ma)
+\begin{CompactList}\small\item\em Just print out the vector.\item\end{CompactList}\end{CompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$class E$>$  class Multi\-Array}
+
+A multidimensional array made from a 1D vector.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{MultiArray@{Multi\-Array}!MultiArray@{MultiArray}}
+\index{MultiArray@{MultiArray}!MultiArray@{Multi\-Array}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}template$<$class E$>$ Multi\-Array$<$E$>$::Multi\-Array$<$E$>$ (const vector$<$ int $>$ \& {\em dims}, const E \& {\em x})}\label{class_MultiArray_a0}
+
+
+Constructor with default assignment of x to each element.
+
+\index{MultiArray@{Multi\-Array}!MultiArray@{MultiArray}}
+\index{MultiArray@{MultiArray}!MultiArray@{Multi\-Array}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}template$<$class E$>$ Multi\-Array$<$E$>$::Multi\-Array$<$E$>$ (const vector$<$ int $>$ \& {\em dims})}\label{class_MultiArray_a1}
+
+
+Constructor with no default assignment.
+
+\index{MultiArray@{Multi\-Array}!MultiArray@{MultiArray}}
+\index{MultiArray@{MultiArray}!MultiArray@{Multi\-Array}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}template$<$class E$>$ Multi\-Array$<$E$>$::Multi\-Array$<$E$>$ ()\hspace{0.3cm}{\tt  [inline]}}\label{class_MultiArray_a2}
+
+
+Constructor with no initialization.
+
+\index{MultiArray@{Multi\-Array}!~MultiArray@{$\sim$MultiArray}}
+\index{~MultiArray@{$\sim$MultiArray}!MultiArray@{Multi\-Array}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}template$<$class E$>$ Multi\-Array$<$E$>$::$\sim$Multi\-Array$<$E$>$ ()\hspace{0.3cm}{\tt  [inline]}}\label{class_MultiArray_a3}
+
+
+
+
+\subsection{Member Function Documentation}
+\index{MultiArray@{Multi\-Array}!Increment@{Increment}}
+\index{Increment@{Increment}!MultiArray@{Multi\-Array}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}template$<$class E$>$ bool Multi\-Array$<$E$>$::Increment (vector$<$ int $>$ \& {\em indices})\hspace{0.3cm}{\tt  [inline]}}\label{class_MultiArray_a5}
+
+
+Get the next element (used as an iterator). Return true if at end.
+
+\index{MultiArray@{Multi\-Array}!operator[]@{operator[]}}
+\index{operator[]@{operator[]}!MultiArray@{Multi\-Array}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}template$<$class E$>$ E \& Multi\-Array$<$E$>$::operator[$\,$] (const vector$<$ int $>$ \& {\em indices})\hspace{0.3cm}{\tt  [inline]}}\label{class_MultiArray_a4}
+
+
+This can be used for access or assignment (e.g., ma[indices] = 1).
+
+
+
+\subsection{Friends And Related Function Documentation}
+\index{MultiArray@{Multi\-Array}!operator<<@{operator$<$$<$}}
+\index{operator<<@{operator$<$$<$}!MultiArray@{Multi\-Array}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}template$<$class E$>$ ostream \& operator$<$$<$ (ostream \& {\em os}, const Multi\-Array$<$E$>$ \& {\em ma})\hspace{0.3cm}{\tt  [friend]}}\label{class_MultiArray_l1}
+
+
+Just print out the vector.
+
+\index{MultiArray@{Multi\-Array}!operator>>@{operator$>$$>$}}
+\index{operator>>@{operator$>$$>$}!MultiArray@{Multi\-Array}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}template$<$class E$>$ istream \& operator$>$$>$ (istream \& {\em is}, Multi\-Array$<$E$>$ \& {\em ma})\hspace{0.3cm}{\tt  [friend]}}\label{class_MultiArray_l0}
+
+
+This will not work correctly unless dimensions are preset correctly.
+
+
+
+\subsection{Member Data Documentation}
+\index{MultiArray@{Multi\-Array}!MaxSize@{MaxSize}}
+\index{MaxSize@{MaxSize}!MultiArray@{Multi\-Array}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}template$<$class E$>$ int Multi\-Array$<$E$>$::Max\-Size}\label{class_MultiArray_m0}
+
+
+Maximum allowable array size (default = 10 million).
+
+
+
+The documentation for this class was generated from the following files:\begin{CompactItemize}
+\item 
+{\bf marray.h}\item 
+{\bf marray.C}\end{CompactItemize}

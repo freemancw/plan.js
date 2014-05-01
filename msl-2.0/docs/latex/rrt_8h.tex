@@ -1,0 +1,31 @@
+\section{rrt.h File Reference}
+\label{rrt_8h}\index{rrt.h@{rrt.h}}
+{\tt \#include \char`\"{}planner.h\char`\"{}}\par
+{\tt \#include \char`\"{}util.h\char`\"{}}\par
+\subsection*{Compounds}
+\begin{CompactItemize}
+\item 
+class {\bf Random\-Tree}
+\begin{CompactList}\small\item\em Naively extend the tree by random node selection (not really an {\bf RRT} {\rm (p.\,\pageref{classRRT})}).\item\end{CompactList}\item 
+class {\bf RRT}
+\begin{CompactList}\small\item\em The base class, which generates a single Rapidly-exploring Random Tree.\item\end{CompactList}\item 
+class {\bf RRTBidir\-Balanced}
+\begin{CompactList}\small\item\em Balanced Bidirectional {\bf RRTCon\-Con} {\rm (p.\,\pageref{classRRTConCon})} planner.\item\end{CompactList}\item 
+class {\bf RRTCon}
+\begin{CompactList}\small\item\em Replaces Extend with Connect.\item\end{CompactList}\item 
+class {\bf RRTCon\-Con}
+\begin{CompactList}\small\item\em Use Connect for both exploration and connecting of trees.\item\end{CompactList}\item 
+class {\bf RRTDual}
+\begin{CompactList}\small\item\em Planners that grow trees from the initial and goal.\item\end{CompactList}\item 
+class {\bf RRTExt\-Con}
+\begin{CompactList}\small\item\em Use Connect instead of Extend to connect the two trees.\item\end{CompactList}\item 
+class {\bf RRTExt\-Ext}
+\begin{CompactList}\small\item\em Balance between growing trees toward each other and exploring.\item\end{CompactList}\item 
+class {\bf RRTGoal\-Bias}
+\begin{CompactList}\small\item\em With some probability, choose the goal instead of a random sample.\item\end{CompactList}\item 
+class {\bf RRTGoal\-Zoom}
+\begin{CompactList}\small\item\em Bias the samples toward the goal as the tree gets closer.\item\end{CompactList}\item 
+class {\bf RRTHull}
+\begin{CompactList}\small\item\em Grow a Rapidly-exploring Random Tree in a large disc.\item\end{CompactList}\item 
+class {\bf RRTPolar}
+\begin{CompactList}\small\item\em Gradually bias the sampling towards the goal.\item\end{CompactList}\end{CompactItemize}

@@ -1,0 +1,122 @@
+\section{MSLTree  Class Reference}
+\label{class_MSLTree}\index{MSLTree@{MSLTree}}
+{\tt \#include $<$tree.h$>$}
+
+\subsection*{Public Methods}
+\begin{CompactItemize}
+\item 
+{\bf MSLTree} ()
+\item 
+{\bf MSLTree} (const {\bf MSLVector} \&x)
+\item 
+{\bf $\sim$MSLTree} ()
+\item 
+void {\bf Make\-Root} (const {\bf MSLVector} \&x)
+\item 
+{\bf MSLNode}$\ast$ {\bf Extend} ({\bf MSLNode} $\ast$parent, const {\bf MSLVector} \&x, const {\bf MSLVector} \&u)
+\item 
+{\bf MSLNode}$\ast$ {\bf Extend} ({\bf MSLNode} $\ast$parent, const {\bf MSLVector} \&x, const {\bf MSLVector} \&u, double time)
+\item 
+list$<${\bf MSLNode}$\ast$$>$ {\bf Path\-To\-Root} ({\bf MSLNode} $\ast$n)
+\item 
+{\bf MSLNode}$\ast$ {\bf Find\-Node} (int nid)
+\item 
+list$<${\bf MSLNode}$\ast$$>$ {\bf Nodes} () const
+\item 
+{\bf MSLNode}$\ast$ {\bf Root} ()
+\item 
+int {\bf Size} ()
+\item 
+void {\bf Clear} ()
+\end{CompactItemize}
+\subsection*{Friends}
+\begin{CompactItemize}
+\item 
+istream\& {\bf operator$>$$>$} (istream \&is, MSLTree \&n)
+\item 
+ostream\& {\bf operator$<$$<$} (ostream \&os, const MSLTree \&n)
+\end{CompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{MSLTree@{MSLTree}!MSLTree@{MSLTree}}
+\index{MSLTree@{MSLTree}!MSLTree@{MSLTree}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}MSLTree::MSLTree ()}\label{class_MSLTree_a0}
+
+
+\index{MSLTree@{MSLTree}!MSLTree@{MSLTree}}
+\index{MSLTree@{MSLTree}!MSLTree@{MSLTree}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}MSLTree::MSLTree (const {\bf MSLVector} \& {\em x})}\label{class_MSLTree_a1}
+
+
+\index{MSLTree@{MSLTree}!~MSLTree@{$\sim$MSLTree}}
+\index{~MSLTree@{$\sim$MSLTree}!MSLTree@{MSLTree}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}MSLTree::$\sim$MSLTree ()}\label{class_MSLTree_a2}
+
+
+
+
+\subsection{Member Function Documentation}
+\index{MSLTree@{MSLTree}!Clear@{Clear}}
+\index{Clear@{Clear}!MSLTree@{MSLTree}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void MSLTree::Clear ()}\label{class_MSLTree_a11}
+
+
+\index{MSLTree@{MSLTree}!Extend@{Extend}}
+\index{Extend@{Extend}!MSLTree@{MSLTree}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf MSLNode}$\ast$ MSLTree::Extend ({\bf MSLNode} $\ast$ {\em parent}, const {\bf MSLVector} \& {\em x}, const {\bf MSLVector} \& {\em u}, double {\em time})}\label{class_MSLTree_a5}
+
+
+\index{MSLTree@{MSLTree}!Extend@{Extend}}
+\index{Extend@{Extend}!MSLTree@{MSLTree}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf MSLNode}$\ast$ MSLTree::Extend ({\bf MSLNode} $\ast$ {\em parent}, const {\bf MSLVector} \& {\em x}, const {\bf MSLVector} \& {\em u})}\label{class_MSLTree_a4}
+
+
+\index{MSLTree@{MSLTree}!FindNode@{FindNode}}
+\index{FindNode@{FindNode}!MSLTree@{MSLTree}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf MSLNode}$\ast$ MSLTree::Find\-Node (int {\em nid})}\label{class_MSLTree_a7}
+
+
+\index{MSLTree@{MSLTree}!MakeRoot@{MakeRoot}}
+\index{MakeRoot@{MakeRoot}!MSLTree@{MSLTree}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void MSLTree::Make\-Root (const {\bf MSLVector} \& {\em x})}\label{class_MSLTree_a3}
+
+
+\index{MSLTree@{MSLTree}!Nodes@{Nodes}}
+\index{Nodes@{Nodes}!MSLTree@{MSLTree}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}list$<$ {\bf MSLNode} $\ast$$>$ MSLTree::Nodes$<${\bf MSLNode}$\ast$$>$ () const\hspace{0.3cm}{\tt  [inline]}}\label{class_MSLTree_a8}
+
+
+\index{MSLTree@{MSLTree}!PathToRoot@{PathToRoot}}
+\index{PathToRoot@{PathToRoot}!MSLTree@{MSLTree}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}list$<${\bf MSLNode}$\ast$$>$ MSLTree::Path\-To\-Root ({\bf MSLNode} $\ast$ {\em n})}\label{class_MSLTree_a6}
+
+
+\index{MSLTree@{MSLTree}!Root@{Root}}
+\index{Root@{Root}!MSLTree@{MSLTree}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf MSLNode} $\ast$ MSLTree::Root ()\hspace{0.3cm}{\tt  [inline]}}\label{class_MSLTree_a9}
+
+
+\index{MSLTree@{MSLTree}!Size@{Size}}
+\index{Size@{Size}!MSLTree@{MSLTree}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int MSLTree::Size ()\hspace{0.3cm}{\tt  [inline]}}\label{class_MSLTree_a10}
+
+
+
+
+\subsection{Friends And Related Function Documentation}
+\index{MSLTree@{MSLTree}!operator<<@{operator$<$$<$}}
+\index{operator<<@{operator$<$$<$}!MSLTree@{MSLTree}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}ostream\& operator$<$$<$ (ostream \& {\em os}, const MSLTree \& {\em T})\hspace{0.3cm}{\tt  [friend]}}\label{class_MSLTree_l1}
+
+
+\index{MSLTree@{MSLTree}!operator>>@{operator$>$$>$}}
+\index{operator>>@{operator$>$$>$}!MSLTree@{MSLTree}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}istream\& operator$>$$>$ (istream \& {\em is}, MSLTree \& {\em T})\hspace{0.3cm}{\tt  [friend]}}\label{class_MSLTree_l0}
+
+
+
+
+The documentation for this class was generated from the following file:\begin{CompactItemize}
+\item 
+{\bf tree.h}\end{CompactItemize}

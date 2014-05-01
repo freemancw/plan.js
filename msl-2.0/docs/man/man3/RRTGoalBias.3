@@ -1,0 +1,67 @@
+.TH "RRTGoalBias" 3 "24 Jul 2003" "Motion Strategy Library" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+RRTGoalBias \- With some probability, choose the goal instead of a random sample. 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <rrt.h>\fP
+.PP
+Inherits \fBRRT\fP.
+.PP
+Inherited by \fBRCRRT\fP, and \fBRRTCon\fP.
+.PP
+.SS "Public Methods"
+
+.in +1c
+.ti -1c
+.RI "\fBRRTGoalBias\fP (\fBProblem\fP *p)"
+.br
+.ti -1c
+.RI "virtual \fB~RRTGoalBias\fP ()"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "double \fBGoalProb\fP"
+.br
+.in -1c
+.SS "Protected Methods"
+
+.in +1c
+.ti -1c
+.RI "virtual \fBMSLVector\fP \fBChooseState\fP ()"
+.br
+.RI "\fIPick a state using some sampling technique.\fP"
+.in -1c
+.SH "DETAILED DESCRIPTION"
+.PP 
+With some probability, choose the goal instead of a random sample.
+.PP
+Instead of choosing a state at random, this planner chooses with probability GoalProb the GoalState. It can be considered as a  biased coin toss in which heads yields the goal state, and tails yields a random sample. 
+.PP
+.SH "CONSTRUCTOR & DESTRUCTOR DOCUMENTATION"
+.PP 
+.SS "RRTGoalBias::RRTGoalBias (\fBProblem\fP * p)"
+.PP
+.SS "virtual RRTGoalBias::~RRTGoalBias ()\fC [inline, virtual]\fP"
+.PP
+.SH "MEMBER FUNCTION DOCUMENTATION"
+.PP 
+.SS "\fBMSLVector\fP RRTGoalBias::ChooseState ()\fC [protected, virtual]\fP"
+.PP
+Pick a state using some sampling technique.
+.PP
+Reimplemented from \fBRRT\fP.
+.SH "MEMBER DATA DOCUMENTATION"
+.PP 
+.SS "double RRTGoalBias::GoalProb"
+.PP
+
+
+.SH "AUTHOR"
+.PP 
+Generated automatically by Doxygen for Motion Strategy Library from the source code.

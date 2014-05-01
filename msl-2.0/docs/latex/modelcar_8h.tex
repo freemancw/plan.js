@@ -1,0 +1,22 @@
+\section{modelcar.h File Reference}
+\label{modelcar_8h}\index{modelcar.h@{modelcar.h}}
+{\tt \#include $<$list$>$}\par
+{\tt \#include $<$string$>$}\par
+{\tt \#include \char`\"{}model2d.h\char`\"{}}\par
+{\tt \#include \char`\"{}vector.h\char`\"{}}\par
+{\tt \#include \char`\"{}matrix.h\char`\"{}}\par
+\subsection*{Compounds}
+\begin{CompactItemize}
+\item 
+class {\bf Model\-Car}
+\begin{CompactList}\small\item\em The same model as {\bf Model2DRigid\-Car} {\rm (p.\,\pageref{classModel2DRigidCar})}.\item\end{CompactList}\item 
+class {\bf Model\-Car\-Dyn}
+\begin{CompactList}\small\item\em The same model as {\bf Model2DRigid\-Dyncar} {\rm (p.\,\pageref{classModel2DRigidDyncar})}.\item\end{CompactList}\item 
+class {\bf Model\-Car\-Dyn\-Ntire}
+\begin{CompactList}\small\item\em The same model as {\bf Model2DRigid\-Dyncar\-Ntire} {\rm (p.\,\pageref{classModel2DRigidDyncarNtire})}.\item\end{CompactList}\item 
+class {\bf Model\-Car\-Dyn\-Rollover}
+\begin{CompactList}\small\item\em A car model considering the rolling effect and the pressure on different tires of the car is different. If the pressure on one tire is 0, the car is considered rolling over. The pressure model of the tire is rigid such that pressure can change at instant time, which means: (1) It might be the reason that only forward {\bf RRT} {\rm (p.\,\pageref{classRRT})} tree works. (2) In the Select\-Input function, pressure has to be restored when to test new inputs.\item\end{CompactList}\item 
+class {\bf Model\-Car\-Dyn\-Smooth\-Rollover}
+\begin{CompactList}\small\item\em One more dimension than {\bf Model\-Car\-Dyn\-Rollover} {\rm (p.\,\pageref{classModelCarDynRollover})} considering the steering angle can only change continuously.\item\end{CompactList}\item 
+class {\bf Model\-Car\-Smooth}
+\begin{CompactList}\small\item\em The same model as {\bf Model2DRigid\-Car\-Smooth} {\rm (p.\,\pageref{classModel2DRigidCarSmooth})}.\item\end{CompactList}\end{CompactItemize}

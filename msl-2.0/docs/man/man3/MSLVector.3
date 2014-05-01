@@ -1,0 +1,214 @@
+.TH "MSLVector" 3 "24 Jul 2003" "Motion Strategy Library" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+MSLVector \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <vector.h>\fP
+.PP
+.SS "Public Methods"
+
+.in +1c
+.ti -1c
+.RI "\fBMSLVector\fP ()"
+.br
+.ti -1c
+.RI "\fBMSLVector\fP (int d)"
+.br
+.ti -1c
+.RI "\fBMSLVector\fP (double a, double b)"
+.br
+.ti -1c
+.RI "\fBMSLVector\fP (double a, double b, double c)"
+.br
+.ti -1c
+.RI "\fBMSLVector\fP (const MSLVector &w, int prec)"
+.br
+.ti -1c
+.RI "\fBMSLVector\fP (const MSLVector &)"
+.br
+.ti -1c
+.RI "\fB~MSLVector\fP ()"
+.br
+.ti -1c
+.RI "MSLVector & \fBoperator=\fP (const MSLVector &)"
+.br
+.ti -1c
+.RI "int \fBdim\fP () const"
+.br
+.ti -1c
+.RI "double & \fBoperator[]\fP (int i)"
+.br
+.ti -1c
+.RI "double \fBoperator[]\fP (int) const"
+.br
+.ti -1c
+.RI "double \fBhcoord\fP (int i) const"
+.br
+.ti -1c
+.RI "double \fBcoord\fP (int i) const"
+.br
+.ti -1c
+.RI "double \fBsqr_length\fP () const"
+.br
+.ti -1c
+.RI "double \fBlength\fP () const"
+.br
+.ti -1c
+.RI "MSLVector \fBnorm\fP () const"
+.br
+.ti -1c
+.RI "double \fBangle\fP (const MSLVector &w) const"
+.br
+.ti -1c
+.RI "MSLVector \fBrotate90\fP () const"
+.br
+.ti -1c
+.RI "MSLVector \fBrotate\fP (double a) const"
+.br
+.ti -1c
+.RI "MSLVector & \fBoperator+=\fP (const MSLVector &)"
+.br
+.ti -1c
+.RI "MSLVector & \fBoperator-=\fP (const MSLVector &)"
+.br
+.ti -1c
+.RI "MSLVector \fBoperator+\fP (const MSLVector &v1) const"
+.br
+.ti -1c
+.RI "MSLVector \fBoperator-\fP (const MSLVector &v1) const"
+.br
+.ti -1c
+.RI "double \fBoperator *\fP (const MSLVector &v1) const"
+.br
+.ti -1c
+.RI "MSLVector \fBoperator *\fP (double r) const"
+.br
+.ti -1c
+.RI "MSLVector \fBoperator-\fP () const"
+.br
+.ti -1c
+.RI "MSLVector \fBoperator/\fP (double) const"
+.br
+.ti -1c
+.RI "bool \fBoperator==\fP (const MSLVector &w) const"
+.br
+.ti -1c
+.RI "bool \fBoperator!=\fP (const MSLVector &w) const"
+.br
+.ti -1c
+.RI "void \fBprint\fP (ostream &O)"
+.br
+.ti -1c
+.RI "void \fBprint\fP ()"
+.br
+.ti -1c
+.RI "void \fBread\fP (istream &I)"
+.br
+.ti -1c
+.RI "void \fBread\fP ()"
+.br
+.in -1c
+.SS "Friends"
+
+.in +1c
+.ti -1c
+.RI "class \fBMSLMatrix\fP"
+.br
+.ti -1c
+.RI "MSLVector \fBoperator *\fP (double f, const MSLVector &v)"
+.br
+.ti -1c
+.RI "ostream & \fBoperator<<\fP (ostream &O, const MSLVector &v)"
+.br
+.ti -1c
+.RI "istream & \fBoperator>>\fP (istream &I, MSLVector &v)"
+.br
+.in -1c
+.SH "CONSTRUCTOR & DESTRUCTOR DOCUMENTATION"
+.PP 
+.SS "MSLVector::MSLVector ()"
+.PP
+.SS "MSLVector::MSLVector (int d)"
+.PP
+.SS "MSLVector::MSLVector (double a, double b)"
+.PP
+.SS "MSLVector::MSLVector (double a, double b, double c)"
+.PP
+.SS "MSLVector::MSLVector (const MSLVector & w, int prec)"
+.PP
+.SS "MSLVector::MSLVector (const MSLVector &)"
+.PP
+.SS "MSLVector::~MSLVector ()"
+.PP
+.SH "MEMBER FUNCTION DOCUMENTATION"
+.PP 
+.SS "double MSLVector::angle (const MSLVector & w) const"
+.PP
+.SS "double MSLVector::coord (int i) const\fC [inline]\fP"
+.PP
+.SS "int MSLVector::dim () const\fC [inline]\fP"
+.PP
+.SS "double MSLVector::hcoord (int i) const\fC [inline]\fP"
+.PP
+.SS "double MSLVector::length () const"
+.PP
+.SS "MSLVector MSLVector::norm () const\fC [inline]\fP"
+.PP
+.SS "MSLVector MSLVector::operator * (double r) const"
+.PP
+.SS "double MSLVector::operator * (const MSLVector & v1) const"
+.PP
+.SS "bool MSLVector::operator!= (const MSLVector & w) const\fC [inline]\fP"
+.PP
+.SS "MSLVector MSLVector::operator+ (const MSLVector & v1) const"
+.PP
+.SS "MSLVector & MSLVector::operator+= (const MSLVector &)"
+.PP
+.SS "MSLVector MSLVector::operator- () const"
+.PP
+.SS "MSLVector MSLVector::operator- (const MSLVector & v1) const"
+.PP
+.SS "MSLVector & MSLVector::operator-= (const MSLVector &)"
+.PP
+.SS "MSLVector MSLVector::operator/ (double) const"
+.PP
+.SS "MSLVector & MSLVector::operator= (const MSLVector &)"
+.PP
+.SS "bool MSLVector::operator== (const MSLVector & w) const"
+.PP
+.SS "double MSLVector::operator[] (int) const"
+.PP
+.SS "double & MSLVector::operator[] (int i)"
+.PP
+.SS "void MSLVector::print ()\fC [inline]\fP"
+.PP
+.SS "void MSLVector::print (ostream & O)"
+.PP
+.SS "void MSLVector::read ()\fC [inline]\fP"
+.PP
+.SS "void MSLVector::read (istream & I)"
+.PP
+.SS "MSLVector MSLVector::rotate (double a) const"
+.PP
+.SS "MSLVector MSLVector::rotate90 () const"
+.PP
+.SS "double MSLVector::sqr_length () const"
+.PP
+.SH "FRIENDS AND RELATED FUNCTION DOCUMENTATION"
+.PP 
+.SS "friend class MSLMatrix\fC [friend]\fP"
+.PP
+.SS "MSLVector operator * (double f, const MSLVector & v)\fC [friend]\fP"
+.PP
+.SS "ostream& operator<< (ostream & O, const MSLVector & v)\fC [friend]\fP"
+.PP
+.SS "istream& operator>> (istream & I, MSLVector & v)\fC [friend]\fP"
+.PP
+
+
+.SH "AUTHOR"
+.PP 
+Generated automatically by Doxygen for Motion Strategy Library from the source code.

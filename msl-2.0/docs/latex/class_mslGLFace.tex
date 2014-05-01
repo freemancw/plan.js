@@ -1,0 +1,179 @@
+\section{msl\-GLFace  Class Reference}
+\label{class_mslGLFace}\index{mslGLFace@{msl\-GLFace}}
+An internal class, used only for {\bf Render\-GL} {\rm (p.\,\pageref{class_RenderGL})}. 
+
+
+{\tt \#include $<$renderglobj.h$>$}
+
+\subsection*{Public Methods}
+\begin{CompactItemize}
+\item 
+{\bf msl\-GLFace} ()
+\item 
+{\bf $\sim$msl\-GLFace} ()
+\item 
+void {\bf Add\-Vertex} (const msl\-GLVertex \&ver)
+\item 
+void {\bf Add\-Normal} (const msl\-GLNormal \&nor)
+\item 
+void {\bf Add\-Tex\-Coord} (const msl\-GLTex\-Coord \&tex)
+\item 
+void {\bf Add\-Vertex} (const {\bf MSLVector} \&ver)
+\item 
+void {\bf Add\-Normal} (const {\bf MSLVector} \&nor)
+\item 
+void {\bf Add\-Tex\-Coord} (const {\bf MSLVector} \&tex)
+\item 
+void {\bf Clear} ()
+\item 
+void {\bf Print\-Vertex} ()
+\item 
+void {\bf Draw\-Face} ()
+\end{CompactItemize}
+\subsection*{Public Attributes}
+\begin{CompactItemize}
+\item 
+int {\bf Number\-Of\-Point}
+\item 
+int {\bf Number\-Of\-Normal}
+\item 
+int {\bf Number\-Of\-Tex\-Coord}
+\item 
+msl\-GLVertex$\ast$ {\bf Vertice\-Coord}
+\item 
+msl\-GLNormal$\ast$ {\bf Normal\-Coord}
+\item 
+msl\-GLTex\-Coord$\ast$ {\bf Texture\-Coord}
+\item 
+int {\bf Normal\-On}
+\item 
+int {\bf Texture\-On}
+\item 
+int {\bf Color\-On}
+\item 
+int {\bf Material\-ID}
+\end{CompactItemize}
+
+
+\subsection{Detailed Description}
+An internal class, used only for {\bf Render\-GL} {\rm (p.\,\pageref{class_RenderGL})}.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{mslGLFace@{msl\-GLFace}!mslGLFace@{mslGLFace}}
+\index{mslGLFace@{mslGLFace}!mslGLFace@{msl\-GLFace}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}msl\-GLFace::msl\-GLFace ()}\label{class_mslGLFace_a0}
+
+
+\index{mslGLFace@{msl\-GLFace}!~mslGLFace@{$\sim$mslGLFace}}
+\index{~mslGLFace@{$\sim$mslGLFace}!mslGLFace@{msl\-GLFace}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}msl\-GLFace::$\sim$msl\-GLFace ()}\label{class_mslGLFace_a1}
+
+
+
+
+\subsection{Member Function Documentation}
+\index{mslGLFace@{msl\-GLFace}!AddNormal@{AddNormal}}
+\index{AddNormal@{AddNormal}!mslGLFace@{msl\-GLFace}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void msl\-GLFace::Add\-Normal (const {\bf MSLVector} \& {\em nor})}\label{class_mslGLFace_a6}
+
+
+\index{mslGLFace@{msl\-GLFace}!AddNormal@{AddNormal}}
+\index{AddNormal@{AddNormal}!mslGLFace@{msl\-GLFace}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void msl\-GLFace::Add\-Normal (const msl\-GLNormal \& {\em nor})}\label{class_mslGLFace_a3}
+
+
+\index{mslGLFace@{msl\-GLFace}!AddTexCoord@{AddTexCoord}}
+\index{AddTexCoord@{AddTexCoord}!mslGLFace@{msl\-GLFace}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void msl\-GLFace::Add\-Tex\-Coord (const {\bf MSLVector} \& {\em tex})}\label{class_mslGLFace_a7}
+
+
+\index{mslGLFace@{msl\-GLFace}!AddTexCoord@{AddTexCoord}}
+\index{AddTexCoord@{AddTexCoord}!mslGLFace@{msl\-GLFace}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void msl\-GLFace::Add\-Tex\-Coord (const msl\-GLTex\-Coord \& {\em tex})}\label{class_mslGLFace_a4}
+
+
+\index{mslGLFace@{msl\-GLFace}!AddVertex@{AddVertex}}
+\index{AddVertex@{AddVertex}!mslGLFace@{msl\-GLFace}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void msl\-GLFace::Add\-Vertex (const {\bf MSLVector} \& {\em ver})}\label{class_mslGLFace_a5}
+
+
+\index{mslGLFace@{msl\-GLFace}!AddVertex@{AddVertex}}
+\index{AddVertex@{AddVertex}!mslGLFace@{msl\-GLFace}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void msl\-GLFace::Add\-Vertex (const msl\-GLVertex \& {\em ver})}\label{class_mslGLFace_a2}
+
+
+\index{mslGLFace@{msl\-GLFace}!Clear@{Clear}}
+\index{Clear@{Clear}!mslGLFace@{msl\-GLFace}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void msl\-GLFace::Clear ()}\label{class_mslGLFace_a8}
+
+
+\index{mslGLFace@{msl\-GLFace}!DrawFace@{DrawFace}}
+\index{DrawFace@{DrawFace}!mslGLFace@{msl\-GLFace}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void msl\-GLFace::Draw\-Face ()}\label{class_mslGLFace_a10}
+
+
+\index{mslGLFace@{msl\-GLFace}!PrintVertex@{PrintVertex}}
+\index{PrintVertex@{PrintVertex}!mslGLFace@{msl\-GLFace}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void msl\-GLFace::Print\-Vertex ()}\label{class_mslGLFace_a9}
+
+
+
+
+\subsection{Member Data Documentation}
+\index{mslGLFace@{msl\-GLFace}!ColorOn@{ColorOn}}
+\index{ColorOn@{ColorOn}!mslGLFace@{msl\-GLFace}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int msl\-GLFace::Color\-On}\label{class_mslGLFace_m8}
+
+
+\index{mslGLFace@{msl\-GLFace}!MaterialID@{MaterialID}}
+\index{MaterialID@{MaterialID}!mslGLFace@{msl\-GLFace}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int msl\-GLFace::Material\-ID}\label{class_mslGLFace_m9}
+
+
+\index{mslGLFace@{msl\-GLFace}!NormalCoord@{NormalCoord}}
+\index{NormalCoord@{NormalCoord}!mslGLFace@{msl\-GLFace}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}msl\-GLNormal$\ast$ msl\-GLFace::Normal\-Coord}\label{class_mslGLFace_m4}
+
+
+\index{mslGLFace@{msl\-GLFace}!NormalOn@{NormalOn}}
+\index{NormalOn@{NormalOn}!mslGLFace@{msl\-GLFace}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int msl\-GLFace::Normal\-On}\label{class_mslGLFace_m6}
+
+
+\index{mslGLFace@{msl\-GLFace}!NumberOfNormal@{NumberOfNormal}}
+\index{NumberOfNormal@{NumberOfNormal}!mslGLFace@{msl\-GLFace}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int msl\-GLFace::Number\-Of\-Normal}\label{class_mslGLFace_m1}
+
+
+\index{mslGLFace@{msl\-GLFace}!NumberOfPoint@{NumberOfPoint}}
+\index{NumberOfPoint@{NumberOfPoint}!mslGLFace@{msl\-GLFace}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int msl\-GLFace::Number\-Of\-Point}\label{class_mslGLFace_m0}
+
+
+\index{mslGLFace@{msl\-GLFace}!NumberOfTexCoord@{NumberOfTexCoord}}
+\index{NumberOfTexCoord@{NumberOfTexCoord}!mslGLFace@{msl\-GLFace}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int msl\-GLFace::Number\-Of\-Tex\-Coord}\label{class_mslGLFace_m2}
+
+
+\index{mslGLFace@{msl\-GLFace}!TextureCoord@{TextureCoord}}
+\index{TextureCoord@{TextureCoord}!mslGLFace@{msl\-GLFace}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}msl\-GLTex\-Coord$\ast$ msl\-GLFace::Texture\-Coord}\label{class_mslGLFace_m5}
+
+
+\index{mslGLFace@{msl\-GLFace}!TextureOn@{TextureOn}}
+\index{TextureOn@{TextureOn}!mslGLFace@{msl\-GLFace}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int msl\-GLFace::Texture\-On}\label{class_mslGLFace_m7}
+
+
+\index{mslGLFace@{msl\-GLFace}!VerticeCoord@{VerticeCoord}}
+\index{VerticeCoord@{VerticeCoord}!mslGLFace@{msl\-GLFace}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}msl\-GLVertex$\ast$ msl\-GLFace::Vertice\-Coord}\label{class_mslGLFace_m3}
+
+
+
+
+The documentation for this class was generated from the following file:\begin{CompactItemize}
+\item 
+{\bf renderglobj.h}\end{CompactItemize}

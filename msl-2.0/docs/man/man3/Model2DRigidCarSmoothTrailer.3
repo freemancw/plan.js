@@ -1,0 +1,101 @@
+.TH "Model2DRigidCarSmoothTrailer" 3 "24 Jul 2003" "Motion Strategy Library" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Model2DRigidCarSmoothTrailer \- A rigid car-like robot with continuous steering angles and a trailer. The trailer models are taken from Murray and Sastry, Trans. Automatic Control, Vol 38, No 5, 1993, pp. 700-716. 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <model2d.h>\fP
+.PP
+Inherits \fBModel2DRigidCarSmooth\fP.
+.PP
+Inherited by \fBModel2DRigidCarSmooth2Trailers\fP.
+.PP
+.SS "Public Methods"
+
+.in +1c
+.ti -1c
+.RI "\fBModel2DRigidCarSmoothTrailer\fP (string path)"
+.br
+.ti -1c
+.RI "virtual \fB~Model2DRigidCarSmoothTrailer\fP ()"
+.br
+.ti -1c
+.RI "virtual \fBMSLVector\fP \fBStateTransitionEquation\fP (const \fBMSLVector\fP &\fBx\fP, const \fBMSLVector\fP &u)"
+.br
+.RI "\fIThe state transition equation, or equations of motion, xdot=f(x,u).\fP"
+.ti -1c
+.RI "virtual double \fBMetric\fP (const \fBMSLVector\fP &x1, const \fBMSLVector\fP &x2)"
+.br
+.RI "\fIA distance metric, which is Euclidean in the base class.\fP"
+.ti -1c
+.RI "virtual \fBMSLVector\fP \fBStateToConfiguration\fP (const \fBMSLVector\fP &\fBx\fP)"
+.br
+.RI "\fIA method that converts a \fBModel\fP state in to a \fBGeom\fP configuration.\fP"
+.ti -1c
+.RI "virtual bool \fBSatisfied\fP (const \fBMSLVector\fP &\fBx\fP)"
+.br
+.RI "\fITest whether global state-space constraints are satisfied.\fP"
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "double \fBHitchLength\fP"
+.br
+.ti -1c
+.RI "double \fBHitchMaxAngle\fP"
+.br
+.in -1c
+.SH "DETAILED DESCRIPTION"
+.PP 
+A rigid car-like robot with continuous steering angles and a trailer. The trailer models are taken from Murray and Sastry, Trans. Automatic Control, Vol 38, No 5, 1993, pp. 700-716.
+.PP
+.SH "CONSTRUCTOR & DESTRUCTOR DOCUMENTATION"
+.PP 
+.SS "Model2DRigidCarSmoothTrailer::Model2DRigidCarSmoothTrailer (string path)"
+.PP
+.SS "virtual Model2DRigidCarSmoothTrailer::~Model2DRigidCarSmoothTrailer ()\fC [inline, virtual]\fP"
+.PP
+.SH "MEMBER FUNCTION DOCUMENTATION"
+.PP 
+.SS "double Model2DRigidCarSmoothTrailer::Metric (const \fBMSLVector\fP & x1, const \fBMSLVector\fP & x2)\fC [virtual]\fP"
+.PP
+A distance metric, which is Euclidean in the base class.
+.PP
+Reimplemented from \fBModel2DRigidCarSmooth\fP.
+.PP
+Reimplemented in \fBModel2DRigidCarSmooth2Trailers\fP.
+.SS "bool Model2DRigidCarSmoothTrailer::Satisfied (const \fBMSLVector\fP & x)\fC [virtual]\fP"
+.PP
+Test whether global state-space constraints are satisfied.
+.PP
+Reimplemented from \fBModel2DRigidCarSmooth\fP.
+.PP
+Reimplemented in \fBModel2DRigidCarSmooth2Trailers\fP.
+.SS "\fBMSLVector\fP Model2DRigidCarSmoothTrailer::StateToConfiguration (const \fBMSLVector\fP & x)\fC [virtual]\fP"
+.PP
+A method that converts a \fBModel\fP state in to a \fBGeom\fP configuration.
+.PP
+Reimplemented from \fBModel2DRigidCarSmooth\fP.
+.PP
+Reimplemented in \fBModel2DRigidCarSmooth2Trailers\fP.
+.SS "\fBMSLVector\fP Model2DRigidCarSmoothTrailer::StateTransitionEquation (const \fBMSLVector\fP & x, const \fBMSLVector\fP & u)\fC [virtual]\fP"
+.PP
+The state transition equation, or equations of motion, xdot=f(x,u).
+.PP
+Reimplemented from \fBModel2DRigidCarSmooth\fP.
+.PP
+Reimplemented in \fBModel2DRigidCarSmooth2Trailers\fP.
+.SH "MEMBER DATA DOCUMENTATION"
+.PP 
+.SS "double Model2DRigidCarSmoothTrailer::HitchLength"
+.PP
+.SS "double Model2DRigidCarSmoothTrailer::HitchMaxAngle"
+.PP
+
+
+.SH "AUTHOR"
+.PP 
+Generated automatically by Doxygen for Motion Strategy Library from the source code.

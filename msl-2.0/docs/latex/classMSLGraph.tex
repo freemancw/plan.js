@@ -1,0 +1,138 @@
+\section{MSLGraph  Class Reference}
+\label{classMSLGraph}\index{MSLGraph@{MSLGraph}}
+{\tt \#include $<$graph.h$>$}
+
+\subsection*{Public Methods}
+\begin{CompactItemize}
+\item 
+{\bf MSLGraph} ()
+\item 
+virtual {\bf $\sim$MSLGraph} ()
+\item 
+{\bf MSLVertex} $\ast$ {\bf Add\-Vertex} (const {\bf MSLVector} \&{\bf x})
+\item 
+{\bf MSLEdge} $\ast$ {\bf Add\-Edge} ({\bf MSLVertex} $\ast$v1, {\bf MSLVertex} $\ast$v2)
+\item 
+{\bf MSLEdge} $\ast$ {\bf Add\-Edge} ({\bf MSLVertex} $\ast$v1, {\bf MSLVertex} $\ast$v2, double time)
+\item 
+{\bf MSLEdge} $\ast$ {\bf Add\-Edge} ({\bf MSLVertex} $\ast$v1, {\bf MSLVertex} $\ast$v2, const {\bf MSLVector} \&u, double time)
+\item 
+bool {\bf Is\-Edge} ({\bf MSLVertex} $\ast$v1, {\bf MSLVertex} $\ast$v2)
+\item 
+{\bf MSLVertex} $\ast$ {\bf Find\-Vertex} (int nid)
+\item 
+list$<$ {\bf MSLVertex} $\ast$ $>$ {\bf Vertices} () const
+\item 
+list$<$ {\bf MSLEdge} $\ast$ $>$ {\bf Edges} () const
+\item 
+int {\bf Size} ()
+\item 
+int {\bf Num\-Vertices} () const
+\item 
+int {\bf Num\-Edges} () const
+\item 
+void {\bf Clear} ()
+\end{CompactItemize}
+\subsection*{Friends}
+\begin{CompactItemize}
+\item 
+istream \& {\bf operator$>$$>$} (istream \&is, MSLGraph \&n)
+\item 
+ostream \& {\bf operator$<$$<$} (ostream \&os, const MSLGraph \&n)
+\end{CompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{MSLGraph@{MSLGraph}!MSLGraph@{MSLGraph}}
+\index{MSLGraph@{MSLGraph}!MSLGraph@{MSLGraph}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}MSLGraph::MSLGraph ()}\label{classMSLGraph_a0}
+
+
+\index{MSLGraph@{MSLGraph}!~MSLGraph@{$\sim$MSLGraph}}
+\index{~MSLGraph@{$\sim$MSLGraph}!MSLGraph@{MSLGraph}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}MSLGraph::$\sim$MSLGraph ()\hspace{0.3cm}{\tt  [virtual]}}\label{classMSLGraph_a1}
+
+
+
+
+\subsection{Member Function Documentation}
+\index{MSLGraph@{MSLGraph}!AddEdge@{AddEdge}}
+\index{AddEdge@{AddEdge}!MSLGraph@{MSLGraph}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf MSLEdge} $\ast$ MSLGraph::Add\-Edge ({\bf MSLVertex} $\ast$ {\em v1}, {\bf MSLVertex} $\ast$ {\em v2}, const {\bf MSLVector} \& {\em u}, double {\em time})}\label{classMSLGraph_a5}
+
+
+\index{MSLGraph@{MSLGraph}!AddEdge@{AddEdge}}
+\index{AddEdge@{AddEdge}!MSLGraph@{MSLGraph}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf MSLEdge} $\ast$ MSLGraph::Add\-Edge ({\bf MSLVertex} $\ast$ {\em v1}, {\bf MSLVertex} $\ast$ {\em v2}, double {\em time})}\label{classMSLGraph_a4}
+
+
+\index{MSLGraph@{MSLGraph}!AddEdge@{AddEdge}}
+\index{AddEdge@{AddEdge}!MSLGraph@{MSLGraph}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf MSLEdge} $\ast$ MSLGraph::Add\-Edge ({\bf MSLVertex} $\ast$ {\em v1}, {\bf MSLVertex} $\ast$ {\em v2})}\label{classMSLGraph_a3}
+
+
+\index{MSLGraph@{MSLGraph}!AddVertex@{AddVertex}}
+\index{AddVertex@{AddVertex}!MSLGraph@{MSLGraph}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf MSLVertex} $\ast$ MSLGraph::Add\-Vertex (const {\bf MSLVector} \& {\em x})}\label{classMSLGraph_a2}
+
+
+\index{MSLGraph@{MSLGraph}!Clear@{Clear}}
+\index{Clear@{Clear}!MSLGraph@{MSLGraph}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void MSLGraph::Clear ()}\label{classMSLGraph_a13}
+
+
+\index{MSLGraph@{MSLGraph}!Edges@{Edges}}
+\index{Edges@{Edges}!MSLGraph@{MSLGraph}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}list$<${\bf MSLEdge}$\ast$$>$ MSLGraph::Edges () const\hspace{0.3cm}{\tt  [inline]}}\label{classMSLGraph_a9}
+
+
+\index{MSLGraph@{MSLGraph}!FindVertex@{FindVertex}}
+\index{FindVertex@{FindVertex}!MSLGraph@{MSLGraph}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf MSLVertex} $\ast$ MSLGraph::Find\-Vertex (int {\em nid})}\label{classMSLGraph_a7}
+
+
+\index{MSLGraph@{MSLGraph}!IsEdge@{IsEdge}}
+\index{IsEdge@{IsEdge}!MSLGraph@{MSLGraph}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}bool MSLGraph::Is\-Edge ({\bf MSLVertex} $\ast$ {\em v1}, {\bf MSLVertex} $\ast$ {\em v2})}\label{classMSLGraph_a6}
+
+
+\index{MSLGraph@{MSLGraph}!NumEdges@{NumEdges}}
+\index{NumEdges@{NumEdges}!MSLGraph@{MSLGraph}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int MSLGraph::Num\-Edges () const\hspace{0.3cm}{\tt  [inline]}}\label{classMSLGraph_a12}
+
+
+\index{MSLGraph@{MSLGraph}!NumVertices@{NumVertices}}
+\index{NumVertices@{NumVertices}!MSLGraph@{MSLGraph}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int MSLGraph::Num\-Vertices () const\hspace{0.3cm}{\tt  [inline]}}\label{classMSLGraph_a11}
+
+
+\index{MSLGraph@{MSLGraph}!Size@{Size}}
+\index{Size@{Size}!MSLGraph@{MSLGraph}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int MSLGraph::Size ()\hspace{0.3cm}{\tt  [inline]}}\label{classMSLGraph_a10}
+
+
+\index{MSLGraph@{MSLGraph}!Vertices@{Vertices}}
+\index{Vertices@{Vertices}!MSLGraph@{MSLGraph}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}list$<${\bf MSLVertex}$\ast$$>$ MSLGraph::Vertices () const\hspace{0.3cm}{\tt  [inline]}}\label{classMSLGraph_a8}
+
+
+
+
+\subsection{Friends And Related Function Documentation}
+\index{MSLGraph@{MSLGraph}!operator<<@{operator$<$$<$}}
+\index{operator<<@{operator$<$$<$}!MSLGraph@{MSLGraph}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}ostream\& operator$<$$<$ (ostream \& {\em os}, const MSLGraph \& {\em n})\hspace{0.3cm}{\tt  [friend]}}\label{classMSLGraph_l1}
+
+
+\index{MSLGraph@{MSLGraph}!operator>>@{operator$>$$>$}}
+\index{operator>>@{operator$>$$>$}!MSLGraph@{MSLGraph}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}istream\& operator$>$$>$ (istream \& {\em is}, MSLGraph \& {\em n})\hspace{0.3cm}{\tt  [friend]}}\label{classMSLGraph_l0}
+
+
+
+
+The documentation for this class was generated from the following files:\begin{CompactItemize}
+\item 
+{\bf graph.h}\item 
+{\bf graph.C}\item 
+{\bf graph\_\-old.C}\end{CompactItemize}

@@ -1,0 +1,115 @@
+.TH "Geom" 3 "24 Jul 2003" "Motion Strategy Library" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Geom \- Geometric models and collision detection methods. 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <geom.h>\fP
+.PP
+Inherited by \fBGeomNone\fP, and \fBGeomPQP\fP.
+.PP
+.SS "Public Methods"
+
+.in +1c
+.ti -1c
+.RI "\fBGeom\fP (string path)"
+.br
+.RI "\fIEmpty constructor in base class.\fP"
+.ti -1c
+.RI "virtual \fB~Geom\fP ()"
+.br
+.RI "\fIEmpty destructor.\fP"
+.ti -1c
+.RI "virtual bool \fBCollisionFree\fP (const \fBMSLVector\fP &q)=0"
+.br
+.RI "\fIReturn true if the robot(s) and obstacles are not in collision.\fP"
+.ti -1c
+.RI "virtual double \fBDistanceComp\fP (const \fBMSLVector\fP &q)=0"
+.br
+.RI "\fICompute the distance of the closest point on the robot to the obstacle region.\fP"
+.ti -1c
+.RI "virtual \fBMSLVector\fP \fBConfigurationDifference\fP (const \fBMSLVector\fP &q1, const \fBMSLVector\fP &q2)"
+.br
+.RI "\fICompute a \fBMSLVector\fP based on q2-q1. In R^n, the configurations are simply subtracted to make the \fBMSLVector\fP. This method exists to make things work correctly for other configuration-space topologies.\fP"
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "int \fBNumBodies\fP"
+.br
+.RI "\fIThe number of rigid bodies in the geometry model.\fP"
+.ti -1c
+.RI "int \fBGeomDim\fP"
+.br
+.RI "\fIThe dimension of the world geometry: 2 or 3.\fP"
+.ti -1c
+.RI "\fBMSLVector\fP \fBMaxDeviates\fP"
+.br
+.RI "\fIMaximum displacement of geometry with respect to change in each variable.\fP"
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "string \fBFilePath\fP"
+.br
+.in -1c
+.SH "DETAILED DESCRIPTION"
+.PP 
+Geometric models and collision detection methods.
+.PP
+These classes define the geometric representations of all obstacles in the world, and of each part of the robot. The methods allow planning algorithms to determine whether any of the robot parts are in collision with each other or with obstacles in the world.
+.PP
+A configuration vector specifies the positions and orientation of each rigid body. 
+.PP
+.SH "CONSTRUCTOR & DESTRUCTOR DOCUMENTATION"
+.PP 
+.SS "Geom::Geom (string path)"
+.PP
+Empty constructor in base class.
+.PP
+.SS "virtual Geom::~Geom ()\fC [inline, virtual]\fP"
+.PP
+Empty destructor.
+.PP
+.SH "MEMBER FUNCTION DOCUMENTATION"
+.PP 
+.SS "virtual bool Geom::CollisionFree (const \fBMSLVector\fP & q)\fC [pure virtual]\fP"
+.PP
+Return true if the robot(s) and obstacles are not in collision.
+.PP
+Implemented in \fBGeomNone\fP.
+.SS "\fBMSLVector\fP Geom::ConfigurationDifference (const \fBMSLVector\fP & q1, const \fBMSLVector\fP & q2)\fC [virtual]\fP"
+.PP
+Compute a \fBMSLVector\fP based on q2-q1. In R^n, the configurations are simply subtracted to make the \fBMSLVector\fP. This method exists to make things work correctly for other configuration-space topologies.
+.PP
+Reimplemented in \fBGeomPQP2DRigid\fP.
+.SS "virtual double Geom::DistanceComp (const \fBMSLVector\fP & q)\fC [pure virtual]\fP"
+.PP
+Compute the distance of the closest point on the robot to the obstacle region.
+.PP
+Implemented in \fBGeomNone\fP.
+.SH "MEMBER DATA DOCUMENTATION"
+.PP 
+.SS "string Geom::FilePath\fC [protected]\fP"
+.PP
+.SS "int Geom::GeomDim"
+.PP
+The dimension of the world geometry: 2 or 3.
+.PP
+.SS "\fBMSLVector\fP Geom::MaxDeviates"
+.PP
+Maximum displacement of geometry with respect to change in each variable.
+.PP
+.SS "int Geom::NumBodies"
+.PP
+The number of rigid bodies in the geometry model.
+.PP
+
+
+.SH "AUTHOR"
+.PP 
+Generated automatically by Doxygen for Motion Strategy Library from the source code.

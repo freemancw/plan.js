@@ -1,0 +1,57 @@
+.TH "graph.h" 3 "24 Jul 2003" "Motion Strategy Library" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+graph.h \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'vector.h'\fP
+.br
+\fC#include 'mslio.h'\fP
+.br
+.SS "Compounds"
+
+.in +1c
+.ti -1c
+.RI "class \fBMSLEdge\fP"
+.br
+.ti -1c
+.RI "class \fBMSLGraph\fP"
+.br
+.ti -1c
+.RI "class \fBMSLVertex\fP"
+.br
+.ti -1c
+.RI "class \fBMSLVertexGreater\fP"
+.br
+.RI "\fIThis is a comparison object to be used for STL-based sorting.\fP"
+.ti -1c
+.RI "class \fBMSLVertexLess\fP"
+.br
+.RI "\fIThis is a comparison object to be used for STL-based sorting.\fP"
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "ostream & \fBoperator<<\fP (ostream &os, const \fBMSLEdge\fP &e)"
+.br
+.ti -1c
+.RI "istream & \fBoperator>>\fP (istream &is, \fBMSLGraph\fP &n)"
+.br
+.ti -1c
+.RI "ostream & \fBoperator<<\fP (ostream &os, const \fBMSLGraph\fP &n)"
+.br
+.in -1c
+.SH "FUNCTION DOCUMENTATION"
+.PP 
+.SS "ostream& operator<< (ostream & os, const \fBMSLGraph\fP & n)"
+.PP
+.SS "ostream& operator<< (ostream & os, const \fBMSLEdge\fP & e)"
+.PP
+.SS "istream& operator>> (istream & is, \fBMSLGraph\fP & n)"
+.PP
+.SH "AUTHOR"
+.PP 
+Generated automatically by Doxygen for Motion Strategy Library from the source code.

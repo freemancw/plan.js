@@ -1,0 +1,77 @@
+.TH "ModelND" 3 "24 Jul 2003" "Motion Strategy Library" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ModelND \- Simple axis-parallel motions in an N-dimensional space. 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <modelmisc.h>\fP
+.PP
+Inherits \fBModel\fP.
+.PP
+.SS "Public Methods"
+
+.in +1c
+.ti -1c
+.RI "\fBModelND\fP (string path)"
+.br
+.ti -1c
+.RI "virtual \fB~ModelND\fP ()"
+.br
+.ti -1c
+.RI "virtual \fBMSLVector\fP \fBStateToConfiguration\fP (const \fBMSLVector\fP &\fBx\fP)"
+.br
+.RI "\fIA method that converts a \fBModel\fP state in to a \fBGeom\fP configuration.\fP"
+.ti -1c
+.RI "virtual \fBMSLVector\fP \fBIntegrate\fP (const \fBMSLVector\fP &\fBx\fP, const \fBMSLVector\fP &u, const double &h)"
+.br
+.RI "\fIPerform integration from state x, using input u, over time step h.\fP"
+.ti -1c
+.RI "virtual \fBMSLVector\fP \fBStateTransitionEquation\fP (const \fBMSLVector\fP &\fBx\fP, const \fBMSLVector\fP &u)"
+.br
+.RI "\fIThe state transition equation, or equations of motion, xdot=f(x,u).\fP"
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "double \fBCorridorWidth\fP"
+.br
+.in -1c
+.SH "DETAILED DESCRIPTION"
+.PP 
+Simple axis-parallel motions in an N-dimensional space.
+.PP
+.SH "CONSTRUCTOR & DESTRUCTOR DOCUMENTATION"
+.PP 
+.SS "ModelND::ModelND (string path)"
+.PP
+.SS "virtual ModelND::~ModelND ()\fC [inline, virtual]\fP"
+.PP
+.SH "MEMBER FUNCTION DOCUMENTATION"
+.PP 
+.SS "\fBMSLVector\fP ModelND::Integrate (const \fBMSLVector\fP & x, const \fBMSLVector\fP & u, const double & h)\fC [virtual]\fP"
+.PP
+Perform integration from state x, using input u, over time step h.
+.PP
+Implements \fBModel\fP.
+.SS "\fBMSLVector\fP ModelND::StateToConfiguration (const \fBMSLVector\fP & x)\fC [virtual]\fP"
+.PP
+A method that converts a \fBModel\fP state in to a \fBGeom\fP configuration.
+.PP
+Reimplemented from \fBModel\fP.
+.SS "\fBMSLVector\fP ModelND::StateTransitionEquation (const \fBMSLVector\fP & x, const \fBMSLVector\fP & u)\fC [virtual]\fP"
+.PP
+The state transition equation, or equations of motion, xdot=f(x,u).
+.PP
+Implements \fBModel\fP.
+.SH "MEMBER DATA DOCUMENTATION"
+.PP 
+.SS "double ModelND::CorridorWidth"
+.PP
+
+
+.SH "AUTHOR"
+.PP 
+Generated automatically by Doxygen for Motion Strategy Library from the source code.

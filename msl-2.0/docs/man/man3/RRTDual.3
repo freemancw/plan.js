@@ -1,0 +1,63 @@
+.TH "RRTDual" 3 "24 Jul 2003" "Motion Strategy Library" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+RRTDual \- Planners that grow trees from the initial and goal. 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <rrt.h>\fP
+.PP
+Inherits \fBRRT\fP.
+.PP
+Inherited by \fBRRTBidirBalanced\fP, \fBRRTConCon\fP, \fBRRTExtCon\fP, and \fBRRTExtExt\fP.
+.PP
+.SS "Public Methods"
+
+.in +1c
+.ti -1c
+.RI "\fBRRTDual\fP (\fBProblem\fP *p)"
+.br
+.ti -1c
+.RI "virtual \fB~RRTDual\fP ()"
+.br
+.ti -1c
+.RI "virtual bool \fBPlan\fP ()"
+.br
+.RI "\fIThe dual-tree planner used in LaValle, Kuffner, ICRA 1999. Each tree is extended toward a randomly-sampled point. \fBRRTExtExt\fP is generally better.\fP"
+.in -1c
+.SS "Protected Methods"
+
+.in +1c
+.ti -1c
+.RI "void \fBRecoverSolution\fP (\fBMSLNode\fP *n1, \fBMSLNode\fP *n2)"
+.br
+.in -1c
+.SH "DETAILED DESCRIPTION"
+.PP 
+Planners that grow trees from the initial and goal.
+.PP
+This planner grows one tree, G, from the initial state,  and one tree, G2, from the goal state. When the closest pair of points between the two trees is within GapError, a solution path is returned. The planners in the derived classes also use two trees, and are generally more efficient than RRTDual. 
+.PP
+.SH "CONSTRUCTOR & DESTRUCTOR DOCUMENTATION"
+.PP 
+.SS "RRTDual::RRTDual (\fBProblem\fP * p)"
+.PP
+.SS "virtual RRTDual::~RRTDual ()\fC [inline, virtual]\fP"
+.PP
+.SH "MEMBER FUNCTION DOCUMENTATION"
+.PP 
+.SS "bool RRTDual::Plan ()\fC [virtual]\fP"
+.PP
+The dual-tree planner used in LaValle, Kuffner, ICRA 1999. Each tree is extended toward a randomly-sampled point. \fBRRTExtExt\fP is generally better.
+.PP
+Reimplemented from \fBRRT\fP.
+.PP
+Reimplemented in \fBRRTExtExt\fP.
+.SS "void RRTDual::RecoverSolution (\fBMSLNode\fP * n1, \fBMSLNode\fP * n2)\fC [protected]\fP"
+.PP
+
+
+.SH "AUTHOR"
+.PP 
+Generated automatically by Doxygen for Motion Strategy Library from the source code.

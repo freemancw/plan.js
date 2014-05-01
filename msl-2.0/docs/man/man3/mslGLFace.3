@@ -1,0 +1,138 @@
+.TH "mslGLFace" 3 "24 Jul 2003" "Motion Strategy Library" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+mslGLFace \- An internal class, used only for \fBRenderGL\fP. 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <renderglobj.h>\fP
+.PP
+.SS "Public Methods"
+
+.in +1c
+.ti -1c
+.RI "\fBmslGLFace\fP ()"
+.br
+.ti -1c
+.RI "\fB~mslGLFace\fP ()"
+.br
+.ti -1c
+.RI "void \fBAddVertex\fP (const \fBmslGLVertex\fP &ver)"
+.br
+.ti -1c
+.RI "void \fBAddNormal\fP (const \fBmslGLNormal\fP &nor)"
+.br
+.ti -1c
+.RI "void \fBAddTexCoord\fP (const \fBmslGLTexCoord\fP &tex)"
+.br
+.ti -1c
+.RI "void \fBAddVertex\fP (const \fBMSLVector\fP &ver)"
+.br
+.ti -1c
+.RI "void \fBAddNormal\fP (const \fBMSLVector\fP &nor)"
+.br
+.ti -1c
+.RI "void \fBAddTexCoord\fP (const \fBMSLVector\fP &tex)"
+.br
+.ti -1c
+.RI "void \fBClear\fP ()"
+.br
+.ti -1c
+.RI "void \fBPrintVertex\fP ()"
+.br
+.ti -1c
+.RI "void \fBDrawFace\fP ()"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "int \fBNumberOfPoint\fP"
+.br
+.ti -1c
+.RI "int \fBNumberOfNormal\fP"
+.br
+.ti -1c
+.RI "int \fBNumberOfTexCoord\fP"
+.br
+.ti -1c
+.RI "\fBmslGLVertex\fP * \fBVerticeCoord\fP"
+.br
+.ti -1c
+.RI "\fBmslGLNormal\fP * \fBNormalCoord\fP"
+.br
+.ti -1c
+.RI "\fBmslGLTexCoord\fP * \fBTextureCoord\fP"
+.br
+.ti -1c
+.RI "int \fBNormalOn\fP"
+.br
+.ti -1c
+.RI "int \fBTextureOn\fP"
+.br
+.ti -1c
+.RI "int \fBColorOn\fP"
+.br
+.ti -1c
+.RI "int \fBMaterialID\fP"
+.br
+.in -1c
+.SH "DETAILED DESCRIPTION"
+.PP 
+An internal class, used only for \fBRenderGL\fP.
+.PP
+.SH "CONSTRUCTOR & DESTRUCTOR DOCUMENTATION"
+.PP 
+.SS "mslGLFace::mslGLFace ()"
+.PP
+.SS "mslGLFace::~mslGLFace ()"
+.PP
+.SH "MEMBER FUNCTION DOCUMENTATION"
+.PP 
+.SS "void mslGLFace::AddNormal (const \fBMSLVector\fP & nor)"
+.PP
+.SS "void mslGLFace::AddNormal (const \fBmslGLNormal\fP & nor)"
+.PP
+.SS "void mslGLFace::AddTexCoord (const \fBMSLVector\fP & tex)"
+.PP
+.SS "void mslGLFace::AddTexCoord (const \fBmslGLTexCoord\fP & tex)"
+.PP
+.SS "void mslGLFace::AddVertex (const \fBMSLVector\fP & ver)"
+.PP
+.SS "void mslGLFace::AddVertex (const \fBmslGLVertex\fP & ver)"
+.PP
+.SS "void mslGLFace::Clear ()"
+.PP
+.SS "void mslGLFace::DrawFace ()"
+.PP
+.SS "void mslGLFace::PrintVertex ()"
+.PP
+.SH "MEMBER DATA DOCUMENTATION"
+.PP 
+.SS "int mslGLFace::ColorOn"
+.PP
+.SS "int mslGLFace::MaterialID"
+.PP
+.SS "\fBmslGLNormal\fP* mslGLFace::NormalCoord"
+.PP
+.SS "int mslGLFace::NormalOn"
+.PP
+.SS "int mslGLFace::NumberOfNormal"
+.PP
+.SS "int mslGLFace::NumberOfPoint"
+.PP
+.SS "int mslGLFace::NumberOfTexCoord"
+.PP
+.SS "\fBmslGLTexCoord\fP* mslGLFace::TextureCoord"
+.PP
+.SS "int mslGLFace::TextureOn"
+.PP
+.SS "\fBmslGLVertex\fP* mslGLFace::VerticeCoord"
+.PP
+
+
+.SH "AUTHOR"
+.PP 
+Generated automatically by Doxygen for Motion Strategy Library from the source code.

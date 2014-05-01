@@ -1,0 +1,125 @@
+\section{Model2DRigid  Class Reference}
+\label{classModel2DRigid}\index{Model2DRigid@{Model2DRigid}}
+A holonomic rigid robot in a 2D world. 
+
+
+{\tt \#include $<$model2d.h$>$}
+
+Inheritance diagram for Model2DRigid::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.03318cm]{classModel2DRigid}
+\end{center}
+\end{figure}
+\subsection*{Public Methods}
+\begin{CompactItemize}
+\item 
+{\bf Model2DRigid} (string path)
+\item 
+virtual {\bf $\sim$Model2DRigid} ()
+\item 
+virtual {\bf MSLVector} {\bf Integrate} (const {\bf MSLVector} \&{\bf x}, const {\bf MSLVector} \&u, const double \&h)
+\begin{CompactList}\small\item\em Perform integration from state x, using input u, over time step h.\item\end{CompactList}\item 
+virtual {\bf MSLVector} {\bf State\-Transition\-Equation} (const {\bf MSLVector} \&{\bf x}, const {\bf MSLVector} \&u)
+\begin{CompactList}\small\item\em The state transition equation, or equations of motion, xdot=f(x,u).\item\end{CompactList}\item 
+{\bf MSLVector} {\bf Linear\-Interpolate} (const {\bf MSLVector} \&x1, const {\bf MSLVector} \&x2, const double \&a)
+\begin{CompactList}\small\item\em Linearly interpolate two state while respecting topology.\item\end{CompactList}\item 
+virtual {\bf MSLVector} {\bf State\-Difference} (const {\bf MSLVector} \&x1, const {\bf MSLVector} \&x2)
+\begin{CompactList}\small\item\em Compute a {\bf MSLVector} {\rm (p.\,\pageref{classMSLVector})} based on x2-x1. In R$^\wedge$n, the states are simply subtracted to make the {\bf MSLVector} {\rm (p.\,\pageref{classMSLVector})}. This method exists to make things work correctly for other state-space topologies.\item\end{CompactList}\item 
+virtual double {\bf Metric} (const {\bf MSLVector} \&x1, const {\bf MSLVector} \&x2)
+\begin{CompactList}\small\item\em A distance metric, which is Euclidean in the base class.\item\end{CompactList}\item 
+virtual {\bf MSLVector} {\bf State\-To\-Configuration} (const {\bf MSLVector} \&{\bf x})
+\begin{CompactList}\small\item\em A method that converts a {\bf Model} {\rm (p.\,\pageref{classModel})} state in to a {\bf Geom} {\rm (p.\,\pageref{classGeom})} configuration.\item\end{CompactList}\end{CompactItemize}
+
+
+\subsection{Detailed Description}
+A holonomic rigid robot in a 2D world.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Model2DRigid@{Model2DRigid}!Model2DRigid@{Model2DRigid}}
+\index{Model2DRigid@{Model2DRigid}!Model2DRigid@{Model2DRigid}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}Model2DRigid::Model2DRigid (string {\em path})}\label{classModel2DRigid_a0}
+
+
+\index{Model2DRigid@{Model2DRigid}!~Model2DRigid@{$\sim$Model2DRigid}}
+\index{~Model2DRigid@{$\sim$Model2DRigid}!Model2DRigid@{Model2DRigid}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}virtual Model2DRigid::$\sim$Model2DRigid ()\hspace{0.3cm}{\tt  [inline, virtual]}}\label{classModel2DRigid_a1}
+
+
+
+
+\subsection{Member Function Documentation}
+\index{Model2DRigid@{Model2DRigid}!Integrate@{Integrate}}
+\index{Integrate@{Integrate}!Model2DRigid@{Model2DRigid}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf MSLVector} Model2DRigid::Integrate (const {\bf MSLVector} \& {\em x}, const {\bf MSLVector} \& {\em u}, const double \& {\em h})\hspace{0.3cm}{\tt  [virtual]}}\label{classModel2DRigid_a2}
+
+
+Perform integration from state x, using input u, over time step h.
+
+
+
+Implements {\bf Model} {\rm (p.\,\pageref{classModel_a5})}.
+
+Reimplemented in {\bf Model2DRigid\-Dyncar} {\rm (p.\,\pageref{classModel2DRigidDyncar_a2})}.\index{Model2DRigid@{Model2DRigid}!LinearInterpolate@{LinearInterpolate}}
+\index{LinearInterpolate@{LinearInterpolate}!Model2DRigid@{Model2DRigid}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf MSLVector} Model2DRigid::Linear\-Interpolate (const {\bf MSLVector} \& {\em x1}, const {\bf MSLVector} \& {\em x2}, const double \& {\em a})\hspace{0.3cm}{\tt  [virtual]}}\label{classModel2DRigid_a4}
+
+
+Linearly interpolate two state while respecting topology.
+
+If a=0, then x1 is returned; if a=1, then x2 is returned. All intermediate values of \$a $\backslash$in [0,1]\$ yield intermediate states. This method is defined by {\bf Model} {\rm (p.\,\pageref{classModel})}. 
+
+Reimplemented from {\bf Model} {\rm (p.\,\pageref{classModel_a6})}.
+
+Reimplemented in {\bf Model2DRigid\-Dyncar} {\rm (p.\,\pageref{classModel2DRigidDyncar_a6})}.\index{Model2DRigid@{Model2DRigid}!Metric@{Metric}}
+\index{Metric@{Metric}!Model2DRigid@{Model2DRigid}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}double Model2DRigid::Metric (const {\bf MSLVector} \& {\em x1}, const {\bf MSLVector} \& {\em x2})\hspace{0.3cm}{\tt  [virtual]}}\label{classModel2DRigid_a6}
+
+
+A distance metric, which is Euclidean in the base class.
+
+
+
+Reimplemented from {\bf Model} {\rm (p.\,\pageref{classModel_a9})}.
+
+Reimplemented in {\bf Model2DRigid\-Car\-Smooth} {\rm (p.\,\pageref{classModel2DRigidCarSmooth_a3})}.\index{Model2DRigid@{Model2DRigid}!StateDifference@{StateDifference}}
+\index{StateDifference@{StateDifference}!Model2DRigid@{Model2DRigid}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf MSLVector} Model2DRigid::State\-Difference (const {\bf MSLVector} \& {\em x1}, const {\bf MSLVector} \& {\em x2})\hspace{0.3cm}{\tt  [virtual]}}\label{classModel2DRigid_a5}
+
+
+Compute a {\bf MSLVector} {\rm (p.\,\pageref{classMSLVector})} based on x2-x1. In R$^\wedge$n, the states are simply subtracted to make the {\bf MSLVector} {\rm (p.\,\pageref{classMSLVector})}. This method exists to make things work correctly for other state-space topologies.
+
+
+
+Reimplemented from {\bf Model} {\rm (p.\,\pageref{classModel_a7})}.
+
+Reimplemented in {\bf Model2DRigid\-Dyncar} {\rm (p.\,\pageref{classModel2DRigidDyncar_a7})}.\index{Model2DRigid@{Model2DRigid}!StateToConfiguration@{StateToConfiguration}}
+\index{StateToConfiguration@{StateToConfiguration}!Model2DRigid@{Model2DRigid}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf MSLVector} Model2DRigid::State\-To\-Configuration (const {\bf MSLVector} \& {\em x})\hspace{0.3cm}{\tt  [virtual]}}\label{classModel2DRigid_a7}
+
+
+A method that converts a {\bf Model} {\rm (p.\,\pageref{classModel})} state in to a {\bf Geom} {\rm (p.\,\pageref{classGeom})} configuration.
+
+
+
+Reimplemented from {\bf Model2D} {\rm (p.\,\pageref{classModel2D_a2})}.
+
+Reimplemented in {\bf Model2DRigid\-Car\-Smooth} {\rm (p.\,\pageref{classModel2DRigidCarSmooth_a4})}.\index{Model2DRigid@{Model2DRigid}!StateTransitionEquation@{StateTransitionEquation}}
+\index{StateTransitionEquation@{StateTransitionEquation}!Model2DRigid@{Model2DRigid}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf MSLVector} Model2DRigid::State\-Transition\-Equation (const {\bf MSLVector} \& {\em x}, const {\bf MSLVector} \& {\em u})\hspace{0.3cm}{\tt  [virtual]}}\label{classModel2DRigid_a3}
+
+
+The state transition equation, or equations of motion, xdot=f(x,u).
+
+
+
+Implements {\bf Model} {\rm (p.\,\pageref{classModel_a3})}.
+
+Reimplemented in {\bf Model2DRigid\-Car} {\rm (p.\,\pageref{classModel2DRigidCar_a2})}.
+
+The documentation for this class was generated from the following files:\begin{CompactItemize}
+\item 
+{\bf model2d.h}\item 
+{\bf model2d.C}\end{CompactItemize}

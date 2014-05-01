@@ -1,0 +1,284 @@
+.TH "Planner" 3 "24 Jul 2003" "Motion Strategy Library" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Planner \- The base class for all path planners. 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <planner.h>\fP
+.PP
+Inherits \fBSolver\fP.
+.PP
+Inherited by \fBIncrementalPlanner\fP, and \fBRoadmapPlanner\fP.
+.PP
+.SS "Public Methods"
+
+.in +1c
+.ti -1c
+.RI "\fBPlanner\fP (\fBProblem\fP *problem)"
+.br
+.RI "\fIA constructor that initializes data members.\fP"
+.ti -1c
+.RI "\fB~Planner\fP ()"
+.br
+.ti -1c
+.RI "void \fBReset\fP ()"
+.br
+.RI "\fIReset the planner.\fP"
+.ti -1c
+.RI "virtual void \fBConstruct\fP ()=0"
+.br
+.RI "\fIGenerate a planning graph.\fP"
+.ti -1c
+.RI "virtual bool \fBPlan\fP ()=0"
+.br
+.RI "\fIAttempt to solve an Initial-Goal query.\fP"
+.ti -1c
+.RI "virtual void \fBWriteGraphs\fP (ofstream &fout)=0"
+.br
+.RI "\fIWrite roadmap or trees to a file.\fP"
+.ti -1c
+.RI "virtual void \fBReadGraphs\fP (ifstream &fin)=0"
+.br
+.RI "\fIRead roadmap or trees from a file.\fP"
+.ti -1c
+.RI "bool \fBGapSatisfied\fP (const \fBMSLVector\fP &x1, const \fBMSLVector\fP &x2)"
+.br
+.RI "\fIDetermine if the gap error is staisfied.\fP"
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "double \fBCumulativePlanningTime\fP"
+.br
+.RI "\fITotal amount of time spent on planning.\fP"
+.ti -1c
+.RI "double \fBCumulativeConstructTime\fP"
+.br
+.RI "\fITotal amount of time spent on construction.\fP"
+.ti -1c
+.RI "list< \fBMSLVector\fP > \fBPath\fP"
+.br
+.RI "\fIThe solution path, as a list of states.\fP"
+.ti -1c
+.RI "list< double > \fBTimeList\fP"
+.br
+.RI "\fIThe times associated with the path.\fP"
+.ti -1c
+.RI "list< \fBMSLVector\fP > \fBPolicy1\fP"
+.br
+.RI "\fIThe solution policy before the jump.\fP"
+.ti -1c
+.RI "list< double > \fBTimeList1\fP"
+.br
+.RI "\fIThe times associated with a solution path before the jump.\fP"
+.ti -1c
+.RI "list< \fBMSLVector\fP > \fBPolicy2\fP"
+.br
+.RI "\fIThe solution policy after the jump.\fP"
+.ti -1c
+.RI "list< double > \fBTimeList2\fP"
+.br
+.RI "\fIThe times associated with a solution path after the jump.\fP"
+.ti -1c
+.RI "\fBMSLVector\fP \fBGapState1\fP"
+.br
+.RI "\fIThe last state in a path before a jump occurs.\fP"
+.ti -1c
+.RI "\fBMSLVector\fP \fBGapState2\fP"
+.br
+.RI "\fIThe first state in a path after a jump occurs.\fP"
+.ti -1c
+.RI "bool \fBHolonomic\fP"
+.br
+.RI "\fISet to true to ignore inputs and avoid integration (default false). This will make 'regular' path planning much faster.\fP"
+.ti -1c
+.RI "\fBMSLVector\fP \fBGapError\fP"
+.br
+.RI "\fIHow much gap error is allowed for each element in bidirectional search.\fP"
+.ti -1c
+.RI "\fBMSLTree\fP * \fBT\fP"
+.br
+.RI "\fIA search tree (used by incremental planners, but included in Planner base to allow \fBGuiPlanner\fP to handle all planners).\fP"
+.ti -1c
+.RI "\fBMSLTree\fP * \fBT2\fP"
+.br
+.RI "\fIA second tree (if needed).\fP"
+.ti -1c
+.RI "\fBMSLGraph\fP * \fBRoadmap\fP"
+.br
+.RI "\fIA graph to represent a roadmap (used by roadmap planners, but included in Planner base to allow \fBGuiPlanner\fP to handle all planners).\fP"
+.ti -1c
+.RI "list< \fBMSLVector\fP > \fBStateList\fP"
+.br
+.RI "\fIThe states associated with a solution path.\fP"
+.ti -1c
+.RI "list< \fBMSLVector\fP > \fBInputList\fP"
+.br
+.RI "\fIThe inputs associated with a solution path.\fP"
+.ti -1c
+.RI "int \fBNumNodes\fP"
+.br
+.RI "\fINumber of nodes to generate in a single execution of Plan or Construct.\fP"
+.ti -1c
+.RI "double \fBPlannerDeltaT\fP"
+.br
+.RI "\fITime step to use for incremental planners.\fP"
+.in -1c
+.SS "Protected Methods"
+
+.in +1c
+.ti -1c
+.RI "\fBMSLVector\fP \fBRandomState\fP ()"
+.br
+.RI "\fIChoose a state at random.\fP"
+.ti -1c
+.RI "\fBMSLVector\fP \fBNormalState\fP (\fBMSLVector\fP mean, double sd)"
+.br
+.RI "\fIPick a state using a Normal distribution.\fP"
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBMSLRandomSource\fP \fBR\fP"
+.br
+.in -1c
+.SH "DETAILED DESCRIPTION"
+.PP 
+The base class for all path planners.
+.PP
+.SH "CONSTRUCTOR & DESTRUCTOR DOCUMENTATION"
+.PP 
+.SS "Planner::Planner (\fBProblem\fP * problem)"
+.PP
+A constructor that initializes data members.
+.PP
+.SS "Planner::~Planner ()"
+.PP
+.SH "MEMBER FUNCTION DOCUMENTATION"
+.PP 
+.SS "virtual void Planner::Construct ()\fC [pure virtual]\fP"
+.PP
+Generate a planning graph.
+.PP
+Implemented in \fBIncrementalPlanner\fP.
+.SS "bool Planner::GapSatisfied (const \fBMSLVector\fP & x1, const \fBMSLVector\fP & x2)"
+.PP
+Determine if the gap error is staisfied.
+.PP
+.SS "\fBMSLVector\fP Planner::NormalState (\fBMSLVector\fP mean, double sd)\fC [protected]\fP"
+.PP
+Pick a state using a Normal distribution.
+.PP
+.SS "virtual bool Planner::Plan ()\fC [pure virtual]\fP"
+.PP
+Attempt to solve an Initial-Goal query.
+.PP
+Implemented in \fBFDP\fP.
+.SS "\fBMSLVector\fP Planner::RandomState ()\fC [protected]\fP"
+.PP
+Choose a state at random.
+.PP
+.SS "virtual void Planner::ReadGraphs (ifstream & fin)\fC [pure virtual]\fP"
+.PP
+Read roadmap or trees from a file.
+.PP
+Implemented in \fBIncrementalPlanner\fP.
+.SS "void Planner::Reset ()"
+.PP
+Reset the planner.
+.PP
+Reimplemented in \fBFDP\fP.
+.SS "virtual void Planner::WriteGraphs (ofstream & fout)\fC [pure virtual]\fP"
+.PP
+Write roadmap or trees to a file.
+.PP
+Implemented in \fBIncrementalPlanner\fP.
+.SH "MEMBER DATA DOCUMENTATION"
+.PP 
+.SS "double Planner::CumulativeConstructTime"
+.PP
+Total amount of time spent on construction.
+.PP
+.SS "double Planner::CumulativePlanningTime"
+.PP
+Total amount of time spent on planning.
+.PP
+.SS "\fBMSLVector\fP Planner::GapError"
+.PP
+How much gap error is allowed for each element in bidirectional search.
+.PP
+.SS "\fBMSLVector\fP Planner::GapState1"
+.PP
+The last state in a path before a jump occurs.
+.PP
+.SS "\fBMSLVector\fP Planner::GapState2"
+.PP
+The first state in a path after a jump occurs.
+.PP
+.SS "bool Planner::Holonomic"
+.PP
+Set to true to ignore inputs and avoid integration (default false). This will make 'regular' path planning much faster.
+.PP
+.SS "list<\fBMSLVector\fP> Planner::InputList"
+.PP
+The inputs associated with a solution path.
+.PP
+.SS "int Planner::NumNodes"
+.PP
+Number of nodes to generate in a single execution of Plan or Construct.
+.PP
+.SS "list<\fBMSLVector\fP> Planner::Path"
+.PP
+The solution path, as a list of states.
+.PP
+.SS "double Planner::PlannerDeltaT"
+.PP
+Time step to use for incremental planners.
+.PP
+.SS "list<\fBMSLVector\fP> Planner::Policy1"
+.PP
+The solution policy before the jump.
+.PP
+.SS "list<\fBMSLVector\fP> Planner::Policy2"
+.PP
+The solution policy after the jump.
+.PP
+.SS "\fBMSLRandomSource\fP Planner::R\fC [protected]\fP"
+.PP
+.SS "\fBMSLGraph\fP* Planner::Roadmap"
+.PP
+A graph to represent a roadmap (used by roadmap planners, but included in Planner base to allow \fBGuiPlanner\fP to handle all planners).
+.PP
+.SS "list<\fBMSLVector\fP> Planner::StateList"
+.PP
+The states associated with a solution path.
+.PP
+.SS "\fBMSLTree\fP* Planner::T"
+.PP
+A search tree (used by incremental planners, but included in Planner base to allow \fBGuiPlanner\fP to handle all planners).
+.PP
+.SS "\fBMSLTree\fP* Planner::T2"
+.PP
+A second tree (if needed).
+.PP
+.SS "list<double> Planner::TimeList"
+.PP
+The times associated with the path.
+.PP
+.SS "list<double> Planner::TimeList1"
+.PP
+The times associated with a solution path before the jump.
+.PP
+.SS "list<double> Planner::TimeList2"
+.PP
+The times associated with a solution path after the jump.
+.PP
+
+
+.SH "AUTHOR"
+.PP 
+Generated automatically by Doxygen for Motion Strategy Library from the source code.

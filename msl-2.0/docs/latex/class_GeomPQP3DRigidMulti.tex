@@ -1,0 +1,99 @@
+\section{Geom\-PQP3DRigid\-Multi  Class Reference}
+\label{class_GeomPQP3DRigidMulti}\index{GeomPQP3DRigidMulti@{Geom\-PQP3DRigid\-Multi}}
+A collection of 3D rigid modies. 
+
+
+{\tt \#include $<$geom\-PQP.h$>$}
+
+Inheritance diagram for Geom\-PQP3DRigid\-Multi::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4cm]{class_GeomPQP3DRigidMulti}
+\end{center}
+\end{figure}
+\subsection*{Public Methods}
+\begin{CompactItemize}
+\item 
+{\bf Geom\-PQP3DRigid\-Multi} (string path)
+\item 
+virtual {\bf $\sim$Geom\-PQP3DRigid\-Multi} ()
+\item 
+virtual bool {\bf Collision\-Free} (const {\bf MSLVector} \&q)
+\begin{CompactList}\small\item\em Return true if the robot(s) and obstacles are not in collision.\item\end{CompactList}\item 
+virtual double {\bf Distance\-Comp} (const {\bf MSLVector} \&q)
+\begin{CompactList}\small\item\em Compute the distance of the closest point on the robot to the obstacle region.\item\end{CompactList}\item 
+virtual void {\bf Load\-Robot} (string path)
+\item 
+void {\bf Set\-Transformation} (const {\bf MSLVector} \&q)
+\end{CompactItemize}
+\subsection*{Public Attributes}
+\begin{CompactItemize}
+\item 
+bool {\bf Self\-Collision\-Check}
+\end{CompactItemize}
+
+
+\subsection{Detailed Description}
+A collection of 3D rigid modies.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{GeomPQP3DRigidMulti@{Geom\-PQP3DRigid\-Multi}!GeomPQP3DRigidMulti@{GeomPQP3DRigidMulti}}
+\index{GeomPQP3DRigidMulti@{GeomPQP3DRigidMulti}!GeomPQP3DRigidMulti@{Geom\-PQP3DRigid\-Multi}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}Geom\-PQP3DRigid\-Multi::Geom\-PQP3DRigid\-Multi (string {\em path})}\label{class_GeomPQP3DRigidMulti_a0}
+
+
+\index{GeomPQP3DRigidMulti@{Geom\-PQP3DRigid\-Multi}!~GeomPQP3DRigidMulti@{$\sim$GeomPQP3DRigidMulti}}
+\index{~GeomPQP3DRigidMulti@{$\sim$GeomPQP3DRigidMulti}!GeomPQP3DRigidMulti@{Geom\-PQP3DRigid\-Multi}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}Geom\-PQP3DRigid\-Multi::$\sim$Geom\-PQP3DRigid\-Multi ()\hspace{0.3cm}{\tt  [inline, virtual]}}\label{class_GeomPQP3DRigidMulti_a1}
+
+
+
+
+\subsection{Member Function Documentation}
+\index{GeomPQP3DRigidMulti@{Geom\-PQP3DRigid\-Multi}!CollisionFree@{CollisionFree}}
+\index{CollisionFree@{CollisionFree}!GeomPQP3DRigidMulti@{Geom\-PQP3DRigid\-Multi}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}virtual bool Geom\-PQP3DRigid\-Multi::Collision\-Free (const {\bf MSLVector} \& {\em q})\hspace{0.3cm}{\tt  [virtual]}}\label{class_GeomPQP3DRigidMulti_a2}
+
+
+Return true if the robot(s) and obstacles are not in collision.
+
+
+
+Reimplemented from {\bf Geom\-PQP3DRigid} {\rm (p.\,\pageref{class_GeomPQP3DRigid_a2})}.\index{GeomPQP3DRigidMulti@{Geom\-PQP3DRigid\-Multi}!DistanceComp@{DistanceComp}}
+\index{DistanceComp@{DistanceComp}!GeomPQP3DRigidMulti@{Geom\-PQP3DRigid\-Multi}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}virtual double Geom\-PQP3DRigid\-Multi::Distance\-Comp (const {\bf MSLVector} \& {\em q})\hspace{0.3cm}{\tt  [virtual]}}\label{class_GeomPQP3DRigidMulti_a3}
+
+
+Compute the distance of the closest point on the robot to the obstacle region.
+
+
+
+Reimplemented from {\bf Geom\-PQP3DRigid} {\rm (p.\,\pageref{class_GeomPQP3DRigid_a3})}.\index{GeomPQP3DRigidMulti@{Geom\-PQP3DRigid\-Multi}!LoadRobot@{LoadRobot}}
+\index{LoadRobot@{LoadRobot}!GeomPQP3DRigidMulti@{Geom\-PQP3DRigid\-Multi}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}virtual void Geom\-PQP3DRigid\-Multi::Load\-Robot (string {\em path})\hspace{0.3cm}{\tt  [virtual]}}\label{class_GeomPQP3DRigidMulti_a4}
+
+
+
+
+Reimplemented from {\bf Geom\-PQP} {\rm (p.\,\pageref{class_GeomPQP_a3})}.\index{GeomPQP3DRigidMulti@{Geom\-PQP3DRigid\-Multi}!SetTransformation@{SetTransformation}}
+\index{SetTransformation@{SetTransformation}!GeomPQP3DRigidMulti@{Geom\-PQP3DRigid\-Multi}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void Geom\-PQP3DRigid\-Multi::Set\-Transformation (const {\bf MSLVector} \& {\em q})}\label{class_GeomPQP3DRigidMulti_a5}
+
+
+
+
+Reimplemented from {\bf Geom\-PQP3DRigid} {\rm (p.\,\pageref{class_GeomPQP3DRigid_a5})}.
+
+\subsection{Member Data Documentation}
+\index{GeomPQP3DRigidMulti@{Geom\-PQP3DRigid\-Multi}!SelfCollisionCheck@{SelfCollisionCheck}}
+\index{SelfCollisionCheck@{SelfCollisionCheck}!GeomPQP3DRigidMulti@{Geom\-PQP3DRigid\-Multi}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}bool Geom\-PQP3DRigid\-Multi::Self\-Collision\-Check}\label{class_GeomPQP3DRigidMulti_m0}
+
+
+
+
+The documentation for this class was generated from the following file:\begin{CompactItemize}
+\item 
+{\bf geom\-PQP.h}\end{CompactItemize}

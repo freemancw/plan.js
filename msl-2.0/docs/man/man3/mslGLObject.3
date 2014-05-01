@@ -1,0 +1,208 @@
+.TH "mslGLObject" 3 "24 Jul 2003" "Motion Strategy Library" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+mslGLObject \- An internal class, used only for \fBRenderGL\fP. 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <renderglobj.h>\fP
+.PP
+.SS "Public Methods"
+
+.in +1c
+.ti -1c
+.RI "\fBmslGLObject\fP ()"
+.br
+.ti -1c
+.RI "\fB~mslGLObject\fP ()"
+.br
+.ti -1c
+.RI "int \fBReadModelFile\fP (const string &path, const string &filename)"
+.br
+.ti -1c
+.RI "\fBMSLPoint3d\fP \fBPointCurrentState\fP (const \fBMSLPoint3d\fP &po, int mode)"
+.br
+.ti -1c
+.RI "list< \fBMSLTriangle\fP > \fBSetBoundingBoxTriangle\fP (int mode)"
+.br
+.ti -1c
+.RI "void \fBLoadMaterialFile\fP (const string &path, const string &name)"
+.br
+.ti -1c
+.RI "int \fBSetCurrentMaterialID\fP (char *name)"
+.br
+.ti -1c
+.RI "void \fBSetMaterial\fP (int matid)"
+.br
+.ti -1c
+.RI "void \fBAddMaterial\fP (const string &path, const \fBmslGLMaterial\fP &mat)"
+.br
+.ti -1c
+.RI "void \fBAddFace\fP (const \fBmslGLFace\fP &face)"
+.br
+.ti -1c
+.RI "void \fBParseTexture\fP (char *next, \fBmslGLMaterial\fP *mat)"
+.br
+.ti -1c
+.RI "void \fBClear\fP ()"
+.br
+.ti -1c
+.RI "void \fBObjectDraw\fP ()"
+.br
+.ti -1c
+.RI "void \fBObjectBoundingBoxDraw\fP ()"
+.br
+.ti -1c
+.RI "void \fBObjectHighlight\fP ()"
+.br
+.ti -1c
+.RI "void \fBSetObjectPosition\fP (const \fBMSLVector\fP &pos)"
+.br
+.ti -1c
+.RI "void \fBSetObjectOrientation\fP (const \fBMSLVector\fP &ori)"
+.br
+.ti -1c
+.RI "void \fBSetObjectScale\fP (const \fBMSLVector\fP &sca)"
+.br
+.ti -1c
+.RI "void \fBSetBodyPositionChange\fP (const \fBMSLVector\fP &posc)"
+.br
+.ti -1c
+.RI "void \fBSetBodyOrientationChange\fP (const \fBMSLVector\fP &oric)"
+.br
+.ti -1c
+.RI "void \fBSetBodyScaleChange\fP (const \fBMSLVector\fP &scac)"
+.br
+.ti -1c
+.RI "void \fBPrintFace\fP ()"
+.br
+.ti -1c
+.RI "void \fBPrintMaterial\fP ()"
+.br
+.ti -1c
+.RI "void \fBPrintState\fP ()"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "int \fBID\fP"
+.br
+.ti -1c
+.RI "string \fBName\fP"
+.br
+.ti -1c
+.RI "int \fBNumberOfMaterial\fP"
+.br
+.ti -1c
+.RI "\fBmslGLMaterial\fP * \fBObjectMaterialLib\fP"
+.br
+.ti -1c
+.RI "int \fBNumberOfFace\fP"
+.br
+.ti -1c
+.RI "\fBmslGLFace\fP * \fBObjectFaceLib\fP"
+.br
+.ti -1c
+.RI "float \fBPosition\fP [3]"
+.br
+.ti -1c
+.RI "float \fBOrientation\fP [3]"
+.br
+.ti -1c
+.RI "float \fBScale\fP [3]"
+.br
+.ti -1c
+.RI "float \fBBoundingBoxMin\fP [3]"
+.br
+.ti -1c
+.RI "float \fBBoundingBoxMax\fP [3]"
+.br
+.in -1c
+.SH "DETAILED DESCRIPTION"
+.PP 
+An internal class, used only for \fBRenderGL\fP.
+.PP
+.SH "CONSTRUCTOR & DESTRUCTOR DOCUMENTATION"
+.PP 
+.SS "mslGLObject::mslGLObject ()"
+.PP
+.SS "mslGLObject::~mslGLObject ()"
+.PP
+.SH "MEMBER FUNCTION DOCUMENTATION"
+.PP 
+.SS "void mslGLObject::AddFace (const \fBmslGLFace\fP & face)"
+.PP
+.SS "void mslGLObject::AddMaterial (const string & path, const \fBmslGLMaterial\fP & mat)"
+.PP
+.SS "void mslGLObject::Clear ()"
+.PP
+.SS "void mslGLObject::LoadMaterialFile (const string & path, const string & name)"
+.PP
+.SS "void mslGLObject::ObjectBoundingBoxDraw ()"
+.PP
+.SS "void mslGLObject::ObjectDraw ()"
+.PP
+.SS "void mslGLObject::ObjectHighlight ()"
+.PP
+.SS "void mslGLObject::ParseTexture (char * next, \fBmslGLMaterial\fP * mat)"
+.PP
+.SS "\fBMSLPoint3d\fP mslGLObject::PointCurrentState (const \fBMSLPoint3d\fP & po, int mode)"
+.PP
+.SS "void mslGLObject::PrintFace ()"
+.PP
+.SS "void mslGLObject::PrintMaterial ()"
+.PP
+.SS "void mslGLObject::PrintState ()"
+.PP
+.SS "int mslGLObject::ReadModelFile (const string & path, const string & filename)"
+.PP
+.SS "void mslGLObject::SetBodyOrientationChange (const \fBMSLVector\fP & oric)"
+.PP
+.SS "void mslGLObject::SetBodyPositionChange (const \fBMSLVector\fP & posc)"
+.PP
+.SS "void mslGLObject::SetBodyScaleChange (const \fBMSLVector\fP & scac)"
+.PP
+.SS "list< \fBMSLTriangle\fP > mslGLObject::SetBoundingBoxTriangle (int mode)"
+.PP
+.SS "int mslGLObject::SetCurrentMaterialID (char * name)"
+.PP
+.SS "void mslGLObject::SetMaterial (int matid)"
+.PP
+.SS "void mslGLObject::SetObjectOrientation (const \fBMSLVector\fP & ori)"
+.PP
+.SS "void mslGLObject::SetObjectPosition (const \fBMSLVector\fP & pos)"
+.PP
+.SS "void mslGLObject::SetObjectScale (const \fBMSLVector\fP & sca)"
+.PP
+.SH "MEMBER DATA DOCUMENTATION"
+.PP 
+.SS "float mslGLObject::BoundingBoxMax[3]"
+.PP
+.SS "float mslGLObject::BoundingBoxMin[3]"
+.PP
+.SS "int mslGLObject::ID"
+.PP
+.SS "string mslGLObject::Name"
+.PP
+.SS "int mslGLObject::NumberOfFace"
+.PP
+.SS "int mslGLObject::NumberOfMaterial"
+.PP
+.SS "\fBmslGLFace\fP* mslGLObject::ObjectFaceLib"
+.PP
+.SS "\fBmslGLMaterial\fP* mslGLObject::ObjectMaterialLib"
+.PP
+.SS "float mslGLObject::Orientation[3]"
+.PP
+.SS "float mslGLObject::Position[3]"
+.PP
+.SS "float mslGLObject::Scale[3]"
+.PP
+
+
+.SH "AUTHOR"
+.PP 
+Generated automatically by Doxygen for Motion Strategy Library from the source code.

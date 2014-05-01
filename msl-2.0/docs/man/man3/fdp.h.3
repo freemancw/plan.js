@@ -1,0 +1,78 @@
+.TH "fdp.h" 3 "24 Jul 2003" "Motion Strategy Library" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+fdp.h \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <queue>\fP
+.br
+\fC#include <vector>\fP
+.br
+\fC#include 'marray.h'\fP
+.br
+\fC#include 'planner.h'\fP
+.br
+\fC#include 'tree.h'\fP
+.br
+\fC#include 'vector.h'\fP
+.br
+\fC#include 'defs.h'\fP
+.br
+\fC#include 'mslio.h'\fP
+.br
+.SS "Compounds"
+
+.in +1c
+.ti -1c
+.RI "class \fBFDP\fP"
+.br
+.RI "\fIA dynamic programming approach to nonholonomic planning, as proposed by Barraquand, Latombe, Algorithmica 10:6, pp. 121-155, 1993.\fP"
+.ti -1c
+.RI "class \fBFDPBestFirst\fP"
+.br
+.RI "\fIBest first search variant, using the Metric in \fBProblem\fP.\fP"
+.ti -1c
+.RI "class \fBFDPBi\fP"
+.br
+.RI "\fIA bidirectional version of forward dynamic programming.\fP"
+.ti -1c
+.RI "class \fBFDPStar\fP"
+.br
+.RI "\fIAn A-Star search variant. The Metric in \fBProblem\fP is used as the cost.\fP"
+.in -1c
+.SS "Defines"
+
+.in +1c
+.ti -1c
+.RI "#define \fBUNVISITED\fP   0"
+.br
+.ti -1c
+.RI "#define \fBVISITED\fP   1"
+.br
+.ti -1c
+.RI "#define \fBCOLLISION\fP   2"
+.br
+.ti -1c
+.RI "#define \fBVISITED2\fP   3"
+.br
+.ti -1c
+.RI "#define \fBGOAL\fP   4"
+.br
+.in -1c
+.SH "DEFINE DOCUMENTATION"
+.PP 
+.SS "#define COLLISION   2"
+.PP
+.SS "#define GOAL   4"
+.PP
+.SS "#define UNVISITED   0"
+.PP
+.SS "#define VISITED   1"
+.PP
+.SS "#define VISITED2   3"
+.PP
+.SH "AUTHOR"
+.PP 
+Generated automatically by Doxygen for Motion Strategy Library from the source code.

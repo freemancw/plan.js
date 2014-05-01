@@ -1,0 +1,65 @@
+.TH "RRTHull" 3 "24 Jul 2003" "Motion Strategy Library" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+RRTHull \- Grow a Rapidly-exploring Random Tree in a large disc. 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <rrt.h>\fP
+.PP
+Inherits \fBRRT\fP.
+.PP
+.SS "Public Methods"
+
+.in +1c
+.ti -1c
+.RI "\fBRRTHull\fP (\fBProblem\fP *p)"
+.br
+.ti -1c
+.RI "virtual \fB~RRTHull\fP ()"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "double \fBRadius\fP"
+.br
+.in -1c
+.SS "Protected Methods"
+
+.in +1c
+.ti -1c
+.RI "virtual \fBMSLVector\fP \fBChooseState\fP ()"
+.br
+.RI "\fIPick a state using some sampling technique.\fP"
+.in -1c
+.SH "DETAILED DESCRIPTION"
+.PP 
+Grow a Rapidly-exploring Random Tree in a large disc.
+.PP
+This is a special-purpose class that grows a tree in an 'infinitely' large disc to study asymptotic properties. 
+.PP
+.SH "CONSTRUCTOR & DESTRUCTOR DOCUMENTATION"
+.PP 
+.SS "RRTHull::RRTHull (\fBProblem\fP * p)"
+.PP
+.SS "virtual RRTHull::~RRTHull ()\fC [inline, virtual]\fP"
+.PP
+.SH "MEMBER FUNCTION DOCUMENTATION"
+.PP 
+.SS "\fBMSLVector\fP RRTHull::ChooseState ()\fC [protected, virtual]\fP"
+.PP
+Pick a state using some sampling technique.
+.PP
+Reimplemented from \fBRRT\fP.
+.SH "MEMBER DATA DOCUMENTATION"
+.PP 
+.SS "double RRTHull::Radius"
+.PP
+
+
+.SH "AUTHOR"
+.PP 
+Generated automatically by Doxygen for Motion Strategy Library from the source code.

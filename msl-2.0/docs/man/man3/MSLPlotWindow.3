@@ -1,0 +1,87 @@
+.TH "MSLPlotWindow" 3 "24 Jul 2003" "Motion Strategy Library" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+MSLPlotWindow \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <guiplanner.h>\fP
+.PP
+.SS "Public Methods"
+
+.in +1c
+.ti -1c
+.RI "long \fBonPaint\fP (FXObject *, FXSelector, void *)"
+.br
+.ti -1c
+.RI "long \fBonCmdPrint\fP (FXObject *, FXSelector, void *)"
+.br
+.ti -1c
+.RI "\fBMSLPlotWindow\fP (\fBMSLPlannerWindow\fP *owner)"
+.br
+.ti -1c
+.RI "void \fBdrawPage\fP (FXDC &dc, FXint w, FXint h, FXint tx=0, FXint ty=0)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "enum \fBID_CANVAS\fP = FXMainWindow::ID_LAST"
+.br
+.ti -1c
+.RI "enum \fBID_PRINT\fP"
+.br
+.ti -1c
+.RI "enum \fBID_LAST\fP"
+.br
+.in -1c
+.SS "Protected Methods"
+
+.in +1c
+.ti -1c
+.RI "\fBMSLPlotWindow\fP ()"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBMSLPlannerWindow\fP * \fBOwner\fP"
+.br
+.ti -1c
+.RI "\fBGuiPlanner\fP * \fBGP\fP"
+.br
+.in -1c
+.SH "CONSTRUCTOR & DESTRUCTOR DOCUMENTATION"
+.PP 
+.SS "MSLPlotWindow::MSLPlotWindow ()\fC [inline, protected]\fP"
+.PP
+.SS "MSLPlotWindow::MSLPlotWindow (\fBMSLPlannerWindow\fP * owner)"
+.PP
+.SH "MEMBER FUNCTION DOCUMENTATION"
+.PP 
+.SS "void MSLPlotWindow::drawPage (FXDC & dc, FXint w, FXint h, FXint tx = 0, FXint ty = 0)"
+.PP
+.SS "long MSLPlotWindow::onCmdPrint (FXObject *, FXSelector, void *)"
+.PP
+.SS "long MSLPlotWindow::onPaint (FXObject *, FXSelector, void *)"
+.PP
+.SH "MEMBER DATA DOCUMENTATION"
+.PP 
+.SS "\fBGuiPlanner\fP* MSLPlotWindow::GP\fC [protected]\fP"
+.PP
+.SS "enum MSLPlotWindow::ID_CANVAS = FXMainWindow::ID_LAST"
+.PP
+.SS "enum MSLPlotWindow::ID_LAST"
+.PP
+.SS "enum MSLPlotWindow::ID_PRINT"
+.PP
+.SS "\fBMSLPlannerWindow\fP* MSLPlotWindow::Owner\fC [protected]\fP"
+.PP
+
+
+.SH "AUTHOR"
+.PP 
+Generated automatically by Doxygen for Motion Strategy Library from the source code.

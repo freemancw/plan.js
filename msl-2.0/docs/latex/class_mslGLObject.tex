@@ -1,0 +1,277 @@
+\section{msl\-GLObject  Class Reference}
+\label{class_mslGLObject}\index{mslGLObject@{msl\-GLObject}}
+An internal class, used only for {\bf Render\-GL} {\rm (p.\,\pageref{class_RenderGL})}. 
+
+
+{\tt \#include $<$renderglobj.h$>$}
+
+\subsection*{Public Methods}
+\begin{CompactItemize}
+\item 
+{\bf msl\-GLObject} ()
+\item 
+{\bf $\sim$msl\-GLObject} ()
+\item 
+int {\bf Read\-Model\-File} (const string \&path, const string \&filename)
+\item 
+{\bf MSLPoint3d} {\bf Point\-Current\-State} (const {\bf MSLPoint3d} \&po, int mode)
+\item 
+list$<${\bf MSLTriangle}$>$ {\bf Set\-Bounding\-Box\-Triangle} (int mode)
+\item 
+void {\bf Load\-Material\-File} (const string \&path, const string \&name)
+\item 
+int {\bf Set\-Current\-Material\-ID} (char $\ast$name)
+\item 
+void {\bf Set\-Material} (int matid)
+\item 
+void {\bf Add\-Material} (const string \&path, const {\bf msl\-GLMaterial} \&mat)
+\item 
+void {\bf Add\-Face} (const {\bf msl\-GLFace} \&face)
+\item 
+void {\bf Parse\-Texture} (char $\ast$next, {\bf msl\-GLMaterial} $\ast$mat)
+\item 
+void {\bf Clear} ()
+\item 
+void {\bf Object\-Draw} ()
+\item 
+void {\bf Object\-Bounding\-Box\-Draw} ()
+\item 
+void {\bf Object\-Highlight} ()
+\item 
+void {\bf Set\-Object\-Position} (const {\bf MSLVector} \&pos)
+\item 
+void {\bf Set\-Object\-Orientation} (const {\bf MSLVector} \&ori)
+\item 
+void {\bf Set\-Object\-Scale} (const {\bf MSLVector} \&sca)
+\item 
+void {\bf Set\-Body\-Position\-Change} (const {\bf MSLVector} \&posc)
+\item 
+void {\bf Set\-Body\-Orientation\-Change} (const {\bf MSLVector} \&oric)
+\item 
+void {\bf Set\-Body\-Scale\-Change} (const {\bf MSLVector} \&scac)
+\item 
+void {\bf Print\-Face} ()
+\item 
+void {\bf Print\-Material} ()
+\item 
+void {\bf Print\-State} ()
+\end{CompactItemize}
+\subsection*{Public Attributes}
+\begin{CompactItemize}
+\item 
+int {\bf ID}
+\item 
+string {\bf Name}
+\item 
+int {\bf Number\-Of\-Material}
+\item 
+{\bf msl\-GLMaterial}$\ast$ {\bf Object\-Material\-Lib}
+\item 
+int {\bf Number\-Of\-Face}
+\item 
+{\bf msl\-GLFace}$\ast$ {\bf Object\-Face\-Lib}
+\item 
+float {\bf Position} [3]
+\item 
+float {\bf Orientation} [3]
+\item 
+float {\bf Scale} [3]
+\item 
+float {\bf Bounding\-Box\-Min} [3]
+\item 
+float {\bf Bounding\-Box\-Max} [3]
+\end{CompactItemize}
+
+
+\subsection{Detailed Description}
+An internal class, used only for {\bf Render\-GL} {\rm (p.\,\pageref{class_RenderGL})}.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{mslGLObject@{msl\-GLObject}!mslGLObject@{mslGLObject}}
+\index{mslGLObject@{mslGLObject}!mslGLObject@{msl\-GLObject}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}msl\-GLObject::msl\-GLObject ()}\label{class_mslGLObject_a0}
+
+
+\index{mslGLObject@{msl\-GLObject}!~mslGLObject@{$\sim$mslGLObject}}
+\index{~mslGLObject@{$\sim$mslGLObject}!mslGLObject@{msl\-GLObject}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}msl\-GLObject::$\sim$msl\-GLObject ()}\label{class_mslGLObject_a1}
+
+
+
+
+\subsection{Member Function Documentation}
+\index{mslGLObject@{msl\-GLObject}!AddFace@{AddFace}}
+\index{AddFace@{AddFace}!mslGLObject@{msl\-GLObject}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void msl\-GLObject::Add\-Face (const {\bf msl\-GLFace} \& {\em face})}\label{class_mslGLObject_a9}
+
+
+\index{mslGLObject@{msl\-GLObject}!AddMaterial@{AddMaterial}}
+\index{AddMaterial@{AddMaterial}!mslGLObject@{msl\-GLObject}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void msl\-GLObject::Add\-Material (const string \& {\em path}, const {\bf msl\-GLMaterial} \& {\em mat})}\label{class_mslGLObject_a8}
+
+
+\index{mslGLObject@{msl\-GLObject}!Clear@{Clear}}
+\index{Clear@{Clear}!mslGLObject@{msl\-GLObject}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void msl\-GLObject::Clear ()}\label{class_mslGLObject_a11}
+
+
+\index{mslGLObject@{msl\-GLObject}!LoadMaterialFile@{LoadMaterialFile}}
+\index{LoadMaterialFile@{LoadMaterialFile}!mslGLObject@{msl\-GLObject}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void msl\-GLObject::Load\-Material\-File (const string \& {\em path}, const string \& {\em name})}\label{class_mslGLObject_a5}
+
+
+\index{mslGLObject@{msl\-GLObject}!ObjectBoundingBoxDraw@{ObjectBoundingBoxDraw}}
+\index{ObjectBoundingBoxDraw@{ObjectBoundingBoxDraw}!mslGLObject@{msl\-GLObject}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void msl\-GLObject::Object\-Bounding\-Box\-Draw ()}\label{class_mslGLObject_a13}
+
+
+\index{mslGLObject@{msl\-GLObject}!ObjectDraw@{ObjectDraw}}
+\index{ObjectDraw@{ObjectDraw}!mslGLObject@{msl\-GLObject}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void msl\-GLObject::Object\-Draw ()}\label{class_mslGLObject_a12}
+
+
+\index{mslGLObject@{msl\-GLObject}!ObjectHighlight@{ObjectHighlight}}
+\index{ObjectHighlight@{ObjectHighlight}!mslGLObject@{msl\-GLObject}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void msl\-GLObject::Object\-Highlight ()}\label{class_mslGLObject_a14}
+
+
+\index{mslGLObject@{msl\-GLObject}!ParseTexture@{ParseTexture}}
+\index{ParseTexture@{ParseTexture}!mslGLObject@{msl\-GLObject}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void msl\-GLObject::Parse\-Texture (char $\ast$ {\em next}, {\bf msl\-GLMaterial} $\ast$ {\em mat})}\label{class_mslGLObject_a10}
+
+
+\index{mslGLObject@{msl\-GLObject}!PointCurrentState@{PointCurrentState}}
+\index{PointCurrentState@{PointCurrentState}!mslGLObject@{msl\-GLObject}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf MSLPoint3d} msl\-GLObject::Point\-Current\-State (const {\bf MSLPoint3d} \& {\em po}, int {\em mode})}\label{class_mslGLObject_a3}
+
+
+\index{mslGLObject@{msl\-GLObject}!PrintFace@{PrintFace}}
+\index{PrintFace@{PrintFace}!mslGLObject@{msl\-GLObject}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void msl\-GLObject::Print\-Face ()}\label{class_mslGLObject_a21}
+
+
+\index{mslGLObject@{msl\-GLObject}!PrintMaterial@{PrintMaterial}}
+\index{PrintMaterial@{PrintMaterial}!mslGLObject@{msl\-GLObject}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void msl\-GLObject::Print\-Material ()}\label{class_mslGLObject_a22}
+
+
+\index{mslGLObject@{msl\-GLObject}!PrintState@{PrintState}}
+\index{PrintState@{PrintState}!mslGLObject@{msl\-GLObject}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void msl\-GLObject::Print\-State ()}\label{class_mslGLObject_a23}
+
+
+\index{mslGLObject@{msl\-GLObject}!ReadModelFile@{ReadModelFile}}
+\index{ReadModelFile@{ReadModelFile}!mslGLObject@{msl\-GLObject}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int msl\-GLObject::Read\-Model\-File (const string \& {\em path}, const string \& {\em filename})}\label{class_mslGLObject_a2}
+
+
+\index{mslGLObject@{msl\-GLObject}!SetBodyOrientationChange@{SetBodyOrientationChange}}
+\index{SetBodyOrientationChange@{SetBodyOrientationChange}!mslGLObject@{msl\-GLObject}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void msl\-GLObject::Set\-Body\-Orientation\-Change (const {\bf MSLVector} \& {\em oric})}\label{class_mslGLObject_a19}
+
+
+\index{mslGLObject@{msl\-GLObject}!SetBodyPositionChange@{SetBodyPositionChange}}
+\index{SetBodyPositionChange@{SetBodyPositionChange}!mslGLObject@{msl\-GLObject}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void msl\-GLObject::Set\-Body\-Position\-Change (const {\bf MSLVector} \& {\em posc})}\label{class_mslGLObject_a18}
+
+
+\index{mslGLObject@{msl\-GLObject}!SetBodyScaleChange@{SetBodyScaleChange}}
+\index{SetBodyScaleChange@{SetBodyScaleChange}!mslGLObject@{msl\-GLObject}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void msl\-GLObject::Set\-Body\-Scale\-Change (const {\bf MSLVector} \& {\em scac})}\label{class_mslGLObject_a20}
+
+
+\index{mslGLObject@{msl\-GLObject}!SetBoundingBoxTriangle@{SetBoundingBoxTriangle}}
+\index{SetBoundingBoxTriangle@{SetBoundingBoxTriangle}!mslGLObject@{msl\-GLObject}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}list$<${\bf MSLTriangle}$>$ msl\-GLObject::Set\-Bounding\-Box\-Triangle (int {\em mode})}\label{class_mslGLObject_a4}
+
+
+\index{mslGLObject@{msl\-GLObject}!SetCurrentMaterialID@{SetCurrentMaterialID}}
+\index{SetCurrentMaterialID@{SetCurrentMaterialID}!mslGLObject@{msl\-GLObject}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int msl\-GLObject::Set\-Current\-Material\-ID (char $\ast$ {\em name})}\label{class_mslGLObject_a6}
+
+
+\index{mslGLObject@{msl\-GLObject}!SetMaterial@{SetMaterial}}
+\index{SetMaterial@{SetMaterial}!mslGLObject@{msl\-GLObject}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void msl\-GLObject::Set\-Material (int {\em matid})}\label{class_mslGLObject_a7}
+
+
+\index{mslGLObject@{msl\-GLObject}!SetObjectOrientation@{SetObjectOrientation}}
+\index{SetObjectOrientation@{SetObjectOrientation}!mslGLObject@{msl\-GLObject}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void msl\-GLObject::Set\-Object\-Orientation (const {\bf MSLVector} \& {\em ori})}\label{class_mslGLObject_a16}
+
+
+\index{mslGLObject@{msl\-GLObject}!SetObjectPosition@{SetObjectPosition}}
+\index{SetObjectPosition@{SetObjectPosition}!mslGLObject@{msl\-GLObject}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void msl\-GLObject::Set\-Object\-Position (const {\bf MSLVector} \& {\em pos})}\label{class_mslGLObject_a15}
+
+
+\index{mslGLObject@{msl\-GLObject}!SetObjectScale@{SetObjectScale}}
+\index{SetObjectScale@{SetObjectScale}!mslGLObject@{msl\-GLObject}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void msl\-GLObject::Set\-Object\-Scale (const {\bf MSLVector} \& {\em sca})}\label{class_mslGLObject_a17}
+
+
+
+
+\subsection{Member Data Documentation}
+\index{mslGLObject@{msl\-GLObject}!BoundingBoxMax@{BoundingBoxMax}}
+\index{BoundingBoxMax@{BoundingBoxMax}!mslGLObject@{msl\-GLObject}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}float msl\-GLObject::Bounding\-Box\-Max[3]}\label{class_mslGLObject_m10}
+
+
+\index{mslGLObject@{msl\-GLObject}!BoundingBoxMin@{BoundingBoxMin}}
+\index{BoundingBoxMin@{BoundingBoxMin}!mslGLObject@{msl\-GLObject}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}float msl\-GLObject::Bounding\-Box\-Min[3]}\label{class_mslGLObject_m9}
+
+
+\index{mslGLObject@{msl\-GLObject}!ID@{ID}}
+\index{ID@{ID}!mslGLObject@{msl\-GLObject}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int msl\-GLObject::ID}\label{class_mslGLObject_m0}
+
+
+\index{mslGLObject@{msl\-GLObject}!Name@{Name}}
+\index{Name@{Name}!mslGLObject@{msl\-GLObject}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}string msl\-GLObject::Name}\label{class_mslGLObject_m1}
+
+
+\index{mslGLObject@{msl\-GLObject}!NumberOfFace@{NumberOfFace}}
+\index{NumberOfFace@{NumberOfFace}!mslGLObject@{msl\-GLObject}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int msl\-GLObject::Number\-Of\-Face}\label{class_mslGLObject_m4}
+
+
+\index{mslGLObject@{msl\-GLObject}!NumberOfMaterial@{NumberOfMaterial}}
+\index{NumberOfMaterial@{NumberOfMaterial}!mslGLObject@{msl\-GLObject}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int msl\-GLObject::Number\-Of\-Material}\label{class_mslGLObject_m2}
+
+
+\index{mslGLObject@{msl\-GLObject}!ObjectFaceLib@{ObjectFaceLib}}
+\index{ObjectFaceLib@{ObjectFaceLib}!mslGLObject@{msl\-GLObject}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf msl\-GLFace}$\ast$ msl\-GLObject::Object\-Face\-Lib}\label{class_mslGLObject_m5}
+
+
+\index{mslGLObject@{msl\-GLObject}!ObjectMaterialLib@{ObjectMaterialLib}}
+\index{ObjectMaterialLib@{ObjectMaterialLib}!mslGLObject@{msl\-GLObject}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf msl\-GLMaterial}$\ast$ msl\-GLObject::Object\-Material\-Lib}\label{class_mslGLObject_m3}
+
+
+\index{mslGLObject@{msl\-GLObject}!Orientation@{Orientation}}
+\index{Orientation@{Orientation}!mslGLObject@{msl\-GLObject}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}float msl\-GLObject::Orientation[3]}\label{class_mslGLObject_m7}
+
+
+\index{mslGLObject@{msl\-GLObject}!Position@{Position}}
+\index{Position@{Position}!mslGLObject@{msl\-GLObject}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}float msl\-GLObject::Position[3]}\label{class_mslGLObject_m6}
+
+
+\index{mslGLObject@{msl\-GLObject}!Scale@{Scale}}
+\index{Scale@{Scale}!mslGLObject@{msl\-GLObject}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}float msl\-GLObject::Scale[3]}\label{class_mslGLObject_m8}
+
+
+
+
+The documentation for this class was generated from the following file:\begin{CompactItemize}
+\item 
+{\bf renderglobj.h}\end{CompactItemize}

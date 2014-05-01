@@ -1,0 +1,476 @@
+.TH "renderglobj.h" 3 "24 Jul 2003" "Motion Strategy Library" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+renderglobj.h \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <cstdio>\fP
+.br
+\fC#include <ctype.h>\fP
+.br
+\fC#include <cstdlib>\fP
+.br
+\fC#include <math.h>\fP
+.br
+\fC#include <string>\fP
+.br
+\fC#include <algorithm>\fP
+.br
+\fC#include <unistd.h>\fP
+.br
+\fC#include 'triangle.h'\fP
+.br
+\fC#include 'vector.h'\fP
+.br
+\fC#include 'matrix.h'\fP
+.br
+\fC#include 'point3d.h'\fP
+.br
+\fC#include 'util.h'\fP
+.br
+\fC#include '../../configs/configGL.h'\fP
+.br
+.SS "Compounds"
+
+.in +1c
+.ti -1c
+.RI "class \fBImage\fP"
+.br
+.RI "\fIUsed for texture mapping as part of \fBRenderGL\fP.\fP"
+.ti -1c
+.RI "class \fBmslGLFace\fP"
+.br
+.RI "\fIAn internal class, used only for \fBRenderGL\fP.\fP"
+.ti -1c
+.RI "class \fBmslGLMaterial\fP"
+.br
+.RI "\fIAn internal class, used only for \fBRenderGL\fP.\fP"
+.ti -1c
+.RI "class \fBmslGLObject\fP"
+.br
+.RI "\fIAn internal class, used only for \fBRenderGL\fP.\fP"
+.in -1c
+.SS "Defines"
+
+.in +1c
+.ti -1c
+.RI "#define \fBBUFFER_SIZE\fP   4096"
+.br
+.ti -1c
+.RI "#define \fBFACE_SIZE\fP   2048"
+.br
+.ti -1c
+.RI "#define \fBCHUNK\fP   2048"
+.br
+.ti -1c
+.RI "#define \fBMAX_MTL_FILES\fP   512"
+.br
+.ti -1c
+.RI "#define \fBMAXNAME_LENGTH\fP   50"
+.br
+.ti -1c
+.RI "#define \fBMinX\fP   -100.0"
+.br
+.ti -1c
+.RI "#define \fBMinY\fP   -100.0"
+.br
+.ti -1c
+.RI "#define \fBMaxX\fP   100.0"
+.br
+.ti -1c
+.RI "#define \fBMaxY\fP   100.0"
+.br
+.ti -1c
+.RI "#define \fBMinZ\fP   100.0"
+.br
+.ti -1c
+.RI "#define \fBMaxZ\fP   300.0"
+.br
+.ti -1c
+.RI "#define \fBRESET_ID\fP   200"
+.br
+.ti -1c
+.RI "#define \fBRADIO_GROUP1\fP   201"
+.br
+.ti -1c
+.RI "#define \fBRECORD_PATH_ID\fP   202"
+.br
+.ti -1c
+.RI "#define \fBDISPLAY_PATH_ID\fP   203"
+.br
+.ti -1c
+.RI "#define \fBNEW_PATH_ID\fP   204"
+.br
+.ti -1c
+.RI "#define \fBVIEW_ORIENTATION_ID\fP   205"
+.br
+.ti -1c
+.RI "#define \fBBODY_SELECTION_ID\fP   206"
+.br
+.ti -1c
+.RI "#define \fBTEXTURE_ON_OFF_ID\fP   207"
+.br
+.ti -1c
+.RI "#define \fBSINGLE_MULTI_VIEW_ID\fP   208"
+.br
+.ti -1c
+.RI "#define \fBRELOAD_MODEL_ID\fP   209"
+.br
+.ti -1c
+.RI "#define \fBTRANSPARENCY_ADJUST_ID\fP   210"
+.br
+.ti -1c
+.RI "#define \fBBEGIN_FLIGHT_ID\fP   211"
+.br
+.ti -1c
+.RI "#define \fBPLANE_LAND_ID\fP   212"
+.br
+.ti -1c
+.RI "#define \fBMODEL_FLY_ID\fP   213"
+.br
+.ti -1c
+.RI "#define \fBCREATE_OBJECT_ID\fP   214"
+.br
+.ti -1c
+.RI "#define \fBDELETE_OBJECT_ID\fP   215"
+.br
+.ti -1c
+.RI "#define \fBCURRENT_OBJECT_ID\fP   216"
+.br
+.ti -1c
+.RI "#define \fBCREATE_OBJECT_OVER_ID\fP   217"
+.br
+.ti -1c
+.RI "#define \fBCREATE_POINT_ID\fP   218"
+.br
+.ti -1c
+.RI "#define \fBCREATE_POINT_OVER_ID\fP   219"
+.br
+.ti -1c
+.RI "#define \fBCURRENT_TEXTURE_ID\fP   220"
+.br
+.ti -1c
+.RI "#define \fBOBJECT_SELECTION_ID\fP   221"
+.br
+.ti -1c
+.RI "#define \fBPLAN_ID\fP   222"
+.br
+.ti -1c
+.RI "#define \fBANIMATE_ID\fP   223"
+.br
+.ti -1c
+.RI "#define \fBSET_INITIAL_ID\fP   224"
+.br
+.ti -1c
+.RI "#define \fBSAVE_GEOMETRY_ID\fP   225"
+.br
+.ti -1c
+.RI "#define \fBSET_GOAL_ID\fP   226"
+.br
+.ti -1c
+.RI "#define \fBANIMATE_PAUSE_ID\fP   227"
+.br
+.ti -1c
+.RI "#define \fBSAVE_CONFIG_ID\fP   228"
+.br
+.ti -1c
+.RI "#define \fBAUTOMATIC_PLAN_ID\fP   229"
+.br
+.ti -1c
+.RI "#define \fBLIGHT_COMPONENT_SELECTION_ID\fP   230"
+.br
+.ti -1c
+.RI "#define \fBLIGHT_MODE_SELECTION_ID\fP   231"
+.br
+.ti -1c
+.RI "#define \fBANIMATION_RATE_ID\fP   232"
+.br
+.ti -1c
+.RI "#define \fBLOAD_CONFIG_ID\fP   233"
+.br
+.ti -1c
+.RI "#define \fBSINGLE_VIEW\fP   300"
+.br
+.ti -1c
+.RI "#define \fBMULTI_VIEW\fP   301"
+.br
+.ti -1c
+.RI "#define \fBOBSTACLE_MODE\fP   302"
+.br
+.ti -1c
+.RI "#define \fBROBOT_MODE\fP   303"
+.br
+.ti -1c
+.RI "#define \fBZ_MOVE_MODE\fP   304"
+.br
+.ti -1c
+.RI "#define \fBSCALE_MOVE_MODE\fP   305"
+.br
+.ti -1c
+.RI "#define \fBORI_MOVE_MODE\fP   306"
+.br
+.ti -1c
+.RI "#define \fBSELECT_BOUNDINGBOX_ID\fP   307"
+.br
+.ti -1c
+.RI "#define \fBSHOW_BOUNDINGBOX_ID\fP   308"
+.br
+.ti -1c
+.RI "#define \fBHIDE_BOUNDINGBOX_ID\fP   309"
+.br
+.ti -1c
+.RI "#define \fBSUN_LIGHT_MODE\fP   310"
+.br
+.ti -1c
+.RI "#define \fBEYE_LIGHT_MODE\fP   311"
+.br
+.ti -1c
+.RI "#define \fBSAME\fP(_a, _b)   !cmp_nocase(_a, _b)"
+.br
+.in -1c
+.SS "Typedefs"
+
+.in +1c
+.ti -1c
+.RI "typedef double \fBx\fP"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBrotate_x_MSLMatrix\fP (double sita, \fBMSLMatrix\fP &m)"
+.br
+.ti -1c
+.RI "void \fBrotate_y_MSLMatrix\fP (double sita, \fBMSLMatrix\fP &m)"
+.br
+.ti -1c
+.RI "void \fBrotate_z_MSLMatrix\fP (double sita, \fBMSLMatrix\fP &m)"
+.br
+.ti -1c
+.RI "\fBMSLVector\fP \fBpoint_x_rotation\fP (const double &sita, const \fBMSLVector\fP &p1)"
+.br
+.ti -1c
+.RI "\fBMSLVector\fP \fBpoint_y_rotation\fP (const double &sita, const \fBMSLVector\fP &p1)"
+.br
+.ti -1c
+.RI "\fBMSLVector\fP \fBpoint_z_rotation\fP (const double &sita, const \fBMSLVector\fP &p1)"
+.br
+.ti -1c
+.RI "void \fBcrossproduct\fP (const \fBMSLVector\fP &v1, const \fBMSLVector\fP &v2, \fBMSLVector\fP &v)"
+.br
+.ti -1c
+.RI "void \fBnormalMSLVector\fP (const \fBMSLVector\fP &v1, const \fBMSLVector\fP &v2, \fBMSLVector\fP &v)"
+.br
+.ti -1c
+.RI "\fBMSLVector\fP \fBirpy\fP (const \fBMSLMatrix\fP &R)"
+.br
+.ti -1c
+.RI "\fBMSLMatrix\fP \fBrpy\fP (const \fBMSLVector\fP &v)"
+.br
+.ti -1c
+.RI "\fBMSLVector\fP \fBfree_rotate\fP (const \fBMSLVector\fP &axis, const \fBMSLVector\fP &v, double sita)"
+.br
+.ti -1c
+.RI "\fBMSLMatrix\fP \fBfree_rotate\fP (const \fBMSLVector\fP &axis, const \fBMSLMatrix\fP &m, double sita)"
+.br
+.ti -1c
+.RI "string \fBUPPER\fP (string _str)"
+.br
+.ti -1c
+.RI "int \fBcmp_nocase\fP (const string &a, const string &b)"
+.br
+.ti -1c
+.RI "\fBmslGLNormal\fP \fBNormalCompute\fP (const \fBmslGLVertex\fP &v1, const \fBmslGLVertex\fP &v2, const \fBmslGLVertex\fP &v3)"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "double \fBy\fP"
+.br
+.ti -1c
+.RI "double \fBz\fP"
+.br
+.ti -1c
+.RI "\fBmslGLVertex\fP"
+.br
+.ti -1c
+.RI "\fBmslGLNormal\fP"
+.br
+.ti -1c
+.RI "\fBmslGLTexCoord\fP"
+.br
+.in -1c
+.SH "DEFINE DOCUMENTATION"
+.PP 
+.SS "#define ANIMATE_ID   223"
+.PP
+.SS "#define ANIMATE_PAUSE_ID   227"
+.PP
+.SS "#define ANIMATION_RATE_ID   232"
+.PP
+.SS "#define AUTOMATIC_PLAN_ID   229"
+.PP
+.SS "#define BEGIN_FLIGHT_ID   211"
+.PP
+.SS "#define BODY_SELECTION_ID   206"
+.PP
+.SS "#define BUFFER_SIZE   4096"
+.PP
+.SS "#define CHUNK   2048"
+.PP
+.SS "#define CREATE_OBJECT_ID   214"
+.PP
+.SS "#define CREATE_OBJECT_OVER_ID   217"
+.PP
+.SS "#define CREATE_POINT_ID   218"
+.PP
+.SS "#define CREATE_POINT_OVER_ID   219"
+.PP
+.SS "#define CURRENT_OBJECT_ID   216"
+.PP
+.SS "#define CURRENT_TEXTURE_ID   220"
+.PP
+.SS "#define DELETE_OBJECT_ID   215"
+.PP
+.SS "#define DISPLAY_PATH_ID   203"
+.PP
+.SS "#define EYE_LIGHT_MODE   311"
+.PP
+.SS "#define FACE_SIZE   2048"
+.PP
+.SS "#define HIDE_BOUNDINGBOX_ID   309"
+.PP
+.SS "#define LIGHT_COMPONENT_SELECTION_ID   230"
+.PP
+.SS "#define LIGHT_MODE_SELECTION_ID   231"
+.PP
+.SS "#define LOAD_CONFIG_ID   233"
+.PP
+.SS "#define MAX_MTL_FILES   512"
+.PP
+.SS "#define MAXNAME_LENGTH   50"
+.PP
+.SS "#define MaxX   100.0"
+.PP
+.SS "#define MaxY   100.0"
+.PP
+.SS "#define MaxZ   300.0"
+.PP
+.SS "#define MinX   -100.0"
+.PP
+.SS "#define MinY   -100.0"
+.PP
+.SS "#define MinZ   100.0"
+.PP
+.SS "#define MODEL_FLY_ID   213"
+.PP
+.SS "#define MULTI_VIEW   301"
+.PP
+.SS "#define NEW_PATH_ID   204"
+.PP
+.SS "#define OBJECT_SELECTION_ID   221"
+.PP
+.SS "#define OBSTACLE_MODE   302"
+.PP
+.SS "#define ORI_MOVE_MODE   306"
+.PP
+.SS "#define PLAN_ID   222"
+.PP
+.SS "#define PLANE_LAND_ID   212"
+.PP
+.SS "#define RADIO_GROUP1   201"
+.PP
+.SS "#define RECORD_PATH_ID   202"
+.PP
+.SS "#define RELOAD_MODEL_ID   209"
+.PP
+.SS "#define RESET_ID   200"
+.PP
+.SS "#define ROBOT_MODE   303"
+.PP
+.SS "#define SAME(_a, _b)   !cmp_nocase(_a, _b)"
+.PP
+.SS "#define SAVE_CONFIG_ID   228"
+.PP
+.SS "#define SAVE_GEOMETRY_ID   225"
+.PP
+.SS "#define SCALE_MOVE_MODE   305"
+.PP
+.SS "#define SELECT_BOUNDINGBOX_ID   307"
+.PP
+.SS "#define SET_GOAL_ID   226"
+.PP
+.SS "#define SET_INITIAL_ID   224"
+.PP
+.SS "#define SHOW_BOUNDINGBOX_ID   308"
+.PP
+.SS "#define SINGLE_MULTI_VIEW_ID   208"
+.PP
+.SS "#define SINGLE_VIEW   300"
+.PP
+.SS "#define SUN_LIGHT_MODE   310"
+.PP
+.SS "#define TEXTURE_ON_OFF_ID   207"
+.PP
+.SS "#define TRANSPARENCY_ADJUST_ID   210"
+.PP
+.SS "#define VIEW_ORIENTATION_ID   205"
+.PP
+.SS "#define Z_MOVE_MODE   304"
+.PP
+.SH "TYPEDEF DOCUMENTATION"
+.PP 
+.SS "typedef struct double x"
+.PP
+.SH "FUNCTION DOCUMENTATION"
+.PP 
+.SS "int cmp_nocase (const string & a, const string & b)"
+.PP
+.SS "void crossproduct (const \fBMSLVector\fP & v1, const \fBMSLVector\fP & v2, \fBMSLVector\fP & v)"
+.PP
+.SS "\fBMSLMatrix\fP free_rotate (const \fBMSLVector\fP & axis, const \fBMSLMatrix\fP & m, double sita)"
+.PP
+.SS "\fBMSLVector\fP free_rotate (const \fBMSLVector\fP & axis, const \fBMSLVector\fP & v, double sita)"
+.PP
+.SS "\fBMSLVector\fP irpy (const \fBMSLMatrix\fP & R)"
+.PP
+.SS "\fBmslGLNormal\fP NormalCompute (const \fBmslGLVertex\fP & v1, const \fBmslGLVertex\fP & v2, const \fBmslGLVertex\fP & v3)"
+.PP
+.SS "void normalMSLVector (const \fBMSLVector\fP & v1, const \fBMSLVector\fP & v2, \fBMSLVector\fP & v)"
+.PP
+.SS "\fBMSLVector\fP point_x_rotation (const double & sita, const \fBMSLVector\fP & p1)"
+.PP
+.SS "\fBMSLVector\fP point_y_rotation (const double & sita, const \fBMSLVector\fP & p1)"
+.PP
+.SS "\fBMSLVector\fP point_z_rotation (const double & sita, const \fBMSLVector\fP & p1)"
+.PP
+.SS "void rotate_x_MSLMatrix (double sita, \fBMSLMatrix\fP & m)"
+.PP
+.SS "void rotate_y_MSLMatrix (double sita, \fBMSLMatrix\fP & m)"
+.PP
+.SS "void rotate_z_MSLMatrix (double sita, \fBMSLMatrix\fP & m)"
+.PP
+.SS "\fBMSLMatrix\fP rpy (const \fBMSLVector\fP & v)"
+.PP
+.SS "string UPPER (string _str)"
+.PP
+.SH "VARIABLE DOCUMENTATION"
+.PP 
+.SS "mslGLNormal"
+.PP
+.SS "mslGLTexCoord"
+.PP
+.SS "mslGLVertex"
+.PP
+.SS "double y"
+.PP
+.SS "double z"
+.PP
+.SH "AUTHOR"
+.PP 
+Generated automatically by Doxygen for Motion Strategy Library from the source code.

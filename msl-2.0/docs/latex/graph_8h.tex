@@ -1,0 +1,44 @@
+\section{graph.h File Reference}
+\label{graph_8h}\index{graph.h@{graph.h}}
+{\tt \#include \char`\"{}vector.h\char`\"{}}\par
+{\tt \#include \char`\"{}mslio.h\char`\"{}}\par
+\subsection*{Compounds}
+\begin{CompactItemize}
+\item 
+class {\bf MSLEdge}
+\item 
+class {\bf MSLGraph}
+\item 
+class {\bf MSLVertex}
+\item 
+class {\bf MSLVertex\-Greater}
+\begin{CompactList}\small\item\em This is a comparison object to be used for STL-based sorting.\item\end{CompactList}\item 
+class {\bf MSLVertex\-Less}
+\begin{CompactList}\small\item\em This is a comparison object to be used for STL-based sorting.\item\end{CompactList}\end{CompactItemize}
+\subsection*{Functions}
+\begin{CompactItemize}
+\item 
+ostream \& {\bf operator$<$$<$} (ostream \&os, const {\bf MSLEdge} \&e)
+\item 
+istream \& {\bf operator$>$$>$} (istream \&is, {\bf MSLGraph} \&n)
+\item 
+ostream \& {\bf operator$<$$<$} (ostream \&os, const {\bf MSLGraph} \&n)
+\end{CompactItemize}
+
+
+\subsection{Function Documentation}
+\index{graph.h@{graph.h}!operator<<@{operator$<$$<$}}
+\index{operator<<@{operator$<$$<$}!graph.h@{graph.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}ostream\& operator$<$$<$ (ostream \& {\em os}, const {\bf MSLGraph} \& {\em n})}\label{graph_8h_a2}
+
+
+\index{graph.h@{graph.h}!operator<<@{operator$<$$<$}}
+\index{operator<<@{operator$<$$<$}!graph.h@{graph.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}ostream\& operator$<$$<$ (ostream \& {\em os}, const {\bf MSLEdge} \& {\em e})}\label{graph_8h_a0}
+
+
+\index{graph.h@{graph.h}!operator>>@{operator$>$$>$}}
+\index{operator>>@{operator$>$$>$}!graph.h@{graph.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}istream\& operator$>$$>$ (istream \& {\em is}, {\bf MSLGraph} \& {\em n})}\label{graph_8h_a1}
+
+

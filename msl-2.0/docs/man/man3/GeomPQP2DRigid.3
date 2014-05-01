@@ -1,0 +1,77 @@
+.TH "GeomPQP2DRigid" 3 "24 Jul 2003" "Motion Strategy Library" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+GeomPQP2DRigid \- 2D rigid body. 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <geomPQP.h>\fP
+.PP
+Inherits \fBGeomPQP2D\fP.
+.PP
+Inherited by \fBGeomPQP2DRigidMulti\fP.
+.PP
+.SS "Public Methods"
+
+.in +1c
+.ti -1c
+.RI "\fBGeomPQP2DRigid\fP (string path)"
+.br
+.ti -1c
+.RI "virtual \fB~GeomPQP2DRigid\fP ()"
+.br
+.ti -1c
+.RI "virtual bool \fBCollisionFree\fP (const \fBMSLVector\fP &q)"
+.br
+.RI "\fIReturn true if the robot(s) and obstacles are not in collision.\fP"
+.ti -1c
+.RI "virtual double \fBDistanceComp\fP (const \fBMSLVector\fP &q)"
+.br
+.RI "\fICompute the distance of the closest point on the robot to the obstacle region.\fP"
+.ti -1c
+.RI "virtual \fBMSLVector\fP \fBConfigurationDifference\fP (const \fBMSLVector\fP &q1, const \fBMSLVector\fP &q2)"
+.br
+.RI "\fICompute a \fBMSLVector\fP based on q2-q1. In R^n, the configurations are simply subtracted to make the \fBMSLVector\fP. This method exists to make things work correctly for other configuration-space topologies.\fP"
+.ti -1c
+.RI "void \fBSetTransformation\fP (const \fBMSLVector\fP &q)"
+.br
+.in -1c
+.SH "DETAILED DESCRIPTION"
+.PP 
+2D rigid body.
+.PP
+.SH "CONSTRUCTOR & DESTRUCTOR DOCUMENTATION"
+.PP 
+.SS "GeomPQP2DRigid::GeomPQP2DRigid (string path)"
+.PP
+.SS "virtual GeomPQP2DRigid::~GeomPQP2DRigid ()\fC [inline, virtual]\fP"
+.PP
+.SH "MEMBER FUNCTION DOCUMENTATION"
+.PP 
+.SS "bool GeomPQP2DRigid::CollisionFree (const \fBMSLVector\fP & q)\fC [virtual]\fP"
+.PP
+Return true if the robot(s) and obstacles are not in collision.
+.PP
+Reimplemented from \fBGeomPQP\fP.
+.PP
+Reimplemented in \fBGeomPQP2DRigidMulti\fP.
+.SS "\fBMSLVector\fP GeomPQP2DRigid::ConfigurationDifference (const \fBMSLVector\fP & q1, const \fBMSLVector\fP & q2)\fC [virtual]\fP"
+.PP
+Compute a \fBMSLVector\fP based on q2-q1. In R^n, the configurations are simply subtracted to make the \fBMSLVector\fP. This method exists to make things work correctly for other configuration-space topologies.
+.PP
+Reimplemented from \fBGeom\fP.
+.SS "double GeomPQP2DRigid::DistanceComp (const \fBMSLVector\fP & q)\fC [virtual]\fP"
+.PP
+Compute the distance of the closest point on the robot to the obstacle region.
+.PP
+Reimplemented from \fBGeomPQP\fP.
+.PP
+Reimplemented in \fBGeomPQP2DRigidMulti\fP.
+.SS "void GeomPQP2DRigid::SetTransformation (const \fBMSLVector\fP & q)"
+.PP
+Reimplemented in \fBGeomPQP2DRigidMulti\fP.
+
+.SH "AUTHOR"
+.PP 
+Generated automatically by Doxygen for Motion Strategy Library from the source code.

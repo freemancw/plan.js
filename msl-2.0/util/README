@@ -1,0 +1,5 @@
+
+This directory contains simple utilities for making spheres, cylinders,
+and tori out of 3D triangles.  The ASCII output can be saved as a Robot
+or Obst file, which can be read by the Motion Strategy Library.
+

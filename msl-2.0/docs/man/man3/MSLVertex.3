@@ -1,0 +1,136 @@
+.TH "MSLVertex" 3 "24 Jul 2003" "Motion Strategy Library" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+MSLVertex \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <graph.h>\fP
+.PP
+.SS "Public Methods"
+
+.in +1c
+.ti -1c
+.RI "\fBMSLVector\fP \fBState\fP () const"
+.br
+.RI "\fIThe state to which this node corresponds.\fP"
+.ti -1c
+.RI "list< \fBMSLEdge\fP * > \fBEdges\fP () const"
+.br
+.RI "\fIReturn all of the incident edges.\fP"
+.ti -1c
+.RI "double \fBCost\fP () const"
+.br
+.RI "\fIA cost value, useful in some algorithms.\fP"
+.ti -1c
+.RI "void \fBSetCost\fP (const double &\fBx\fP)"
+.br
+.RI "\fIA cost value, useful in some algorithms.\fP"
+.ti -1c
+.RI "void \fBSetID\fP (const int &i)"
+.br
+.RI "\fIChange the vertex ID.\fP"
+.ti -1c
+.RI "int \fBID\fP () const"
+.br
+.RI "\fIGet the vertex ID.\fP"
+.ti -1c
+.RI "void \fBMark\fP ()"
+.br
+.RI "\fIA cost value, useful in some algorithms.\fP"
+.ti -1c
+.RI "void \fBUnmark\fP ()"
+.br
+.RI "\fIA cost value, useful in some algorithms.\fP"
+.ti -1c
+.RI "bool \fBIsMarked\fP () const"
+.br
+.RI "\fIA cost value, useful in some algorithms.\fP"
+.ti -1c
+.RI "\fBMSLVertex\fP ()"
+.br
+.ti -1c
+.RI "\fBMSLVertex\fP (const \fBMSLVector\fP &\fBx\fP)"
+.br
+.ti -1c
+.RI "\fB~MSLVertex\fP ()"
+.br
+.in -1c
+.SS "Friends"
+
+.in +1c
+.ti -1c
+.RI "class \fBMSLEdge\fP"
+.br
+.ti -1c
+.RI "class \fBMSLGraph\fP"
+.br
+.ti -1c
+.RI "istream & \fBoperator>>\fP (istream &is, MSLVertex &n)"
+.br
+.ti -1c
+.RI "ostream & \fBoperator<<\fP (ostream &os, const MSLVertex &n)"
+.br
+.in -1c
+.SH "CONSTRUCTOR & DESTRUCTOR DOCUMENTATION"
+.PP 
+.SS "MSLVertex::MSLVertex ()"
+.PP
+.SS "MSLVertex::MSLVertex (const \fBMSLVector\fP & x)"
+.PP
+.SS "MSLVertex::~MSLVertex ()"
+.PP
+.SH "MEMBER FUNCTION DOCUMENTATION"
+.PP 
+.SS "double MSLVertex::Cost () const\fC [inline]\fP"
+.PP
+A cost value, useful in some algorithms.
+.PP
+.SS "list<\fBMSLEdge\fP*> MSLVertex::Edges () const\fC [inline]\fP"
+.PP
+Return all of the incident edges.
+.PP
+.SS "int MSLVertex::ID () const\fC [inline]\fP"
+.PP
+Get the vertex ID.
+.PP
+.SS "bool MSLVertex::IsMarked () const\fC [inline]\fP"
+.PP
+A cost value, useful in some algorithms.
+.PP
+.SS "void MSLVertex::Mark ()\fC [inline]\fP"
+.PP
+A cost value, useful in some algorithms.
+.PP
+.SS "void MSLVertex::SetCost (const double & x)\fC [inline]\fP"
+.PP
+A cost value, useful in some algorithms.
+.PP
+.SS "void MSLVertex::SetID (const int & i)\fC [inline]\fP"
+.PP
+Change the vertex ID.
+.PP
+.SS "\fBMSLVector\fP MSLVertex::State () const\fC [inline]\fP"
+.PP
+The state to which this node corresponds.
+.PP
+.SS "void MSLVertex::Unmark ()\fC [inline]\fP"
+.PP
+A cost value, useful in some algorithms.
+.PP
+.SH "FRIENDS AND RELATED FUNCTION DOCUMENTATION"
+.PP 
+.SS "friend class MSLEdge\fC [friend]\fP"
+.PP
+.SS "friend class MSLGraph\fC [friend]\fP"
+.PP
+.SS "ostream& operator<< (ostream & os, const MSLVertex & n)\fC [friend]\fP"
+.PP
+.SS "istream& operator>> (istream & is, MSLVertex & n)\fC [friend]\fP"
+.PP
+
+
+.SH "AUTHOR"
+.PP 
+Generated automatically by Doxygen for Motion Strategy Library from the source code.

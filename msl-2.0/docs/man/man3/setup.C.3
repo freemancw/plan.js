@@ -1,0 +1,63 @@
+.TH "setup.C" 3 "24 Jul 2003" "Motion Strategy Library" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+setup.C \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <math.h>\fP
+.br
+\fC#include <cstdlib>\fP
+.br
+\fC#include 'MSL/model.h'\fP
+.br
+\fC#include 'MSL/modelmisc.h'\fP
+.br
+\fC#include 'MSL/model2d.h'\fP
+.br
+\fC#include 'MSL/model3d.h'\fP
+.br
+\fC#include 'MSL/model3ddyn.h'\fP
+.br
+\fC#include 'MSL/modelcar.h'\fP
+.br
+\fC#include 'MSL/geom.h'\fP
+.br
+\fC#include 'MSL/geomPQP.h'\fP
+.br
+\fC#include 'MSL/util.h'\fP
+.br
+\fC#include 'MSL/defs.h'\fP
+.br
+
+.SS "Defines"
+
+.in +1c
+.ti -1c
+.RI "#define \fBMAKE_MODEL\fP(_m)   if (is_file(path+''#_m'')) m = new _m(path);"
+.br
+.ti -1c
+.RI "#define \fBMAKE_GEOM\fP(_g)   if (is_file(path+''#_g'')) g = new _g(path);"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBSetupProblem\fP (\fBModel\fP *&m, \fBGeom\fP *&g, string path)"
+.br
+.in -1c
+.SH "DEFINE DOCUMENTATION"
+.PP 
+.SS "#define MAKE_GEOM(_g)   if (is_file(path+''#_g'')) g = new _g(path);"
+.PP
+.SS "#define MAKE_MODEL(_m)   if (is_file(path+''#_m'')) m = new _m(path);"
+.PP
+.SH "FUNCTION DOCUMENTATION"
+.PP 
+.SS "void SetupProblem (\fBModel\fP *& m, \fBGeom\fP *& g, string path)"
+.PP
+.SH "AUTHOR"
+.PP 
+Generated automatically by Doxygen for Motion Strategy Library from the source code.

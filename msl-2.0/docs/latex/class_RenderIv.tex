@@ -1,0 +1,267 @@
+\section{Render\-Iv  Class Reference}
+\label{class_RenderIv}\index{RenderIv@{Render\-Iv}}
+Perform 3D rendering using the Open\-Inventor library. 
+
+
+{\tt \#include $<$renderiv.h$>$}
+
+Inheritance diagram for Render\-Iv::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2cm]{class_RenderIv}
+\end{center}
+\end{figure}
+\subsection*{Public Methods}
+\begin{CompactItemize}
+\item 
+{\bf Render\-Iv} ()
+\item 
+{\bf Render\-Iv} (string filepath)
+\item 
+{\bf Render\-Iv} ({\bf Scene} $\ast$s, string filepath)
+\item 
+virtual {\bf $\sim$Render\-Iv} ()
+\item 
+virtual void {\bf Reset} ()
+\begin{CompactList}\small\item\em Reset the renderer.\item\end{CompactList}\item 
+virtual void {\bf Init} ()
+\begin{CompactList}\small\item\em Initialized the renderer.\item\end{CompactList}\item 
+virtual void {\bf Main\-Loop} ({\bf Gui} $\ast$g)
+\begin{CompactList}\small\item\em If Control\-Freak = true, then Main\-Loop is entered here.\item\end{CompactList}\end{CompactItemize}
+\subsection*{Protected Methods}
+\begin{CompactItemize}
+\item 
+void {\bf \_\-Idle\-Function} ()
+\item 
+So\-Separator$\ast$ {\bf \_\-Read\-Iv\-File} (const char $\ast$filename)
+\item 
+So\-Separator$\ast$ {\bf \_\-Init\-Object} (const string \&fname)
+\item 
+bool {\bf \_\-Init\-Bounds\-Display} ()
+\item 
+bool {\bf \_\-Init\-Path\-Display} ()
+\item 
+So\-Separator$\ast$ {\bf \_\-Init\-Triangle\-Geom} (list$<$ {\bf MSLTriangle} $>$ \&triangles)
+\item 
+bool {\bf \_\-Init\-Data} ()
+\item 
+void {\bf \_\-Set\-Switch} (So\-Switch $\ast$p\-Switch, bool b\-Flag)
+\item 
+void {\bf \_\-Update\-Path\-Display} ()
+\item 
+void {\bf \_\-Set\-Transform} (So\-Transform $\ast$p\-Trans, double tx, double ty, double tz, double rx, double ry, double rz)
+\item 
+void {\bf \_\-Update\-Bodies} (const {\bf MSLVector} \&q\-Config)
+\end{CompactItemize}
+\subsection*{Protected Attributes}
+\begin{CompactItemize}
+\item 
+So\-Xt\-Examiner\-Viewer$\ast$ {\bf \_\-viewer}
+\item 
+{\bf Gui}$\ast$ {\bf \_\-p\-Gui}
+\item 
+So\-Separator$\ast$ {\bf \_\-iv\-Root}
+\item 
+So\-Separator$\ast$ {\bf \_\-iv\-Data}
+\item 
+So\-Switch$\ast$ {\bf \_\-iv\-Bounds\-Switch}
+\item 
+bool {\bf \_\-b\-Display\-Bounds}
+\item 
+So\-Switch$\ast$ {\bf \_\-iv\-Path\-Switch}
+\item 
+So\-Vertex\-Property$\ast$ {\bf \_\-p\-Path\-Vertex\-Prop}
+\item 
+int {\bf \_\-path\-Frames}
+\item 
+bool {\bf \_\-b\-Display\-Path}
+\item 
+list$<$So\-Transform$\ast$$>$ {\bf \_\-body\-Trans}
+\end{CompactItemize}
+\subsection*{Static Protected Methods}
+\begin{CompactItemize}
+\item 
+void {\bf \_\-Timer\-CB} (void $\ast$user\-Data, So\-Sensor $\ast$)
+\end{CompactItemize}
+
+
+\subsection{Detailed Description}
+Perform 3D rendering using the Open\-Inventor library.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{RenderIv@{Render\-Iv}!RenderIv@{RenderIv}}
+\index{RenderIv@{RenderIv}!RenderIv@{Render\-Iv}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}Render\-Iv::Render\-Iv ()}\label{class_RenderIv_a0}
+
+
+\index{RenderIv@{Render\-Iv}!RenderIv@{RenderIv}}
+\index{RenderIv@{RenderIv}!RenderIv@{Render\-Iv}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}Render\-Iv::Render\-Iv (string {\em filepath})}\label{class_RenderIv_a1}
+
+
+\index{RenderIv@{Render\-Iv}!RenderIv@{RenderIv}}
+\index{RenderIv@{RenderIv}!RenderIv@{Render\-Iv}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}Render\-Iv::Render\-Iv ({\bf Scene} $\ast$ {\em s}, string {\em filepath})}\label{class_RenderIv_a2}
+
+
+\index{RenderIv@{Render\-Iv}!~RenderIv@{$\sim$RenderIv}}
+\index{~RenderIv@{$\sim$RenderIv}!RenderIv@{Render\-Iv}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}virtual Render\-Iv::$\sim$Render\-Iv ()\hspace{0.3cm}{\tt  [virtual]}}\label{class_RenderIv_a3}
+
+
+
+
+\subsection{Member Function Documentation}
+\index{RenderIv@{Render\-Iv}!Init@{Init}}
+\index{Init@{Init}!RenderIv@{Render\-Iv}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}virtual void Render\-Iv::Init ()\hspace{0.3cm}{\tt  [virtual]}}\label{class_RenderIv_a5}
+
+
+Initialized the renderer.
+
+
+
+Reimplemented from {\bf Render} {\rm (p.\,\pageref{class_Render_a4})}.\index{RenderIv@{Render\-Iv}!MainLoop@{MainLoop}}
+\index{MainLoop@{MainLoop}!RenderIv@{Render\-Iv}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}virtual void Render\-Iv::Main\-Loop ({\bf Gui} $\ast$ {\em g})\hspace{0.3cm}{\tt  [virtual]}}\label{class_RenderIv_a6}
+
+
+If Control\-Freak = true, then Main\-Loop is entered here.
+
+
+
+Reimplemented from {\bf Render} {\rm (p.\,\pageref{class_Render_a6})}.\index{RenderIv@{Render\-Iv}!Reset@{Reset}}
+\index{Reset@{Reset}!RenderIv@{Render\-Iv}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}virtual void Render\-Iv::Reset ()\hspace{0.3cm}{\tt  [virtual]}}\label{class_RenderIv_a4}
+
+
+Reset the renderer.
+
+
+
+Reimplemented from {\bf Render} {\rm (p.\,\pageref{class_Render_a7})}.\index{RenderIv@{Render\-Iv}!_IdleFunction@{\_\-IdleFunction}}
+\index{_IdleFunction@{\_\-IdleFunction}!RenderIv@{Render\-Iv}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void Render\-Iv::\_\-Idle\-Function ()\hspace{0.3cm}{\tt  [inline, protected]}}\label{class_RenderIv_b0}
+
+
+\index{RenderIv@{Render\-Iv}!_InitBoundsDisplay@{\_\-InitBoundsDisplay}}
+\index{_InitBoundsDisplay@{\_\-InitBoundsDisplay}!RenderIv@{Render\-Iv}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}bool Render\-Iv::\_\-Init\-Bounds\-Display ()\hspace{0.3cm}{\tt  [protected]}}\label{class_RenderIv_b3}
+
+
+\index{RenderIv@{Render\-Iv}!_InitData@{\_\-InitData}}
+\index{_InitData@{\_\-InitData}!RenderIv@{Render\-Iv}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}bool Render\-Iv::\_\-Init\-Data ()\hspace{0.3cm}{\tt  [protected]}}\label{class_RenderIv_b6}
+
+
+\index{RenderIv@{Render\-Iv}!_InitObject@{\_\-InitObject}}
+\index{_InitObject@{\_\-InitObject}!RenderIv@{Render\-Iv}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}So\-Separator$\ast$ Render\-Iv::\_\-Init\-Object (const string \& {\em fname})\hspace{0.3cm}{\tt  [protected]}}\label{class_RenderIv_b2}
+
+
+\index{RenderIv@{Render\-Iv}!_InitPathDisplay@{\_\-InitPathDisplay}}
+\index{_InitPathDisplay@{\_\-InitPathDisplay}!RenderIv@{Render\-Iv}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}bool Render\-Iv::\_\-Init\-Path\-Display ()\hspace{0.3cm}{\tt  [protected]}}\label{class_RenderIv_b4}
+
+
+\index{RenderIv@{Render\-Iv}!_InitTriangleGeom@{\_\-InitTriangleGeom}}
+\index{_InitTriangleGeom@{\_\-InitTriangleGeom}!RenderIv@{Render\-Iv}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}So\-Separator$\ast$ Render\-Iv::\_\-Init\-Triangle\-Geom (list$<$ {\bf MSLTriangle} $>$ \& {\em triangles})\hspace{0.3cm}{\tt  [protected]}}\label{class_RenderIv_b5}
+
+
+\index{RenderIv@{Render\-Iv}!_ReadIvFile@{\_\-ReadIvFile}}
+\index{_ReadIvFile@{\_\-ReadIvFile}!RenderIv@{Render\-Iv}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}So\-Separator$\ast$ Render\-Iv::\_\-Read\-Iv\-File (const char $\ast$ {\em filename})\hspace{0.3cm}{\tt  [protected]}}\label{class_RenderIv_b1}
+
+
+\index{RenderIv@{Render\-Iv}!_SetSwitch@{\_\-SetSwitch}}
+\index{_SetSwitch@{\_\-SetSwitch}!RenderIv@{Render\-Iv}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void Render\-Iv::\_\-Set\-Switch (So\-Switch $\ast$ {\em p\-Switch}, bool {\em b\-Flag})\hspace{0.3cm}{\tt  [inline, protected]}}\label{class_RenderIv_b7}
+
+
+\index{RenderIv@{Render\-Iv}!_SetTransform@{\_\-SetTransform}}
+\index{_SetTransform@{\_\-SetTransform}!RenderIv@{Render\-Iv}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void Render\-Iv::\_\-Set\-Transform (So\-Transform $\ast$ {\em p\-Trans}, double {\em tx}, double {\em ty}, double {\em tz}, double {\em rx}, double {\em ry}, double {\em rz})\hspace{0.3cm}{\tt  [inline, protected]}}\label{class_RenderIv_b9}
+
+
+\index{RenderIv@{Render\-Iv}!_TimerCB@{\_\-TimerCB}}
+\index{_TimerCB@{\_\-TimerCB}!RenderIv@{Render\-Iv}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void Render\-Iv::\_\-Timer\-CB (void $\ast$ {\em user\-Data}, So\-Sensor $\ast$)\hspace{0.3cm}{\tt  [static, protected]}}\label{class_RenderIv_e0}
+
+
+\index{RenderIv@{Render\-Iv}!_UpdateBodies@{\_\-UpdateBodies}}
+\index{_UpdateBodies@{\_\-UpdateBodies}!RenderIv@{Render\-Iv}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void Render\-Iv::\_\-Update\-Bodies (const {\bf MSLVector} \& {\em q\-Config})\hspace{0.3cm}{\tt  [inline, protected]}}\label{class_RenderIv_b10}
+
+
+\index{RenderIv@{Render\-Iv}!_UpdatePathDisplay@{\_\-UpdatePathDisplay}}
+\index{_UpdatePathDisplay@{\_\-UpdatePathDisplay}!RenderIv@{Render\-Iv}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void Render\-Iv::\_\-Update\-Path\-Display ()\hspace{0.3cm}{\tt  [inline, protected]}}\label{class_RenderIv_b8}
+
+
+
+
+\subsection{Member Data Documentation}
+\index{RenderIv@{Render\-Iv}!_bDisplayBounds@{\_\-bDisplayBounds}}
+\index{_bDisplayBounds@{\_\-bDisplayBounds}!RenderIv@{Render\-Iv}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}bool Render\-Iv::\_\-b\-Display\-Bounds\hspace{0.3cm}{\tt  [protected]}}\label{class_RenderIv_n5}
+
+
+\index{RenderIv@{Render\-Iv}!_bDisplayPath@{\_\-bDisplayPath}}
+\index{_bDisplayPath@{\_\-bDisplayPath}!RenderIv@{Render\-Iv}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}bool Render\-Iv::\_\-b\-Display\-Path\hspace{0.3cm}{\tt  [protected]}}\label{class_RenderIv_n9}
+
+
+\index{RenderIv@{Render\-Iv}!_bodyTrans@{\_\-bodyTrans}}
+\index{_bodyTrans@{\_\-bodyTrans}!RenderIv@{Render\-Iv}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}list$<$So\-Transform$\ast$$>$ Render\-Iv::\_\-body\-Trans\hspace{0.3cm}{\tt  [protected]}}\label{class_RenderIv_n10}
+
+
+\index{RenderIv@{Render\-Iv}!_ivBoundsSwitch@{\_\-ivBoundsSwitch}}
+\index{_ivBoundsSwitch@{\_\-ivBoundsSwitch}!RenderIv@{Render\-Iv}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}So\-Switch$\ast$ Render\-Iv::\_\-iv\-Bounds\-Switch\hspace{0.3cm}{\tt  [protected]}}\label{class_RenderIv_n4}
+
+
+\index{RenderIv@{Render\-Iv}!_ivData@{\_\-ivData}}
+\index{_ivData@{\_\-ivData}!RenderIv@{Render\-Iv}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}So\-Separator$\ast$ Render\-Iv::\_\-iv\-Data\hspace{0.3cm}{\tt  [protected]}}\label{class_RenderIv_n3}
+
+
+\index{RenderIv@{Render\-Iv}!_ivPathSwitch@{\_\-ivPathSwitch}}
+\index{_ivPathSwitch@{\_\-ivPathSwitch}!RenderIv@{Render\-Iv}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}So\-Switch$\ast$ Render\-Iv::\_\-iv\-Path\-Switch\hspace{0.3cm}{\tt  [protected]}}\label{class_RenderIv_n6}
+
+
+\index{RenderIv@{Render\-Iv}!_ivRoot@{\_\-ivRoot}}
+\index{_ivRoot@{\_\-ivRoot}!RenderIv@{Render\-Iv}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}So\-Separator$\ast$ Render\-Iv::\_\-iv\-Root\hspace{0.3cm}{\tt  [protected]}}\label{class_RenderIv_n2}
+
+
+\index{RenderIv@{Render\-Iv}!_pGui@{\_\-pGui}}
+\index{_pGui@{\_\-pGui}!RenderIv@{Render\-Iv}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf Gui}$\ast$ Render\-Iv::\_\-p\-Gui\hspace{0.3cm}{\tt  [protected]}}\label{class_RenderIv_n1}
+
+
+\index{RenderIv@{Render\-Iv}!_pPathVertexProp@{\_\-pPathVertexProp}}
+\index{_pPathVertexProp@{\_\-pPathVertexProp}!RenderIv@{Render\-Iv}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}So\-Vertex\-Property$\ast$ Render\-Iv::\_\-p\-Path\-Vertex\-Prop\hspace{0.3cm}{\tt  [protected]}}\label{class_RenderIv_n7}
+
+
+\index{RenderIv@{Render\-Iv}!_pathFrames@{\_\-pathFrames}}
+\index{_pathFrames@{\_\-pathFrames}!RenderIv@{Render\-Iv}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int Render\-Iv::\_\-path\-Frames\hspace{0.3cm}{\tt  [protected]}}\label{class_RenderIv_n8}
+
+
+\index{RenderIv@{Render\-Iv}!_viewer@{\_\-viewer}}
+\index{_viewer@{\_\-viewer}!RenderIv@{Render\-Iv}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}So\-Xt\-Examiner\-Viewer$\ast$ Render\-Iv::\_\-viewer\hspace{0.3cm}{\tt  [protected]}}\label{class_RenderIv_n0}
+
+
+
+
+The documentation for this class was generated from the following files:\begin{CompactItemize}
+\item 
+{\bf renderiv.h}\item 
+{\bf renderiv.C}\end{CompactItemize}

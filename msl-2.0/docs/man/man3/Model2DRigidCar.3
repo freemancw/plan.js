@@ -1,0 +1,68 @@
+.TH "Model2DRigidCar" 3 "24 Jul 2003" "Motion Strategy Library" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Model2DRigidCar \- A rigid car-like robot in a 2D world. 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <model2d.h>\fP
+.PP
+Inherits \fBModel2DRigid\fP.
+.PP
+Inherited by \fBModel2DRigidCarForward\fP, \fBModel2DRigidCarSmooth\fP, and \fBModelCar\fP.
+.PP
+.SS "Public Methods"
+
+.in +1c
+.ti -1c
+.RI "\fBModel2DRigidCar\fP (string path)"
+.br
+.ti -1c
+.RI "virtual \fB~Model2DRigidCar\fP ()"
+.br
+.ti -1c
+.RI "virtual \fBMSLVector\fP \fBStateTransitionEquation\fP (const \fBMSLVector\fP &\fBx\fP, const \fBMSLVector\fP &u)"
+.br
+.RI "\fIThe state transition equation, or equations of motion, xdot=f(x,u).\fP"
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "double \fBMaxSteeringAngle\fP"
+.br
+.ti -1c
+.RI "double \fBCarLength\fP"
+.br
+.in -1c
+.SH "DETAILED DESCRIPTION"
+.PP 
+A rigid car-like robot in a 2D world.
+.PP
+.SH "CONSTRUCTOR & DESTRUCTOR DOCUMENTATION"
+.PP 
+.SS "Model2DRigidCar::Model2DRigidCar (string path)"
+.PP
+.SS "virtual Model2DRigidCar::~Model2DRigidCar ()\fC [inline, virtual]\fP"
+.PP
+.SH "MEMBER FUNCTION DOCUMENTATION"
+.PP 
+.SS "\fBMSLVector\fP Model2DRigidCar::StateTransitionEquation (const \fBMSLVector\fP & x, const \fBMSLVector\fP & u)\fC [virtual]\fP"
+.PP
+The state transition equation, or equations of motion, xdot=f(x,u).
+.PP
+Reimplemented from \fBModel2DRigid\fP.
+.PP
+Reimplemented in \fBModel2DRigidCarSmooth\fP.
+.SH "MEMBER DATA DOCUMENTATION"
+.PP 
+.SS "double Model2DRigidCar::CarLength"
+.PP
+.SS "double Model2DRigidCar::MaxSteeringAngle"
+.PP
+
+
+.SH "AUTHOR"
+.PP 
+Generated automatically by Doxygen for Motion Strategy Library from the source code.

@@ -1,0 +1,73 @@
+.TH "Model2DPoint" 3 "24 Jul 2003" "Motion Strategy Library" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Model2DPoint \- A point robot in a 2D world. 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <model2d.h>\fP
+.PP
+Inherits \fBModel2D\fP.
+.PP
+Inherited by \fBModel2DPointCar\fP.
+.PP
+.SS "Public Methods"
+
+.in +1c
+.ti -1c
+.RI "\fBModel2DPoint\fP (string path)"
+.br
+.ti -1c
+.RI "virtual \fB~Model2DPoint\fP ()"
+.br
+.ti -1c
+.RI "virtual \fBMSLVector\fP \fBIntegrate\fP (const \fBMSLVector\fP &\fBx\fP, const \fBMSLVector\fP &u, const double &h)"
+.br
+.RI "\fIPerform integration from state x, using input u, over time step h.\fP"
+.ti -1c
+.RI "virtual \fBMSLVector\fP \fBStateTransitionEquation\fP (const \fBMSLVector\fP &\fBx\fP, const \fBMSLVector\fP &u)"
+.br
+.RI "\fIThe state transition equation, or equations of motion, xdot=f(x,u).\fP"
+.ti -1c
+.RI "virtual double \fBMetric\fP (const \fBMSLVector\fP &x1, const \fBMSLVector\fP &x2)"
+.br
+.RI "\fIA distance metric, which is Euclidean in the base class.\fP"
+.in -1c
+.SH "DETAILED DESCRIPTION"
+.PP 
+A point robot in a 2D world.
+.PP
+.SH "CONSTRUCTOR & DESTRUCTOR DOCUMENTATION"
+.PP 
+.SS "Model2DPoint::Model2DPoint (string path)"
+.PP
+.SS "virtual Model2DPoint::~Model2DPoint ()\fC [inline, virtual]\fP"
+.PP
+.SH "MEMBER FUNCTION DOCUMENTATION"
+.PP 
+.SS "\fBMSLVector\fP Model2DPoint::Integrate (const \fBMSLVector\fP & x, const \fBMSLVector\fP & u, const double & h)\fC [virtual]\fP"
+.PP
+Perform integration from state x, using input u, over time step h.
+.PP
+Implements \fBModel\fP.
+.PP
+Reimplemented in \fBModel2DPointCar\fP.
+.SS "double Model2DPoint::Metric (const \fBMSLVector\fP & x1, const \fBMSLVector\fP & x2)\fC [virtual]\fP"
+.PP
+A distance metric, which is Euclidean in the base class.
+.PP
+Reimplemented from \fBModel\fP.
+.PP
+Reimplemented in \fBModel2DPointCar\fP.
+.SS "\fBMSLVector\fP Model2DPoint::StateTransitionEquation (const \fBMSLVector\fP & x, const \fBMSLVector\fP & u)\fC [virtual]\fP"
+.PP
+The state transition equation, or equations of motion, xdot=f(x,u).
+.PP
+Implements \fBModel\fP.
+.PP
+Reimplemented in \fBModel2DPointCar\fP.
+
+.SH "AUTHOR"
+.PP 
+Generated automatically by Doxygen for Motion Strategy Library from the source code.

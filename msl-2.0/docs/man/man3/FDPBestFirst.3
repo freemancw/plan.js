@@ -1,0 +1,43 @@
+.TH "FDPBestFirst" 3 "24 Jul 2003" "Motion Strategy Library" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+FDPBestFirst \- Best first search variant, using the Metric in \fBProblem\fP. 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <fdp.h>\fP
+.PP
+Inherits \fBFDP\fP.
+.PP
+.SS "Public Methods"
+
+.in +1c
+.ti -1c
+.RI "\fBFDPBestFirst\fP (\fBProblem\fP *p)"
+.br
+.in -1c
+.SS "Protected Methods"
+
+.in +1c
+.ti -1c
+.RI "virtual double \fBSearchCost\fP (double initcost, \fBMSLNode\fP *&n, \fBMSLNode\fP *&nn)"
+.br
+.in -1c
+.SH "DETAILED DESCRIPTION"
+.PP 
+Best first search variant, using the Metric in \fBProblem\fP.
+.PP
+.SH "CONSTRUCTOR & DESTRUCTOR DOCUMENTATION"
+.PP 
+.SS "FDPBestFirst::FDPBestFirst (\fBProblem\fP * p)"
+.PP
+.SH "MEMBER FUNCTION DOCUMENTATION"
+.PP 
+.SS "double FDPBestFirst::SearchCost (double initcost, \fBMSLNode\fP *& n, \fBMSLNode\fP *& nn)\fC [protected, virtual]\fP"
+.PP
+Reimplemented from \fBFDP\fP.
+
+.SH "AUTHOR"
+.PP 
+Generated automatically by Doxygen for Motion Strategy Library from the source code.

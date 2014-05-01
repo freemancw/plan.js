@@ -1,0 +1,162 @@
+.TH "GuiPlanner" 3 "24 Jul 2003" "Motion Strategy Library" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+GuiPlanner \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <guiplanner.h>\fP
+.PP
+Inherits \fBGui\fP.
+.PP
+.SS "Public Methods"
+
+.in +1c
+.ti -1c
+.RI "virtual void \fBHandleEvents\fP ()"
+.br
+.RI "\fIProcess any IO events (may be used by \fBRender\fP).\fP"
+.ti -1c
+.RI "virtual void \fBButtonHandle\fP (int b)"
+.br
+.RI "\fIFigure out what actions to take based on menu choices.\fP"
+.ti -1c
+.RI "\fBGuiPlanner\fP (\fBRender\fP *render, \fBPlanner\fP *planner)"
+.br
+.ti -1c
+.RI "virtual \fB~GuiPlanner\fP ()"
+.br
+.ti -1c
+.RI "void \fBResetPlanner\fP ()"
+.br
+.ti -1c
+.RI "void \fBWriteGraphs\fP ()"
+.br
+.ti -1c
+.RI "void \fBReadGraphs\fP ()"
+.br
+.ti -1c
+.RI "void \fBReadAnimationFrames\fP ()"
+.br
+.ti -1c
+.RI "void \fBWriteAnimationFrames\fP ()"
+.br
+.ti -1c
+.RI "void \fBReadPolicy\fP ()"
+.br
+.ti -1c
+.RI "void \fBWritePolicy\fP ()"
+.br
+.ti -1c
+.RI "void \fBDrawGraphs\fP ()"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "double \fBLineWidth\fP"
+.br
+.ti -1c
+.RI "double \fBPSLineWidth\fP"
+.br
+.ti -1c
+.RI "int \fBDrawIndexX\fP"
+.br
+.ti -1c
+.RI "int \fBDrawIndexY\fP"
+.br
+.ti -1c
+.RI "\fBPlanner\fP * \fBPl\fP"
+.br
+.in -1c
+.SS "Protected Methods"
+
+.in +1c
+.ti -1c
+.RI "virtual void \fBInit\fP ()"
+.br
+.RI "\fIInitialize \fBGui\fP and \fBRender\fP.\fP"
+.ti -1c
+.RI "virtual void \fBCreateMenuWindow\fP ()"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBMSLPlannerWindow\fP * \fBWindow\fP"
+.br
+.in -1c
+.SS "Friends"
+
+.in +1c
+.ti -1c
+.RI "class \fBMSLPlotWindow\fP"
+.br
+.in -1c
+.SH "CONSTRUCTOR & DESTRUCTOR DOCUMENTATION"
+.PP 
+.SS "GuiPlanner::GuiPlanner (\fBRender\fP * render, \fBPlanner\fP * planner)"
+.PP
+.SS "virtual GuiPlanner::~GuiPlanner ()\fC [inline, virtual]\fP"
+.PP
+.SH "MEMBER FUNCTION DOCUMENTATION"
+.PP 
+.SS "void GuiPlanner::ButtonHandle (int b)\fC [virtual]\fP"
+.PP
+Figure out what actions to take based on menu choices.
+.PP
+Reimplemented from \fBGui\fP.
+.SS "void GuiPlanner::CreateMenuWindow ()\fC [protected, virtual]\fP"
+.PP
+.SS "void GuiPlanner::DrawGraphs ()"
+.PP
+.SS "void GuiPlanner::HandleEvents ()\fC [virtual]\fP"
+.PP
+Process any IO events (may be used by \fBRender\fP).
+.PP
+Implements \fBGui\fP.
+.SS "void GuiPlanner::Init ()\fC [protected, virtual]\fP"
+.PP
+Initialize \fBGui\fP and \fBRender\fP.
+.PP
+Reimplemented from \fBGui\fP.
+.SS "void GuiPlanner::ReadAnimationFrames ()"
+.PP
+.SS "void GuiPlanner::ReadGraphs ()"
+.PP
+.SS "void GuiPlanner::ReadPolicy ()"
+.PP
+.SS "void GuiPlanner::ResetPlanner ()"
+.PP
+.SS "void GuiPlanner::WriteAnimationFrames ()"
+.PP
+.SS "void GuiPlanner::WriteGraphs ()"
+.PP
+.SS "void GuiPlanner::WritePolicy ()"
+.PP
+.SH "FRIENDS AND RELATED FUNCTION DOCUMENTATION"
+.PP 
+.SS "friend class MSLPlotWindow\fC [friend]\fP"
+.PP
+.SH "MEMBER DATA DOCUMENTATION"
+.PP 
+.SS "int GuiPlanner::DrawIndexX"
+.PP
+.SS "int GuiPlanner::DrawIndexY"
+.PP
+.SS "double GuiPlanner::LineWidth"
+.PP
+.SS "\fBPlanner\fP* GuiPlanner::Pl"
+.PP
+.SS "double GuiPlanner::PSLineWidth"
+.PP
+.SS "\fBMSLPlannerWindow\fP* GuiPlanner::Window\fC [protected]\fP"
+.PP
+
+
+.SH "AUTHOR"
+.PP 
+Generated automatically by Doxygen for Motion Strategy Library from the source code.

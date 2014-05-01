@@ -1,0 +1,77 @@
+.TH "model2d.h" 3 "8 Nov 2001" "Motion Strategy Library" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+model2d.h \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include "model.h"\fR
+.br
+.SS Compounds
+
+.in +1c
+.ti -1c
+.RI "class \fBModel2D\fR"
+.br
+.RI "\fIBase for all 2D models.\fR"
+.ti -1c
+.RI "class \fBModel2DPoint\fR"
+.br
+.RI "\fIA point robot in a 2D world.\fR"
+.ti -1c
+.RI "class \fBModel2DPointCar\fR"
+.br
+.RI "\fIA point car-like robot in a 2D world.\fR"
+.ti -1c
+.RI "class \fBModel2DRigid\fR"
+.br
+.RI "\fIA holonomic rigid robot in a 2D world.\fR"
+.ti -1c
+.RI "class \fBModel2DRigidCar\fR"
+.br
+.RI "\fIA rigid car-like robot in a 2D world.\fR"
+.ti -1c
+.RI "class \fBModel2DRigidCarForward\fR"
+.br
+.RI "\fIA rigid car-like robot that can only go forward in a 2D world.\fR"
+.ti -1c
+.RI "class \fBModel2DRigidCarSmooth\fR"
+.br
+.RI "\fIA rigid car-like robot with continuous steering angles This model is used by Th. Fraichard, Scheuer, Laugier.\fR"
+.ti -1c
+.RI "class \fBModel2DRigidCarSmooth2Trailers\fR"
+.br
+.RI "\fIA rigid car-like robot with continuous steering angles and two trailers.\fR"
+.ti -1c
+.RI "class \fBModel2DRigidCarSmooth3Trailers\fR"
+.br
+.RI "\fIA rigid car-like robot with continuous steering angles and three trailers.\fR"
+.ti -1c
+.RI "class \fBModel2DRigidCarSmoothTrailer\fR"
+.br
+.RI "\fIA rigid car-like robot with continuous steering angles and a trailer. The trailer models are taken from Murray and Sastry, Trans. Automatic Control, Vol 38, No 5, 1993, pp. 700-716.\fR"
+.ti -1c
+.RI "class \fBModel2DRigidChain\fR"
+.br
+.RI "\fIA 2D kinematic chain of bodies.\fR"
+.ti -1c
+.RI "class \fBModel2DRigidDyncar\fR"
+.br
+.RI "\fIA 5DOF dynamical model of a rigid car. This model uses a linear tire model, which is far from reality. The model was donated by Jim Bernard.\fR"
+.ti -1c
+.RI "class \fBModel2DRigidDyncarNtire\fR"
+.br
+.RI "\fIA 5DOF dynamical model of a rigid car. This model uses a nonlinear tire model. The model was donated by Jim Bernard.\fR"
+.ti -1c
+.RI "class \fBModel2DRigidLander\fR"
+.br
+.RI "\fIA rigid body with two small side thrusters, and a larger lower thruster. The goal is to navigate and softly "land" the craft by firing thrusters, in spite of gravity.\fR"
+.ti -1c
+.RI "class \fBModel2DRigidMulti\fR"
+.br
+.RI "\fIA collection of free-floating bodies in a 2D world.\fR"
+.in -1c
+.SH AUTHOR
+.PP 
+Generated automatically by Doxygen for Motion Strategy Library from the source code.

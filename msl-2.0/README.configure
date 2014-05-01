@@ -1,0 +1,47 @@
+This is our first effort using a configure script for MSL. As such,
+there may be many tips to learn and better ways to perform the
+tests. If you have a problem with the configure script please send us
+an email.
+
+If you downloaded MSL from the MSL webpage, just run:
+
+./configure
+make
+
+If configure does not find some of the libraries needed, but you know
+they are installed in your system, use --with-LIB-includes=PATH and
+--with-LIB-libs=PATH, in which PATH indicates the location of the
+header files and the library files of the given LIB. Use ./configure
+--help to know all the options available.
+
+If you downloaded MSL from cvs:
+To create the configure script use:
+
+autoconf
+
+You will need autoconf version 2.53 or newer.
+
+Never, commit the ./configure file, since it is thousand lines
+long. And anyway it is not that useful, since the important info is in
+the configure.ac file (is like making a commit of a .o file). That
+will only make sense for an official release.
+
+NOTE:
+
+I tried to build all this configure thing without breaking too much
+the msl source code ;). The only changes of the msl source were when a
+.h involved in the configure search is used. Now the changes where in
+the headers fx.h, PQP.h and gl*.h. The headers may be found like
+<PQP.h> or <PQP/PQP.h>. The configure script prefers the later case.
+
+#include <fx.h>
+
+was replaced by:
+
+#include "../../configs/configFOX.h", and so on.
+
+
+If something is not working as it should, email me at
+<btovar@uiuc.edu>
+
+Benjamin

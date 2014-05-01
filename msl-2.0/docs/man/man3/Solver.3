@@ -1,0 +1,65 @@
+.TH "Solver" 3 "24 Jul 2003" "Motion Strategy Library" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Solver \- The base class for all path planners. 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <solver.h>\fP
+.PP
+Inherited by \fBPlanner\fP.
+.PP
+.SS "Public Methods"
+
+.in +1c
+.ti -1c
+.RI "\fBSolver\fP (\fBProblem\fP *problem)"
+.br
+.RI "\fIA constructor that initializes data members.\fP"
+.ti -1c
+.RI "virtual \fB~Solver\fP ()"
+.br
+.RI "\fIEmpty destructor.\fP"
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "string \fBFilePath\fP"
+.br
+.RI "\fIThe directory in which all files for a problem will be stored.\fP"
+.ti -1c
+.RI "\fBProblem\fP * \fBP\fP"
+.br
+.RI "\fIAn instance of problem, which defines all of the problem-specific methods needed for solvers.\fP"
+.in -1c
+.SH "DETAILED DESCRIPTION"
+.PP 
+The base class for all path planners.
+.PP
+.SH "CONSTRUCTOR & DESTRUCTOR DOCUMENTATION"
+.PP 
+.SS "Solver::Solver (\fBProblem\fP * problem)"
+.PP
+A constructor that initializes data members.
+.PP
+.SS "virtual Solver::~Solver ()\fC [inline, virtual]\fP"
+.PP
+Empty destructor.
+.PP
+.SH "MEMBER DATA DOCUMENTATION"
+.PP 
+.SS "string Solver::FilePath"
+.PP
+The directory in which all files for a problem will be stored.
+.PP
+.SS "\fBProblem\fP* Solver::P"
+.PP
+An instance of problem, which defines all of the problem-specific methods needed for solvers.
+.PP
+This includes incremental simulation and collision detection. 
+
+.SH "AUTHOR"
+.PP 
+Generated automatically by Doxygen for Motion Strategy Library from the source code.

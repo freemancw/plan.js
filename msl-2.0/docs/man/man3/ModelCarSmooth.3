@@ -1,0 +1,47 @@
+.TH "ModelCarSmooth" 3 "24 Jul 2003" "Motion Strategy Library" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ModelCarSmooth \- The same model as \fBModel2DRigidCarSmooth\fP. 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <modelcar.h>\fP
+.PP
+Inherits \fBModel2DRigidCarSmooth\fP.
+.PP
+.SS "Public Methods"
+
+.in +1c
+.ti -1c
+.RI "\fBModelCarSmooth\fP (string path)"
+.br
+.ti -1c
+.RI "virtual \fB~ModelCarSmooth\fP ()"
+.br
+.ti -1c
+.RI "virtual \fBMSLVector\fP \fBStateToConfiguration\fP (const \fBMSLVector\fP &\fBx\fP)"
+.br
+.RI "\fIA method that converts a \fBModel\fP state in to a \fBGeom\fP configuration.\fP"
+.in -1c
+.SH "DETAILED DESCRIPTION"
+.PP 
+The same model as \fBModel2DRigidCarSmooth\fP.
+.PP
+.SH "CONSTRUCTOR & DESTRUCTOR DOCUMENTATION"
+.PP 
+.SS "ModelCarSmooth::ModelCarSmooth (string path)"
+.PP
+.SS "virtual ModelCarSmooth::~ModelCarSmooth ()\fC [inline, virtual]\fP"
+.PP
+.SH "MEMBER FUNCTION DOCUMENTATION"
+.PP 
+.SS "\fBMSLVector\fP ModelCarSmooth::StateToConfiguration (const \fBMSLVector\fP & x)\fC [virtual]\fP"
+.PP
+A method that converts a \fBModel\fP state in to a \fBGeom\fP configuration.
+.PP
+Reimplemented from \fBModel2DRigidCarSmooth\fP.
+
+.SH "AUTHOR"
+.PP 
+Generated automatically by Doxygen for Motion Strategy Library from the source code.

@@ -1,0 +1,89 @@
+\section{Incremental\-Planner  Class Reference}
+\label{class_IncrementalPlanner}\index{IncrementalPlanner@{Incremental\-Planner}}
+{\tt \#include $<$planner.h$>$}
+
+Inheritance diagram for Incremental\-Planner::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=10cm]{class_IncrementalPlanner}
+\end{center}
+\end{figure}
+\subsection*{Public Methods}
+\begin{CompactItemize}
+\item 
+{\bf Incremental\-Planner} ({\bf Problem} $\ast$problem)
+\begin{CompactList}\small\item\em A constructor that initializes data members.\item\end{CompactList}\item 
+{\bf $\sim$Incremental\-Planner} ()
+\item 
+virtual void {\bf Construct} ()
+\begin{CompactList}\small\item\em Essentially do nothing (no precomputation for incremental planners).\item\end{CompactList}\item 
+void {\bf Record\-Solution} (const list$<$ {\bf MSLNode} $\ast$$>$ \&glist, const list$<$ {\bf MSLNode} $\ast$$>$ \&g2list)
+\begin{CompactList}\small\item\em Convert a path in the graph to Path and Policy.\item\end{CompactList}\item 
+void {\bf Record\-Solution} (const list$<$ {\bf MSLNode} $\ast$$>$ \&glist)
+\item 
+virtual void {\bf Write\-Graphs} (ofstream \&fout)
+\begin{CompactList}\small\item\em Write trees to a file.\item\end{CompactList}\item 
+virtual void {\bf Read\-Graphs} (ifstream \&fin)
+\begin{CompactList}\small\item\em Read trees from a file.\item\end{CompactList}\end{CompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{IncrementalPlanner@{Incremental\-Planner}!IncrementalPlanner@{IncrementalPlanner}}
+\index{IncrementalPlanner@{IncrementalPlanner}!IncrementalPlanner@{Incremental\-Planner}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}Incremental\-Planner::Incremental\-Planner ({\bf Problem} $\ast$ {\em problem})}\label{class_IncrementalPlanner_a0}
+
+
+A constructor that initializes data members.
+
+\index{IncrementalPlanner@{Incremental\-Planner}!~IncrementalPlanner@{$\sim$IncrementalPlanner}}
+\index{~IncrementalPlanner@{$\sim$IncrementalPlanner}!IncrementalPlanner@{Incremental\-Planner}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}Incremental\-Planner::$\sim$Incremental\-Planner ()\hspace{0.3cm}{\tt  [inline]}}\label{class_IncrementalPlanner_a1}
+
+
+
+
+\subsection{Member Function Documentation}
+\index{IncrementalPlanner@{Incremental\-Planner}!Construct@{Construct}}
+\index{Construct@{Construct}!IncrementalPlanner@{Incremental\-Planner}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void Incremental\-Planner::Construct ()\hspace{0.3cm}{\tt  [virtual]}}\label{class_IncrementalPlanner_a2}
+
+
+Essentially do nothing (no precomputation for incremental planners).
+
+
+
+Reimplemented from {\bf Planner} {\rm (p.\,\pageref{class_Planner_a3})}.\index{IncrementalPlanner@{Incremental\-Planner}!ReadGraphs@{ReadGraphs}}
+\index{ReadGraphs@{ReadGraphs}!IncrementalPlanner@{Incremental\-Planner}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void Incremental\-Planner::Read\-Graphs (ifstream \& {\em fin})\hspace{0.3cm}{\tt  [virtual]}}\label{class_IncrementalPlanner_a6}
+
+
+Read trees from a file.
+
+
+
+Reimplemented from {\bf Planner} {\rm (p.\,\pageref{class_Planner_a6})}.\index{IncrementalPlanner@{Incremental\-Planner}!RecordSolution@{RecordSolution}}
+\index{RecordSolution@{RecordSolution}!IncrementalPlanner@{Incremental\-Planner}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void Incremental\-Planner::Record\-Solution (const list$<$ {\bf MSLNode} $\ast$$>$ \& {\em glist})}\label{class_IncrementalPlanner_a4}
+
+
+\index{IncrementalPlanner@{Incremental\-Planner}!RecordSolution@{RecordSolution}}
+\index{RecordSolution@{RecordSolution}!IncrementalPlanner@{Incremental\-Planner}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void Incremental\-Planner::Record\-Solution (const list$<$ {\bf MSLNode} $\ast$$>$ \& {\em glist}, const list$<$ {\bf MSLNode} $\ast$$>$ \& {\em g2list})}\label{class_IncrementalPlanner_a3}
+
+
+Convert a path in the graph to Path and Policy.
+
+\index{IncrementalPlanner@{Incremental\-Planner}!WriteGraphs@{WriteGraphs}}
+\index{WriteGraphs@{WriteGraphs}!IncrementalPlanner@{Incremental\-Planner}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void Incremental\-Planner::Write\-Graphs (ofstream \& {\em fout})\hspace{0.3cm}{\tt  [virtual]}}\label{class_IncrementalPlanner_a5}
+
+
+Write trees to a file.
+
+
+
+Reimplemented from {\bf Planner} {\rm (p.\,\pageref{class_Planner_a5})}.
+
+The documentation for this class was generated from the following file:\begin{CompactItemize}
+\item 
+{\bf planner.h}\end{CompactItemize}

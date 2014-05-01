@@ -1,0 +1,73 @@
+.TH "Model3DDyn" 3 "24 Jul 2003" "Motion Strategy Library" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Model3DDyn \- A spacecraft model with three thrusters providing both tranlation force and rotation torque. 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <model3ddyn.h>\fP
+.PP
+Inherits \fBModel3DRigid\fP.
+.PP
+.SS "Public Methods"
+
+.in +1c
+.ti -1c
+.RI "\fBModel3DDyn\fP (string path)"
+.br
+.ti -1c
+.RI "virtual \fB~Model3DDyn\fP ()"
+.br
+.ti -1c
+.RI "virtual \fBMSLVector\fP \fBStateTransitionEquation\fP (const \fBMSLVector\fP &\fBx\fP, const \fBMSLVector\fP &u)"
+.br
+.RI "\fIThe state transition equation, or equations of motion, xdot=f(x,u).\fP"
+.ti -1c
+.RI "virtual bool \fBSatisfied\fP (const \fBMSLVector\fP &state)"
+.br
+.RI "\fITest whether global state-space constraints are satisfied.\fP"
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "double \fBm\fP"
+.br
+.ti -1c
+.RI "\fBMSLMatrix\fP \fBI\fP"
+.br
+.in -1c
+.SH "DETAILED DESCRIPTION"
+.PP 
+A spacecraft model with three thrusters providing both tranlation force and rotation torque.
+.PP
+.SH "CONSTRUCTOR & DESTRUCTOR DOCUMENTATION"
+.PP 
+.SS "Model3DDyn::Model3DDyn (string path)"
+.PP
+.SS "virtual Model3DDyn::~Model3DDyn ()\fC [inline, virtual]\fP"
+.PP
+.SH "MEMBER FUNCTION DOCUMENTATION"
+.PP 
+.SS "bool Model3DDyn::Satisfied (const \fBMSLVector\fP & state)\fC [virtual]\fP"
+.PP
+Test whether global state-space constraints are satisfied.
+.PP
+Reimplemented from \fBModel\fP.
+.SS "\fBMSLVector\fP Model3DDyn::StateTransitionEquation (const \fBMSLVector\fP & x, const \fBMSLVector\fP & u)\fC [virtual]\fP"
+.PP
+The state transition equation, or equations of motion, xdot=f(x,u).
+.PP
+Reimplemented from \fBModel3DRigid\fP.
+.SH "MEMBER DATA DOCUMENTATION"
+.PP 
+.SS "\fBMSLMatrix\fP Model3DDyn::I"
+.PP
+.SS "double Model3DDyn::m"
+.PP
+
+
+.SH "AUTHOR"
+.PP 
+Generated automatically by Doxygen for Motion Strategy Library from the source code.

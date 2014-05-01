@@ -1,0 +1,61 @@
+.TH "RRTConCon" 3 "24 Jul 2003" "Motion Strategy Library" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+RRTConCon \- Use Connect for both exploration and connecting of trees. 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <rrt.h>\fP
+.PP
+Inherits \fBRRTDual\fP.
+.PP
+.SS "Public Methods"
+
+.in +1c
+.ti -1c
+.RI "\fBRRTConCon\fP (\fBProblem\fP *p)"
+.br
+.ti -1c
+.RI "virtual \fB~RRTConCon\fP ()"
+.br
+.ti -1c
+.RI "virtual bool \fBPlan\fP ()"
+.br
+.RI "\fIThe greediest of the dual-tree planners. Very fast for holonomic planning.\fP"
+.in -1c
+.SH "DETAILED DESCRIPTION"
+.PP 
+Use Connect for both exploration and connecting of trees.
+.PP
+This planner balances the computation between growing the trees toward random samples and toward each other. G is the tree from the initial state, and G2 is the tree from the goal state. In each iteration, there are four steps: 
+.TP
+Use Connect to grow G toward a random sample 
+.TP
+Use Connect to grow G2 toward the new node in G 
+.TP
+Use Connect to grow G2 toward a random sample 
+.TP
+Use Connect to grow G toward the new node in G2 
+.PP
+In each step, node selection is based on the nearest neighbor.
+.PP
+The planner is described in LaValle, Kuffner, WAFR, 2000. The only difference between RRTConCon and \fBRRTExtExt\fP is the replacement of Extend with Connect in all four steps. 
+.PP
+.SH "CONSTRUCTOR & DESTRUCTOR DOCUMENTATION"
+.PP 
+.SS "RRTConCon::RRTConCon (\fBProblem\fP * p)"
+.PP
+.SS "virtual RRTConCon::~RRTConCon ()\fC [inline, virtual]\fP"
+.PP
+.SH "MEMBER FUNCTION DOCUMENTATION"
+.PP 
+.SS "bool RRTConCon::Plan ()\fC [virtual]\fP"
+.PP
+The greediest of the dual-tree planners. Very fast for holonomic planning.
+.PP
+Reimplemented from \fBRRTDual\fP.
+
+.SH "AUTHOR"
+.PP 
+Generated automatically by Doxygen for Motion Strategy Library from the source code.

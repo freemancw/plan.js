@@ -1,0 +1,70 @@
+.TH "vector.C" 3 "8 Nov 2001" "Motion Strategy Library" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+vector.C \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <math.h>\fR
+.br
+\fC#include <ctype.h>\fR
+.br
+\fC#include "vector.h"\fR
+.br
+
+.SS Defines
+
+.in +1c
+.ti -1c
+.RI "#define \fBnil\fR  0"
+.br
+.in -1c
+.SS Functions
+
+.in +1c
+.ti -1c
+.RI "ostream& \fBoperator<<\fR (ostream &out, const list< \fBMSLVector\fR > &L)"
+.br
+.ti -1c
+.RI "istream& \fBoperator>>\fR (istream &in, list< \fBMSLVector\fR > &L)"
+.br
+.ti -1c
+.RI "ostream& \fBoperator<<\fR (ostream &out, const vector< \fBMSLVector\fR > &L)"
+.br
+.ti -1c
+.RI "istream& \fBoperator>>\fR (istream &in, vector< \fBMSLVector\fR > &L)"
+.br
+.ti -1c
+.RI "void \fBerror_handler\fR (int i, const char *s)"
+.br
+.ti -1c
+.RI "ostream& \fBoperator<<\fR (ostream &os, const \fBMSLVector\fR &v)"
+.br
+.ti -1c
+.RI "istream& \fBoperator>>\fR (istream &is, \fBMSLVector\fR &v)"
+.br
+.in -1c
+.SH DEFINE DOCUMENTATION
+.PP 
+.SS #define nil  0
+.PP
+.SH FUNCTION DOCUMENTATION
+.PP 
+.SS void error_handler (int i, const char * s)
+.PP
+.SS ostream& operator<< (ostream & os, const \fBMSLVector\fR & v)
+.PP
+.SS ostream& operator<< (ostream & out, const vector< \fBMSLVector\fR > & L)
+.PP
+.SS ostream& operator<< (ostream & out, const list< \fBMSLVector\fR > & L)
+.PP
+.SS istream& operator>> (istream & is, \fBMSLVector\fR & v)
+.PP
+.SS istream& operator>> (istream & in, vector< \fBMSLVector\fR > & L)
+.PP
+.SS istream& operator>> (istream & in, list< \fBMSLVector\fR > & L)
+.PP
+.SH AUTHOR
+.PP 
+Generated automatically by Doxygen for Motion Strategy Library from the source code.

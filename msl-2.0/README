@@ -1,0 +1,90 @@
+Motion Strategy Library 
+
+University of Illinois
+
+Contributors:  Steve LaValle
+               James Juffner
+               Libo Yang
+               Peng Cheng
+               Anna Atramentov
+
+
+The following directories are included in this distribution:
+
+data:      Numerous examples, stored one per subdirectory
+docs:      Documentation, including LaTeX and html
+tests:     Sample code that uses the library
+include:   The C++ header files for MSL
+lib:       Location of the MSL library (libMSL.a), when compiled
+src:       The source code of the library
+
+
+INSTALLATION:
+
+1.  Make sure that the following libraries and packages are installed
+on your system:
+
+a) The FOX C++ library.  This GNU package allows GUIs to be written
+that can be ported to both Unix platforms and MS Windows.  It was
+developed under Linux, and the source is available.  The default
+install uses shared libraries.  Make sure your LD_LIBRARY_PATH
+environment variable is set to point to the shared object files.
+
+http://www.cfdrc.com/FOX/fox.html
+
+b) The PQP collision detection package from Univ. of North Carolina.
+
+http://www.cs.unc.edu/~geom/SSV/
+
+c) Open GL and GLUT libraries for 3D graphics.  These are available on
+most platforms, including Windows.  All of these libraries are
+included in RedHat Linux.  In many cases, it is not necessary to
+download them (they might even be installed already).  Helpful web
+pages are:
+
+http://www.opengl.org/
+http://reality.sgi.com/mjk/glut3/glut3.html
+http://www.nvidia.com/
+
+d) (OPTIONAL) Open Inventor which is available as open source (for Linux,
+at least) 
+
+The objects look better in the inventor renderer, but it does not
+presently have as many features (multiple views, attached cameras)
+as the GL-based render.
+
+
+2.  Edit the file Makefile.config so that the appropriate paths are
+set for each of the libraries, if any of these libraries do not appear
+in the default search path of your compiler.  Directories must be set
+for both header inclusion and for linking.  Note that you can select
+whether or not you want the GL-based renderer or the Performer-based
+renderer.  By default, it is assumed that you want GL, but not
+Performer.
+
+3.  From the top-level directory of MSL, run "make".  This should
+generate build all of the executables.  In lib, the libMSL.a file will
+be generated.  Any programs that are written using MSL should be
+linked with this file.  Two executables, plangl and planleda should be
+generated in the top-level directory.  These are complete graphical
+uder interfaces that use RRT planners to solve a variety of problems.
+For example, try "plangl data/cage" or "plangl data/coffeemug", and try
+the menu options.  
+
+
+4.  See the documentation in "docs" or 
+
+http://msl.cs.uiuc.edu/msl/
+
+for more information.
+
+To test the software, try the following from this directory:
+
+plangl data/coffeemug
+
+or 
+
+planleda data/cross
+
+Click on Plan one or more times, until a successful path is found.
+Click on RenderCtl to control the animation.

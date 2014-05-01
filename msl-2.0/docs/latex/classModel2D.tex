@@ -1,0 +1,60 @@
+\section{Model2D  Class Reference}
+\label{classModel2D}\index{Model2D@{Model2D}}
+Base for all 2D models. 
+
+
+{\tt \#include $<$model2d.h$>$}
+
+Inheritance diagram for Model2D::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.03318cm]{classModel2D}
+\end{center}
+\end{figure}
+\subsection*{Public Methods}
+\begin{CompactItemize}
+\item 
+{\bf Model2D} (string path)
+\item 
+virtual {\bf $\sim$Model2D} ()
+\item 
+virtual {\bf MSLVector} {\bf State\-To\-Configuration} (const {\bf MSLVector} \&{\bf x})
+\begin{CompactList}\small\item\em A method that converts a {\bf Model} {\rm (p.\,\pageref{classModel})} state in to a {\bf Geom} {\rm (p.\,\pageref{classGeom})} configuration.\item\end{CompactList}\end{CompactItemize}
+
+
+\subsection{Detailed Description}
+Base for all 2D models.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Model2D@{Model2D}!Model2D@{Model2D}}
+\index{Model2D@{Model2D}!Model2D@{Model2D}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}Model2D::Model2D (string {\em path})}\label{classModel2D_a0}
+
+
+\index{Model2D@{Model2D}!~Model2D@{$\sim$Model2D}}
+\index{~Model2D@{$\sim$Model2D}!Model2D@{Model2D}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}virtual Model2D::$\sim$Model2D ()\hspace{0.3cm}{\tt  [inline, virtual]}}\label{classModel2D_a1}
+
+
+
+
+\subsection{Member Function Documentation}
+\index{Model2D@{Model2D}!StateToConfiguration@{StateToConfiguration}}
+\index{StateToConfiguration@{StateToConfiguration}!Model2D@{Model2D}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf MSLVector} Model2D::State\-To\-Configuration (const {\bf MSLVector} \& {\em x})\hspace{0.3cm}{\tt  [virtual]}}\label{classModel2D_a2}
+
+
+A method that converts a {\bf Model} {\rm (p.\,\pageref{classModel})} state in to a {\bf Geom} {\rm (p.\,\pageref{classGeom})} configuration.
+
+
+
+Reimplemented from {\bf Model} {\rm (p.\,\pageref{classModel_a8})}.
+
+Reimplemented in {\bf Model2DRigid} {\rm (p.\,\pageref{classModel2DRigid_a7})}.
+
+The documentation for this class was generated from the following files:\begin{CompactItemize}
+\item 
+{\bf model2d.h}\item 
+{\bf model2d.C}\end{CompactItemize}

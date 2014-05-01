@@ -1,0 +1,97 @@
+.TH "Model3DRigid" 3 "24 Jul 2003" "Motion Strategy Library" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Model3DRigid \- A rigid robot in a 3D world. 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <model3d.h>\fP
+.PP
+Inherits \fBModel3D\fP.
+.PP
+Inherited by \fBModel3DDyn\fP, \fBModel3DRigidChain\fP, \fBModel3DRigidHelical\fP, \fBModel3DRigidMulti\fP, and \fBModel3DRigidTree\fP.
+.PP
+.SS "Public Methods"
+
+.in +1c
+.ti -1c
+.RI "\fBModel3DRigid\fP (string path)"
+.br
+.ti -1c
+.RI "virtual \fB~Model3DRigid\fP ()"
+.br
+.ti -1c
+.RI "virtual \fBMSLVector\fP \fBIntegrate\fP (const \fBMSLVector\fP &\fBx\fP, const \fBMSLVector\fP &u, const double &h)"
+.br
+.RI "\fIPerform integration from state x, using input u, over time step h.\fP"
+.ti -1c
+.RI "\fBMSLVector\fP \fBStateTransitionEquation\fP (const \fBMSLVector\fP &\fBx\fP, const \fBMSLVector\fP &u)"
+.br
+.RI "\fIThe state transition equation, or equations of motion, xdot=f(x,u).\fP"
+.ti -1c
+.RI "virtual double \fBMetric\fP (const \fBMSLVector\fP &x1, const \fBMSLVector\fP &x2)"
+.br
+.RI "\fIA distance metric, which is Euclidean in the base class.\fP"
+.ti -1c
+.RI "virtual \fBMSLVector\fP \fBLinearInterpolate\fP (const \fBMSLVector\fP &x1, const \fBMSLVector\fP &x2, const double &a)"
+.br
+.RI "\fILinearly interpolate two state while respecting topology.\fP"
+.ti -1c
+.RI "virtual \fBMSLVector\fP \fBStateDifference\fP (const \fBMSLVector\fP &x1, const \fBMSLVector\fP &x2)"
+.br
+.RI "\fICompute a \fBMSLVector\fP based on x2-x1. In R^n, the states are simply subtracted to make the \fBMSLVector\fP. This method exists to make things work correctly for other state-space topologies.\fP"
+.in -1c
+.SH "DETAILED DESCRIPTION"
+.PP 
+A rigid robot in a 3D world.
+.PP
+.SH "CONSTRUCTOR & DESTRUCTOR DOCUMENTATION"
+.PP 
+.SS "Model3DRigid::Model3DRigid (string path)"
+.PP
+.SS "virtual Model3DRigid::~Model3DRigid ()\fC [inline, virtual]\fP"
+.PP
+.SH "MEMBER FUNCTION DOCUMENTATION"
+.PP 
+.SS "\fBMSLVector\fP Model3DRigid::Integrate (const \fBMSLVector\fP & x, const \fBMSLVector\fP & u, const double & h)\fC [virtual]\fP"
+.PP
+Perform integration from state x, using input u, over time step h.
+.PP
+Implements \fBModel\fP.
+.PP
+Reimplemented in \fBModel3DRigidHelical\fP.
+.SS "\fBMSLVector\fP Model3DRigid::LinearInterpolate (const \fBMSLVector\fP & x1, const \fBMSLVector\fP & x2, const double & a)\fC [virtual]\fP"
+.PP
+Linearly interpolate two state while respecting topology.
+.PP
+If a=0, then x1 is returned; if a=1, then x2 is returned. All intermediate values of $a \\in [0,1]$ yield intermediate states. This method is defined by \fBModel\fP. 
+.PP
+Reimplemented from \fBModel\fP.
+.PP
+Reimplemented in \fBModel3DRigidMulti\fP.
+.SS "double Model3DRigid::Metric (const \fBMSLVector\fP & x1, const \fBMSLVector\fP & x2)\fC [virtual]\fP"
+.PP
+A distance metric, which is Euclidean in the base class.
+.PP
+Reimplemented from \fBModel\fP.
+.PP
+Reimplemented in \fBModel3DRigidMulti\fP.
+.SS "\fBMSLVector\fP Model3DRigid::StateDifference (const \fBMSLVector\fP & x1, const \fBMSLVector\fP & x2)\fC [virtual]\fP"
+.PP
+Compute a \fBMSLVector\fP based on x2-x1. In R^n, the states are simply subtracted to make the \fBMSLVector\fP. This method exists to make things work correctly for other state-space topologies.
+.PP
+Reimplemented from \fBModel\fP.
+.PP
+Reimplemented in \fBModel3DRigidMulti\fP.
+.SS "\fBMSLVector\fP Model3DRigid::StateTransitionEquation (const \fBMSLVector\fP & x, const \fBMSLVector\fP & u)\fC [virtual]\fP"
+.PP
+The state transition equation, or equations of motion, xdot=f(x,u).
+.PP
+Implements \fBModel\fP.
+.PP
+Reimplemented in \fBModel3DRigidHelical\fP.
+
+.SH "AUTHOR"
+.PP 
+Generated automatically by Doxygen for Motion Strategy Library from the source code.

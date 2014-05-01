@@ -1,0 +1,100 @@
+.TH "point.h" 3 "24 Jul 2003" "Motion Strategy Library" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+point.h \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <iostream>\fP
+.br
+\fC#include <list>\fP
+.br
+\fC#include 'mslio.h'\fP
+.br
+.SS "Compounds"
+
+.in +1c
+.ti -1c
+.RI "class \fBMSLPoint\fP"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "ostream & \fBoperator<<\fP (ostream &O, const \fBMSLPoint\fP &p)"
+.br
+.ti -1c
+.RI "istream & \fBoperator>>\fP (istream &I, \fBMSLPoint\fP &p)"
+.br
+.ti -1c
+.RI "\fBMSLPoint\fP \fBcenter\fP (const \fBMSLPoint\fP &a, const \fBMSLPoint\fP &b)"
+.br
+.ti -1c
+.RI "\fBMSLPoint\fP \fBmidMSLPoint\fP (const \fBMSLPoint\fP &a, const \fBMSLPoint\fP &b)"
+.br
+.ti -1c
+.RI "int \fBorientation\fP (const \fBMSLPoint\fP &a, const \fBMSLPoint\fP &b, const \fBMSLPoint\fP &c)"
+.br
+.ti -1c
+.RI "int \fBcmp_signed_dist\fP (const \fBMSLPoint\fP &a, const \fBMSLPoint\fP &b, const \fBMSLPoint\fP &c, const \fBMSLPoint\fP &d)"
+.br
+.ti -1c
+.RI "double \fBarea\fP (const \fBMSLPoint\fP &a, const \fBMSLPoint\fP &b, const \fBMSLPoint\fP &c)"
+.br
+.ti -1c
+.RI "bool \fBcollinear\fP (const \fBMSLPoint\fP &a, const \fBMSLPoint\fP &b, const \fBMSLPoint\fP &c)"
+.br
+.ti -1c
+.RI "bool \fBright_turn\fP (const \fBMSLPoint\fP &a, const \fBMSLPoint\fP &b, const \fBMSLPoint\fP &c)"
+.br
+.ti -1c
+.RI "bool \fBleft_turn\fP (const \fBMSLPoint\fP &a, const \fBMSLPoint\fP &b, const \fBMSLPoint\fP &c)"
+.br
+.ti -1c
+.RI "int \fBside_of_circle\fP (const \fBMSLPoint\fP &a, const \fBMSLPoint\fP &b, const \fBMSLPoint\fP &c, const \fBMSLPoint\fP &d)"
+.br
+.ti -1c
+.RI "bool \fBincircle\fP (const \fBMSLPoint\fP &a, const \fBMSLPoint\fP &b, const \fBMSLPoint\fP &c, const \fBMSLPoint\fP &d)"
+.br
+.ti -1c
+.RI "bool \fBoutcircle\fP (const \fBMSLPoint\fP &a, const \fBMSLPoint\fP &b, const \fBMSLPoint\fP &c, const \fBMSLPoint\fP &d)"
+.br
+.ti -1c
+.RI "bool \fBcocircular\fP (const \fBMSLPoint\fP &a, const \fBMSLPoint\fP &b, const \fBMSLPoint\fP &c, const \fBMSLPoint\fP &d)"
+.br
+.in -1c
+.SH "FUNCTION DOCUMENTATION"
+.PP 
+.SS "double area (const \fBMSLPoint\fP & a, const \fBMSLPoint\fP & b, const \fBMSLPoint\fP & c)\fC [inline]\fP"
+.PP
+.SS "\fBMSLPoint\fP center (const \fBMSLPoint\fP & a, const \fBMSLPoint\fP & b)\fC [inline]\fP"
+.PP
+.SS "int cmp_signed_dist (const \fBMSLPoint\fP & a, const \fBMSLPoint\fP & b, const \fBMSLPoint\fP & c, const \fBMSLPoint\fP & d)\fC [inline]\fP"
+.PP
+.SS "bool cocircular (const \fBMSLPoint\fP & a, const \fBMSLPoint\fP & b, const \fBMSLPoint\fP & c, const \fBMSLPoint\fP & d)\fC [inline]\fP"
+.PP
+.SS "bool collinear (const \fBMSLPoint\fP & a, const \fBMSLPoint\fP & b, const \fBMSLPoint\fP & c)\fC [inline]\fP"
+.PP
+.SS "bool incircle (const \fBMSLPoint\fP & a, const \fBMSLPoint\fP & b, const \fBMSLPoint\fP & c, const \fBMSLPoint\fP & d)\fC [inline]\fP"
+.PP
+.SS "bool left_turn (const \fBMSLPoint\fP & a, const \fBMSLPoint\fP & b, const \fBMSLPoint\fP & c)\fC [inline]\fP"
+.PP
+.SS "\fBMSLPoint\fP midMSLPoint (const \fBMSLPoint\fP & a, const \fBMSLPoint\fP & b)\fC [inline]\fP"
+.PP
+.SS "ostream& operator<< (ostream & O, const \fBMSLPoint\fP & p)"
+.PP
+.SS "istream& operator>> (istream & I, \fBMSLPoint\fP & p)"
+.PP
+.SS "int orientation (const \fBMSLPoint\fP & a, const \fBMSLPoint\fP & b, const \fBMSLPoint\fP & c)\fC [inline]\fP"
+.PP
+.SS "bool outcircle (const \fBMSLPoint\fP & a, const \fBMSLPoint\fP & b, const \fBMSLPoint\fP & c, const \fBMSLPoint\fP & d)\fC [inline]\fP"
+.PP
+.SS "bool right_turn (const \fBMSLPoint\fP & a, const \fBMSLPoint\fP & b, const \fBMSLPoint\fP & c)\fC [inline]\fP"
+.PP
+.SS "int side_of_circle (const \fBMSLPoint\fP & a, const \fBMSLPoint\fP & b, const \fBMSLPoint\fP & c, const \fBMSLPoint\fP & d)"
+.PP
+.SH "AUTHOR"
+.PP 
+Generated automatically by Doxygen for Motion Strategy Library from the source code.

@@ -1,0 +1,68 @@
+template <class T>
+DisjointSets<T>::DisjointSets()
+{
+    numSets = 0;
+}
+
+template <class T>
+void DisjointSets<T>::makeSet(T obj)
+{
+    parentMap[obj] = obj;
+    rankMap[obj] = 1;
+    numSets++;
+}
+
+template <class T>
+void DisjointSets<T>::setUnion(T obj1, T obj2)
+{
+    T p1 = findSet(obj1);
+    T p2 = findSet(obj2);
+    if (p1 == p2)
+    {
+        return;
+    }
+
+    numSets--;
+    if (rankMap[p1] > rankMap[p2])
+    {
+        parentMap[p2] = p1;
+    }
+    else
+    {
+        parentMap[p1] = p2;
+        if (rankMap[p1] == rankMap[p2])
+        {
+            rankMap[p2] = rankMap[p2] + 1;
+        }
+    }
+}
+
+template <class T>
+T DisjointSets<T>::findSet(T obj1)
+{
+    T self = obj1;
+    typename map<T,T>::iterator mit = parentMap.find(obj1);
+    if (mit == parentMap.end()) //this shouldn't happen!
+    {
+        return obj1;
+    }
+    T parent = parentMap[self];
+    while (parent != self)
+    {
+        self = parent;
+        parent = parentMap[self];
+    }
+    T leader = parent;
+    //now have leader, go through and do path compression
+    self = obj1;
+    parent = parentMap[self];
+    while (self != leader)
+    {
+      parentMap[self] = leader;
+      self = parent;
+      parent = parentMap[self];
+    }
+    return parent;
+}
+
+

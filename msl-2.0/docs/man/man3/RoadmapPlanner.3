@@ -1,0 +1,57 @@
+.TH "RoadmapPlanner" 3 "24 Jul 2003" "Motion Strategy Library" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+RoadmapPlanner \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <planner.h>\fP
+.PP
+Inherits \fBPlanner\fP.
+.PP
+Inherited by \fBPRM\fP.
+.PP
+.SS "Public Methods"
+
+.in +1c
+.ti -1c
+.RI "\fBRoadmapPlanner\fP (\fBProblem\fP *problem)"
+.br
+.RI "\fIA constructor that initializes data members.\fP"
+.ti -1c
+.RI "\fB~RoadmapPlanner\fP ()"
+.br
+.ti -1c
+.RI "virtual void \fBWriteGraphs\fP (ofstream &fout)"
+.br
+.RI "\fIWrite roadmap to a file.\fP"
+.ti -1c
+.RI "virtual void \fBReadGraphs\fP (ifstream &fin)"
+.br
+.RI "\fIRead roadmap from a file.\fP"
+.in -1c
+.SH "CONSTRUCTOR & DESTRUCTOR DOCUMENTATION"
+.PP 
+.SS "RoadmapPlanner::RoadmapPlanner (\fBProblem\fP * problem)"
+.PP
+A constructor that initializes data members.
+.PP
+.SS "RoadmapPlanner::~RoadmapPlanner ()\fC [inline]\fP"
+.PP
+.SH "MEMBER FUNCTION DOCUMENTATION"
+.PP 
+.SS "void RoadmapPlanner::ReadGraphs (ifstream & fin)\fC [virtual]\fP"
+.PP
+Read roadmap from a file.
+.PP
+Implements \fBPlanner\fP.
+.SS "void RoadmapPlanner::WriteGraphs (ofstream & fout)\fC [virtual]\fP"
+.PP
+Write roadmap to a file.
+.PP
+Implements \fBPlanner\fP.
+
+.SH "AUTHOR"
+.PP 
+Generated automatically by Doxygen for Motion Strategy Library from the source code.

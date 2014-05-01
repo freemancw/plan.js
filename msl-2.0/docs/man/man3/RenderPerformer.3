@@ -1,0 +1,162 @@
+.TH "RenderPerformer" 3 "24 Jul 2003" "Motion Strategy Library" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+RenderPerformer \- Perform 3D rendering using the SGI IRIS Performer library. 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <renderpf.h>\fP
+.PP
+Inherits \fBRender\fP.
+.PP
+.SS "Public Methods"
+
+.in +1c
+.ti -1c
+.RI "\fBRenderPerformer\fP ()"
+.br
+.ti -1c
+.RI "\fBRenderPerformer\fP (string filepath)"
+.br
+.ti -1c
+.RI "\fBRenderPerformer\fP (\fBScene\fP *s, string filepath)"
+.br
+.ti -1c
+.RI "virtual \fB~RenderPerformer\fP ()"
+.br
+.ti -1c
+.RI "virtual void \fBInit\fP ()"
+.br
+.RI "\fIInitialized the renderer.\fP"
+.ti -1c
+.RI "virtual void \fBHandleEvents\fP ()"
+.br
+.RI "\fIProcess IO events.\fP"
+.ti -1c
+.RI "virtual void \fBTerminate\fP ()"
+.br
+.RI "\fIImplement functions upon termination of the renderer.\fP"
+.in -1c
+.SS "Protected Methods"
+
+.in +1c
+.ti -1c
+.RI "virtual void \fBShowCurrentAnimationFrame\fP ()"
+.br
+.RI "\fIDisplay the current animation frame in a rendering window.\fP"
+.ti -1c
+.RI "void \fBLoadEnvironment\fP (pfGroup *env)"
+.br
+.ti -1c
+.RI "void \fBLoadBodies\fP (pfGroup *bodies)"
+.br
+.ti -1c
+.RI "pfNode * \fBLoadNativeModel\fP (string file, int colorindex)"
+.br
+.RI "\fILoad a model that is a list of 2D polygons or 3D triangles.\fP"
+.ti -1c
+.RI "void \fBMakeBoundingBox\fP (pfGeode *bound)"
+.br
+.ti -1c
+.RI "void \fBMakeControlPanel\fP (pfGroup *con, pfDCS *pad)"
+.br
+.ti -1c
+.RI "void \fBGetCurrentMousePos\fP (double &\fBx\fP, double &\fBy\fP)"
+.br
+.ti -1c
+.RI "void \fBHandleKeyInput\fP ()"
+.br
+.ti -1c
+.RI "void \fBHandleMouseEvents\fP ()"
+.br
+.ti -1c
+.RI "void \fBGetControlPadSize\fP (double &padwidth_l, double &padwidth_r, double &padheight_b, double &padheight_top)"
+.br
+.ti -1c
+.RI "void \fBNormCrossProduct\fP (double v1[3], double v2[3], double out[3])"
+.br
+.in -1c
+.SS "Static Protected Methods"
+
+.in +1c
+.ti -1c
+.RI "void \fBDrawChannel\fP (pfChannel *chan, void *data)"
+.br
+.in -1c
+.SS "Static Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBSharedData\fP * \fBShared\fP"
+.br
+.in -1c
+.SH "DETAILED DESCRIPTION"
+.PP 
+Perform 3D rendering using the SGI IRIS Performer library.
+.PP
+.SH "CONSTRUCTOR & DESTRUCTOR DOCUMENTATION"
+.PP 
+.SS "RenderPerformer::RenderPerformer ()"
+.PP
+.SS "RenderPerformer::RenderPerformer (string filepath)"
+.PP
+.SS "RenderPerformer::RenderPerformer (\fBScene\fP * s, string filepath)"
+.PP
+.SS "virtual RenderPerformer::~RenderPerformer ()\fC [inline, virtual]\fP"
+.PP
+.SH "MEMBER FUNCTION DOCUMENTATION"
+.PP 
+.SS "void RenderPerformer::DrawChannel (pfChannel * chan, void * data)\fC [static, protected]\fP"
+.PP
+.SS "void RenderPerformer::GetControlPadSize (double & padwidth_l, double & padwidth_r, double & padheight_b, double & padheight_top)\fC [protected]\fP"
+.PP
+.SS "void RenderPerformer::GetCurrentMousePos (double & x, double & y)\fC [protected]\fP"
+.PP
+.SS "void RenderPerformer::HandleEvents ()\fC [virtual]\fP"
+.PP
+Process IO events.
+.PP
+Reimplemented from \fBRender\fP.
+.SS "void RenderPerformer::HandleKeyInput ()\fC [protected]\fP"
+.PP
+.SS "void RenderPerformer::HandleMouseEvents ()\fC [protected]\fP"
+.PP
+.SS "void RenderPerformer::Init ()\fC [virtual]\fP"
+.PP
+Initialized the renderer.
+.PP
+Reimplemented from \fBRender\fP.
+.SS "void RenderPerformer::LoadBodies (pfGroup * bodies)\fC [protected]\fP"
+.PP
+.SS "void RenderPerformer::LoadEnvironment (pfGroup * env)\fC [protected]\fP"
+.PP
+.SS "pfNode * RenderPerformer::LoadNativeModel (string file, int colorindex)\fC [protected]\fP"
+.PP
+Load a model that is a list of 2D polygons or 3D triangles.
+.PP
+.SS "void RenderPerformer::MakeBoundingBox (pfGeode * bound)\fC [protected]\fP"
+.PP
+.SS "void RenderPerformer::MakeControlPanel (pfGroup * con, pfDCS * pad)\fC [protected]\fP"
+.PP
+.SS "void RenderPerformer::NormCrossProduct (double v1[3], double v2[3], double out[3])\fC [protected]\fP"
+.PP
+.SS "void RenderPerformer::ShowCurrentAnimationFrame ()\fC [protected, virtual]\fP"
+.PP
+Display the current animation frame in a rendering window.
+.PP
+Reimplemented from \fBRender\fP.
+.SS "void RenderPerformer::Terminate ()\fC [virtual]\fP"
+.PP
+Implement functions upon termination of the renderer.
+.PP
+Reimplemented from \fBRender\fP.
+.SH "MEMBER DATA DOCUMENTATION"
+.PP 
+.SS "\fBSharedData\fP * RenderPerformer::Shared\fC [static, protected]\fP"
+.PP
+
+
+.SH "AUTHOR"
+.PP 
+Generated automatically by Doxygen for Motion Strategy Library from the source code.

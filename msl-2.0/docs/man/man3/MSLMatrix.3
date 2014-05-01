@@ -1,0 +1,194 @@
+.TH "MSLMatrix" 3 "24 Jul 2003" "Motion Strategy Library" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+MSLMatrix \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <matrix.h>\fP
+.PP
+.SS "Public Methods"
+
+.in +1c
+.ti -1c
+.RI "\fBMSLMatrix\fP (int n=0, int m=0)"
+.br
+.ti -1c
+.RI "\fBMSLMatrix\fP (int n, int m, double *D)"
+.br
+.ti -1c
+.RI "\fBMSLMatrix\fP (const MSLMatrix &)"
+.br
+.ti -1c
+.RI "\fBMSLMatrix\fP (const \fBMSLVector\fP &)"
+.br
+.ti -1c
+.RI "MSLMatrix & \fBoperator=\fP (const MSLMatrix &)"
+.br
+.ti -1c
+.RI "\fB~MSLMatrix\fP ()"
+.br
+.ti -1c
+.RI "int \fBdim1\fP () const"
+.br
+.ti -1c
+.RI "int \fBdim2\fP () const"
+.br
+.ti -1c
+.RI "\fBMSLVector\fP & \fBrow\fP (int i) const"
+.br
+.ti -1c
+.RI "\fBMSLVector\fP \fBcol\fP (int i) const"
+.br
+.ti -1c
+.RI "MSLMatrix \fBtrans\fP () const"
+.br
+.ti -1c
+.RI "MSLMatrix \fBinv\fP () const"
+.br
+.ti -1c
+.RI "double \fBdet\fP () const"
+.br
+.ti -1c
+.RI "MSLMatrix \fBsolve\fP (const MSLMatrix &) const"
+.br
+.ti -1c
+.RI "\fBMSLVector\fP \fBsolve\fP (const \fBMSLVector\fP &b) const"
+.br
+.ti -1c
+.RI "\fBoperator MSLVector\fP () const"
+.br
+.ti -1c
+.RI "\fBMSLVector\fP & \fBoperator[]\fP (int i) const"
+.br
+.ti -1c
+.RI "double & \fBoperator()\fP (int i, int j)"
+.br
+.ti -1c
+.RI "double \fBoperator()\fP (int, int) const"
+.br
+.ti -1c
+.RI "int \fBoperator==\fP (const MSLMatrix &) const"
+.br
+.ti -1c
+.RI "int \fBoperator!=\fP (const MSLMatrix &\fBx\fP) const"
+.br
+.ti -1c
+.RI "MSLMatrix \fBoperator+\fP (const MSLMatrix &M1) const"
+.br
+.ti -1c
+.RI "MSLMatrix \fBoperator-\fP (const MSLMatrix &M1) const"
+.br
+.ti -1c
+.RI "MSLMatrix \fBoperator-\fP () const"
+.br
+.ti -1c
+.RI "MSLMatrix & \fBoperator-=\fP (const MSLMatrix &)"
+.br
+.ti -1c
+.RI "MSLMatrix & \fBoperator+=\fP (const MSLMatrix &)"
+.br
+.ti -1c
+.RI "MSLMatrix \fBoperator *\fP (const MSLMatrix &M1) const"
+.br
+.ti -1c
+.RI "\fBMSLVector\fP \fBoperator *\fP (const \fBMSLVector\fP &vec) const"
+.br
+.ti -1c
+.RI "MSLMatrix \fBoperator *\fP (double \fBx\fP) const"
+.br
+.ti -1c
+.RI "void \fBread\fP (istream &I)"
+.br
+.ti -1c
+.RI "void \fBread\fP ()"
+.br
+.in -1c
+.SS "Friends"
+
+.in +1c
+.ti -1c
+.RI "ostream & \fBoperator<<\fP (ostream &O, const MSLMatrix &M)"
+.br
+.ti -1c
+.RI "istream & \fBoperator>>\fP (istream &I, MSLMatrix &M)"
+.br
+.in -1c
+.SH "CONSTRUCTOR & DESTRUCTOR DOCUMENTATION"
+.PP 
+.SS "MSLMatrix::MSLMatrix (int n = 0, int m = 0)"
+.PP
+.SS "MSLMatrix::MSLMatrix (int n, int m, double * D)"
+.PP
+.SS "MSLMatrix::MSLMatrix (const MSLMatrix &)"
+.PP
+.SS "MSLMatrix::MSLMatrix (const \fBMSLVector\fP &)"
+.PP
+.SS "MSLMatrix::~MSLMatrix ()"
+.PP
+.SH "MEMBER FUNCTION DOCUMENTATION"
+.PP 
+.SS "\fBMSLVector\fP MSLMatrix::col (int i) const"
+.PP
+.SS "double MSLMatrix::det () const"
+.PP
+.SS "int MSLMatrix::dim1 () const\fC [inline]\fP"
+.PP
+.SS "int MSLMatrix::dim2 () const\fC [inline]\fP"
+.PP
+.SS "MSLMatrix MSLMatrix::inv () const"
+.PP
+.SS "MSLMatrix MSLMatrix::operator * (double x) const"
+.PP
+.SS "\fBMSLVector\fP MSLMatrix::operator * (const \fBMSLVector\fP & vec) const\fC [inline]\fP"
+.PP
+.SS "MSLMatrix MSLMatrix::operator * (const MSLMatrix & M1) const"
+.PP
+.SS "MSLMatrix::operator \fBMSLVector\fP () const"
+.PP
+.SS "int MSLMatrix::operator!= (const MSLMatrix & x) const\fC [inline]\fP"
+.PP
+.SS "double MSLMatrix::operator() (int, int) const"
+.PP
+.SS "double & MSLMatrix::operator() (int i, int j)"
+.PP
+.SS "MSLMatrix MSLMatrix::operator+ (const MSLMatrix & M1) const"
+.PP
+.SS "MSLMatrix & MSLMatrix::operator+= (const MSLMatrix &)"
+.PP
+.SS "MSLMatrix MSLMatrix::operator- () const"
+.PP
+.SS "MSLMatrix MSLMatrix::operator- (const MSLMatrix & M1) const"
+.PP
+.SS "MSLMatrix & MSLMatrix::operator-= (const MSLMatrix &)"
+.PP
+.SS "MSLMatrix & MSLMatrix::operator= (const MSLMatrix &)"
+.PP
+.SS "int MSLMatrix::operator== (const MSLMatrix &) const"
+.PP
+.SS "\fBMSLVector\fP& MSLMatrix::operator[] (int i) const\fC [inline]\fP"
+.PP
+.SS "void MSLMatrix::read ()\fC [inline]\fP"
+.PP
+.SS "void MSLMatrix::read (istream & I)"
+.PP
+.SS "\fBMSLVector\fP & MSLMatrix::row (int i) const"
+.PP
+.SS "\fBMSLVector\fP MSLMatrix::solve (const \fBMSLVector\fP & b) const\fC [inline]\fP"
+.PP
+.SS "MSLMatrix MSLMatrix::solve (const MSLMatrix &) const"
+.PP
+.SS "MSLMatrix MSLMatrix::trans () const"
+.PP
+.SH "FRIENDS AND RELATED FUNCTION DOCUMENTATION"
+.PP 
+.SS "ostream& operator<< (ostream & O, const MSLMatrix & M)\fC [friend]\fP"
+.PP
+.SS "istream& operator>> (istream & I, MSLMatrix & M)\fC [friend]\fP"
+.PP
+
+
+.SH "AUTHOR"
+.PP 
+Generated automatically by Doxygen for Motion Strategy Library from the source code.

@@ -1,0 +1,280 @@
+\section{Problem  Class Reference}
+\label{class_Problem}\index{Problem@{Problem}}
+An interface class that provides the primary input to a planner. 
+
+
+{\tt \#include $<$problem.h$>$}
+
+\subsection*{Public Methods}
+\begin{CompactItemize}
+\item 
+{\bf Problem} ({\bf Geom} $\ast$geom, {\bf Model} $\ast$model, string path)
+\begin{CompactList}\small\item\em Problem must be given any instance of {\bf Geom} {\rm (p.\,\pageref{class_Geom})} and any instance of {\bf Model} {\rm (p.\,\pageref{class_Model})} from each of their class hierarchies.\item\end{CompactList}\item 
+virtual {\bf $\sim$Problem} ()
+\begin{CompactList}\small\item\em Empty destructor.\item\end{CompactList}\item 
+void {\bf Set\-Geom} ({\bf Geom} $\ast$geom)
+\begin{CompactList}\small\item\em Change the instance of {\bf Geom} {\rm (p.\,\pageref{class_Geom})}.\item\end{CompactList}\item 
+void {\bf Set\-Model} ({\bf Model} $\ast$model)
+\begin{CompactList}\small\item\em Change the instance of {\bf Model} {\rm (p.\,\pageref{class_Model})}.\item\end{CompactList}\item 
+virtual list$<${\bf MSLVector}$>$ {\bf Get\-Inputs} (const {\bf MSLVector} \&x)
+\begin{CompactList}\small\item\em Return a list of possible inputs, which may depend on state.\item\end{CompactList}\item 
+virtual list$<${\bf MSLVector}$>$ {\bf Get\-Inputs} ()
+\begin{CompactList}\small\item\em Return a list of possible inputs.\item\end{CompactList}\item 
+virtual {\bf MSLVector} {\bf Integrate} (const {\bf MSLVector} \&x, const {\bf MSLVector} \&u, const double \&deltat)
+\begin{CompactList}\small\item\em Perform integration from state x, using input u, over time deltat.\item\end{CompactList}\item 
+virtual {\bf MSLVector} {\bf Interpolate\-State} (const {\bf MSLVector} \&x1, const {\bf MSLVector} \&x2, const double \&a)
+\begin{CompactList}\small\item\em Linearly interpolate two states while respecting topology.\item\end{CompactList}\item 
+virtual double {\bf Metric} (const {\bf MSLVector} \&x1, const {\bf MSLVector} \&x2)
+\begin{CompactList}\small\item\em A distance metric defined in {\bf Model} {\rm (p.\,\pageref{class_Model})}.\item\end{CompactList}\item 
+virtual {\bf MSLVector} {\bf State\-To\-Configuration} (const {\bf MSLVector} \&x)
+\begin{CompactList}\small\item\em A method that converts a {\bf Model} {\rm (p.\,\pageref{class_Model})} state in to a {\bf Geom} {\rm (p.\,\pageref{class_Geom})} configuration.\item\end{CompactList}\item 
+virtual {\bf MSLVector} {\bf State\-Difference} (const {\bf MSLVector} \&x1, const {\bf MSLVector} \&x2)
+\begin{CompactList}\small\item\em Compute a {\bf MSLVector} {\rm (p.\,\pageref{class_MSLVector})} based on x2-x1. In R$^\wedge$n, the states are simply subtracted to make the {\bf MSLVector} {\rm (p.\,\pageref{class_MSLVector})}. This method exists to make things work correctly for other state-space topologies.\item\end{CompactList}\item 
+virtual bool {\bf Satisfied} (const {\bf MSLVector} \&x)
+\begin{CompactList}\small\item\em This takes the logical AND of Collision\-Free from {\bf Geom} {\rm (p.\,\pageref{class_Geom})}, and Satisfied from {\bf Model} {\rm (p.\,\pageref{class_Model})}.\item\end{CompactList}\item 
+virtual bool {\bf Collision\-Free} (const {\bf MSLVector} \&q)
+\begin{CompactList}\small\item\em The collision checker passed in from {\bf Geom} {\rm (p.\,\pageref{class_Geom})}.\item\end{CompactList}\item 
+virtual double {\bf Distance\-Comp} (const {\bf MSLVector} \&q)
+\begin{CompactList}\small\item\em The distance computation algorithm from {\bf Geom} {\rm (p.\,\pageref{class_Geom})}.\item\end{CompactList}\item 
+virtual {\bf MSLVector} {\bf Configuration\-Difference} (const {\bf MSLVector} \&q1, const {\bf MSLVector} \&q2)
+\begin{CompactList}\small\item\em Compute a {\bf MSLVector} {\rm (p.\,\pageref{class_MSLVector})} based on q2-q1. In R$^\wedge$n, the configurations are simply subtracted to make the {\bf MSLVector} {\rm (p.\,\pageref{class_MSLVector})}. This method exists to make things work correctly for other configuration-space topologies.\item\end{CompactList}\end{CompactItemize}
+\subsection*{Public Attributes}
+\begin{CompactItemize}
+\item 
+string {\bf File\-Path}
+\begin{CompactList}\small\item\em The directory in which all files for a problem will be stored.\item\end{CompactList}\item 
+int {\bf Num\-Bodies}
+\begin{CompactList}\small\item\em The number of rigid bodies.\item\end{CompactList}\item 
+int {\bf State\-Dim}
+\begin{CompactList}\small\item\em The dimenson of the state space.\item\end{CompactList}\item 
+int {\bf Input\-Dim}
+\begin{CompactList}\small\item\em The dimension of the input space.\item\end{CompactList}\item 
+int {\bf Geom\-Dim}
+\begin{CompactList}\small\item\em The dimension of the geometric model.\item\end{CompactList}\item 
+{\bf MSLVector} {\bf Lower\-State}
+\begin{CompactList}\small\item\em {\bf MSLVector} {\rm (p.\,\pageref{class_MSLVector})} of minimum values for each state variable.\item\end{CompactList}\item 
+{\bf MSLVector} {\bf Upper\-State}
+\begin{CompactList}\small\item\em {\bf MSLVector} {\rm (p.\,\pageref{class_MSLVector})} of maximum values for each state variable.\item\end{CompactList}\item 
+{\bf MSLVector} {\bf Initial\-State}
+\begin{CompactList}\small\item\em The starting state for a planner.\item\end{CompactList}\item 
+{\bf MSLVector} {\bf Goal\-State}
+\begin{CompactList}\small\item\em The goal state for a planner.\item\end{CompactList}\item 
+{\bf MSLVector} {\bf Max\-Deviates}
+\begin{CompactList}\small\item\em Maximum displacement of geometry with respect to change in each variable.\item\end{CompactList}\end{CompactItemize}
+\subsection*{Protected Attributes}
+\begin{CompactItemize}
+\item 
+{\bf Geom}$\ast$ {\bf G}
+\begin{CompactList}\small\item\em Need to define a geometry for collision detection.\item\end{CompactList}\item 
+{\bf Model}$\ast$ {\bf M}
+\begin{CompactList}\small\item\em xdot = f(x,u), integration technique, state bounds.\item\end{CompactList}\end{CompactItemize}
+
+
+\subsection{Detailed Description}
+An interface class that provides the primary input to a planner.
+
+This interface class contains protected instances of {\bf Geom} {\rm (p.\,\pageref{class_Geom})} and {\bf Model} {\rm (p.\,\pageref{class_Model})}. Wrappers to methods from {\bf Geom} {\rm (p.\,\pageref{class_Geom})} provide collision detection and distance computation. Wrappers to methods from {\bf Model} {\rm (p.\,\pageref{class_Model})} provide incremental simulation of a kinematic or dynamical system. It is expected a planner can get all (or nearly all) of the information it needs from Problem. 
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Problem@{Problem}!Problem@{Problem}}
+\index{Problem@{Problem}!Problem@{Problem}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}Problem::Problem ({\bf Geom} $\ast$ {\em geom}, {\bf Model} $\ast$ {\em model}, string {\em path})}\label{class_Problem_a0}
+
+
+Problem must be given any instance of {\bf Geom} {\rm (p.\,\pageref{class_Geom})} and any instance of {\bf Model} {\rm (p.\,\pageref{class_Model})} from each of their class hierarchies.
+
+\index{Problem@{Problem}!~Problem@{$\sim$Problem}}
+\index{~Problem@{$\sim$Problem}!Problem@{Problem}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}Problem::$\sim$Problem ()\hspace{0.3cm}{\tt  [inline, virtual]}}\label{class_Problem_a1}
+
+
+Empty destructor.
+
+
+
+\subsection{Member Function Documentation}
+\index{Problem@{Problem}!CollisionFree@{CollisionFree}}
+\index{CollisionFree@{CollisionFree}!Problem@{Problem}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}bool Problem::Collision\-Free (const {\bf MSLVector} \& {\em q})\hspace{0.3cm}{\tt  [virtual]}}\label{class_Problem_a12}
+
+
+The collision checker passed in from {\bf Geom} {\rm (p.\,\pageref{class_Geom})}.
+
+\index{Problem@{Problem}!ConfigurationDifference@{ConfigurationDifference}}
+\index{ConfigurationDifference@{ConfigurationDifference}!Problem@{Problem}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf MSLVector} Problem::Configuration\-Difference (const {\bf MSLVector} \& {\em q1}, const {\bf MSLVector} \& {\em q2})\hspace{0.3cm}{\tt  [virtual]}}\label{class_Problem_a14}
+
+
+Compute a {\bf MSLVector} {\rm (p.\,\pageref{class_MSLVector})} based on q2-q1. In R$^\wedge$n, the configurations are simply subtracted to make the {\bf MSLVector} {\rm (p.\,\pageref{class_MSLVector})}. This method exists to make things work correctly for other configuration-space topologies.
+
+\index{Problem@{Problem}!DistanceComp@{DistanceComp}}
+\index{DistanceComp@{DistanceComp}!Problem@{Problem}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}double Problem::Distance\-Comp (const {\bf MSLVector} \& {\em q})\hspace{0.3cm}{\tt  [virtual]}}\label{class_Problem_a13}
+
+
+The distance computation algorithm from {\bf Geom} {\rm (p.\,\pageref{class_Geom})}.
+
+\index{Problem@{Problem}!GetInputs@{GetInputs}}
+\index{GetInputs@{GetInputs}!Problem@{Problem}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}list$<$ {\bf MSLVector} $>$ Problem::Get\-Inputs ()\hspace{0.3cm}{\tt  [virtual]}}\label{class_Problem_a5}
+
+
+Return a list of possible inputs.
+
+\index{Problem@{Problem}!GetInputs@{GetInputs}}
+\index{GetInputs@{GetInputs}!Problem@{Problem}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}list$<$ {\bf MSLVector} $>$ Problem::Get\-Inputs (const {\bf MSLVector} \& {\em x})\hspace{0.3cm}{\tt  [virtual]}}\label{class_Problem_a4}
+
+
+Return a list of possible inputs, which may depend on state.
+
+\index{Problem@{Problem}!Integrate@{Integrate}}
+\index{Integrate@{Integrate}!Problem@{Problem}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf MSLVector} Problem::Integrate (const {\bf MSLVector} \& {\em x}, const {\bf MSLVector} \& {\em u}, const double \& {\em deltat})\hspace{0.3cm}{\tt  [virtual]}}\label{class_Problem_a6}
+
+
+Perform integration from state x, using input u, over time deltat.
+
+\index{Problem@{Problem}!InterpolateState@{InterpolateState}}
+\index{InterpolateState@{InterpolateState}!Problem@{Problem}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf MSLVector} Problem::Interpolate\-State (const {\bf MSLVector} \& {\em x1}, const {\bf MSLVector} \& {\em x2}, const double \& {\em a})\hspace{0.3cm}{\tt  [virtual]}}\label{class_Problem_a7}
+
+
+Linearly interpolate two states while respecting topology.
+
+If a=0, then x1 is returned; if a=1, then x2 is returned. All intermediate values of \$a $\backslash$in [0,1]\$ yield intermediate states. This method is defined by {\bf Model} {\rm (p.\,\pageref{class_Model})}. \index{Problem@{Problem}!Metric@{Metric}}
+\index{Metric@{Metric}!Problem@{Problem}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}double Problem::Metric (const {\bf MSLVector} \& {\em x1}, const {\bf MSLVector} \& {\em x2})\hspace{0.3cm}{\tt  [virtual]}}\label{class_Problem_a8}
+
+
+A distance metric defined in {\bf Model} {\rm (p.\,\pageref{class_Model})}.
+
+\index{Problem@{Problem}!Satisfied@{Satisfied}}
+\index{Satisfied@{Satisfied}!Problem@{Problem}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}bool Problem::Satisfied (const {\bf MSLVector} \& {\em x})\hspace{0.3cm}{\tt  [virtual]}}\label{class_Problem_a11}
+
+
+This takes the logical AND of Collision\-Free from {\bf Geom} {\rm (p.\,\pageref{class_Geom})}, and Satisfied from {\bf Model} {\rm (p.\,\pageref{class_Model})}.
+
+\index{Problem@{Problem}!SetGeom@{SetGeom}}
+\index{SetGeom@{SetGeom}!Problem@{Problem}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void Problem::Set\-Geom ({\bf Geom} $\ast$ {\em geom})}\label{class_Problem_a2}
+
+
+Change the instance of {\bf Geom} {\rm (p.\,\pageref{class_Geom})}.
+
+\index{Problem@{Problem}!SetModel@{SetModel}}
+\index{SetModel@{SetModel}!Problem@{Problem}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void Problem::Set\-Model ({\bf Model} $\ast$ {\em model})}\label{class_Problem_a3}
+
+
+Change the instance of {\bf Model} {\rm (p.\,\pageref{class_Model})}.
+
+\index{Problem@{Problem}!StateDifference@{StateDifference}}
+\index{StateDifference@{StateDifference}!Problem@{Problem}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf MSLVector} Problem::State\-Difference (const {\bf MSLVector} \& {\em x1}, const {\bf MSLVector} \& {\em x2})\hspace{0.3cm}{\tt  [virtual]}}\label{class_Problem_a10}
+
+
+Compute a {\bf MSLVector} {\rm (p.\,\pageref{class_MSLVector})} based on x2-x1. In R$^\wedge$n, the states are simply subtracted to make the {\bf MSLVector} {\rm (p.\,\pageref{class_MSLVector})}. This method exists to make things work correctly for other state-space topologies.
+
+\index{Problem@{Problem}!StateToConfiguration@{StateToConfiguration}}
+\index{StateToConfiguration@{StateToConfiguration}!Problem@{Problem}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf MSLVector} Problem::State\-To\-Configuration (const {\bf MSLVector} \& {\em x})\hspace{0.3cm}{\tt  [virtual]}}\label{class_Problem_a9}
+
+
+A method that converts a {\bf Model} {\rm (p.\,\pageref{class_Model})} state in to a {\bf Geom} {\rm (p.\,\pageref{class_Geom})} configuration.
+
+
+
+\subsection{Member Data Documentation}
+\index{Problem@{Problem}!FilePath@{FilePath}}
+\index{FilePath@{FilePath}!Problem@{Problem}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}string Problem::File\-Path}\label{class_Problem_m0}
+
+
+The directory in which all files for a problem will be stored.
+
+\index{Problem@{Problem}!G@{G}}
+\index{G@{G}!Problem@{Problem}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf Geom} $\ast$ Problem::G\hspace{0.3cm}{\tt  [protected]}}\label{class_Problem_n0}
+
+
+Need to define a geometry for collision detection.
+
+\index{Problem@{Problem}!GeomDim@{GeomDim}}
+\index{GeomDim@{GeomDim}!Problem@{Problem}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int Problem::Geom\-Dim}\label{class_Problem_m4}
+
+
+The dimension of the geometric model.
+
+\index{Problem@{Problem}!GoalState@{GoalState}}
+\index{GoalState@{GoalState}!Problem@{Problem}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf MSLVector} Problem::Goal\-State}\label{class_Problem_m8}
+
+
+The goal state for a planner.
+
+\index{Problem@{Problem}!InitialState@{InitialState}}
+\index{InitialState@{InitialState}!Problem@{Problem}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf MSLVector} Problem::Initial\-State}\label{class_Problem_m7}
+
+
+The starting state for a planner.
+
+\index{Problem@{Problem}!InputDim@{InputDim}}
+\index{InputDim@{InputDim}!Problem@{Problem}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int Problem::Input\-Dim}\label{class_Problem_m3}
+
+
+The dimension of the input space.
+
+\index{Problem@{Problem}!LowerState@{LowerState}}
+\index{LowerState@{LowerState}!Problem@{Problem}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf MSLVector} Problem::Lower\-State}\label{class_Problem_m5}
+
+
+{\bf MSLVector} {\rm (p.\,\pageref{class_MSLVector})} of minimum values for each state variable.
+
+\index{Problem@{Problem}!M@{M}}
+\index{M@{M}!Problem@{Problem}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf Model} $\ast$ Problem::M\hspace{0.3cm}{\tt  [protected]}}\label{class_Problem_n1}
+
+
+xdot = f(x,u), integration technique, state bounds.
+
+\index{Problem@{Problem}!MaxDeviates@{MaxDeviates}}
+\index{MaxDeviates@{MaxDeviates}!Problem@{Problem}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf MSLVector} Problem::Max\-Deviates}\label{class_Problem_m9}
+
+
+Maximum displacement of geometry with respect to change in each variable.
+
+\index{Problem@{Problem}!NumBodies@{NumBodies}}
+\index{NumBodies@{NumBodies}!Problem@{Problem}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int Problem::Num\-Bodies}\label{class_Problem_m1}
+
+
+The number of rigid bodies.
+
+\index{Problem@{Problem}!StateDim@{StateDim}}
+\index{StateDim@{StateDim}!Problem@{Problem}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int Problem::State\-Dim}\label{class_Problem_m2}
+
+
+The dimenson of the state space.
+
+\index{Problem@{Problem}!UpperState@{UpperState}}
+\index{UpperState@{UpperState}!Problem@{Problem}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf MSLVector} Problem::Upper\-State}\label{class_Problem_m6}
+
+
+{\bf MSLVector} {\rm (p.\,\pageref{class_MSLVector})} of maximum values for each state variable.
+
+
+
+The documentation for this class was generated from the following file:\begin{CompactItemize}
+\item 
+{\bf problem.h}\end{CompactItemize}

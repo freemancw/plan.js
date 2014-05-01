@@ -1,0 +1,191 @@
+.TH "PRM" 3 "24 Jul 2003" "Motion Strategy Library" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+PRM \- A probabilistic roadmap planner, proposed by Kavraki, Svestka, Latombe, Overmars, 1994. 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <prm.h>\fP
+.PP
+Inherits \fBRoadmapPlanner\fP.
+.PP
+.SS "Public Methods"
+
+.in +1c
+.ti -1c
+.RI "\fBPRM\fP (\fBProblem\fP *problem)"
+.br
+.RI "\fIA constructor that initializes data members.\fP"
+.ti -1c
+.RI "virtual \fB~PRM\fP ()"
+.br
+.RI "\fIEmpty destructor.\fP"
+.ti -1c
+.RI "virtual void \fBConstruct\fP ()"
+.br
+.RI "\fIBuild a PRM.\fP"
+.ti -1c
+.RI "virtual bool \fBPlan\fP ()"
+.br
+.RI "\fITry to solve a planning query using an existing PRM.\fP"
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "double \fBRadius\fP"
+.br
+.RI "\fIUsed for deciding on which neighbors to choose.\fP"
+.ti -1c
+.RI "\fBDisjointSets\fP< \fBMSLVertex\fP * > \fBds\fP"
+.br
+.RI "\fIThe disjoint sets data structure (for connected components).\fP"
+.ti -1c
+.RI "int \fBSatisfiedCount\fP"
+.br
+.RI "\fINumber of times the collision checker has been called.\fP"
+.ti -1c
+.RI "bool \fBQuasiRandom\fP"
+.br
+.RI "\fIIf true, then quasirandom sampling is used (make a file named QuasiRandom).\fP"
+.ti -1c
+.RI "bool \fBQuasiRandomSukharev\fP"
+.br
+.RI "\fIIf true, then use Sukharev grid sampling.\fP"
+.ti -1c
+.RI "double \fBSukharevDispersion\fP"
+.br
+.RI "\fIl-infinity dispersion used for Sukharev sampling.\fP"
+.ti -1c
+.RI "int \fBSukharevPointsPerAxis\fP"
+.br
+.RI "\fIPoints per axis for the Sukharev grid.\fP"
+.ti -1c
+.RI "bool \fBQuasiRandomHammersley\fP"
+.br
+.RI "\fIChoose Hammersley, over Halton sequence.\fP"
+.in -1c
+.SS "Protected Methods"
+
+.in +1c
+.ti -1c
+.RI "virtual list< \fBMSLVertex\fP * > \fBNeighboringVertices\fP (const \fBMSLVector\fP &\fBx\fP)"
+.br
+.ti -1c
+.RI "virtual bool \fBConnect\fP (const \fBMSLVector\fP &x1, const \fBMSLVector\fP &x2, \fBMSLVector\fP &u)"
+.br
+.ti -1c
+.RI "virtual \fBMSLVector\fP \fBChooseState\fP (int i, int maxnum, int dim)"
+.br
+.ti -1c
+.RI "\fBMSLVector\fP \fBQuasiRandomStateHammersley\fP (int i, int maxnum, int dim)"
+.br
+.ti -1c
+.RI "\fBMSLVector\fP \fBQuasiRandomStateHalton\fP (int i, int dim)"
+.br
+.ti -1c
+.RI "\fBMSLVector\fP \fBQuasiRandomStateSukharev\fP (int i, int maxnum, int dim)"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "double \fBStepSize\fP"
+.br
+.RI "\fIComputed from DeltaT using the model.\fP"
+.ti -1c
+.RI "int \fBMaxNeighbors\fP"
+.br
+.ti -1c
+.RI "int \fBMaxEdgesPerVertex\fP"
+.br
+.in -1c
+.SH "DETAILED DESCRIPTION"
+.PP 
+A probabilistic roadmap planner, proposed by Kavraki, Svestka, Latombe, Overmars, 1994.
+.PP
+The base class for planners based on the Probabilistic Roadmap \fBPlanner\fP (PRM) framework of Kavraki, Svestka, Latombe, Overmars, 1994. In the base class, only Holonomic planning problems can be solved (i.e., standard path planning, without differential constraints). 
+.PP
+.SH "CONSTRUCTOR & DESTRUCTOR DOCUMENTATION"
+.PP 
+.SS "PRM::PRM (\fBProblem\fP * problem)"
+.PP
+A constructor that initializes data members.
+.PP
+.SS "virtual PRM::~PRM ()\fC [inline, virtual]\fP"
+.PP
+Empty destructor.
+.PP
+.SH "MEMBER FUNCTION DOCUMENTATION"
+.PP 
+.SS "\fBMSLVector\fP PRM::ChooseState (int i, int maxnum, int dim)\fC [protected, virtual]\fP"
+.PP
+.SS "bool PRM::Connect (const \fBMSLVector\fP & x1, const \fBMSLVector\fP & x2, \fBMSLVector\fP & u)\fC [protected, virtual]\fP"
+.PP
+.SS "void PRM::Construct ()\fC [virtual]\fP"
+.PP
+Build a PRM.
+.PP
+Implements \fBPlanner\fP.
+.SS "list< \fBMSLVertex\fP * > PRM::NeighboringVertices (const \fBMSLVector\fP & x)\fC [protected, virtual]\fP"
+.PP
+.SS "bool PRM::Plan ()\fC [virtual]\fP"
+.PP
+Try to solve a planning query using an existing PRM.
+.PP
+Implements \fBPlanner\fP.
+.SS "\fBMSLVector\fP PRM::QuasiRandomStateHalton (int i, int dim)\fC [protected]\fP"
+.PP
+.SS "\fBMSLVector\fP PRM::QuasiRandomStateHammersley (int i, int maxnum, int dim)\fC [protected]\fP"
+.PP
+.SS "\fBMSLVector\fP PRM::QuasiRandomStateSukharev (int i, int maxnum, int dim)\fC [protected]\fP"
+.PP
+.SH "MEMBER DATA DOCUMENTATION"
+.PP 
+.SS "\fBDisjointSets\fP<\fBMSLVertex\fP*> PRM::ds"
+.PP
+The disjoint sets data structure (for connected components).
+.PP
+.SS "int PRM::MaxEdgesPerVertex\fC [protected]\fP"
+.PP
+.SS "int PRM::MaxNeighbors\fC [protected]\fP"
+.PP
+.SS "bool PRM::QuasiRandom"
+.PP
+If true, then quasirandom sampling is used (make a file named QuasiRandom).
+.PP
+.SS "bool PRM::QuasiRandomHammersley"
+.PP
+Choose Hammersley, over Halton sequence.
+.PP
+.SS "bool PRM::QuasiRandomSukharev"
+.PP
+If true, then use Sukharev grid sampling.
+.PP
+.SS "double PRM::Radius"
+.PP
+Used for deciding on which neighbors to choose.
+.PP
+.SS "int PRM::SatisfiedCount"
+.PP
+Number of times the collision checker has been called.
+.PP
+.SS "double PRM::StepSize\fC [protected]\fP"
+.PP
+Computed from DeltaT using the model.
+.PP
+.SS "double PRM::SukharevDispersion"
+.PP
+l-infinity dispersion used for Sukharev sampling.
+.PP
+.SS "int PRM::SukharevPointsPerAxis"
+.PP
+Points per axis for the Sukharev grid.
+.PP
+
+
+.SH "AUTHOR"
+.PP 
+Generated automatically by Doxygen for Motion Strategy Library from the source code.

@@ -1,0 +1,129 @@
+\section{MSLEdge  Class Reference}
+\label{classMSLEdge}\index{MSLEdge@{MSLEdge}}
+{\tt \#include $<$graph.h$>$}
+
+\subsection*{Public Methods}
+\begin{CompactItemize}
+\item 
+{\bf MSLEdge} ()
+\item 
+{\bf MSLEdge} ({\bf MSLVertex} $\ast$v1, {\bf MSLVertex} $\ast$v2, const {\bf MSLVector} \&u, double t)
+\item 
+{\bf MSLEdge} ({\bf MSLVertex} $\ast$v1, {\bf MSLVertex} $\ast$v2, double t)
+\item 
+{\bf MSLEdge} ({\bf MSLVertex} $\ast$v1, {\bf MSLVertex} $\ast$v2)
+\item 
+{\bf $\sim$MSLEdge} ()
+\item 
+double {\bf Time} () const
+\begin{CompactList}\small\item\em The time required to reach this node from the parent.\item\end{CompactList}\item 
+double {\bf Cost} () const
+\begin{CompactList}\small\item\em A cost value, useful in some algorithms.\item\end{CompactList}\item 
+void {\bf Set\-Cost} (const double \&{\bf x})
+\begin{CompactList}\small\item\em A cost value, useful in some algorithms.\item\end{CompactList}\item 
+{\bf MSLVector} {\bf Input} () const
+\begin{CompactList}\small\item\em An input vector that leads from the first state to the second.\item\end{CompactList}\item 
+{\bf MSLVertex} $\ast$ {\bf Source} () const
+\begin{CompactList}\small\item\em The time required to reach this node from the parent.\item\end{CompactList}\item 
+{\bf MSLVertex} $\ast$ {\bf Target} () const
+\begin{CompactList}\small\item\em The time required to reach this node from the parent.\item\end{CompactList}\end{CompactItemize}
+\subsection*{Friends}
+\begin{CompactItemize}
+\item 
+istream \& {\bf operator$>$$>$} (istream \&is, MSLEdge \&e)
+\item 
+ostream \& {\bf operator$<$$<$} (ostream \&os, const MSLEdge \&e)
+\end{CompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{MSLEdge@{MSLEdge}!MSLEdge@{MSLEdge}}
+\index{MSLEdge@{MSLEdge}!MSLEdge@{MSLEdge}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}MSLEdge::MSLEdge ()}\label{classMSLEdge_a0}
+
+
+\index{MSLEdge@{MSLEdge}!MSLEdge@{MSLEdge}}
+\index{MSLEdge@{MSLEdge}!MSLEdge@{MSLEdge}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}MSLEdge::MSLEdge ({\bf MSLVertex} $\ast$ {\em v1}, {\bf MSLVertex} $\ast$ {\em v2}, const {\bf MSLVector} \& {\em u}, double {\em t})}\label{classMSLEdge_a1}
+
+
+\index{MSLEdge@{MSLEdge}!MSLEdge@{MSLEdge}}
+\index{MSLEdge@{MSLEdge}!MSLEdge@{MSLEdge}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}MSLEdge::MSLEdge ({\bf MSLVertex} $\ast$ {\em v1}, {\bf MSLVertex} $\ast$ {\em v2}, double {\em t})}\label{classMSLEdge_a2}
+
+
+\index{MSLEdge@{MSLEdge}!MSLEdge@{MSLEdge}}
+\index{MSLEdge@{MSLEdge}!MSLEdge@{MSLEdge}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}MSLEdge::MSLEdge ({\bf MSLVertex} $\ast$ {\em v1}, {\bf MSLVertex} $\ast$ {\em v2})}\label{classMSLEdge_a3}
+
+
+\index{MSLEdge@{MSLEdge}!~MSLEdge@{$\sim$MSLEdge}}
+\index{~MSLEdge@{$\sim$MSLEdge}!MSLEdge@{MSLEdge}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}MSLEdge::$\sim$MSLEdge ()\hspace{0.3cm}{\tt  [inline]}}\label{classMSLEdge_a4}
+
+
+
+
+\subsection{Member Function Documentation}
+\index{MSLEdge@{MSLEdge}!Cost@{Cost}}
+\index{Cost@{Cost}!MSLEdge@{MSLEdge}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}double MSLEdge::Cost () const\hspace{0.3cm}{\tt  [inline]}}\label{classMSLEdge_a6}
+
+
+A cost value, useful in some algorithms.
+
+\index{MSLEdge@{MSLEdge}!Input@{Input}}
+\index{Input@{Input}!MSLEdge@{MSLEdge}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf MSLVector} MSLEdge::Input () const\hspace{0.3cm}{\tt  [inline]}}\label{classMSLEdge_a8}
+
+
+An input vector that leads from the first state to the second.
+
+\index{MSLEdge@{MSLEdge}!SetCost@{SetCost}}
+\index{SetCost@{SetCost}!MSLEdge@{MSLEdge}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void MSLEdge::Set\-Cost (const double \& {\em x})\hspace{0.3cm}{\tt  [inline]}}\label{classMSLEdge_a7}
+
+
+A cost value, useful in some algorithms.
+
+\index{MSLEdge@{MSLEdge}!Source@{Source}}
+\index{Source@{Source}!MSLEdge@{MSLEdge}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf MSLVertex}$\ast$ MSLEdge::Source () const\hspace{0.3cm}{\tt  [inline]}}\label{classMSLEdge_a9}
+
+
+The time required to reach this node from the parent.
+
+\index{MSLEdge@{MSLEdge}!Target@{Target}}
+\index{Target@{Target}!MSLEdge@{MSLEdge}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf MSLVertex}$\ast$ MSLEdge::Target () const\hspace{0.3cm}{\tt  [inline]}}\label{classMSLEdge_a10}
+
+
+The time required to reach this node from the parent.
+
+\index{MSLEdge@{MSLEdge}!Time@{Time}}
+\index{Time@{Time}!MSLEdge@{MSLEdge}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}double MSLEdge::Time () const\hspace{0.3cm}{\tt  [inline]}}\label{classMSLEdge_a5}
+
+
+The time required to reach this node from the parent.
+
+
+
+\subsection{Friends And Related Function Documentation}
+\index{MSLEdge@{MSLEdge}!operator<<@{operator$<$$<$}}
+\index{operator<<@{operator$<$$<$}!MSLEdge@{MSLEdge}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}ostream\& operator$<$$<$ (ostream \& {\em os}, const MSLEdge \& {\em e})\hspace{0.3cm}{\tt  [friend]}}\label{classMSLEdge_l1}
+
+
+\index{MSLEdge@{MSLEdge}!operator>>@{operator$>$$>$}}
+\index{operator>>@{operator$>$$>$}!MSLEdge@{MSLEdge}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}istream\& operator$>$$>$ (istream \& {\em is}, MSLEdge \& {\em e})\hspace{0.3cm}{\tt  [friend]}}\label{classMSLEdge_l0}
+
+
+
+
+The documentation for this class was generated from the following files:\begin{CompactItemize}
+\item 
+{\bf graph.h}\item 
+{\bf graph.C}\item 
+{\bf graph\_\-old.C}\end{CompactItemize}

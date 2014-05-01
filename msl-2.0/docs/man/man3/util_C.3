@@ -1,0 +1,60 @@
+.TH "util.C" 3 "8 Nov 2001" "Motion Strategy Library" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+util.C \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include "util.h"\fR
+.br
+
+.SS Functions
+
+.in +1c
+.ti -1c
+.RI "float \fBused_time\fR ()"
+.br
+.ti -1c
+.RI "float \fBused_time\fR (float &T)"
+.br
+.ti -1c
+.RI "ostream& \fBoperator<<\fR (ostream &out, const list< string > &L)"
+.br
+.ti -1c
+.RI "istream& \fBoperator>>\fR (istream &in, list< string > &L)"
+.br
+.ti -1c
+.RI "ostream& \fBoperator<<\fR (ostream &out, const list< int > &L)"
+.br
+.ti -1c
+.RI "istream& \fBoperator>>\fR (istream &in, list< int > &L)"
+.br
+.ti -1c
+.RI "bool \fBis_file\fR (string fname)"
+.br
+.ti -1c
+.RI "bool \fBis_directory\fR (string fname)"
+.br
+.in -1c
+.SH FUNCTION DOCUMENTATION
+.PP 
+.SS bool is_directory (string fname)
+.PP
+.SS bool is_file (string fname)
+.PP
+.SS ostream& operator<< (ostream & out, const list< int > & L)
+.PP
+.SS ostream& operator<< (ostream & out, const list< string > & L)
+.PP
+.SS istream& operator>> (istream & in, list< int > & L)
+.PP
+.SS istream& operator>> (istream & in, list< string > & L)
+.PP
+.SS float used_time (float & T)
+.PP
+.SS float used_time ()
+.PP
+.SH AUTHOR
+.PP 
+Generated automatically by Doxygen for Motion Strategy Library from the source code.

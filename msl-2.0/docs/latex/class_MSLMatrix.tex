@@ -1,0 +1,255 @@
+\section{MSLMatrix  Class Reference}
+\label{class_MSLMatrix}\index{MSLMatrix@{MSLMatrix}}
+{\tt \#include $<$matrix.h$>$}
+
+\subsection*{Public Methods}
+\begin{CompactItemize}
+\item 
+{\bf MSLMatrix} (int n=0, int m=0)
+\item 
+{\bf MSLMatrix} (int n, int m, double $\ast$D)
+\item 
+{\bf MSLMatrix} (const MSLMatrix \&)
+\item 
+{\bf MSLMatrix} (const {\bf MSLVector} \&)
+\item 
+MSLMatrix\& {\bf operator=} (const MSLMatrix \&)
+\item 
+{\bf $\sim$MSLMatrix} ()
+\item 
+int {\bf dim1} () const
+\item 
+int {\bf dim2} () const
+\item 
+{\bf MSLVector}\& {\bf row} (int i) const
+\item 
+{\bf MSLVector} {\bf col} (int i) const
+\item 
+MSLMatrix {\bf trans} () const
+\item 
+MSLMatrix {\bf inv} () const
+\item 
+double {\bf det} () const
+\item 
+MSLMatrix {\bf solve} (const MSLMatrix \&) const
+\item 
+{\bf MSLVector} {\bf solve} (const {\bf MSLVector} \&b) const
+\item 
+{\bf operator MSLVector} () const
+\item 
+{\bf MSLVector}\& {\bf operator[$\,$]} (int i) const
+\item 
+double\& {\bf operator()} (int i, int j)
+\item 
+double {\bf operator()} (int, int) const
+\item 
+int {\bf operator==} (const MSLMatrix \&) const
+\item 
+int {\bf operator!=} (const MSLMatrix \&x) const
+\item 
+MSLMatrix {\bf operator+} (const MSLMatrix \&M1) const
+\item 
+MSLMatrix {\bf operator-} (const MSLMatrix \&M1) const
+\item 
+MSLMatrix {\bf operator-} () const
+\item 
+MSLMatrix\& {\bf operator-=} (const MSLMatrix \&)
+\item 
+MSLMatrix\& {\bf operator+=} (const MSLMatrix \&)
+\item 
+MSLMatrix {\bf operator $\ast$} (const MSLMatrix \&M1) const
+\item 
+{\bf MSLVector} {\bf operator $\ast$} (const {\bf MSLVector} \&vec) const
+\item 
+MSLMatrix {\bf operator $\ast$} (double x) const
+\item 
+void {\bf read} (istream \&I)
+\item 
+void {\bf read} ()
+\end{CompactItemize}
+\subsection*{Friends}
+\begin{CompactItemize}
+\item 
+ostream\& {\bf operator$<$$<$} (ostream \&O, const MSLMatrix \&M)
+\item 
+istream\& {\bf operator$>$$>$} (istream \&I, MSLMatrix \&M)
+\end{CompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{MSLMatrix@{MSLMatrix}!MSLMatrix@{MSLMatrix}}
+\index{MSLMatrix@{MSLMatrix}!MSLMatrix@{MSLMatrix}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}MSLMatrix::MSLMatrix (int {\em n} = 0, int {\em m} = 0)}\label{class_MSLMatrix_a0}
+
+
+\index{MSLMatrix@{MSLMatrix}!MSLMatrix@{MSLMatrix}}
+\index{MSLMatrix@{MSLMatrix}!MSLMatrix@{MSLMatrix}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}MSLMatrix::MSLMatrix (int {\em n}, int {\em m}, double $\ast$ {\em D})}\label{class_MSLMatrix_a1}
+
+
+\index{MSLMatrix@{MSLMatrix}!MSLMatrix@{MSLMatrix}}
+\index{MSLMatrix@{MSLMatrix}!MSLMatrix@{MSLMatrix}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}MSLMatrix::MSLMatrix (const MSLMatrix \&)}\label{class_MSLMatrix_a2}
+
+
+\index{MSLMatrix@{MSLMatrix}!MSLMatrix@{MSLMatrix}}
+\index{MSLMatrix@{MSLMatrix}!MSLMatrix@{MSLMatrix}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}MSLMatrix::MSLMatrix (const {\bf MSLVector} \&)}\label{class_MSLMatrix_a3}
+
+
+\index{MSLMatrix@{MSLMatrix}!~MSLMatrix@{$\sim$MSLMatrix}}
+\index{~MSLMatrix@{$\sim$MSLMatrix}!MSLMatrix@{MSLMatrix}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}MSLMatrix::$\sim$MSLMatrix ()}\label{class_MSLMatrix_a5}
+
+
+
+
+\subsection{Member Function Documentation}
+\index{MSLMatrix@{MSLMatrix}!col@{col}}
+\index{col@{col}!MSLMatrix@{MSLMatrix}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf MSLVector} MSLMatrix::col (int {\em i}) const}\label{class_MSLMatrix_a9}
+
+
+\index{MSLMatrix@{MSLMatrix}!det@{det}}
+\index{det@{det}!MSLMatrix@{MSLMatrix}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}double MSLMatrix::det () const}\label{class_MSLMatrix_a12}
+
+
+\index{MSLMatrix@{MSLMatrix}!dim1@{dim1}}
+\index{dim1@{dim1}!MSLMatrix@{MSLMatrix}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int MSLMatrix::dim1 () const\hspace{0.3cm}{\tt  [inline]}}\label{class_MSLMatrix_a6}
+
+
+\index{MSLMatrix@{MSLMatrix}!dim2@{dim2}}
+\index{dim2@{dim2}!MSLMatrix@{MSLMatrix}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int MSLMatrix::dim2 () const\hspace{0.3cm}{\tt  [inline]}}\label{class_MSLMatrix_a7}
+
+
+\index{MSLMatrix@{MSLMatrix}!inv@{inv}}
+\index{inv@{inv}!MSLMatrix@{MSLMatrix}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}MSLMatrix MSLMatrix::inv () const}\label{class_MSLMatrix_a11}
+
+
+\index{MSLMatrix@{MSLMatrix}!operator *@{operator $\ast$}}
+\index{operator *@{operator $\ast$}!MSLMatrix@{MSLMatrix}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}MSLMatrix MSLMatrix::operator $\ast$ (double {\em x}) const}\label{class_MSLMatrix_a28}
+
+
+\index{MSLMatrix@{MSLMatrix}!operator *@{operator $\ast$}}
+\index{operator *@{operator $\ast$}!MSLMatrix@{MSLMatrix}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf MSLVector} MSLMatrix::operator $\ast$ (const {\bf MSLVector} \& {\em vec}) const\hspace{0.3cm}{\tt  [inline]}}\label{class_MSLMatrix_a27}
+
+
+\index{MSLMatrix@{MSLMatrix}!operator *@{operator $\ast$}}
+\index{operator *@{operator $\ast$}!MSLMatrix@{MSLMatrix}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}MSLMatrix MSLMatrix::operator $\ast$ (const MSLMatrix \& {\em M1}) const}\label{class_MSLMatrix_a26}
+
+
+\index{MSLMatrix@{MSLMatrix}!operator MSLVector@{operator MSLVector}}
+\index{operator MSLVector@{operator MSLVector}!MSLMatrix@{MSLMatrix}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}MSLMatrix::operator {\bf MSLVector} () const}\label{class_MSLMatrix_a15}
+
+
+\index{MSLMatrix@{MSLMatrix}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!MSLMatrix@{MSLMatrix}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int MSLMatrix::operator!= (const MSLMatrix \& {\em x}) const\hspace{0.3cm}{\tt  [inline]}}\label{class_MSLMatrix_a20}
+
+
+\index{MSLMatrix@{MSLMatrix}!operator()@{operator()}}
+\index{operator()@{operator()}!MSLMatrix@{MSLMatrix}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}double MSLMatrix::operator() (int, int) const}\label{class_MSLMatrix_a18}
+
+
+\index{MSLMatrix@{MSLMatrix}!operator()@{operator()}}
+\index{operator()@{operator()}!MSLMatrix@{MSLMatrix}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}double\& MSLMatrix::operator() (int {\em i}, int {\em j})}\label{class_MSLMatrix_a17}
+
+
+\index{MSLMatrix@{MSLMatrix}!operator+@{operator+}}
+\index{operator+@{operator+}!MSLMatrix@{MSLMatrix}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}MSLMatrix MSLMatrix::operator+ (const MSLMatrix \& {\em M1}) const}\label{class_MSLMatrix_a21}
+
+
+\index{MSLMatrix@{MSLMatrix}!operator+=@{operator+=}}
+\index{operator+=@{operator+=}!MSLMatrix@{MSLMatrix}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}MSLMatrix\& MSLMatrix::operator+= (const MSLMatrix \&)}\label{class_MSLMatrix_a25}
+
+
+\index{MSLMatrix@{MSLMatrix}!operator-@{operator-}}
+\index{operator-@{operator-}!MSLMatrix@{MSLMatrix}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}MSLMatrix MSLMatrix::operator- () const}\label{class_MSLMatrix_a23}
+
+
+\index{MSLMatrix@{MSLMatrix}!operator-@{operator-}}
+\index{operator-@{operator-}!MSLMatrix@{MSLMatrix}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}MSLMatrix MSLMatrix::operator- (const MSLMatrix \& {\em M1}) const}\label{class_MSLMatrix_a22}
+
+
+\index{MSLMatrix@{MSLMatrix}!operator-=@{operator-=}}
+\index{operator-=@{operator-=}!MSLMatrix@{MSLMatrix}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}MSLMatrix\& MSLMatrix::operator-= (const MSLMatrix \&)}\label{class_MSLMatrix_a24}
+
+
+\index{MSLMatrix@{MSLMatrix}!operator=@{operator=}}
+\index{operator=@{operator=}!MSLMatrix@{MSLMatrix}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}MSLMatrix\& MSLMatrix::operator= (const MSLMatrix \&)}\label{class_MSLMatrix_a4}
+
+
+\index{MSLMatrix@{MSLMatrix}!operator==@{operator==}}
+\index{operator==@{operator==}!MSLMatrix@{MSLMatrix}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int MSLMatrix::operator== (const MSLMatrix \&) const}\label{class_MSLMatrix_a19}
+
+
+\index{MSLMatrix@{MSLMatrix}!operator[]@{operator[]}}
+\index{operator[]@{operator[]}!MSLMatrix@{MSLMatrix}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf MSLVector} \& MSLMatrix::operator[$\,$] (int {\em i}) const\hspace{0.3cm}{\tt  [inline]}}\label{class_MSLMatrix_a16}
+
+
+\index{MSLMatrix@{MSLMatrix}!read@{read}}
+\index{read@{read}!MSLMatrix@{MSLMatrix}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void MSLMatrix::read ()\hspace{0.3cm}{\tt  [inline]}}\label{class_MSLMatrix_a30}
+
+
+\index{MSLMatrix@{MSLMatrix}!read@{read}}
+\index{read@{read}!MSLMatrix@{MSLMatrix}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void MSLMatrix::read (istream \& {\em I})}\label{class_MSLMatrix_a29}
+
+
+\index{MSLMatrix@{MSLMatrix}!row@{row}}
+\index{row@{row}!MSLMatrix@{MSLMatrix}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf MSLVector}\& MSLMatrix::row (int {\em i}) const}\label{class_MSLMatrix_a8}
+
+
+\index{MSLMatrix@{MSLMatrix}!solve@{solve}}
+\index{solve@{solve}!MSLMatrix@{MSLMatrix}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf MSLVector} MSLMatrix::solve (const {\bf MSLVector} \& {\em b}) const\hspace{0.3cm}{\tt  [inline]}}\label{class_MSLMatrix_a14}
+
+
+\index{MSLMatrix@{MSLMatrix}!solve@{solve}}
+\index{solve@{solve}!MSLMatrix@{MSLMatrix}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}MSLMatrix MSLMatrix::solve (const MSLMatrix \&) const}\label{class_MSLMatrix_a13}
+
+
+\index{MSLMatrix@{MSLMatrix}!trans@{trans}}
+\index{trans@{trans}!MSLMatrix@{MSLMatrix}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}MSLMatrix MSLMatrix::trans () const}\label{class_MSLMatrix_a10}
+
+
+
+
+\subsection{Friends And Related Function Documentation}
+\index{MSLMatrix@{MSLMatrix}!operator<<@{operator$<$$<$}}
+\index{operator<<@{operator$<$$<$}!MSLMatrix@{MSLMatrix}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}ostream\& operator$<$$<$ (ostream \& {\em os}, const MSLMatrix \& {\em M})\hspace{0.3cm}{\tt  [friend]}}\label{class_MSLMatrix_l0}
+
+
+\index{MSLMatrix@{MSLMatrix}!operator>>@{operator$>$$>$}}
+\index{operator>>@{operator$>$$>$}!MSLMatrix@{MSLMatrix}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}istream\& operator$>$$>$ (istream \& {\em is}, MSLMatrix \& {\em M})\hspace{0.3cm}{\tt  [friend]}}\label{class_MSLMatrix_l1}
+
+
+
+
+The documentation for this class was generated from the following file:\begin{CompactItemize}
+\item 
+{\bf matrix.h}\end{CompactItemize}

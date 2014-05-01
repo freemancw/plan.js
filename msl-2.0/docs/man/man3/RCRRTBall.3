@@ -1,0 +1,109 @@
+.TH "RCRRTBall" 3 "24 Jul 2003" "Motion Strategy Library" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+RCRRTBall \- \fBRCRRT\fP planner using ball neighborhood to exclude the repeated states. 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <rcrrt.h>\fP
+.PP
+Inherits \fBRCRRT\fP.
+.PP
+Inherited by \fBRCRRTBallDual\fP.
+.PP
+.SS "Public Methods"
+
+.in +1c
+.ti -1c
+.RI "\fBRCRRTBall\fP (\fBProblem\fP *p)"
+.br
+.ti -1c
+.RI "virtual \fB~RCRRTBall\fP ()"
+.br
+.ti -1c
+.RI "virtual \fBMSLNode\fP * \fBSelectNode\fP (const \fBMSLVector\fP &\fBx\fP, \fBMSLTree\fP *t, bool forward)"
+.br
+.RI "\fIcheck the termination condition: n points in the balls in row.\fP"
+.ti -1c
+.RI "virtual bool \fBExtend\fP (const \fBMSLVector\fP &\fBx\fP, \fBMSLTree\fP *t, \fBMSLNode\fP *&nn, bool forward)"
+.br
+.RI "\fIExtend the nearest node to the random state.\fP"
+.ti -1c
+.RI "virtual bool \fBConnect\fP (const \fBMSLVector\fP &\fBx\fP, \fBMSLTree\fP *t, \fBMSLNode\fP *&nn, bool forward)"
+.br
+.RI "\fIextend the best input to a new state and check if the new state is in some balls.\fP"
+.ti -1c
+.RI "virtual bool \fBPlan\fP ()"
+.br
+.RI "\fIAttempt to solve an Initial-Goal query by growing an \fBRRT\fP.\fP"
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "double \fBBallRadius\fP"
+.br
+.RI "\fIthe radius of the balls surrounding the nodes.\fP"
+.ti -1c
+.RI "int \fBFailNumTh\fP"
+.br
+.RI "\fIthe termination number, if FailNum random points are in the balls in row the algorithm terminates.\fP"
+.ti -1c
+.RI "int \fBFailNum\fP"
+.br
+.RI "\fIthe number of times of the random points in the balls in row.\fP"
+.in -1c
+.SH "DETAILED DESCRIPTION"
+.PP 
+\fBRCRRT\fP planner using ball neighborhood to exclude the repeated states.
+.PP
+.SH "CONSTRUCTOR & DESTRUCTOR DOCUMENTATION"
+.PP 
+.SS "RCRRTBall::RCRRTBall (\fBProblem\fP * p)"
+.PP
+.SS "virtual RCRRTBall::~RCRRTBall ()\fC [inline, virtual]\fP"
+.PP
+.SH "MEMBER FUNCTION DOCUMENTATION"
+.PP 
+.SS "bool RCRRTBall::Connect (const \fBMSLVector\fP & x, \fBMSLTree\fP * t, \fBMSLNode\fP *& nn, bool forward)\fC [virtual]\fP"
+.PP
+extend the best input to a new state and check if the new state is in some balls.
+.PP
+Reimplemented from \fBRCRRT\fP.
+.SS "bool RCRRTBall::Extend (const \fBMSLVector\fP & x, \fBMSLTree\fP * t, \fBMSLNode\fP *& nn, bool forward)\fC [virtual]\fP"
+.PP
+Extend the nearest node to the random state.
+.PP
+Reimplemented from \fBRCRRT\fP.
+.SS "bool RCRRTBall::Plan ()\fC [virtual]\fP"
+.PP
+Attempt to solve an Initial-Goal query by growing an \fBRRT\fP.
+.PP
+Reimplemented from \fBRCRRT\fP.
+.PP
+Reimplemented in \fBRCRRTBallDual\fP.
+.SS "\fBMSLNode\fP * RCRRTBall::SelectNode (const \fBMSLVector\fP & x, \fBMSLTree\fP * t, bool forward)\fC [virtual]\fP"
+.PP
+check the termination condition: n points in the balls in row.
+.PP
+Reimplemented from \fBRCRRT\fP.
+.SH "MEMBER DATA DOCUMENTATION"
+.PP 
+.SS "double RCRRTBall::BallRadius"
+.PP
+the radius of the balls surrounding the nodes.
+.PP
+.SS "int RCRRTBall::FailNum"
+.PP
+the number of times of the random points in the balls in row.
+.PP
+.SS "int RCRRTBall::FailNumTh"
+.PP
+the termination number, if FailNum random points are in the balls in row the algorithm terminates.
+.PP
+
+
+.SH "AUTHOR"
+.PP 
+Generated automatically by Doxygen for Motion Strategy Library from the source code.

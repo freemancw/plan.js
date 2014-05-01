@@ -1,0 +1,66 @@
+.TH "RCRRTDual" 3 "24 Jul 2003" "Motion Strategy Library" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+RCRRTDual \- Basic dual tree version of \fBRCRRT\fP. 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <rcrrt.h>\fP
+.PP
+Inherits \fBRCRRT\fP.
+.PP
+Inherited by \fBRCRRTExtExt\fP.
+.PP
+.SS "Public Methods"
+
+.in +1c
+.ti -1c
+.RI "\fBRCRRTDual\fP (\fBProblem\fP *p)"
+.br
+.ti -1c
+.RI "virtual \fB~RCRRTDual\fP ()"
+.br
+.ti -1c
+.RI "virtual bool \fBPlan\fP ()"
+.br
+.RI "\fIAttempt to solve an Initial-Goal query by growing an \fBRRT\fP.\fP"
+.ti -1c
+.RI "virtual bool \fBGetConnected\fP (\fBMSLNode\fP *n1, \fBMSLNode\fP *n2)"
+.br
+.in -1c
+.SS "Protected Methods"
+
+.in +1c
+.ti -1c
+.RI "void \fBRecoverSolution\fP (\fBMSLNode\fP *n1, \fBMSLNode\fP *n2)"
+.br
+.in -1c
+.SH "DETAILED DESCRIPTION"
+.PP 
+Basic dual tree version of \fBRCRRT\fP.
+.PP
+.SH "CONSTRUCTOR & DESTRUCTOR DOCUMENTATION"
+.PP 
+.SS "RCRRTDual::RCRRTDual (\fBProblem\fP * p)"
+.PP
+.SS "virtual RCRRTDual::~RCRRTDual ()\fC [inline, virtual]\fP"
+.PP
+.SH "MEMBER FUNCTION DOCUMENTATION"
+.PP 
+.SS "bool RCRRTDual::GetConnected (\fBMSLNode\fP * n1, \fBMSLNode\fP * n2)\fC [virtual]\fP"
+.PP
+.SS "bool RCRRTDual::Plan ()\fC [virtual]\fP"
+.PP
+Attempt to solve an Initial-Goal query by growing an \fBRRT\fP.
+.PP
+Reimplemented from \fBRCRRT\fP.
+.PP
+Reimplemented in \fBRCRRTExtExt\fP.
+.SS "void RCRRTDual::RecoverSolution (\fBMSLNode\fP * n1, \fBMSLNode\fP * n2)\fC [protected]\fP"
+.PP
+
+
+.SH "AUTHOR"
+.PP 
+Generated automatically by Doxygen for Motion Strategy Library from the source code.

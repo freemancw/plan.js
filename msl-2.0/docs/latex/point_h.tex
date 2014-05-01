@@ -1,0 +1,112 @@
+\section{point.h File Reference}
+\label{point_h}\index{point.h@{point.h}}
+{\tt \#include $<$stream.h$>$}\par
+{\tt \#include $<$list.h$>$}\par
+\subsection*{Compounds}
+\begin{CompactItemize}
+\item 
+class {\bf MSLPoint}
+\end{CompactItemize}
+\subsection*{Typedefs}
+\begin{CompactItemize}
+\item 
+typedef list$<${\bf MSLPoint}$>$ {\bf MSLPolygon}
+\end{CompactItemize}
+\subsection*{Functions}
+\begin{CompactItemize}
+\item 
+{\bf MSLPoint} {\bf center} (const {\bf MSLPoint} \&a, const {\bf MSLPoint} \&b)
+\item 
+{\bf MSLPoint} {\bf mid\-MSLPoint} (const {\bf MSLPoint} \&a, const {\bf MSLPoint} \&b)
+\item 
+int {\bf orientation} (const {\bf MSLPoint} \&a, const {\bf MSLPoint} \&b, const {\bf MSLPoint} \&c)
+\item 
+int {\bf cmp\_\-signed\_\-dist} (const {\bf MSLPoint} \&a, const {\bf MSLPoint} \&b, const {\bf MSLPoint} \&c, const {\bf MSLPoint} \&d)
+\item 
+double {\bf area} (const {\bf MSLPoint} \&a, const {\bf MSLPoint} \&b, const {\bf MSLPoint} \&c)
+\item 
+bool {\bf collinear} (const {\bf MSLPoint} \&a, const {\bf MSLPoint} \&b, const {\bf MSLPoint} \&c)
+\item 
+bool {\bf right\_\-turn} (const {\bf MSLPoint} \&a, const {\bf MSLPoint} \&b, const {\bf MSLPoint} \&c)
+\item 
+bool {\bf left\_\-turn} (const {\bf MSLPoint} \&a, const {\bf MSLPoint} \&b, const {\bf MSLPoint} \&c)
+\item 
+int {\bf side\_\-of\_\-circle} (const {\bf MSLPoint} \&a, const {\bf MSLPoint} \&b, const {\bf MSLPoint} \&c, const {\bf MSLPoint} \&d)
+\item 
+bool {\bf incircle} (const {\bf MSLPoint} \&a, const {\bf MSLPoint} \&b, const {\bf MSLPoint} \&c, const {\bf MSLPoint} \&d)
+\item 
+bool {\bf outcircle} (const {\bf MSLPoint} \&a, const {\bf MSLPoint} \&b, const {\bf MSLPoint} \&c, const {\bf MSLPoint} \&d)
+\item 
+bool {\bf cocircular} (const {\bf MSLPoint} \&a, const {\bf MSLPoint} \&b, const {\bf MSLPoint} \&c, const {\bf MSLPoint} \&d)
+\end{CompactItemize}
+
+
+\subsection{Typedef Documentation}
+\index{point.h@{point.h}!MSLPolygon@{MSLPolygon}}
+\index{MSLPolygon@{MSLPolygon}!point.h@{point.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}typedef list$<${\bf MSLPoint}$>$ MSLPolygon}\label{point_h_a0}
+
+
+
+
+\subsection{Function Documentation}
+\index{point.h@{point.h}!area@{area}}
+\index{area@{area}!point.h@{point.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}double area (const {\bf MSLPoint} \& {\em a}, const {\bf MSLPoint} \& {\em b}, const {\bf MSLPoint} \& {\em c})\hspace{0.3cm}{\tt  [inline]}}\label{point_h_a5}
+
+
+\index{point.h@{point.h}!center@{center}}
+\index{center@{center}!point.h@{point.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf MSLPoint} center (const {\bf MSLPoint} \& {\em a}, const {\bf MSLPoint} \& {\em b})\hspace{0.3cm}{\tt  [inline]}}\label{point_h_a1}
+
+
+\index{point.h@{point.h}!cmp_signed_dist@{cmp\_\-signed\_\-dist}}
+\index{cmp_signed_dist@{cmp\_\-signed\_\-dist}!point.h@{point.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int cmp\_\-signed\_\-dist (const {\bf MSLPoint} \& {\em a}, const {\bf MSLPoint} \& {\em b}, const {\bf MSLPoint} \& {\em c}, const {\bf MSLPoint} \& {\em d})\hspace{0.3cm}{\tt  [inline]}}\label{point_h_a4}
+
+
+\index{point.h@{point.h}!cocircular@{cocircular}}
+\index{cocircular@{cocircular}!point.h@{point.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}bool cocircular (const {\bf MSLPoint} \& {\em a}, const {\bf MSLPoint} \& {\em b}, const {\bf MSLPoint} \& {\em c}, const {\bf MSLPoint} \& {\em d})\hspace{0.3cm}{\tt  [inline]}}\label{point_h_a12}
+
+
+\index{point.h@{point.h}!collinear@{collinear}}
+\index{collinear@{collinear}!point.h@{point.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}bool collinear (const {\bf MSLPoint} \& {\em a}, const {\bf MSLPoint} \& {\em b}, const {\bf MSLPoint} \& {\em c})\hspace{0.3cm}{\tt  [inline]}}\label{point_h_a6}
+
+
+\index{point.h@{point.h}!incircle@{incircle}}
+\index{incircle@{incircle}!point.h@{point.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}bool incircle (const {\bf MSLPoint} \& {\em a}, const {\bf MSLPoint} \& {\em b}, const {\bf MSLPoint} \& {\em c}, const {\bf MSLPoint} \& {\em d})\hspace{0.3cm}{\tt  [inline]}}\label{point_h_a10}
+
+
+\index{point.h@{point.h}!left_turn@{left\_\-turn}}
+\index{left_turn@{left\_\-turn}!point.h@{point.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}bool left\_\-turn (const {\bf MSLPoint} \& {\em a}, const {\bf MSLPoint} \& {\em b}, const {\bf MSLPoint} \& {\em c})\hspace{0.3cm}{\tt  [inline]}}\label{point_h_a8}
+
+
+\index{point.h@{point.h}!midMSLPoint@{midMSLPoint}}
+\index{midMSLPoint@{midMSLPoint}!point.h@{point.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf MSLPoint} mid\-MSLPoint (const {\bf MSLPoint} \& {\em a}, const {\bf MSLPoint} \& {\em b})\hspace{0.3cm}{\tt  [inline]}}\label{point_h_a2}
+
+
+\index{point.h@{point.h}!orientation@{orientation}}
+\index{orientation@{orientation}!point.h@{point.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int orientation (const {\bf MSLPoint} \& {\em a}, const {\bf MSLPoint} \& {\em b}, const {\bf MSLPoint} \& {\em c})\hspace{0.3cm}{\tt  [inline]}}\label{point_h_a3}
+
+
+\index{point.h@{point.h}!outcircle@{outcircle}}
+\index{outcircle@{outcircle}!point.h@{point.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}bool outcircle (const {\bf MSLPoint} \& {\em a}, const {\bf MSLPoint} \& {\em b}, const {\bf MSLPoint} \& {\em c}, const {\bf MSLPoint} \& {\em d})\hspace{0.3cm}{\tt  [inline]}}\label{point_h_a11}
+
+
+\index{point.h@{point.h}!right_turn@{right\_\-turn}}
+\index{right_turn@{right\_\-turn}!point.h@{point.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}bool right\_\-turn (const {\bf MSLPoint} \& {\em a}, const {\bf MSLPoint} \& {\em b}, const {\bf MSLPoint} \& {\em c})\hspace{0.3cm}{\tt  [inline]}}\label{point_h_a7}
+
+
+\index{point.h@{point.h}!side_of_circle@{side\_\-of\_\-circle}}
+\index{side_of_circle@{side\_\-of\_\-circle}!point.h@{point.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int side\_\-of\_\-circle (const {\bf MSLPoint} \& {\em a}, const {\bf MSLPoint} \& {\em b}, const {\bf MSLPoint} \& {\em c}, const {\bf MSLPoint} \& {\em d})}\label{point_h_a9}
+
+

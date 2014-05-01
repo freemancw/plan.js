@@ -1,0 +1,122 @@
+\section{MSLTriangle  Class Reference}
+\label{class_MSLTriangle}\index{MSLTriangle@{MSLTriangle}}
+A 3D triangle, made of 3 3D points. 
+
+
+{\tt \#include $<$triangle.h$>$}
+
+\subsection*{Public Methods}
+\begin{CompactItemize}
+\item 
+{\bf MSLTriangle} ({\bf MSLPoint3d} pt1, {\bf MSLPoint3d} pt2, {\bf MSLPoint3d} pt3)
+\item 
+{\bf MSLTriangle} ()
+\item 
+{\bf $\sim$MSLTriangle} ()
+\item 
+{\bf MSLTriangle} (const MSLTriangle \&tr)
+\item 
+const MSLTriangle\& {\bf operator=} (const MSLTriangle \&tr)
+\end{CompactItemize}
+\subsection*{Public Attributes}
+\begin{CompactItemize}
+\item 
+{\bf MSLPoint3d} {\bf p1}
+\item 
+{\bf MSLPoint3d} {\bf p2}
+\item 
+{\bf MSLPoint3d} {\bf p3}
+\end{CompactItemize}
+\subsection*{Friends}
+\begin{CompactItemize}
+\item 
+istream\& {\bf operator$>$$>$} (istream \&is, MSLTriangle \&tr)
+\item 
+ostream\& {\bf operator$<$$<$} (ostream \&os, const MSLTriangle \&tr)
+\item 
+istream\& {\bf operator$>$$>$} (istream \&is, list$<$ MSLTriangle $>$ \&tl)
+\item 
+ostream\& {\bf operator$<$$<$} (ostream \&os, const list$<$ MSLTriangle $>$ \&tl)
+\end{CompactItemize}
+
+
+\subsection{Detailed Description}
+A 3D triangle, made of 3 3D points.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{MSLTriangle@{MSLTriangle}!MSLTriangle@{MSLTriangle}}
+\index{MSLTriangle@{MSLTriangle}!MSLTriangle@{MSLTriangle}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}MSLTriangle::MSLTriangle ({\bf MSLPoint3d} {\em pt1}, {\bf MSLPoint3d} {\em pt2}, {\bf MSLPoint3d} {\em pt3})}\label{class_MSLTriangle_a0}
+
+
+\index{MSLTriangle@{MSLTriangle}!MSLTriangle@{MSLTriangle}}
+\index{MSLTriangle@{MSLTriangle}!MSLTriangle@{MSLTriangle}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}MSLTriangle::MSLTriangle ()}\label{class_MSLTriangle_a1}
+
+
+\index{MSLTriangle@{MSLTriangle}!~MSLTriangle@{$\sim$MSLTriangle}}
+\index{~MSLTriangle@{$\sim$MSLTriangle}!MSLTriangle@{MSLTriangle}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}MSLTriangle::$\sim$MSLTriangle ()\hspace{0.3cm}{\tt  [inline]}}\label{class_MSLTriangle_a2}
+
+
+\index{MSLTriangle@{MSLTriangle}!MSLTriangle@{MSLTriangle}}
+\index{MSLTriangle@{MSLTriangle}!MSLTriangle@{MSLTriangle}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}MSLTriangle::MSLTriangle (const MSLTriangle \& {\em tr})}\label{class_MSLTriangle_a3}
+
+
+
+
+\subsection{Member Function Documentation}
+\index{MSLTriangle@{MSLTriangle}!operator=@{operator=}}
+\index{operator=@{operator=}!MSLTriangle@{MSLTriangle}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}const MSLTriangle \& MSLTriangle::operator= (const MSLTriangle \& {\em tr})\hspace{0.3cm}{\tt  [inline]}}\label{class_MSLTriangle_a4}
+
+
+
+
+\subsection{Friends And Related Function Documentation}
+\index{MSLTriangle@{MSLTriangle}!operator<<@{operator$<$$<$}}
+\index{operator<<@{operator$<$$<$}!MSLTriangle@{MSLTriangle}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}ostream\& operator$<$$<$ (ostream \& {\em out}, const list$<$ MSLTriangle $>$ \& {\em L})\hspace{0.3cm}{\tt  [friend]}}\label{class_MSLTriangle_l3}
+
+
+\index{MSLTriangle@{MSLTriangle}!operator<<@{operator$<$$<$}}
+\index{operator<<@{operator$<$$<$}!MSLTriangle@{MSLTriangle}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}ostream \& operator$<$$<$ (ostream \& {\em os}, const MSLTriangle \& {\em tr})\hspace{0.3cm}{\tt  [friend]}}\label{class_MSLTriangle_l1}
+
+
+\index{MSLTriangle@{MSLTriangle}!operator>>@{operator$>$$>$}}
+\index{operator>>@{operator$>$$>$}!MSLTriangle@{MSLTriangle}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}istream\& operator$>$$>$ (istream \& {\em in}, list$<$ MSLTriangle $>$ \& {\em L})\hspace{0.3cm}{\tt  [friend]}}\label{class_MSLTriangle_l2}
+
+
+\index{MSLTriangle@{MSLTriangle}!operator>>@{operator$>$$>$}}
+\index{operator>>@{operator$>$$>$}!MSLTriangle@{MSLTriangle}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}istream \& operator$>$$>$ (istream \& {\em is}, MSLTriangle \& {\em tr})\hspace{0.3cm}{\tt  [friend]}}\label{class_MSLTriangle_l0}
+
+
+
+
+\subsection{Member Data Documentation}
+\index{MSLTriangle@{MSLTriangle}!p1@{p1}}
+\index{p1@{p1}!MSLTriangle@{MSLTriangle}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf MSLPoint3d} MSLTriangle::p1}\label{class_MSLTriangle_m0}
+
+
+\index{MSLTriangle@{MSLTriangle}!p2@{p2}}
+\index{p2@{p2}!MSLTriangle@{MSLTriangle}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf MSLPoint3d} MSLTriangle::p2}\label{class_MSLTriangle_m1}
+
+
+\index{MSLTriangle@{MSLTriangle}!p3@{p3}}
+\index{p3@{p3}!MSLTriangle@{MSLTriangle}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf MSLPoint3d} MSLTriangle::p3}\label{class_MSLTriangle_m2}
+
+
+
+
+The documentation for this class was generated from the following file:\begin{CompactItemize}
+\item 
+{\bf triangle.h}\end{CompactItemize}

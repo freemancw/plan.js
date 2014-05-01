@@ -1,0 +1,49 @@
+.TH "modelcar.h" 3 "24 Jul 2003" "Motion Strategy Library" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+modelcar.h \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <list>\fP
+.br
+\fC#include <string>\fP
+.br
+\fC#include 'model2d.h'\fP
+.br
+\fC#include 'vector.h'\fP
+.br
+\fC#include 'matrix.h'\fP
+.br
+.SS "Compounds"
+
+.in +1c
+.ti -1c
+.RI "class \fBModelCar\fP"
+.br
+.RI "\fIThe same model as \fBModel2DRigidCar\fP.\fP"
+.ti -1c
+.RI "class \fBModelCarDyn\fP"
+.br
+.RI "\fIThe same model as \fBModel2DRigidDyncar\fP.\fP"
+.ti -1c
+.RI "class \fBModelCarDynNtire\fP"
+.br
+.RI "\fIThe same model as \fBModel2DRigidDyncarNtire\fP.\fP"
+.ti -1c
+.RI "class \fBModelCarDynRollover\fP"
+.br
+.RI "\fIA car model considering the rolling effect and the pressure on different tires of the car is different. If the pressure on one tire is 0, the car is considered rolling over. The pressure model of the tire is rigid such that pressure can change at instant time, which means: (1) It might be the reason that only forward \fBRRT\fP tree works. (2) In the SelectInput function, pressure has to be restored when to test new inputs.\fP"
+.ti -1c
+.RI "class \fBModelCarDynSmoothRollover\fP"
+.br
+.RI "\fIOne more dimension than \fBModelCarDynRollover\fP considering the steering angle can only change continuously.\fP"
+.ti -1c
+.RI "class \fBModelCarSmooth\fP"
+.br
+.RI "\fIThe same model as \fBModel2DRigidCarSmooth\fP.\fP"
+.in -1c
+.SH "AUTHOR"
+.PP 
+Generated automatically by Doxygen for Motion Strategy Library from the source code.

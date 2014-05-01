@@ -1,0 +1,62 @@
+.TH "ModelCarDynNtire" 3 "24 Jul 2003" "Motion Strategy Library" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ModelCarDynNtire \- The same model as \fBModel2DRigidDyncarNtire\fP. 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <modelcar.h>\fP
+.PP
+Inherits \fBModel2DRigidDyncarNtire\fP.
+.PP
+Inherited by \fBModelCarDynRollover\fP.
+.PP
+.SS "Public Methods"
+
+.in +1c
+.ti -1c
+.RI "\fBModelCarDynNtire\fP (string path)"
+.br
+.ti -1c
+.RI "virtual \fB~ModelCarDynNtire\fP ()"
+.br
+.ti -1c
+.RI "virtual \fBMSLVector\fP \fBStateToConfiguration\fP (const \fBMSLVector\fP &\fBx\fP)"
+.br
+.RI "\fIA method that converts a \fBModel\fP state in to a \fBGeom\fP configuration.\fP"
+.ti -1c
+.RI "virtual double \fBMetric\fP (const \fBMSLVector\fP &x1, const \fBMSLVector\fP &x2)"
+.br
+.RI "\fIA distance metric, which is Euclidean in the base class.\fP"
+.in -1c
+.SH "DETAILED DESCRIPTION"
+.PP 
+The same model as \fBModel2DRigidDyncarNtire\fP.
+.PP
+.SH "CONSTRUCTOR & DESTRUCTOR DOCUMENTATION"
+.PP 
+.SS "ModelCarDynNtire::ModelCarDynNtire (string path)"
+.PP
+.SS "virtual ModelCarDynNtire::~ModelCarDynNtire ()\fC [inline, virtual]\fP"
+.PP
+.SH "MEMBER FUNCTION DOCUMENTATION"
+.PP 
+.SS "double ModelCarDynNtire::Metric (const \fBMSLVector\fP & x1, const \fBMSLVector\fP & x2)\fC [virtual]\fP"
+.PP
+A distance metric, which is Euclidean in the base class.
+.PP
+Reimplemented from \fBModel2DRigidDyncar\fP.
+.PP
+Reimplemented in \fBModelCarDynRollover\fP.
+.SS "\fBMSLVector\fP ModelCarDynNtire::StateToConfiguration (const \fBMSLVector\fP & x)\fC [virtual]\fP"
+.PP
+A method that converts a \fBModel\fP state in to a \fBGeom\fP configuration.
+.PP
+Reimplemented from \fBModel2DRigidDyncar\fP.
+.PP
+Reimplemented in \fBModelCarDynRollover\fP.
+
+.SH "AUTHOR"
+.PP 
+Generated automatically by Doxygen for Motion Strategy Library from the source code.

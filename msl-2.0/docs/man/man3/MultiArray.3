@@ -1,0 +1,110 @@
+.TH "MultiArray" 3 "24 Jul 2003" "Motion Strategy Library" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+MultiArray \- A multidimensional array made from a 1D vector. 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <marray.h>\fP
+.PP
+.SS "Public Methods"
+
+.in +1c
+.ti -1c
+.RI "\fBMultiArray\fP (const vector< int > &dims, const E &\fBx\fP)"
+.br
+.RI "\fIConstructor with default assignment of x to each element.\fP"
+.ti -1c
+.RI "\fBMultiArray\fP (const vector< int > &dims)"
+.br
+.RI "\fIConstructor with no default assignment.\fP"
+.ti -1c
+.RI "\fBMultiArray\fP ()"
+.br
+.RI "\fIConstructor with no initialization.\fP"
+.ti -1c
+.RI "\fB~MultiArray\fP ()"
+.br
+.ti -1c
+.RI "E & \fBoperator[]\fP (const vector< int > &indices)"
+.br
+.RI "\fIThis can be used for access or assignment (e.g., ma[indices] = 1).\fP"
+.ti -1c
+.RI "bool \fBIncrement\fP (vector< int > &indices)"
+.br
+.RI "\fIGet the next element (used as an iterator). Return true if at end.\fP"
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "int \fBMaxSize\fP"
+.br
+.RI "\fIMaximum allowable array size (default = 10 million).\fP"
+.in -1c
+.SS "Friends"
+
+.in +1c
+.ti -1c
+.RI "istream & \fBoperator>>\fP (istream &is, MultiArray &ma)"
+.br
+.RI "\fIThis will not work correctly unless dimensions are preset correctly.\fP"
+.ti -1c
+.RI "ostream & \fBoperator<<\fP (ostream &os, const MultiArray &ma)"
+.br
+.RI "\fIJust print out the vector.\fP"
+.in -1c
+.SH "DETAILED DESCRIPTION"
+.PP 
+
+.SS "template<class E> class MultiArray< E >"
+A multidimensional array made from a 1D vector.
+.PP
+.SH "CONSTRUCTOR & DESTRUCTOR DOCUMENTATION"
+.PP 
+.SS "template<class E> MultiArray< E >::MultiArray (const vector< int > & dims, const E & x)"
+.PP
+Constructor with default assignment of x to each element.
+.PP
+.SS "template<class E> MultiArray< E >::MultiArray (const vector< int > & dims)"
+.PP
+Constructor with no default assignment.
+.PP
+.SS "template<class E> MultiArray< E >::MultiArray ()\fC [inline]\fP"
+.PP
+Constructor with no initialization.
+.PP
+.SS "template<class E> MultiArray< E >::~MultiArray ()\fC [inline]\fP"
+.PP
+.SH "MEMBER FUNCTION DOCUMENTATION"
+.PP 
+.SS "template<class E> bool MultiArray< E >::Increment (vector< int > & indices)\fC [inline]\fP"
+.PP
+Get the next element (used as an iterator). Return true if at end.
+.PP
+.SS "template<class E> E & MultiArray< E >::operator[] (const vector< int > & indices)\fC [inline]\fP"
+.PP
+This can be used for access or assignment (e.g., ma[indices] = 1).
+.PP
+.SH "FRIENDS AND RELATED FUNCTION DOCUMENTATION"
+.PP 
+.SS "template<class E> ostream& operator<< (ostream & os, const MultiArray< E > & ma)\fC [friend]\fP"
+.PP
+Just print out the vector.
+.PP
+.SS "template<class E> istream& operator>> (istream & is, MultiArray< E > & ma)\fC [friend]\fP"
+.PP
+This will not work correctly unless dimensions are preset correctly.
+.PP
+.SH "MEMBER DATA DOCUMENTATION"
+.PP 
+.SS "template<class E> int MultiArray::MaxSize"
+.PP
+Maximum allowable array size (default = 10 million).
+.PP
+
+
+.SH "AUTHOR"
+.PP 
+Generated automatically by Doxygen for Motion Strategy Library from the source code.

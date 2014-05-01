@@ -1,0 +1,191 @@
+.TH "Scene" 3 "24 Jul 2003" "Motion Strategy Library" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Scene \- An interface class that gives \fBProblem\fP information to \fBRender\fP. It tells the renderer how the 'scene' appears for rendering purposes, as opposed to collision-detection purposes. 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <scene.h>\fP
+.PP
+.SS "Public Methods"
+
+.in +1c
+.ti -1c
+.RI "\fBScene\fP (\fBProblem\fP *problem, string path)"
+.br
+.RI "\fIScene must be initialized with the \fBProblem\fP that was passed to the planner.\fP"
+.ti -1c
+.RI "virtual \fB~Scene\fP ()"
+.br
+.RI "\fIEmpty destructor.\fP"
+.ti -1c
+.RI "void \fBSetProblem\fP (\fBProblem\fP *\fBP\fP)"
+.br
+.RI "\fIA method for changing the associated \fBProblem\fP.\fP"
+.ti -1c
+.RI "virtual \fBMSLVector\fP \fBStateToSceneConfiguration\fP (const \fBMSLVector\fP &\fBx\fP)"
+.br
+.RI "\fIConvert the state into configurations for each body (a long \fBMSLVector\fP).\fP"
+.ti -1c
+.RI "virtual \fBMSLVector\fP \fBInterpolatedSceneConfiguration\fP (const \fBMSLVector\fP &x1, const \fBMSLVector\fP &x2, const double &a)"
+.br
+.RI "\fIInterpolate the states; convert the result to a SceneConfiguratrion.\fP"
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "string \fBFilePath\fP"
+.br
+.RI "\fIA common filepath.\fP"
+.ti -1c
+.RI "int \fBGeomDim\fP"
+.br
+.RI "\fIThe geometry dimension, 2 or 3.\fP"
+.ti -1c
+.RI "int \fBNumBodies\fP"
+.br
+.RI "\fIThe number of bodies in the scene.\fP"
+.ti -1c
+.RI "int \fBSceneConfigurationDim\fP"
+.br
+.RI "\fITotal degrees of freedom of the scene.\fP"
+.ti -1c
+.RI "\fBMSLVector\fP \fBLowerWorld\fP"
+.br
+.RI "\fIThe smallest x,y,z world coordinates for the environment.\fP"
+.ti -1c
+.RI "\fBMSLVector\fP \fBUpperWorld\fP"
+.br
+.RI "\fIThe largest x,y,z world coordinated for the environment.\fP"
+.ti -1c
+.RI "\fBMSLVector\fP \fBGlobalCameraPosition\fP"
+.br
+.RI "\fIThe location of the default camera in x,y,z.\fP"
+.ti -1c
+.RI "\fBMSLVector\fP \fBGlobalCameraDirection\fP"
+.br
+.RI "\fIThe direction the default camera is pointing with respect to the model.\fP"
+.ti -1c
+.RI "\fBMSLVector\fP \fBGlobalCameraZenith\fP"
+.br
+.RI "\fIThe up direction of the default camera.\fP"
+.ti -1c
+.RI "\fBMSLVector\fP \fBAttachedCameraPosition\fP"
+.br
+.RI "\fIThe location of the body-attached camera in x,y,z.\fP"
+.ti -1c
+.RI "\fBMSLVector\fP \fBAttachedCameraDirection\fP"
+.br
+.RI "\fIThe direction the body-attached camera is pointing.\fP"
+.ti -1c
+.RI "\fBMSLVector\fP \fBAttachedCameraZenith\fP"
+.br
+.RI "\fIThe up direction of the body-attached camera.\fP"
+.ti -1c
+.RI "int \fBAttachedCameraBody\fP"
+.br
+.RI "\fIThe index of the body to which the camera is attached (default = 0).\fP"
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBProblem\fP * \fBP\fP"
+.br
+.RI "\fIThe \fBProblem\fP instance used by the planner/solver.\fP"
+.in -1c
+.SH "DETAILED DESCRIPTION"
+.PP 
+An interface class that gives \fBProblem\fP information to \fBRender\fP. It tells the renderer how the 'scene' appears for rendering purposes, as opposed to collision-detection purposes.
+.PP
+This is an interface class that computes configurations of all bodies to be displayed by a rendering method. Currently, configuration information is passed through an instance of \fBProblem\fP. Thus, the base class for Scene is simply a wrapper to \fBProblem\fP. 
+.PP
+.SH "CONSTRUCTOR & DESTRUCTOR DOCUMENTATION"
+.PP 
+.SS "Scene::Scene (\fBProblem\fP * problem, string path)"
+.PP
+Scene must be initialized with the \fBProblem\fP that was passed to the planner.
+.PP
+.SS "virtual Scene::~Scene ()\fC [inline, virtual]\fP"
+.PP
+Empty destructor.
+.PP
+.SH "MEMBER FUNCTION DOCUMENTATION"
+.PP 
+.SS "\fBMSLVector\fP Scene::InterpolatedSceneConfiguration (const \fBMSLVector\fP & x1, const \fBMSLVector\fP & x2, const double & a)\fC [virtual]\fP"
+.PP
+Interpolate the states; convert the result to a SceneConfiguratrion.
+.PP
+.SS "void Scene::SetProblem (\fBProblem\fP * P)"
+.PP
+A method for changing the associated \fBProblem\fP.
+.PP
+.SS "\fBMSLVector\fP Scene::StateToSceneConfiguration (const \fBMSLVector\fP & x)\fC [virtual]\fP"
+.PP
+Convert the state into configurations for each body (a long \fBMSLVector\fP).
+.PP
+.SH "MEMBER DATA DOCUMENTATION"
+.PP 
+.SS "int Scene::AttachedCameraBody"
+.PP
+The index of the body to which the camera is attached (default = 0).
+.PP
+.SS "\fBMSLVector\fP Scene::AttachedCameraDirection"
+.PP
+The direction the body-attached camera is pointing.
+.PP
+.SS "\fBMSLVector\fP Scene::AttachedCameraPosition"
+.PP
+The location of the body-attached camera in x,y,z.
+.PP
+.SS "\fBMSLVector\fP Scene::AttachedCameraZenith"
+.PP
+The up direction of the body-attached camera.
+.PP
+.SS "string Scene::FilePath"
+.PP
+A common filepath.
+.PP
+.SS "int Scene::GeomDim"
+.PP
+The geometry dimension, 2 or 3.
+.PP
+.SS "\fBMSLVector\fP Scene::GlobalCameraDirection"
+.PP
+The direction the default camera is pointing with respect to the model.
+.PP
+.SS "\fBMSLVector\fP Scene::GlobalCameraPosition"
+.PP
+The location of the default camera in x,y,z.
+.PP
+.SS "\fBMSLVector\fP Scene::GlobalCameraZenith"
+.PP
+The up direction of the default camera.
+.PP
+.SS "\fBMSLVector\fP Scene::LowerWorld"
+.PP
+The smallest x,y,z world coordinates for the environment.
+.PP
+.SS "int Scene::NumBodies"
+.PP
+The number of bodies in the scene.
+.PP
+.SS "\fBProblem\fP* Scene::P\fC [protected]\fP"
+.PP
+The \fBProblem\fP instance used by the planner/solver.
+.PP
+.SS "int Scene::SceneConfigurationDim"
+.PP
+Total degrees of freedom of the scene.
+.PP
+.SS "\fBMSLVector\fP Scene::UpperWorld"
+.PP
+The largest x,y,z world coordinated for the environment.
+.PP
+
+
+.SH "AUTHOR"
+.PP 
+Generated automatically by Doxygen for Motion Strategy Library from the source code.

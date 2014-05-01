@@ -1,0 +1,89 @@
+.TH "MSLTriangle" 3 "24 Jul 2003" "Motion Strategy Library" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+MSLTriangle \- A 3D triangle, made of 3 3D points. 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <triangle.h>\fP
+.PP
+.SS "Public Methods"
+
+.in +1c
+.ti -1c
+.RI "\fBMSLTriangle\fP (\fBMSLPoint3d\fP pt1, \fBMSLPoint3d\fP pt2, \fBMSLPoint3d\fP pt3)"
+.br
+.ti -1c
+.RI "\fBMSLTriangle\fP ()"
+.br
+.ti -1c
+.RI "\fB~MSLTriangle\fP ()"
+.br
+.ti -1c
+.RI "\fBMSLTriangle\fP (const MSLTriangle &tr)"
+.br
+.ti -1c
+.RI "MSLTriangle & \fBoperator=\fP (const MSLTriangle &tr)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBMSLPoint3d\fP \fBp1\fP"
+.br
+.ti -1c
+.RI "\fBMSLPoint3d\fP \fBp2\fP"
+.br
+.ti -1c
+.RI "\fBMSLPoint3d\fP \fBp3\fP"
+.br
+.in -1c
+.SS "Friends"
+
+.in +1c
+.ti -1c
+.RI "istream & \fBoperator>>\fP (istream &is, MSLTriangle &tr)"
+.br
+.ti -1c
+.RI "ostream & \fBoperator<<\fP (ostream &os, const MSLTriangle &tr)"
+.br
+.in -1c
+.SH "DETAILED DESCRIPTION"
+.PP 
+A 3D triangle, made of 3 3D points.
+.PP
+.SH "CONSTRUCTOR & DESTRUCTOR DOCUMENTATION"
+.PP 
+.SS "MSLTriangle::MSLTriangle (\fBMSLPoint3d\fP pt1, \fBMSLPoint3d\fP pt2, \fBMSLPoint3d\fP pt3)"
+.PP
+.SS "MSLTriangle::MSLTriangle ()"
+.PP
+.SS "MSLTriangle::~MSLTriangle ()\fC [inline]\fP"
+.PP
+.SS "MSLTriangle::MSLTriangle (const MSLTriangle & tr)"
+.PP
+.SH "MEMBER FUNCTION DOCUMENTATION"
+.PP 
+.SS "MSLTriangle & MSLTriangle::operator= (const MSLTriangle & tr)"
+.PP
+.SH "FRIENDS AND RELATED FUNCTION DOCUMENTATION"
+.PP 
+.SS "ostream& operator<< (ostream & os, const MSLTriangle & tr)\fC [friend]\fP"
+.PP
+.SS "istream& operator>> (istream & is, MSLTriangle & tr)\fC [friend]\fP"
+.PP
+.SH "MEMBER DATA DOCUMENTATION"
+.PP 
+.SS "\fBMSLPoint3d\fP MSLTriangle::p1"
+.PP
+.SS "\fBMSLPoint3d\fP MSLTriangle::p2"
+.PP
+.SS "\fBMSLPoint3d\fP MSLTriangle::p3"
+.PP
+
+
+.SH "AUTHOR"
+.PP 
+Generated automatically by Doxygen for Motion Strategy Library from the source code.

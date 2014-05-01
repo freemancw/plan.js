@@ -1,0 +1,125 @@
+.TH "renderglobj.C" 3 "24 Jul 2003" "Motion Strategy Library" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+renderglobj.C \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'MSL/renderglobj.h'\fP
+.br
+\fC#include 'MSL/defs.h'\fP
+.br
+\fC#include <algorithm>\fP
+.br
+
+.SS "Defines"
+
+.in +1c
+.ti -1c
+.RI "#define \fBGROW\fP(_v, _t)"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "string \fBUPPER\fP (string _str)"
+.br
+.ti -1c
+.RI "void \fBrotate_x_matrix\fP (double sita, \fBMSLMatrix\fP &m)"
+.br
+.ti -1c
+.RI "void \fBrotate_y_matrix\fP (double sita, \fBMSLMatrix\fP &m)"
+.br
+.ti -1c
+.RI "void \fBrotate_z_matrix\fP (double sita, \fBMSLMatrix\fP &m)"
+.br
+.ti -1c
+.RI "\fBMSLVector\fP \fBpoint_x_rotation\fP (const double &sita, const \fBMSLVector\fP &p1)"
+.br
+.ti -1c
+.RI "\fBMSLVector\fP \fBpoint_y_rotation\fP (const double &sita, const \fBMSLVector\fP &p1)"
+.br
+.ti -1c
+.RI "\fBMSLVector\fP \fBpoint_z_rotation\fP (const double &sita, const \fBMSLVector\fP &p1)"
+.br
+.ti -1c
+.RI "void \fBcrossproduct\fP (const \fBMSLVector\fP &v1, const \fBMSLVector\fP &v2, \fBMSLVector\fP &v)"
+.br
+.ti -1c
+.RI "void \fBnormalMSLVector\fP (const \fBMSLVector\fP &v1, const \fBMSLVector\fP &v2, \fBMSLVector\fP &v)"
+.br
+.ti -1c
+.RI "\fBMSLVector\fP \fBirpy\fP (const \fBMSLMatrix\fP &R)"
+.br
+.ti -1c
+.RI "\fBMSLMatrix\fP \fBrpy\fP (const \fBMSLVector\fP &a)"
+.br
+.ti -1c
+.RI "\fBMSLVector\fP \fBfree_rotate\fP (const \fBMSLVector\fP &axis, const \fBMSLVector\fP &v, double sita)"
+.br
+.ti -1c
+.RI "\fBMSLMatrix\fP \fBfree_rotate\fP (const \fBMSLVector\fP &axis, const \fBMSLMatrix\fP &m, double sita)"
+.br
+.ti -1c
+.RI "\fBmslGLNormal\fP \fBNormalCompute\fP (const \fBmslGLVertex\fP &v1, const \fBmslGLVertex\fP &v2, const \fBmslGLVertex\fP &v3)"
+.br
+.ti -1c
+.RI "int \fBcmp_nocase\fP (const string &a, const string &b)"
+.br
+.in -1c
+.SH "DEFINE DOCUMENTATION"
+.PP 
+.SS "#define GROW(_v, _t)"
+.PP
+\fBValue:\fP
+.PP
+.nf
+if (_v == NULL) \
+    { \
+        _v ## Available = CHUNK; \
+        _v = (_t *) malloc(sizeof(_t)*_v ## Available); \
+    } \
+    else \
+    if (_v ## Count >= _v ## Available) \
+    { \
+        _v ## Available *= 2; \
+        _v = (_t *) realloc(_v, sizeof(_t)*_v ## Available); \
+    }
+.fi
+.SH "FUNCTION DOCUMENTATION"
+.PP 
+.SS "int cmp_nocase (const string & a, const string & b)"
+.PP
+.SS "void crossproduct (const \fBMSLVector\fP & v1, const \fBMSLVector\fP & v2, \fBMSLVector\fP & v)"
+.PP
+.SS "\fBMSLMatrix\fP free_rotate (const \fBMSLVector\fP & axis, const \fBMSLMatrix\fP & m, double sita)"
+.PP
+.SS "\fBMSLVector\fP free_rotate (const \fBMSLVector\fP & axis, const \fBMSLVector\fP & v, double sita)"
+.PP
+.SS "\fBMSLVector\fP irpy (const \fBMSLMatrix\fP & R)"
+.PP
+.SS "\fBmslGLNormal\fP NormalCompute (const \fBmslGLVertex\fP & v1, const \fBmslGLVertex\fP & v2, const \fBmslGLVertex\fP & v3)"
+.PP
+.SS "void normalMSLVector (const \fBMSLVector\fP & v1, const \fBMSLVector\fP & v2, \fBMSLVector\fP & v)"
+.PP
+.SS "\fBMSLVector\fP point_x_rotation (const double & sita, const \fBMSLVector\fP & p1)"
+.PP
+.SS "\fBMSLVector\fP point_y_rotation (const double & sita, const \fBMSLVector\fP & p1)"
+.PP
+.SS "\fBMSLVector\fP point_z_rotation (const double & sita, const \fBMSLVector\fP & p1)"
+.PP
+.SS "void rotate_x_matrix (double sita, \fBMSLMatrix\fP & m)"
+.PP
+.SS "void rotate_y_matrix (double sita, \fBMSLMatrix\fP & m)"
+.PP
+.SS "void rotate_z_matrix (double sita, \fBMSLMatrix\fP & m)"
+.PP
+.SS "\fBMSLMatrix\fP rpy (const \fBMSLVector\fP & a)"
+.PP
+.SS "string UPPER (string _str)"
+.PP
+.SH "AUTHOR"
+.PP 
+Generated automatically by Doxygen for Motion Strategy Library from the source code.

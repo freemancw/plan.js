@@ -1,0 +1,163 @@
+.TH "ModelCarDynRollover" 3 "24 Jul 2003" "Motion Strategy Library" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ModelCarDynRollover \- A car model considering the rolling effect and the pressure on different tires of the car is different. If the pressure on one tire is 0, the car is considered rolling over. The pressure model of the tire is rigid such that pressure can change at instant time, which means: (1) It might be the reason that only forward \fBRRT\fP tree works. (2) In the SelectInput function, pressure has to be restored when to test new inputs. 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <modelcar.h>\fP
+.PP
+Inherits \fBModelCarDynNtire\fP.
+.PP
+Inherited by \fBModelCarDynSmoothRollover\fP.
+.PP
+.SS "Public Methods"
+
+.in +1c
+.ti -1c
+.RI "\fBModelCarDynRollover\fP (string path)"
+.br
+.ti -1c
+.RI "virtual \fB~ModelCarDynRollover\fP ()"
+.br
+.ti -1c
+.RI "int \fBsgn\fP (double \fBx\fP)"
+.br
+.ti -1c
+.RI "virtual \fBMSLVector\fP \fBStateTransitionEquation\fP (const \fBMSLVector\fP &x1, const \fBMSLVector\fP &u)"
+.br
+.RI "\fIThe state transition equation, or equations of motion, xdot=f(x,u).\fP"
+.ti -1c
+.RI "virtual \fBMSLVector\fP \fBStateToConfiguration\fP (const \fBMSLVector\fP &\fBx\fP)"
+.br
+.RI "\fIA method that converts a \fBModel\fP state in to a \fBGeom\fP configuration.\fP"
+.ti -1c
+.RI "virtual \fBMSLVector\fP \fBIntegrate\fP (const \fBMSLVector\fP &\fBx\fP, const \fBMSLVector\fP &u, const double &h)"
+.br
+.RI "\fI!!!!!!!! It has both the state and the uncontrolled state.\fP"
+.ti -1c
+.RI "virtual double \fBMetric\fP (const \fBMSLVector\fP &x1, const \fBMSLVector\fP &x2)"
+.br
+.RI "\fIA distance metric, which is Euclidean in the base class.\fP"
+.ti -1c
+.RI "bool \fBRollOverFree\fP (const \fBMSLVector\fP &\fBx\fP)"
+.br
+.ti -1c
+.RI "bool \fBSatisfied\fP (const \fBMSLVector\fP &\fBx\fP)"
+.br
+.RI "\fITest whether global state-space constraints are satisfied.\fP"
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "double \fBK\fP"
+.br
+.ti -1c
+.RI "double \fBc\fP"
+.br
+.ti -1c
+.RI "double \fBIxx\fP"
+.br
+.ti -1c
+.RI "double \fBT\fP"
+.br
+.ti -1c
+.RI "double \fBH\fP"
+.br
+.ti -1c
+.RI "double \fBH2\fP"
+.br
+.ti -1c
+.RI "double \fBMs\fP"
+.br
+.ti -1c
+.RI "double \fBWn\fP"
+.br
+.ti -1c
+.RI "double \fBFai\fP"
+.br
+.ti -1c
+.RI "double \fBx\fP"
+.br
+.ti -1c
+.RI "bool \fBIsRollOver\fP"
+.br
+.in -1c
+.SH "DETAILED DESCRIPTION"
+.PP 
+A car model considering the rolling effect and the pressure on different tires of the car is different. If the pressure on one tire is 0, the car is considered rolling over. The pressure model of the tire is rigid such that pressure can change at instant time, which means: (1) It might be the reason that only forward \fBRRT\fP tree works. (2) In the SelectInput function, pressure has to be restored when to test new inputs.
+.PP
+.SH "CONSTRUCTOR & DESTRUCTOR DOCUMENTATION"
+.PP 
+.SS "ModelCarDynRollover::ModelCarDynRollover (string path)"
+.PP
+.SS "virtual ModelCarDynRollover::~ModelCarDynRollover ()\fC [inline, virtual]\fP"
+.PP
+.SH "MEMBER FUNCTION DOCUMENTATION"
+.PP 
+.SS "\fBMSLVector\fP ModelCarDynRollover::Integrate (const \fBMSLVector\fP & x, const \fBMSLVector\fP & u, const double & h)\fC [virtual]\fP"
+.PP
+!!!!!!!! It has both the state and the uncontrolled state.
+.PP
+Reimplemented from \fBModel2DRigidDyncar\fP.
+.SS "double ModelCarDynRollover::Metric (const \fBMSLVector\fP & x1, const \fBMSLVector\fP & x2)\fC [virtual]\fP"
+.PP
+A distance metric, which is Euclidean in the base class.
+.PP
+Reimplemented from \fBModelCarDynNtire\fP.
+.PP
+Reimplemented in \fBModelCarDynSmoothRollover\fP.
+.SS "bool ModelCarDynRollover::RollOverFree (const \fBMSLVector\fP & x)"
+.PP
+.SS "bool ModelCarDynRollover::Satisfied (const \fBMSLVector\fP & x)\fC [virtual]\fP"
+.PP
+Test whether global state-space constraints are satisfied.
+.PP
+Reimplemented from \fBModel\fP.
+.SS "int ModelCarDynRollover::sgn (double x)"
+.PP
+.SS "\fBMSLVector\fP ModelCarDynRollover::StateToConfiguration (const \fBMSLVector\fP & x)\fC [virtual]\fP"
+.PP
+A method that converts a \fBModel\fP state in to a \fBGeom\fP configuration.
+.PP
+Reimplemented from \fBModelCarDynNtire\fP.
+.PP
+Reimplemented in \fBModelCarDynSmoothRollover\fP.
+.SS "\fBMSLVector\fP ModelCarDynRollover::StateTransitionEquation (const \fBMSLVector\fP & x1, const \fBMSLVector\fP & u)\fC [virtual]\fP"
+.PP
+The state transition equation, or equations of motion, xdot=f(x,u).
+.PP
+Reimplemented from \fBModel2DRigidDyncarNtire\fP.
+.PP
+Reimplemented in \fBModelCarDynSmoothRollover\fP.
+.SH "MEMBER DATA DOCUMENTATION"
+.PP 
+.SS "double ModelCarDynRollover::c"
+.PP
+.SS "double ModelCarDynRollover::Fai"
+.PP
+.SS "double ModelCarDynRollover::H"
+.PP
+.SS "double ModelCarDynRollover::H2"
+.PP
+.SS "bool ModelCarDynRollover::IsRollOver"
+.PP
+.SS "double ModelCarDynRollover::Ixx"
+.PP
+.SS "double ModelCarDynRollover::K"
+.PP
+.SS "double ModelCarDynRollover::Ms"
+.PP
+.SS "double ModelCarDynRollover::T"
+.PP
+.SS "double ModelCarDynRollover::Wn"
+.PP
+.SS "double ModelCarDynRollover::x"
+.PP
+
+
+.SH "AUTHOR"
+.PP 
+Generated automatically by Doxygen for Motion Strategy Library from the source code.

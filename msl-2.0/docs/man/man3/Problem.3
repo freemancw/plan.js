@@ -1,0 +1,256 @@
+.TH "Problem" 3 "24 Jul 2003" "Motion Strategy Library" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Problem \- An interface class that provides the primary input to a planner. 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <problem.h>\fP
+.PP
+.SS "Public Methods"
+
+.in +1c
+.ti -1c
+.RI "\fBProblem\fP (\fBGeom\fP *geom, \fBModel\fP *model, string path)"
+.br
+.RI "\fIProblem must be given any instance of \fBGeom\fP and any instance of \fBModel\fP from each of their class hierarchies.\fP"
+.ti -1c
+.RI "virtual \fB~Problem\fP ()"
+.br
+.RI "\fIEmpty destructor.\fP"
+.ti -1c
+.RI "void \fBSetGeom\fP (\fBGeom\fP *geom)"
+.br
+.RI "\fIChange the instance of \fBGeom\fP.\fP"
+.ti -1c
+.RI "void \fBSetModel\fP (\fBModel\fP *model)"
+.br
+.RI "\fIChange the instance of \fBModel\fP.\fP"
+.ti -1c
+.RI "virtual list< \fBMSLVector\fP > \fBGetInputs\fP (const \fBMSLVector\fP &\fBx\fP)"
+.br
+.RI "\fIReturn a list of possible inputs, which may depend on state.\fP"
+.ti -1c
+.RI "virtual list< \fBMSLVector\fP > \fBGetInputs\fP ()"
+.br
+.RI "\fIReturn a list of possible inputs.\fP"
+.ti -1c
+.RI "virtual \fBMSLVector\fP \fBIntegrate\fP (const \fBMSLVector\fP &\fBx\fP, const \fBMSLVector\fP &u, const double &deltat)"
+.br
+.RI "\fIPerform integration from state x, using input u, over time deltat.\fP"
+.ti -1c
+.RI "virtual \fBMSLVector\fP \fBInterpolateState\fP (const \fBMSLVector\fP &x1, const \fBMSLVector\fP &x2, const double &a)"
+.br
+.RI "\fILinearly interpolate two states while respecting topology.\fP"
+.ti -1c
+.RI "virtual double \fBMetric\fP (const \fBMSLVector\fP &x1, const \fBMSLVector\fP &x2)"
+.br
+.RI "\fIA distance metric defined in \fBModel\fP.\fP"
+.ti -1c
+.RI "virtual \fBMSLVector\fP \fBStateToConfiguration\fP (const \fBMSLVector\fP &\fBx\fP)"
+.br
+.RI "\fIA method that converts a \fBModel\fP state in to a \fBGeom\fP configuration.\fP"
+.ti -1c
+.RI "virtual \fBMSLVector\fP \fBStateDifference\fP (const \fBMSLVector\fP &x1, const \fBMSLVector\fP &x2)"
+.br
+.RI "\fICompute a \fBMSLVector\fP based on x2-x1. In R^n, the states are simply subtracted to make the \fBMSLVector\fP. This method exists to make things work correctly for other state-space topologies.\fP"
+.ti -1c
+.RI "virtual bool \fBSatisfied\fP (const \fBMSLVector\fP &\fBx\fP)"
+.br
+.RI "\fIThis takes the logical AND of CollisionFree from \fBGeom\fP, and Satisfied from \fBModel\fP.\fP"
+.ti -1c
+.RI "virtual bool \fBCollisionFree\fP (const \fBMSLVector\fP &q)"
+.br
+.RI "\fIThe collision checker passed in from \fBGeom\fP.\fP"
+.ti -1c
+.RI "virtual double \fBDistanceComp\fP (const \fBMSLVector\fP &q)"
+.br
+.RI "\fIThe distance computation algorithm from \fBGeom\fP.\fP"
+.ti -1c
+.RI "virtual \fBMSLVector\fP \fBConfigurationDifference\fP (const \fBMSLVector\fP &q1, const \fBMSLVector\fP &q2)"
+.br
+.RI "\fICompute a \fBMSLVector\fP based on q2-q1. In R^n, the configurations are simply subtracted to make the \fBMSLVector\fP. This method exists to make things work correctly for other configuration-space topologies.\fP"
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "string \fBFilePath\fP"
+.br
+.RI "\fIThe directory in which all files for a problem will be stored.\fP"
+.ti -1c
+.RI "int \fBNumBodies\fP"
+.br
+.RI "\fIThe number of rigid bodies.\fP"
+.ti -1c
+.RI "int \fBStateDim\fP"
+.br
+.RI "\fIThe dimenson of the state space.\fP"
+.ti -1c
+.RI "int \fBInputDim\fP"
+.br
+.RI "\fIThe dimension of the input space.\fP"
+.ti -1c
+.RI "int \fBGeomDim\fP"
+.br
+.RI "\fIThe dimension of the geometric model.\fP"
+.ti -1c
+.RI "\fBMSLVector\fP \fBLowerState\fP"
+.br
+.RI "\fI\fBMSLVector\fP of minimum values for each state variable.\fP"
+.ti -1c
+.RI "\fBMSLVector\fP \fBUpperState\fP"
+.br
+.RI "\fI\fBMSLVector\fP of maximum values for each state variable.\fP"
+.ti -1c
+.RI "\fBMSLVector\fP \fBInitialState\fP"
+.br
+.RI "\fIThe starting state for a planner.\fP"
+.ti -1c
+.RI "\fBMSLVector\fP \fBGoalState\fP"
+.br
+.RI "\fIThe goal state for a planner.\fP"
+.ti -1c
+.RI "\fBMSLVector\fP \fBMaxDeviates\fP"
+.br
+.RI "\fIMaximum displacement of geometry with respect to change in each variable.\fP"
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBGeom\fP * \fBG\fP"
+.br
+.RI "\fINeed to define a geometry for collision detection.\fP"
+.ti -1c
+.RI "\fBModel\fP * \fBM\fP"
+.br
+.RI "\fIxdot = f(x,u), integration technique, state bounds.\fP"
+.in -1c
+.SH "DETAILED DESCRIPTION"
+.PP 
+An interface class that provides the primary input to a planner.
+.PP
+This interface class contains protected instances of \fBGeom\fP and \fBModel\fP. Wrappers to methods from \fBGeom\fP provide collision detection and distance computation. Wrappers to methods from \fBModel\fP provide incremental simulation of a kinematic or dynamical system. It is expected a planner can get all (or nearly all) of the information it needs from Problem. 
+.PP
+.SH "CONSTRUCTOR & DESTRUCTOR DOCUMENTATION"
+.PP 
+.SS "Problem::Problem (\fBGeom\fP * geom, \fBModel\fP * model, string path)"
+.PP
+Problem must be given any instance of \fBGeom\fP and any instance of \fBModel\fP from each of their class hierarchies.
+.PP
+.SS "virtual Problem::~Problem ()\fC [inline, virtual]\fP"
+.PP
+Empty destructor.
+.PP
+.SH "MEMBER FUNCTION DOCUMENTATION"
+.PP 
+.SS "bool Problem::CollisionFree (const \fBMSLVector\fP & q)\fC [virtual]\fP"
+.PP
+The collision checker passed in from \fBGeom\fP.
+.PP
+.SS "\fBMSLVector\fP Problem::ConfigurationDifference (const \fBMSLVector\fP & q1, const \fBMSLVector\fP & q2)\fC [virtual]\fP"
+.PP
+Compute a \fBMSLVector\fP based on q2-q1. In R^n, the configurations are simply subtracted to make the \fBMSLVector\fP. This method exists to make things work correctly for other configuration-space topologies.
+.PP
+.SS "double Problem::DistanceComp (const \fBMSLVector\fP & q)\fC [virtual]\fP"
+.PP
+The distance computation algorithm from \fBGeom\fP.
+.PP
+.SS "list< \fBMSLVector\fP > Problem::GetInputs ()\fC [virtual]\fP"
+.PP
+Return a list of possible inputs.
+.PP
+.SS "list< \fBMSLVector\fP > Problem::GetInputs (const \fBMSLVector\fP & x)\fC [virtual]\fP"
+.PP
+Return a list of possible inputs, which may depend on state.
+.PP
+.SS "\fBMSLVector\fP Problem::Integrate (const \fBMSLVector\fP & x, const \fBMSLVector\fP & u, const double & deltat)\fC [virtual]\fP"
+.PP
+Perform integration from state x, using input u, over time deltat.
+.PP
+.SS "\fBMSLVector\fP Problem::InterpolateState (const \fBMSLVector\fP & x1, const \fBMSLVector\fP & x2, const double & a)\fC [virtual]\fP"
+.PP
+Linearly interpolate two states while respecting topology.
+.PP
+If a=0, then x1 is returned; if a=1, then x2 is returned. All intermediate values of $a \\in [0,1]$ yield intermediate states. This method is defined by \fBModel\fP. 
+.SS "double Problem::Metric (const \fBMSLVector\fP & x1, const \fBMSLVector\fP & x2)\fC [virtual]\fP"
+.PP
+A distance metric defined in \fBModel\fP.
+.PP
+.SS "bool Problem::Satisfied (const \fBMSLVector\fP & x)\fC [virtual]\fP"
+.PP
+This takes the logical AND of CollisionFree from \fBGeom\fP, and Satisfied from \fBModel\fP.
+.PP
+.SS "void Problem::SetGeom (\fBGeom\fP * geom)"
+.PP
+Change the instance of \fBGeom\fP.
+.PP
+.SS "void Problem::SetModel (\fBModel\fP * model)"
+.PP
+Change the instance of \fBModel\fP.
+.PP
+.SS "\fBMSLVector\fP Problem::StateDifference (const \fBMSLVector\fP & x1, const \fBMSLVector\fP & x2)\fC [virtual]\fP"
+.PP
+Compute a \fBMSLVector\fP based on x2-x1. In R^n, the states are simply subtracted to make the \fBMSLVector\fP. This method exists to make things work correctly for other state-space topologies.
+.PP
+.SS "\fBMSLVector\fP Problem::StateToConfiguration (const \fBMSLVector\fP & x)\fC [virtual]\fP"
+.PP
+A method that converts a \fBModel\fP state in to a \fBGeom\fP configuration.
+.PP
+.SH "MEMBER DATA DOCUMENTATION"
+.PP 
+.SS "string Problem::FilePath"
+.PP
+The directory in which all files for a problem will be stored.
+.PP
+.SS "\fBGeom\fP* Problem::G\fC [protected]\fP"
+.PP
+Need to define a geometry for collision detection.
+.PP
+.SS "int Problem::GeomDim"
+.PP
+The dimension of the geometric model.
+.PP
+.SS "\fBMSLVector\fP Problem::GoalState"
+.PP
+The goal state for a planner.
+.PP
+.SS "\fBMSLVector\fP Problem::InitialState"
+.PP
+The starting state for a planner.
+.PP
+.SS "int Problem::InputDim"
+.PP
+The dimension of the input space.
+.PP
+.SS "\fBMSLVector\fP Problem::LowerState"
+.PP
+\fBMSLVector\fP of minimum values for each state variable.
+.PP
+.SS "\fBModel\fP* Problem::M\fC [protected]\fP"
+.PP
+xdot = f(x,u), integration technique, state bounds.
+.PP
+.SS "\fBMSLVector\fP Problem::MaxDeviates"
+.PP
+Maximum displacement of geometry with respect to change in each variable.
+.PP
+.SS "int Problem::NumBodies"
+.PP
+The number of rigid bodies.
+.PP
+.SS "int Problem::StateDim"
+.PP
+The dimenson of the state space.
+.PP
+.SS "\fBMSLVector\fP Problem::UpperState"
+.PP
+\fBMSLVector\fP of maximum values for each state variable.
+.PP
+
+
+.SH "AUTHOR"
+.PP 
+Generated automatically by Doxygen for Motion Strategy Library from the source code.

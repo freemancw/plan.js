@@ -1,0 +1,56 @@
+.TH GeomPQP2DPoint 3 "29 Aug 2001" "Motion Strategy Library" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+GeomPQP2DPoint \- 2D point robot. 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <geomPQP.h>\fR
+.PP
+Inherits \fBGeomPQP2D\fR.
+.PP
+.SS Public Methods
+
+.in +1c
+.ti -1c
+.RI "\fBGeomPQP2DPoint\fR (string path)"
+.br
+.ti -1c
+.RI "virtual \fB~GeomPQP2DPoint\fR ()"
+.br
+.ti -1c
+.RI "virtual bool \fBCollisionFree\fR (const \fBMSLVector\fR &q)"
+.br
+.RI "\fIReturn true if the robot(s) and obstacles are not in collision.\fR"
+.ti -1c
+.RI "virtual double \fBDistanceComp\fR (const \fBMSLVector\fR &q)"
+.br
+.RI "\fICompute the distance of the closest point on the robot to the obstacle region.\fR"
+.in -1c
+.SH DETAILED DESCRIPTION
+.PP 
+2D point robot.
+.PP
+.SH CONSTRUCTOR & DESTRUCTOR DOCUMENTATION
+.PP 
+.SS GeomPQP2DPoint::GeomPQP2DPoint (string path = "")
+.PP
+.SS GeomPQP2DPoint::~GeomPQP2DPoint ()\fC [inline, virtual]\fR
+.PP
+.SH MEMBER FUNCTION DOCUMENTATION
+.PP 
+.SS bool GeomPQP2DPoint::CollisionFree (const \fBMSLVector\fR & q)\fC [virtual]\fR
+.PP
+Return true if the robot(s) and obstacles are not in collision.
+.PP
+Reimplemented from \fBGeomPQP\fR.
+.SS double GeomPQP2DPoint::DistanceComp (const \fBMSLVector\fR & q)\fC [virtual]\fR
+.PP
+Compute the distance of the closest point on the robot to the obstacle region.
+.PP
+Reimplemented from \fBGeomPQP\fR.
+
+.SH AUTHOR
+.PP 
+Generated automatically by Doxygen for Motion Strategy Library from the source code.

@@ -1,0 +1,60 @@
+\section{fdp.h File Reference}
+\label{fdp_h}\index{fdp.h@{fdp.h}}
+{\tt \#include $<$queue$>$}\par
+{\tt \#include $<$vector.h$>$}\par
+{\tt \#include \char`\"{}marray.h\char`\"{}}\par
+{\tt \#include \char`\"{}planner.h\char`\"{}}\par
+{\tt \#include \char`\"{}tree.h\char`\"{}}\par
+{\tt \#include \char`\"{}util.h\char`\"{}}\par
+\subsection*{Compounds}
+\begin{CompactItemize}
+\item 
+class {\bf FDP}
+\begin{CompactList}\small\item\em A dynamic programming approach to nonholonomic planning, as proposed by Barraquand, Latombe, Algorithmica 10:6, pp. 121-155, 1993.\item\end{CompactList}\item 
+class {\bf FDPBest\-First}
+\begin{CompactList}\small\item\em Best first search variant, using the Metric in {\bf Problem} {\rm (p.\,\pageref{class_Problem})}.\item\end{CompactList}\item 
+class {\bf FDPBi}
+\begin{CompactList}\small\item\em A bidirectional version of forward dynamic programming.\item\end{CompactList}\item 
+class {\bf FDPStar}
+\begin{CompactList}\small\item\em An A-Star search variant. The Metric in {\bf Problem} {\rm (p.\,\pageref{class_Problem})} is used as the cost.\item\end{CompactList}\end{CompactItemize}
+\subsection*{Defines}
+\begin{CompactItemize}
+\item 
+\#define {\bf UNVISITED}\ 0
+\item 
+\#define {\bf VISITED}\ 1
+\item 
+\#define {\bf COLLISION}\ 2
+\item 
+\#define {\bf VISITED2}\ 3
+\item 
+\#define {\bf GOAL}\ 4
+\end{CompactItemize}
+
+
+\subsection{Define Documentation}
+\index{fdp.h@{fdp.h}!COLLISION@{COLLISION}}
+\index{COLLISION@{COLLISION}!fdp.h@{fdp.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define COLLISION\ 2}\label{fdp_h_a2}
+
+
+\index{fdp.h@{fdp.h}!GOAL@{GOAL}}
+\index{GOAL@{GOAL}!fdp.h@{fdp.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define GOAL\ 4}\label{fdp_h_a4}
+
+
+\index{fdp.h@{fdp.h}!UNVISITED@{UNVISITED}}
+\index{UNVISITED@{UNVISITED}!fdp.h@{fdp.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define UNVISITED\ 0}\label{fdp_h_a0}
+
+
+\index{fdp.h@{fdp.h}!VISITED@{VISITED}}
+\index{VISITED@{VISITED}!fdp.h@{fdp.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define VISITED\ 1}\label{fdp_h_a1}
+
+
+\index{fdp.h@{fdp.h}!VISITED2@{VISITED2}}
+\index{VISITED2@{VISITED2}!fdp.h@{fdp.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define VISITED2\ 3}\label{fdp_h_a3}
+
+

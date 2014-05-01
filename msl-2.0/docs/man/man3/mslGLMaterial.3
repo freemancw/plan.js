@@ -1,0 +1,173 @@
+.TH "mslGLMaterial" 3 "24 Jul 2003" "Motion Strategy Library" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+mslGLMaterial \- An internal class, used only for \fBRenderGL\fP. 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <renderglobj.h>\fP
+.PP
+.SS "Public Methods"
+
+.in +1c
+.ti -1c
+.RI "\fBmslGLMaterial\fP ()"
+.br
+.ti -1c
+.RI "\fB~mslGLMaterial\fP ()"
+.br
+.ti -1c
+.RI "void \fBSetMaterial\fP ()"
+.br
+.ti -1c
+.RI "int \fBImageLoad\fP (int id, string path, string filename)"
+.br
+.ti -1c
+.RI "void \fBClear\fP ()"
+.br
+.ti -1c
+.RI "void \fBPrint\fP ()"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "int \fBID\fP"
+.br
+.ti -1c
+.RI "char \fBName\fP [MAXNAME_LENGTH]"
+.br
+.ti -1c
+.RI "GLuint \fBTextureHandle\fP"
+.br
+.ti -1c
+.RI "\fBImage\fP * \fBTextureImage\fP"
+.br
+.ti -1c
+.RI "char \fBTextureName\fP [MAXNAME_LENGTH]"
+.br
+.ti -1c
+.RI "GLfloat \fBDiffuse\fP [3]"
+.br
+.ti -1c
+.RI "GLfloat \fBSpecular\fP [3]"
+.br
+.ti -1c
+.RI "GLfloat \fBAmbient\fP [3]"
+.br
+.ti -1c
+.RI "GLfloat \fBColor\fP [3]"
+.br
+.ti -1c
+.RI "GLfloat \fBAlpha\fP"
+.br
+.ti -1c
+.RI "float \fBShininess\fP"
+.br
+.ti -1c
+.RI "float \fBSu\fP"
+.br
+.ti -1c
+.RI "float \fBSv\fP"
+.br
+.ti -1c
+.RI "char \fBReflect\fP [MAXNAME_LENGTH]"
+.br
+.ti -1c
+.RI "int \fBAmbientOn\fP"
+.br
+.ti -1c
+.RI "int \fBSpecularOn\fP"
+.br
+.ti -1c
+.RI "int \fBDiffuseOn\fP"
+.br
+.ti -1c
+.RI "int \fBShininessOn\fP"
+.br
+.ti -1c
+.RI "int \fBAlphaOn\fP"
+.br
+.ti -1c
+.RI "int \fBReflectOn\fP"
+.br
+.ti -1c
+.RI "int \fBTwosideOn\fP"
+.br
+.ti -1c
+.RI "int \fBTextureOn\fP"
+.br
+.in -1c
+.SH "DETAILED DESCRIPTION"
+.PP 
+An internal class, used only for \fBRenderGL\fP.
+.PP
+.SH "CONSTRUCTOR & DESTRUCTOR DOCUMENTATION"
+.PP 
+.SS "mslGLMaterial::mslGLMaterial ()"
+.PP
+.SS "mslGLMaterial::~mslGLMaterial ()"
+.PP
+.SH "MEMBER FUNCTION DOCUMENTATION"
+.PP 
+.SS "void mslGLMaterial::Clear ()"
+.PP
+.SS "int mslGLMaterial::ImageLoad (int id, string path, string filename)"
+.PP
+.SS "void mslGLMaterial::Print ()"
+.PP
+.SS "void mslGLMaterial::SetMaterial ()"
+.PP
+.SH "MEMBER DATA DOCUMENTATION"
+.PP 
+.SS "GLfloat mslGLMaterial::Alpha"
+.PP
+.SS "int mslGLMaterial::AlphaOn"
+.PP
+.SS "GLfloat mslGLMaterial::Ambient[3]"
+.PP
+.SS "int mslGLMaterial::AmbientOn"
+.PP
+.SS "GLfloat mslGLMaterial::Color[3]"
+.PP
+.SS "GLfloat mslGLMaterial::Diffuse[3]"
+.PP
+.SS "int mslGLMaterial::DiffuseOn"
+.PP
+.SS "int mslGLMaterial::ID"
+.PP
+.SS "char mslGLMaterial::Name[MAXNAME_LENGTH]"
+.PP
+.SS "char mslGLMaterial::Reflect[MAXNAME_LENGTH]"
+.PP
+.SS "int mslGLMaterial::ReflectOn"
+.PP
+.SS "float mslGLMaterial::Shininess"
+.PP
+.SS "int mslGLMaterial::ShininessOn"
+.PP
+.SS "GLfloat mslGLMaterial::Specular[3]"
+.PP
+.SS "int mslGLMaterial::SpecularOn"
+.PP
+.SS "float mslGLMaterial::Su"
+.PP
+.SS "float mslGLMaterial::Sv"
+.PP
+.SS "GLuint mslGLMaterial::TextureHandle"
+.PP
+.SS "\fBImage\fP* mslGLMaterial::TextureImage"
+.PP
+.SS "char mslGLMaterial::TextureName[MAXNAME_LENGTH]"
+.PP
+.SS "int mslGLMaterial::TextureOn"
+.PP
+.SS "int mslGLMaterial::TwosideOn"
+.PP
+
+
+.SH "AUTHOR"
+.PP 
+Generated automatically by Doxygen for Motion Strategy Library from the source code.

@@ -1,0 +1,164 @@
+.TH "MSLNode" 3 "24 Jul 2003" "Motion Strategy Library" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+MSLNode \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <tree.h>\fP
+.PP
+.SS "Public Methods"
+
+.in +1c
+.ti -1c
+.RI "\fBMSLVector\fP \fBState\fP () const"
+.br
+.RI "\fIThe state to which this node corresponds.\fP"
+.ti -1c
+.RI "\fBMSLVector\fP \fBInput\fP () const"
+.br
+.RI "\fIThe input vector that leads to this state from the parent.\fP"
+.ti -1c
+.RI "MSLNode * \fBParent\fP ()"
+.br
+.ti -1c
+.RI "list< MSLNode * > const \fBChildren\fP ()"
+.br
+.ti -1c
+.RI "double \fBTime\fP () const"
+.br
+.RI "\fIThe time required to reach this node from the parent.\fP"
+.ti -1c
+.RI "double \fBCost\fP () const"
+.br
+.RI "\fIA cost value, useful in some algorithms.\fP"
+.ti -1c
+.RI "void \fBSetCost\fP (const double &\fBx\fP)"
+.br
+.RI "\fIA cost value, useful in some algorithms.\fP"
+.ti -1c
+.RI "void \fBSetID\fP (const int &i)"
+.br
+.RI "\fIChange the node ID.\fP"
+.ti -1c
+.RI "int \fBID\fP () const"
+.br
+.RI "\fIGet the node ID.\fP"
+.ti -1c
+.RI "void * \fBGetInfo\fP ()"
+.br
+.RI "\fIGet the information.\fP"
+.ti -1c
+.RI "void \fBSetInfo\fP (void *in)"
+.br
+.RI "\fISet the information.\fP"
+.ti -1c
+.RI "\fBMSLNode\fP ()"
+.br
+.RI "\fIClear the memory for the information.\fP"
+.ti -1c
+.RI "\fBMSLNode\fP (void *pninfo)"
+.br
+.ti -1c
+.RI "\fBMSLNode\fP (MSLNode *pn, const \fBMSLVector\fP &\fBx\fP, const \fBMSLVector\fP &u)"
+.br
+.ti -1c
+.RI "\fBMSLNode\fP (MSLNode *pn, const \fBMSLVector\fP &\fBx\fP, const \fBMSLVector\fP &u, double t)"
+.br
+.ti -1c
+.RI "\fBMSLNode\fP (MSLNode *pn, const \fBMSLVector\fP &\fBx\fP, const \fBMSLVector\fP &u, double t, void *pninfo)"
+.br
+.ti -1c
+.RI "\fB~MSLNode\fP ()"
+.br
+.ti -1c
+.RI "void \fBAddChild\fP (MSLNode *cn)"
+.br
+.in -1c
+.SS "Friends"
+
+.in +1c
+.ti -1c
+.RI "class \fBMSLTree\fP"
+.br
+.ti -1c
+.RI "ostream & \fBoperator<<\fP (ostream &os, const MSLNode &n)"
+.br
+.ti -1c
+.RI "ostream & \fBoperator<<\fP (ostream &os, const list< MSLNode * > &nl)"
+.br
+.in -1c
+.SH "CONSTRUCTOR & DESTRUCTOR DOCUMENTATION"
+.PP 
+.SS "MSLNode::MSLNode ()"
+.PP
+Clear the memory for the information.
+.PP
+.SS "MSLNode::MSLNode (void * pninfo)"
+.PP
+.SS "MSLNode::MSLNode (MSLNode * pn, const \fBMSLVector\fP & x, const \fBMSLVector\fP & u)"
+.PP
+.SS "MSLNode::MSLNode (MSLNode * pn, const \fBMSLVector\fP & x, const \fBMSLVector\fP & u, double t)"
+.PP
+.SS "MSLNode::MSLNode (MSLNode * pn, const \fBMSLVector\fP & x, const \fBMSLVector\fP & u, double t, void * pninfo)"
+.PP
+.SS "MSLNode::~MSLNode ()\fC [inline]\fP"
+.PP
+.SH "MEMBER FUNCTION DOCUMENTATION"
+.PP 
+.SS "void MSLNode::AddChild (MSLNode * cn)\fC [inline]\fP"
+.PP
+.SS "list<MSLNode*> const MSLNode::Children ()\fC [inline]\fP"
+.PP
+.SS "double MSLNode::Cost () const\fC [inline]\fP"
+.PP
+A cost value, useful in some algorithms.
+.PP
+.SS "void* MSLNode::GetInfo ()\fC [inline]\fP"
+.PP
+Get the information.
+.PP
+.SS "int MSLNode::ID () const\fC [inline]\fP"
+.PP
+Get the node ID.
+.PP
+.SS "\fBMSLVector\fP MSLNode::Input () const\fC [inline]\fP"
+.PP
+The input vector that leads to this state from the parent.
+.PP
+.SS "MSLNode* MSLNode::Parent ()\fC [inline]\fP"
+.PP
+.SS "void MSLNode::SetCost (const double & x)\fC [inline]\fP"
+.PP
+A cost value, useful in some algorithms.
+.PP
+.SS "void MSLNode::SetID (const int & i)\fC [inline]\fP"
+.PP
+Change the node ID.
+.PP
+.SS "void MSLNode::SetInfo (void * in)\fC [inline]\fP"
+.PP
+Set the information.
+.PP
+.SS "\fBMSLVector\fP MSLNode::State () const\fC [inline]\fP"
+.PP
+The state to which this node corresponds.
+.PP
+.SS "double MSLNode::Time () const\fC [inline]\fP"
+.PP
+The time required to reach this node from the parent.
+.PP
+.SH "FRIENDS AND RELATED FUNCTION DOCUMENTATION"
+.PP 
+.SS "friend class MSLTree\fC [friend]\fP"
+.PP
+.SS "ostream& operator<< (ostream & os, const list< MSLNode * > & nl)\fC [friend]\fP"
+.PP
+.SS "ostream& operator<< (ostream & os, const MSLNode & n)\fC [friend]\fP"
+.PP
+
+
+.SH "AUTHOR"
+.PP 
+Generated automatically by Doxygen for Motion Strategy Library from the source code.

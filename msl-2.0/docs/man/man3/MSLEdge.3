@@ -1,0 +1,112 @@
+.TH "MSLEdge" 3 "24 Jul 2003" "Motion Strategy Library" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+MSLEdge \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <graph.h>\fP
+.PP
+.SS "Public Methods"
+
+.in +1c
+.ti -1c
+.RI "\fBMSLEdge\fP ()"
+.br
+.ti -1c
+.RI "\fBMSLEdge\fP (\fBMSLVertex\fP *v1, \fBMSLVertex\fP *v2, const \fBMSLVector\fP &u, double t)"
+.br
+.ti -1c
+.RI "\fBMSLEdge\fP (\fBMSLVertex\fP *v1, \fBMSLVertex\fP *v2, double t)"
+.br
+.ti -1c
+.RI "\fBMSLEdge\fP (\fBMSLVertex\fP *v1, \fBMSLVertex\fP *v2)"
+.br
+.ti -1c
+.RI "\fB~MSLEdge\fP ()"
+.br
+.ti -1c
+.RI "double \fBTime\fP () const"
+.br
+.RI "\fIThe time required to reach this node from the parent.\fP"
+.ti -1c
+.RI "double \fBCost\fP () const"
+.br
+.RI "\fIA cost value, useful in some algorithms.\fP"
+.ti -1c
+.RI "void \fBSetCost\fP (const double &\fBx\fP)"
+.br
+.RI "\fIA cost value, useful in some algorithms.\fP"
+.ti -1c
+.RI "\fBMSLVector\fP \fBInput\fP () const"
+.br
+.RI "\fIAn input vector that leads from the first state to the second.\fP"
+.ti -1c
+.RI "\fBMSLVertex\fP * \fBSource\fP () const"
+.br
+.RI "\fIThe time required to reach this node from the parent.\fP"
+.ti -1c
+.RI "\fBMSLVertex\fP * \fBTarget\fP () const"
+.br
+.RI "\fIThe time required to reach this node from the parent.\fP"
+.in -1c
+.SS "Friends"
+
+.in +1c
+.ti -1c
+.RI "istream & \fBoperator>>\fP (istream &is, MSLEdge &e)"
+.br
+.ti -1c
+.RI "ostream & \fBoperator<<\fP (ostream &os, const MSLEdge &e)"
+.br
+.in -1c
+.SH "CONSTRUCTOR & DESTRUCTOR DOCUMENTATION"
+.PP 
+.SS "MSLEdge::MSLEdge ()"
+.PP
+.SS "MSLEdge::MSLEdge (\fBMSLVertex\fP * v1, \fBMSLVertex\fP * v2, const \fBMSLVector\fP & u, double t)"
+.PP
+.SS "MSLEdge::MSLEdge (\fBMSLVertex\fP * v1, \fBMSLVertex\fP * v2, double t)"
+.PP
+.SS "MSLEdge::MSLEdge (\fBMSLVertex\fP * v1, \fBMSLVertex\fP * v2)"
+.PP
+.SS "MSLEdge::~MSLEdge ()\fC [inline]\fP"
+.PP
+.SH "MEMBER FUNCTION DOCUMENTATION"
+.PP 
+.SS "double MSLEdge::Cost () const\fC [inline]\fP"
+.PP
+A cost value, useful in some algorithms.
+.PP
+.SS "\fBMSLVector\fP MSLEdge::Input () const\fC [inline]\fP"
+.PP
+An input vector that leads from the first state to the second.
+.PP
+.SS "void MSLEdge::SetCost (const double & x)\fC [inline]\fP"
+.PP
+A cost value, useful in some algorithms.
+.PP
+.SS "\fBMSLVertex\fP* MSLEdge::Source () const\fC [inline]\fP"
+.PP
+The time required to reach this node from the parent.
+.PP
+.SS "\fBMSLVertex\fP* MSLEdge::Target () const\fC [inline]\fP"
+.PP
+The time required to reach this node from the parent.
+.PP
+.SS "double MSLEdge::Time () const\fC [inline]\fP"
+.PP
+The time required to reach this node from the parent.
+.PP
+.SH "FRIENDS AND RELATED FUNCTION DOCUMENTATION"
+.PP 
+.SS "ostream& operator<< (ostream & os, const MSLEdge & e)\fC [friend]\fP"
+.PP
+.SS "istream& operator>> (istream & is, MSLEdge & e)\fC [friend]\fP"
+.PP
+
+
+.SH "AUTHOR"
+.PP 
+Generated automatically by Doxygen for Motion Strategy Library from the source code.

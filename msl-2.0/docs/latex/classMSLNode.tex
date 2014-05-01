@@ -1,0 +1,192 @@
+\section{MSLNode  Class Reference}
+\label{classMSLNode}\index{MSLNode@{MSLNode}}
+{\tt \#include $<$tree.h$>$}
+
+\subsection*{Public Methods}
+\begin{CompactItemize}
+\item 
+{\bf MSLVector} {\bf State} () const
+\begin{CompactList}\small\item\em The state to which this node corresponds.\item\end{CompactList}\item 
+{\bf MSLVector} {\bf Input} () const
+\begin{CompactList}\small\item\em The input vector that leads to this state from the parent.\item\end{CompactList}\item 
+MSLNode $\ast$ {\bf Parent} ()
+\item 
+list$<$ MSLNode $\ast$ $>$ const {\bf Children} ()
+\item 
+double {\bf Time} () const
+\begin{CompactList}\small\item\em The time required to reach this node from the parent.\item\end{CompactList}\item 
+double {\bf Cost} () const
+\begin{CompactList}\small\item\em A cost value, useful in some algorithms.\item\end{CompactList}\item 
+void {\bf Set\-Cost} (const double \&{\bf x})
+\begin{CompactList}\small\item\em A cost value, useful in some algorithms.\item\end{CompactList}\item 
+void {\bf Set\-ID} (const int \&i)
+\begin{CompactList}\small\item\em Change the node ID.\item\end{CompactList}\item 
+int {\bf ID} () const
+\begin{CompactList}\small\item\em Get the node ID.\item\end{CompactList}\item 
+void $\ast$ {\bf Get\-Info} ()
+\begin{CompactList}\small\item\em Get the information.\item\end{CompactList}\item 
+void {\bf Set\-Info} (void $\ast$in)
+\begin{CompactList}\small\item\em Set the information.\item\end{CompactList}\item 
+{\bf MSLNode} ()
+\begin{CompactList}\small\item\em Clear the memory for the information.\item\end{CompactList}\item 
+{\bf MSLNode} (void $\ast$pninfo)
+\item 
+{\bf MSLNode} (MSLNode $\ast$pn, const {\bf MSLVector} \&{\bf x}, const {\bf MSLVector} \&u)
+\item 
+{\bf MSLNode} (MSLNode $\ast$pn, const {\bf MSLVector} \&{\bf x}, const {\bf MSLVector} \&u, double t)
+\item 
+{\bf MSLNode} (MSLNode $\ast$pn, const {\bf MSLVector} \&{\bf x}, const {\bf MSLVector} \&u, double t, void $\ast$pninfo)
+\item 
+{\bf $\sim$MSLNode} ()
+\item 
+void {\bf Add\-Child} (MSLNode $\ast$cn)
+\end{CompactItemize}
+\subsection*{Friends}
+\begin{CompactItemize}
+\item 
+class {\bf MSLTree}
+\item 
+ostream \& {\bf operator$<$$<$} (ostream \&os, const MSLNode \&n)
+\item 
+ostream \& {\bf operator$<$$<$} (ostream \&os, const list$<$ MSLNode $\ast$ $>$ \&nl)
+\end{CompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{MSLNode@{MSLNode}!MSLNode@{MSLNode}}
+\index{MSLNode@{MSLNode}!MSLNode@{MSLNode}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}MSLNode::MSLNode ()}\label{classMSLNode_a11}
+
+
+Clear the memory for the information.
+
+\index{MSLNode@{MSLNode}!MSLNode@{MSLNode}}
+\index{MSLNode@{MSLNode}!MSLNode@{MSLNode}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}MSLNode::MSLNode (void $\ast$ {\em pninfo})}\label{classMSLNode_a12}
+
+
+\index{MSLNode@{MSLNode}!MSLNode@{MSLNode}}
+\index{MSLNode@{MSLNode}!MSLNode@{MSLNode}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}MSLNode::MSLNode (MSLNode $\ast$ {\em pn}, const {\bf MSLVector} \& {\em x}, const {\bf MSLVector} \& {\em u})}\label{classMSLNode_a13}
+
+
+\index{MSLNode@{MSLNode}!MSLNode@{MSLNode}}
+\index{MSLNode@{MSLNode}!MSLNode@{MSLNode}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}MSLNode::MSLNode (MSLNode $\ast$ {\em pn}, const {\bf MSLVector} \& {\em x}, const {\bf MSLVector} \& {\em u}, double {\em t})}\label{classMSLNode_a14}
+
+
+\index{MSLNode@{MSLNode}!MSLNode@{MSLNode}}
+\index{MSLNode@{MSLNode}!MSLNode@{MSLNode}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}MSLNode::MSLNode (MSLNode $\ast$ {\em pn}, const {\bf MSLVector} \& {\em x}, const {\bf MSLVector} \& {\em u}, double {\em t}, void $\ast$ {\em pninfo})}\label{classMSLNode_a15}
+
+
+\index{MSLNode@{MSLNode}!~MSLNode@{$\sim$MSLNode}}
+\index{~MSLNode@{$\sim$MSLNode}!MSLNode@{MSLNode}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}MSLNode::$\sim$MSLNode ()\hspace{0.3cm}{\tt  [inline]}}\label{classMSLNode_a16}
+
+
+
+
+\subsection{Member Function Documentation}
+\index{MSLNode@{MSLNode}!AddChild@{AddChild}}
+\index{AddChild@{AddChild}!MSLNode@{MSLNode}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void MSLNode::Add\-Child (MSLNode $\ast$ {\em cn})\hspace{0.3cm}{\tt  [inline]}}\label{classMSLNode_a17}
+
+
+\index{MSLNode@{MSLNode}!Children@{Children}}
+\index{Children@{Children}!MSLNode@{MSLNode}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}list$<$MSLNode$\ast$$>$ const MSLNode::Children ()\hspace{0.3cm}{\tt  [inline]}}\label{classMSLNode_a3}
+
+
+\index{MSLNode@{MSLNode}!Cost@{Cost}}
+\index{Cost@{Cost}!MSLNode@{MSLNode}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}double MSLNode::Cost () const\hspace{0.3cm}{\tt  [inline]}}\label{classMSLNode_a5}
+
+
+A cost value, useful in some algorithms.
+
+\index{MSLNode@{MSLNode}!GetInfo@{GetInfo}}
+\index{GetInfo@{GetInfo}!MSLNode@{MSLNode}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ MSLNode::Get\-Info ()\hspace{0.3cm}{\tt  [inline]}}\label{classMSLNode_a9}
+
+
+Get the information.
+
+\index{MSLNode@{MSLNode}!ID@{ID}}
+\index{ID@{ID}!MSLNode@{MSLNode}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int MSLNode::ID () const\hspace{0.3cm}{\tt  [inline]}}\label{classMSLNode_a8}
+
+
+Get the node ID.
+
+\index{MSLNode@{MSLNode}!Input@{Input}}
+\index{Input@{Input}!MSLNode@{MSLNode}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf MSLVector} MSLNode::Input () const\hspace{0.3cm}{\tt  [inline]}}\label{classMSLNode_a1}
+
+
+The input vector that leads to this state from the parent.
+
+\index{MSLNode@{MSLNode}!Parent@{Parent}}
+\index{Parent@{Parent}!MSLNode@{MSLNode}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}MSLNode$\ast$ MSLNode::Parent ()\hspace{0.3cm}{\tt  [inline]}}\label{classMSLNode_a2}
+
+
+\index{MSLNode@{MSLNode}!SetCost@{SetCost}}
+\index{SetCost@{SetCost}!MSLNode@{MSLNode}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void MSLNode::Set\-Cost (const double \& {\em x})\hspace{0.3cm}{\tt  [inline]}}\label{classMSLNode_a6}
+
+
+A cost value, useful in some algorithms.
+
+\index{MSLNode@{MSLNode}!SetID@{SetID}}
+\index{SetID@{SetID}!MSLNode@{MSLNode}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void MSLNode::Set\-ID (const int \& {\em i})\hspace{0.3cm}{\tt  [inline]}}\label{classMSLNode_a7}
+
+
+Change the node ID.
+
+\index{MSLNode@{MSLNode}!SetInfo@{SetInfo}}
+\index{SetInfo@{SetInfo}!MSLNode@{MSLNode}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void MSLNode::Set\-Info (void $\ast$ {\em in})\hspace{0.3cm}{\tt  [inline]}}\label{classMSLNode_a10}
+
+
+Set the information.
+
+\index{MSLNode@{MSLNode}!State@{State}}
+\index{State@{State}!MSLNode@{MSLNode}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf MSLVector} MSLNode::State () const\hspace{0.3cm}{\tt  [inline]}}\label{classMSLNode_a0}
+
+
+The state to which this node corresponds.
+
+\index{MSLNode@{MSLNode}!Time@{Time}}
+\index{Time@{Time}!MSLNode@{MSLNode}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}double MSLNode::Time () const\hspace{0.3cm}{\tt  [inline]}}\label{classMSLNode_a4}
+
+
+The time required to reach this node from the parent.
+
+
+
+\subsection{Friends And Related Function Documentation}
+\index{MSLNode@{MSLNode}!MSLTree@{MSLTree}}
+\index{MSLTree@{MSLTree}!MSLNode@{MSLNode}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}friend class MSLTree\hspace{0.3cm}{\tt  [friend]}}\label{classMSLNode_l0}
+
+
+\index{MSLNode@{MSLNode}!operator<<@{operator$<$$<$}}
+\index{operator<<@{operator$<$$<$}!MSLNode@{MSLNode}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}ostream\& operator$<$$<$ (ostream \& {\em os}, const list$<$ MSLNode $\ast$ $>$ \& {\em nl})\hspace{0.3cm}{\tt  [friend]}}\label{classMSLNode_l2}
+
+
+\index{MSLNode@{MSLNode}!operator<<@{operator$<$$<$}}
+\index{operator<<@{operator$<$$<$}!MSLNode@{MSLNode}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}ostream\& operator$<$$<$ (ostream \& {\em os}, const MSLNode \& {\em n})\hspace{0.3cm}{\tt  [friend]}}\label{classMSLNode_l1}
+
+
+
+
+The documentation for this class was generated from the following files:\begin{CompactItemize}
+\item 
+{\bf tree.h}\item 
+{\bf tree.C}\end{CompactItemize}

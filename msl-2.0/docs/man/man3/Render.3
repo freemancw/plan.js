@@ -1,0 +1,394 @@
+.TH "Render" 3 "24 Jul 2003" "Motion Strategy Library" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Render \- A rendering class that accepts commands from a \fBGui\fP, and determines using specific graphics libraries how to draw the results on a screen. 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <render.h>\fP
+.PP
+Inherited by \fBRenderGL\fP, \fBRenderIv\fP, and \fBRenderPerformer\fP.
+.PP
+.SS "Public Methods"
+
+.in +1c
+.ti -1c
+.RI "\fBRender\fP ()"
+.br
+.ti -1c
+.RI "\fBRender\fP (string filepath)"
+.br
+.ti -1c
+.RI "\fBRender\fP (\fBScene\fP *s, string filepath)"
+.br
+.ti -1c
+.RI "virtual \fB~Render\fP ()"
+.br
+.ti -1c
+.RI "virtual void \fBInit\fP ()"
+.br
+.RI "\fIInitialized the renderer.\fP"
+.ti -1c
+.RI "virtual void \fBHandleEvents\fP ()"
+.br
+.RI "\fIProcess IO events.\fP"
+.ti -1c
+.RI "virtual void \fBMainLoop\fP (\fBGui\fP *g)"
+.br
+.RI "\fIIf ControlFreak = true, then MainLoop is entered here.\fP"
+.ti -1c
+.RI "virtual void \fBReset\fP ()"
+.br
+.RI "\fIReset the renderer.\fP"
+.ti -1c
+.RI "virtual void \fBTerminate\fP ()"
+.br
+.RI "\fIImplement functions upon termination of the renderer.\fP"
+.ti -1c
+.RI "virtual void \fBSetFrameList\fP ()"
+.br
+.RI "\fIMake the set of frames from StateList and TimeList.\fP"
+.ti -1c
+.RI "virtual void \fBMakeAnimationFrames\fP (const list< \fBMSLVector\fP > &xlist, double deltat)"
+.br
+.RI "\fIGenerate FrameList and set AnimationActive to true.\fP"
+.ti -1c
+.RI "virtual void \fBMakeAnimationFrames\fP (const list< \fBMSLVector\fP > &xlist, const list< double > &timelist)"
+.br
+.ti -1c
+.RI "virtual void \fBDrawPath\fP ()"
+.br
+.RI "\fIDisplay an entire path (the specific renderer determines how).\fP"
+.ti -1c
+.RI "virtual void \fBButtonHandle\fP (int b)"
+.br
+.RI "\fIExecute actions for render control window choices.\fP"
+.ti -1c
+.RI "void \fBSetScene\fP (\fBScene\fP *s)"
+.br
+.RI "\fIChange the associated scene.\fP"
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "string \fBFilePath\fP"
+.br
+.RI "\fIThe path name for accessing files.\fP"
+.ti -1c
+.RI "list< \fBMSLVector\fP > \fBFrameList\fP"
+.br
+.RI "\fIThe animation frames; each element is a SceneConfiguration.\fP"
+.ti -1c
+.RI "double \fBFrameTime\fP"
+.br
+.RI "\fIThe amount of time for which a frame is shown.\fP"
+.ti -1c
+.RI "float \fBLastFrameTime\fP"
+.br
+.RI "\fIThe time stamp of the last frame change.\fP"
+.ti -1c
+.RI "float \fBFrameStuckTime\fP"
+.br
+.RI "\fIThe amount of time since the last frame change.\fP"
+.ti -1c
+.RI "int \fBNumFrames\fP"
+.br
+.RI "\fIThe number of frames in the animation.\fP"
+.ti -1c
+.RI "double \fBAnimationStartPause\fP"
+.br
+.RI "\fINumber of seconds to wait at the start of an animation.\fP"
+.ti -1c
+.RI "double \fBAnimationEndPause\fP"
+.br
+.RI "\fINumber of seconds to wait at the end of an animation.\fP"
+.ti -1c
+.RI "double \fBAnimationTimeScale\fP"
+.br
+.RI "\fIThe speedup factor for the animation (1.0 = normal speed).\fP"
+.ti -1c
+.RI "double \fBrealAnimationTimeScale\fP"
+.br
+.ti -1c
+.RI "double \fBAnimationTimeScale_prev\fP"
+.br
+.ti -1c
+.RI "double \fBrealAnimationTimeScale_prev\fP"
+.br
+.ti -1c
+.RI "int \fBAnimationFrameIndex\fP"
+.br
+.RI "\fIThe index in FrameList of the frame that should be currently shown.\fP"
+.ti -1c
+.RI "\fBMSLVector\fP \fBCurrentAnimationFrame\fP"
+.br
+.RI "\fIThe frame that should be shown currently.\fP"
+.ti -1c
+.RI "bool \fBAnimationActive\fP"
+.br
+.RI "\fISet to true to start the animation.\fP"
+.ti -1c
+.RI "bool \fBControlFreak\fP"
+.br
+.RI "\fISet to true if the renderer needs main loop control; otherwise, iterated polling of HandleEvents will be performed automatically.\fP"
+.ti -1c
+.RI "bool \fBRenderCtlWindowOn\fP"
+.br
+.RI "\fIIs teh rendering control window currently displayed?\fP"
+.ti -1c
+.RI "bool \fBAttachedCameraOn\fP"
+.br
+.RI "\fISet to true for the viewpoint to be attached to a body.\fP"
+.ti -1c
+.RI "bool \fBBoundingBoxOn\fP"
+.br
+.RI "\fISet to true to draw a bounding box using S->LowerWorld and S->UpperWorld.\fP"
+.ti -1c
+.RI "bool \fBMultipleViewsOn\fP"
+.br
+.RI "\fISet to true to show multiple views simultaneously.\fP"
+.ti -1c
+.RI "bool \fBShowPathOn\fP"
+.br
+.RI "\fISet to true to show the entire path.\fP"
+.ti -1c
+.RI "double \fBAmbientLight\fP"
+.br
+.RI "\fIA parameter that controls the amount of light.\fP"
+.in -1c
+.SS "Protected Methods"
+
+.in +1c
+.ti -1c
+.RI "virtual void \fBSetCurrentAnimationFrame\fP ()"
+.br
+.RI "\fIThis uses the FrameList to return the SceneConfiguration that is supposed to be shown at the present time.\fP"
+.ti -1c
+.RI "virtual void \fBShowCurrentAnimationFrame\fP ()"
+.br
+.RI "\fIDisplay the current animation frame in a rendering window.\fP"
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBScene\fP * \fBS\fP"
+.br
+.RI "\fIAllow information from a \fBScene\fP to be accessed.\fP"
+.ti -1c
+.RI "list< \fBMSLVector\fP > \fBStateList\fP"
+.br
+.RI "\fIA sequence of state to use for animation (should be generated by \fBGui\fP).\fP"
+.ti -1c
+.RI "list< double > \fBTimeList\fP"
+.br
+.RI "\fIThe time stamps for the state sequence.\fP"
+.ti -1c
+.RI "list< string > \fBEnvList\fP"
+.br
+.ti -1c
+.RI "list< string > \fBBodyList\fP"
+.br
+.ti -1c
+.RI "float \fBRGBRed\fP [RENDERCOLORS]"
+.br
+.RI "\fIRGB color values.\fP"
+.ti -1c
+.RI "float \fBRGBGreen\fP [RENDERCOLORS]"
+.br
+.ti -1c
+.RI "float \fBRGBBlue\fP [RENDERCOLORS]"
+.br
+.in -1c
+.SH "DETAILED DESCRIPTION"
+.PP 
+A rendering class that accepts commands from a \fBGui\fP, and determines using specific graphics libraries how to draw the results on a screen.
+.PP
+This hierarchy of classes contains different implementations of graphical rendering requests. For example, when a graphical user interface (GUI) requests that the a solution path is animated, a method in a Render class displays the bodies in motion using configurations obtained from the \fBScene\fP class. Each derived class in Render corresponds to a different graphics system. Presently, there are renderers for Open Inventor and Open GL. The flexibility provided by these classes enables easy extensions to be made for other graphics libraries and platforms, such as Open Inventor.
+.PP
+The rendering is expressed in terms of a \fBScene\fP, in which the  scene configuration gives the configuration of a collection of Bodies in a static Environment. 
+.PP
+.SH "CONSTRUCTOR & DESTRUCTOR DOCUMENTATION"
+.PP 
+.SS "Render::Render ()"
+.PP
+.SS "Render::Render (string filepath)"
+.PP
+.SS "Render::Render (\fBScene\fP * s, string filepath)"
+.PP
+.SS "virtual Render::~Render ()\fC [inline, virtual]\fP"
+.PP
+.SH "MEMBER FUNCTION DOCUMENTATION"
+.PP 
+.SS "void Render::ButtonHandle (int b)\fC [virtual]\fP"
+.PP
+Execute actions for render control window choices.
+.PP
+.SS "virtual void Render::DrawPath ()\fC [inline, virtual]\fP"
+.PP
+Display an entire path (the specific renderer determines how).
+.PP
+Reimplemented in \fBRenderGL\fP.
+.SS "virtual void Render::HandleEvents ()\fC [inline, virtual]\fP"
+.PP
+Process IO events.
+.PP
+Reimplemented in \fBRenderPerformer\fP.
+.SS "void Render::Init ()\fC [virtual]\fP"
+.PP
+Initialized the renderer.
+.PP
+Reimplemented in \fBRenderGL\fP.
+.SS "void Render::MainLoop (\fBGui\fP * g)\fC [virtual]\fP"
+.PP
+If ControlFreak = true, then MainLoop is entered here.
+.PP
+Reimplemented in \fBRenderGL\fP.
+.SS "void Render::MakeAnimationFrames (const list< \fBMSLVector\fP > & xlist, const list< double > & timelist)\fC [virtual]\fP"
+.PP
+.SS "void Render::MakeAnimationFrames (const list< \fBMSLVector\fP > & xlist, double deltat)\fC [virtual]\fP"
+.PP
+Generate FrameList and set AnimationActive to true.
+.PP
+.SS "void Render::Reset ()\fC [virtual]\fP"
+.PP
+Reset the renderer.
+.PP
+Reimplemented in \fBRenderGL\fP.
+.SS "void Render::SetCurrentAnimationFrame ()\fC [protected, virtual]\fP"
+.PP
+This uses the FrameList to return the SceneConfiguration that is supposed to be shown at the present time.
+.PP
+.SS "void Render::SetFrameList ()\fC [virtual]\fP"
+.PP
+Make the set of frames from StateList and TimeList.
+.PP
+.SS "void Render::SetScene (\fBScene\fP * s)"
+.PP
+Change the associated scene.
+.PP
+.SS "virtual void Render::ShowCurrentAnimationFrame ()\fC [inline, protected, virtual]\fP"
+.PP
+Display the current animation frame in a rendering window.
+.PP
+Reimplemented in \fBRenderPerformer\fP.
+.SS "virtual void Render::Terminate ()\fC [inline, virtual]\fP"
+.PP
+Implement functions upon termination of the renderer.
+.PP
+Reimplemented in \fBRenderPerformer\fP.
+.SH "MEMBER DATA DOCUMENTATION"
+.PP 
+.SS "double Render::AmbientLight"
+.PP
+A parameter that controls the amount of light.
+.PP
+.SS "bool Render::AnimationActive"
+.PP
+Set to true to start the animation.
+.PP
+.SS "double Render::AnimationEndPause"
+.PP
+Number of seconds to wait at the end of an animation.
+.PP
+.SS "int Render::AnimationFrameIndex"
+.PP
+The index in FrameList of the frame that should be currently shown.
+.PP
+.SS "double Render::AnimationStartPause"
+.PP
+Number of seconds to wait at the start of an animation.
+.PP
+.SS "double Render::AnimationTimeScale"
+.PP
+The speedup factor for the animation (1.0 = normal speed).
+.PP
+.SS "double Render::AnimationTimeScale_prev"
+.PP
+.SS "bool Render::AttachedCameraOn"
+.PP
+Set to true for the viewpoint to be attached to a body.
+.PP
+.SS "list<string> Render::BodyList\fC [protected]\fP"
+.PP
+.SS "bool Render::BoundingBoxOn"
+.PP
+Set to true to draw a bounding box using S->LowerWorld and S->UpperWorld.
+.PP
+.SS "bool Render::ControlFreak"
+.PP
+Set to true if the renderer needs main loop control; otherwise, iterated polling of HandleEvents will be performed automatically.
+.PP
+.SS "\fBMSLVector\fP Render::CurrentAnimationFrame"
+.PP
+The frame that should be shown currently.
+.PP
+.SS "list<string> Render::EnvList\fC [protected]\fP"
+.PP
+.SS "string Render::FilePath"
+.PP
+The path name for accessing files.
+.PP
+.SS "list<\fBMSLVector\fP> Render::FrameList"
+.PP
+The animation frames; each element is a SceneConfiguration.
+.PP
+.SS "float Render::FrameStuckTime"
+.PP
+The amount of time since the last frame change.
+.PP
+.SS "double Render::FrameTime"
+.PP
+The amount of time for which a frame is shown.
+.PP
+.SS "float Render::LastFrameTime"
+.PP
+The time stamp of the last frame change.
+.PP
+.SS "bool Render::MultipleViewsOn"
+.PP
+Set to true to show multiple views simultaneously.
+.PP
+.SS "int Render::NumFrames"
+.PP
+The number of frames in the animation.
+.PP
+.SS "double Render::realAnimationTimeScale"
+.PP
+.SS "double Render::realAnimationTimeScale_prev"
+.PP
+.SS "bool Render::RenderCtlWindowOn"
+.PP
+Is teh rendering control window currently displayed?
+.PP
+.SS "float Render::RGBBlue[RENDERCOLORS]\fC [protected]\fP"
+.PP
+.SS "float Render::RGBGreen[RENDERCOLORS]\fC [protected]\fP"
+.PP
+.SS "float Render::RGBRed[RENDERCOLORS]\fC [protected]\fP"
+.PP
+RGB color values.
+.PP
+.SS "\fBScene\fP* Render::S\fC [protected]\fP"
+.PP
+Allow information from a \fBScene\fP to be accessed.
+.PP
+.SS "bool Render::ShowPathOn"
+.PP
+Set to true to show the entire path.
+.PP
+.SS "list<\fBMSLVector\fP> Render::StateList\fC [protected]\fP"
+.PP
+A sequence of state to use for animation (should be generated by \fBGui\fP).
+.PP
+.SS "list<double> Render::TimeList\fC [protected]\fP"
+.PP
+The time stamps for the state sequence.
+.PP
+
+
+.SH "AUTHOR"
+.PP 
+Generated automatically by Doxygen for Motion Strategy Library from the source code.

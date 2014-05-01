@@ -1,0 +1,55 @@
+.TH "mslio.h" 3 "24 Jul 2003" "Motion Strategy Library" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+mslio.h \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <list>\fP
+.br
+\fC#include <fstream>\fP
+.br
+\fC#include <sstream>\fP
+.br
+\fC#include <vector>\fP
+.br
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "template<class T> ostream & \fBoperator<<\fP (ostream &out, const list< T > &L)"
+.br
+.ti -1c
+.RI "template<class T> istream & \fBoperator>>\fP (istream &in, list< T > &L)"
+.br
+.ti -1c
+.RI "template<class T> ostream & \fBoperator<<\fP (ostream &out, const vector< T > &L)"
+.br
+.ti -1c
+.RI "template<class T> istream & \fBoperator>>\fP (istream &in, vector< T > &L)"
+.br
+.ti -1c
+.RI "template<class T> ofstream & \fBoperator<<\fP (ofstream &out, const vector< T > &L)"
+.br
+.ti -1c
+.RI "template<class T> ifstream & \fBoperator>>\fP (ifstream &in, vector< T > &L)"
+.br
+.in -1c
+.SH "FUNCTION DOCUMENTATION"
+.PP 
+.SS "template<class T> ofstream& operator<< (ofstream & out, const vector< T > & L)"
+.PP
+.SS "template<class T> ostream& operator<< (ostream & out, const vector< T > & L)"
+.PP
+.SS "template<class T> ostream& operator<< (ostream & out, const list< T > & L)"
+.PP
+.SS "template<class T> ifstream& operator>> (ifstream & in, vector< T > & L)"
+.PP
+.SS "template<class T> istream& operator>> (istream & in, vector< T > & L)"
+.PP
+.SS "template<class T> istream& operator>> (istream & in, list< T > & L)"
+.PP
+.SH "AUTHOR"
+.PP 
+Generated automatically by Doxygen for Motion Strategy Library from the source code.

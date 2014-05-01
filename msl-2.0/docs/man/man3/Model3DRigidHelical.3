@@ -1,0 +1,56 @@
+.TH "Model3DRigidHelical" 3 "24 Jul 2003" "Motion Strategy Library" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Model3DRigidHelical \- A rigid robot that moves along helical paths in a 3D world. 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <modelnew.h>\fP
+.PP
+Inherits \fBModel3DRigid\fP.
+.PP
+.SS "Public Methods"
+
+.in +1c
+.ti -1c
+.RI "\fBModel3DRigidHelical\fP (string path)"
+.br
+.ti -1c
+.RI "virtual \fB~Model3DRigidHelical\fP ()"
+.br
+.ti -1c
+.RI "virtual \fBMSLVector\fP \fBStateTransitionEquation\fP (const \fBMSLVector\fP &\fBx\fP, const \fBMSLVector\fP &u)"
+.br
+.RI "\fIGive the equations of motion for a helical kinematic system.\fP"
+.ti -1c
+.RI "virtual \fBMSLVector\fP \fBIntegrate\fP (const \fBMSLVector\fP &\fBx\fP, const \fBMSLVector\fP &u, const double &h)"
+.br
+.RI "\fIPerform integration from state x, using input u, over time step h.\fP"
+.in -1c
+.SH "DETAILED DESCRIPTION"
+.PP 
+A rigid robot that moves along helical paths in a 3D world.
+.PP
+.SH "CONSTRUCTOR & DESTRUCTOR DOCUMENTATION"
+.PP 
+.SS "Model3DRigidHelical::Model3DRigidHelical (string path)"
+.PP
+.SS "virtual Model3DRigidHelical::~Model3DRigidHelical ()\fC [inline, virtual]\fP"
+.PP
+.SH "MEMBER FUNCTION DOCUMENTATION"
+.PP 
+.SS "\fBMSLVector\fP Model3DRigidHelical::Integrate (const \fBMSLVector\fP & x, const \fBMSLVector\fP & u, const double & h)\fC [virtual]\fP"
+.PP
+Perform integration from state x, using input u, over time step h.
+.PP
+Reimplemented from \fBModel3DRigid\fP.
+.SS "\fBMSLVector\fP Model3DRigidHelical::StateTransitionEquation (const \fBMSLVector\fP & x, const \fBMSLVector\fP & u)\fC [virtual]\fP"
+.PP
+Give the equations of motion for a helical kinematic system.
+.PP
+Reimplemented from \fBModel3DRigid\fP.
+
+.SH "AUTHOR"
+.PP 
+Generated automatically by Doxygen for Motion Strategy Library from the source code.

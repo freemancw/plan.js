@@ -1,0 +1,206 @@
+\section{MSLPlanner\-Window  Class Reference}
+\label{classMSLPlannerWindow}\index{MSLPlannerWindow@{MSLPlanner\-Window}}
+{\tt \#include $<$guiplanner.h$>$}
+
+\subsection*{Public Methods}
+\begin{CompactItemize}
+\item 
+{\bf MSLPlanner\-Window} ()
+\item 
+{\bf MSLPlanner\-Window} ({\bf Gui\-Planner} $\ast$gp)
+\item 
+virtual {\bf $\sim$MSLPlanner\-Window} ()
+\item 
+void {\bf create} ()
+\item 
+void {\bf Restart} ()
+\item 
+long {\bf on\-Cmd\-Timer} (FXObject $\ast$, FXSelector, void $\ast$)
+\item 
+long {\bf General\-Handler} (FXObject $\ast$, FXSelector, void $\ast$)
+\end{CompactItemize}
+\subsection*{Protected Attributes}
+\begin{CompactItemize}
+\item 
+FXMenubar $\ast$ {\bf menubar}
+\item 
+FXMenubar $\ast$ {\bf vcrbar}
+\item 
+FXMenubar $\ast$ {\bf buttonbar}
+\item 
+FXMenu\-Pane $\ast$ {\bf loadmenu}
+\item 
+FXMenu\-Pane $\ast$ {\bf savemenu}
+\item 
+FXMenu\-Pane $\ast$ {\bf plotmenu}
+\item 
+FXMenu\-Pane $\ast$ {\bf plannermenu}
+\item 
+FXMatrix $\ast$ {\bf matrix}
+\item 
+FXData\-Target {\bf plannerdeltat\_\-target}
+\item 
+FXData\-Target {\bf numnodes\_\-target}
+\item 
+FXData\-Target {\bf drawindexx\_\-target}
+\item 
+FXData\-Target {\bf drawindexy\_\-target}
+\item 
+FXData\-Target {\bf animationtimescale\_\-target}
+\item 
+FXData\-Target {\bf real\-Animationtimescale\_\-target}
+\item 
+FXData\-Target {\bf ambientlight\_\-target}
+\item 
+{\bf Gui\-Planner} $\ast$ {\bf GP}
+\end{CompactItemize}
+\subsection*{Friends}
+\begin{CompactItemize}
+\item 
+class {\bf Gui\-Planner}
+\item 
+class {\bf MSLPlot\-Window}
+\end{CompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{MSLPlannerWindow@{MSLPlanner\-Window}!MSLPlannerWindow@{MSLPlannerWindow}}
+\index{MSLPlannerWindow@{MSLPlannerWindow}!MSLPlannerWindow@{MSLPlanner\-Window}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}MSLPlanner\-Window::MSLPlanner\-Window ()\hspace{0.3cm}{\tt  [inline]}}\label{classMSLPlannerWindow_a0}
+
+
+\index{MSLPlannerWindow@{MSLPlanner\-Window}!MSLPlannerWindow@{MSLPlannerWindow}}
+\index{MSLPlannerWindow@{MSLPlannerWindow}!MSLPlannerWindow@{MSLPlanner\-Window}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}MSLPlanner\-Window::MSLPlanner\-Window ({\bf Gui\-Planner} $\ast$ {\em gp})}\label{classMSLPlannerWindow_a1}
+
+
+\index{MSLPlannerWindow@{MSLPlanner\-Window}!~MSLPlannerWindow@{$\sim$MSLPlannerWindow}}
+\index{~MSLPlannerWindow@{$\sim$MSLPlannerWindow}!MSLPlannerWindow@{MSLPlanner\-Window}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}MSLPlanner\-Window::$\sim$MSLPlanner\-Window ()\hspace{0.3cm}{\tt  [virtual]}}\label{classMSLPlannerWindow_a2}
+
+
+
+
+\subsection{Member Function Documentation}
+\index{MSLPlannerWindow@{MSLPlanner\-Window}!create@{create}}
+\index{create@{create}!MSLPlannerWindow@{MSLPlanner\-Window}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void MSLPlanner\-Window::create ()}\label{classMSLPlannerWindow_a3}
+
+
+\index{MSLPlannerWindow@{MSLPlanner\-Window}!GeneralHandler@{GeneralHandler}}
+\index{GeneralHandler@{GeneralHandler}!MSLPlannerWindow@{MSLPlanner\-Window}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}long MSLPlanner\-Window::General\-Handler (FXObject $\ast$, FXSelector, void $\ast$)}\label{classMSLPlannerWindow_a6}
+
+
+\index{MSLPlannerWindow@{MSLPlanner\-Window}!onCmdTimer@{onCmdTimer}}
+\index{onCmdTimer@{onCmdTimer}!MSLPlannerWindow@{MSLPlanner\-Window}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}long MSLPlanner\-Window::on\-Cmd\-Timer (FXObject $\ast$, FXSelector, void $\ast$)}\label{classMSLPlannerWindow_a5}
+
+
+\index{MSLPlannerWindow@{MSLPlanner\-Window}!Restart@{Restart}}
+\index{Restart@{Restart}!MSLPlannerWindow@{MSLPlanner\-Window}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void MSLPlanner\-Window::Restart ()}\label{classMSLPlannerWindow_a4}
+
+
+
+
+\subsection{Friends And Related Function Documentation}
+\index{MSLPlannerWindow@{MSLPlanner\-Window}!GuiPlanner@{GuiPlanner}}
+\index{GuiPlanner@{GuiPlanner}!MSLPlannerWindow@{MSLPlanner\-Window}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}friend class Gui\-Planner\hspace{0.3cm}{\tt  [friend]}}\label{classMSLPlannerWindow_l0}
+
+
+\index{MSLPlannerWindow@{MSLPlanner\-Window}!MSLPlotWindow@{MSLPlotWindow}}
+\index{MSLPlotWindow@{MSLPlotWindow}!MSLPlannerWindow@{MSLPlanner\-Window}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}friend class MSLPlot\-Window\hspace{0.3cm}{\tt  [friend]}}\label{classMSLPlannerWindow_l1}
+
+
+
+
+\subsection{Member Data Documentation}
+\index{MSLPlannerWindow@{MSLPlanner\-Window}!ambientlight_target@{ambientlight\_\-target}}
+\index{ambientlight_target@{ambientlight\_\-target}!MSLPlannerWindow@{MSLPlanner\-Window}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}FXData\-Target MSLPlanner\-Window::ambientlight\_\-target\hspace{0.3cm}{\tt  [protected]}}\label{classMSLPlannerWindow_n14}
+
+
+\index{MSLPlannerWindow@{MSLPlanner\-Window}!animationtimescale_target@{animationtimescale\_\-target}}
+\index{animationtimescale_target@{animationtimescale\_\-target}!MSLPlannerWindow@{MSLPlanner\-Window}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}FXData\-Target MSLPlanner\-Window::animationtimescale\_\-target\hspace{0.3cm}{\tt  [protected]}}\label{classMSLPlannerWindow_n12}
+
+
+\index{MSLPlannerWindow@{MSLPlanner\-Window}!buttonbar@{buttonbar}}
+\index{buttonbar@{buttonbar}!MSLPlannerWindow@{MSLPlanner\-Window}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}FXMenubar$\ast$ MSLPlanner\-Window::buttonbar\hspace{0.3cm}{\tt  [protected]}}\label{classMSLPlannerWindow_n2}
+
+
+\index{MSLPlannerWindow@{MSLPlanner\-Window}!drawindexx_target@{drawindexx\_\-target}}
+\index{drawindexx_target@{drawindexx\_\-target}!MSLPlannerWindow@{MSLPlanner\-Window}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}FXData\-Target MSLPlanner\-Window::drawindexx\_\-target\hspace{0.3cm}{\tt  [protected]}}\label{classMSLPlannerWindow_n10}
+
+
+\index{MSLPlannerWindow@{MSLPlanner\-Window}!drawindexy_target@{drawindexy\_\-target}}
+\index{drawindexy_target@{drawindexy\_\-target}!MSLPlannerWindow@{MSLPlanner\-Window}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}FXData\-Target MSLPlanner\-Window::drawindexy\_\-target\hspace{0.3cm}{\tt  [protected]}}\label{classMSLPlannerWindow_n11}
+
+
+\index{MSLPlannerWindow@{MSLPlanner\-Window}!GP@{GP}}
+\index{GP@{GP}!MSLPlannerWindow@{MSLPlanner\-Window}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf Gui\-Planner}$\ast$ MSLPlanner\-Window::GP\hspace{0.3cm}{\tt  [protected]}}\label{classMSLPlannerWindow_n15}
+
+
+\index{MSLPlannerWindow@{MSLPlanner\-Window}!loadmenu@{loadmenu}}
+\index{loadmenu@{loadmenu}!MSLPlannerWindow@{MSLPlanner\-Window}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}FXMenu\-Pane$\ast$ MSLPlanner\-Window::loadmenu\hspace{0.3cm}{\tt  [protected]}}\label{classMSLPlannerWindow_n3}
+
+
+\index{MSLPlannerWindow@{MSLPlanner\-Window}!matrix@{matrix}}
+\index{matrix@{matrix}!MSLPlannerWindow@{MSLPlanner\-Window}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}FXMatrix$\ast$ MSLPlanner\-Window::matrix\hspace{0.3cm}{\tt  [protected]}}\label{classMSLPlannerWindow_n7}
+
+
+\index{MSLPlannerWindow@{MSLPlanner\-Window}!menubar@{menubar}}
+\index{menubar@{menubar}!MSLPlannerWindow@{MSLPlanner\-Window}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}FXMenubar$\ast$ MSLPlanner\-Window::menubar\hspace{0.3cm}{\tt  [protected]}}\label{classMSLPlannerWindow_n0}
+
+
+\index{MSLPlannerWindow@{MSLPlanner\-Window}!numnodes_target@{numnodes\_\-target}}
+\index{numnodes_target@{numnodes\_\-target}!MSLPlannerWindow@{MSLPlanner\-Window}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}FXData\-Target MSLPlanner\-Window::numnodes\_\-target\hspace{0.3cm}{\tt  [protected]}}\label{classMSLPlannerWindow_n9}
+
+
+\index{MSLPlannerWindow@{MSLPlanner\-Window}!plannerdeltat_target@{plannerdeltat\_\-target}}
+\index{plannerdeltat_target@{plannerdeltat\_\-target}!MSLPlannerWindow@{MSLPlanner\-Window}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}FXData\-Target MSLPlanner\-Window::plannerdeltat\_\-target\hspace{0.3cm}{\tt  [protected]}}\label{classMSLPlannerWindow_n8}
+
+
+\index{MSLPlannerWindow@{MSLPlanner\-Window}!plannermenu@{plannermenu}}
+\index{plannermenu@{plannermenu}!MSLPlannerWindow@{MSLPlanner\-Window}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}FXMenu\-Pane$\ast$ MSLPlanner\-Window::plannermenu\hspace{0.3cm}{\tt  [protected]}}\label{classMSLPlannerWindow_n6}
+
+
+\index{MSLPlannerWindow@{MSLPlanner\-Window}!plotmenu@{plotmenu}}
+\index{plotmenu@{plotmenu}!MSLPlannerWindow@{MSLPlanner\-Window}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}FXMenu\-Pane$\ast$ MSLPlanner\-Window::plotmenu\hspace{0.3cm}{\tt  [protected]}}\label{classMSLPlannerWindow_n5}
+
+
+\index{MSLPlannerWindow@{MSLPlanner\-Window}!realAnimationtimescale_target@{realAnimationtimescale\_\-target}}
+\index{realAnimationtimescale_target@{realAnimationtimescale\_\-target}!MSLPlannerWindow@{MSLPlanner\-Window}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}FXData\-Target MSLPlanner\-Window::real\-Animationtimescale\_\-target\hspace{0.3cm}{\tt  [protected]}}\label{classMSLPlannerWindow_n13}
+
+
+\index{MSLPlannerWindow@{MSLPlanner\-Window}!savemenu@{savemenu}}
+\index{savemenu@{savemenu}!MSLPlannerWindow@{MSLPlanner\-Window}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}FXMenu\-Pane$\ast$ MSLPlanner\-Window::savemenu\hspace{0.3cm}{\tt  [protected]}}\label{classMSLPlannerWindow_n4}
+
+
+\index{MSLPlannerWindow@{MSLPlanner\-Window}!vcrbar@{vcrbar}}
+\index{vcrbar@{vcrbar}!MSLPlannerWindow@{MSLPlanner\-Window}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}FXMenubar$\ast$ MSLPlanner\-Window::vcrbar\hspace{0.3cm}{\tt  [protected]}}\label{classMSLPlannerWindow_n1}
+
+
+
+
+The documentation for this class was generated from the following files:\begin{CompactItemize}
+\item 
+{\bf guiplanner.h}\item 
+{\bf guiplanner.C}\end{CompactItemize}

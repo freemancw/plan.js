@@ -1,0 +1,154 @@
+.TH "MSLPoint" 3 "24 Jul 2003" "Motion Strategy Library" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+MSLPoint \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <point.h>\fP
+.PP
+.SS "Public Methods"
+
+.in +1c
+.ti -1c
+.RI "\fBMSLPoint\fP ()"
+.br
+.ti -1c
+.RI "\fBMSLPoint\fP (double \fBx\fP, double \fBy\fP)"
+.br
+.ti -1c
+.RI "\fB~MSLPoint\fP ()"
+.br
+.ti -1c
+.RI "double \fBxcoord\fP () const"
+.br
+.ti -1c
+.RI "double \fBycoord\fP () const"
+.br
+.ti -1c
+.RI "void \fBnormalize\fP () const"
+.br
+.ti -1c
+.RI "int \fBdim\fP () const"
+.br
+.ti -1c
+.RI "double \fBsqr_dist\fP (const MSLPoint &q) const"
+.br
+.ti -1c
+.RI "double \fBxdist\fP (const MSLPoint &q) const"
+.br
+.ti -1c
+.RI "double \fBydist\fP (const MSLPoint &q) const"
+.br
+.ti -1c
+.RI "double \fBdistance\fP (const MSLPoint &q) const"
+.br
+.ti -1c
+.RI "double \fBdistance\fP () const"
+.br
+.ti -1c
+.RI "double \fBangle\fP (const MSLPoint &q, const MSLPoint &r) const"
+.br
+.ti -1c
+.RI "MSLPoint \fBtranslate_by_angle\fP (double alpha, double d) const"
+.br
+.ti -1c
+.RI "MSLPoint \fBtranslate\fP (double dx, double dy) const"
+.br
+.ti -1c
+.RI "MSLPoint \fBrotate\fP (const MSLPoint &q, double a) const"
+.br
+.ti -1c
+.RI "MSLPoint \fBrotate\fP (double a) const"
+.br
+.ti -1c
+.RI "MSLPoint \fBrotate90\fP (const MSLPoint &q) const"
+.br
+.ti -1c
+.RI "MSLPoint \fBrotate90\fP () const"
+.br
+.ti -1c
+.RI "MSLPoint \fBreflect\fP (const MSLPoint &q, const MSLPoint &r) const"
+.br
+.ti -1c
+.RI "MSLPoint \fBreflect\fP (const MSLPoint &q) const"
+.br
+.ti -1c
+.RI "bool \fBoperator==\fP (const MSLPoint &q) const"
+.br
+.ti -1c
+.RI "bool \fBoperator!=\fP (const MSLPoint &q) const"
+.br
+.in -1c
+.SS "Friends"
+
+.in +1c
+.ti -1c
+.RI "ostream & \fBoperator<<\fP (ostream &O, const MSLPoint &p)"
+.br
+.ti -1c
+.RI "istream & \fBoperator>>\fP (istream &I, MSLPoint &p)"
+.br
+.in -1c
+.SH "CONSTRUCTOR & DESTRUCTOR DOCUMENTATION"
+.PP 
+.SS "MSLPoint::MSLPoint ()"
+.PP
+.SS "MSLPoint::MSLPoint (double x, double y)"
+.PP
+.SS "MSLPoint::~MSLPoint ()\fC [inline]\fP"
+.PP
+.SH "MEMBER FUNCTION DOCUMENTATION"
+.PP 
+.SS "double MSLPoint::angle (const MSLPoint & q, const MSLPoint & r) const"
+.PP
+.SS "int MSLPoint::dim () const\fC [inline]\fP"
+.PP
+.SS "double MSLPoint::distance () const\fC [inline]\fP"
+.PP
+.SS "double MSLPoint::distance (const MSLPoint & q) const"
+.PP
+.SS "void MSLPoint::normalize () const\fC [inline]\fP"
+.PP
+.SS "bool MSLPoint::operator!= (const MSLPoint & q) const\fC [inline]\fP"
+.PP
+.SS "bool MSLPoint::operator== (const MSLPoint & q) const"
+.PP
+.SS "MSLPoint MSLPoint::reflect (const MSLPoint & q) const"
+.PP
+.SS "MSLPoint MSLPoint::reflect (const MSLPoint & q, const MSLPoint & r) const"
+.PP
+.SS "MSLPoint MSLPoint::rotate (double a) const"
+.PP
+.SS "MSLPoint MSLPoint::rotate (const MSLPoint & q, double a) const"
+.PP
+.SS "MSLPoint MSLPoint::rotate90 () const"
+.PP
+.SS "MSLPoint MSLPoint::rotate90 (const MSLPoint & q) const"
+.PP
+.SS "double MSLPoint::sqr_dist (const MSLPoint & q) const"
+.PP
+.SS "MSLPoint MSLPoint::translate (double dx, double dy) const"
+.PP
+.SS "MSLPoint MSLPoint::translate_by_angle (double alpha, double d) const"
+.PP
+.SS "double MSLPoint::xcoord () const\fC [inline]\fP"
+.PP
+.SS "double MSLPoint::xdist (const MSLPoint & q) const"
+.PP
+.SS "double MSLPoint::ycoord () const\fC [inline]\fP"
+.PP
+.SS "double MSLPoint::ydist (const MSLPoint & q) const"
+.PP
+.SH "FRIENDS AND RELATED FUNCTION DOCUMENTATION"
+.PP 
+.SS "ostream& operator<< (ostream & O, const MSLPoint & p)\fC [friend]\fP"
+.PP
+.SS "istream& operator>> (istream & I, MSLPoint & p)\fC [friend]\fP"
+.PP
+
+
+.SH "AUTHOR"
+.PP 
+Generated automatically by Doxygen for Motion Strategy Library from the source code.

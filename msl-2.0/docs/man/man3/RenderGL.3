@@ -1,0 +1,503 @@
+.TH "RenderGL" 3 "24 Jul 2003" "Motion Strategy Library" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+RenderGL \- Perform 3D rendering using the GL and GLUT libraries. 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <rendergl.h>\fP
+.PP
+Inherits \fBRender\fP.
+.PP
+.SS "Public Methods"
+
+.in +1c
+.ti -1c
+.RI "\fBRenderGL\fP ()"
+.br
+.ti -1c
+.RI "\fBRenderGL\fP (string filepath)"
+.br
+.ti -1c
+.RI "\fBRenderGL\fP (\fBScene\fP *s, string filepath)"
+.br
+.ti -1c
+.RI "virtual \fB~RenderGL\fP ()"
+.br
+.ti -1c
+.RI "virtual void \fBReset\fP ()"
+.br
+.RI "\fIReset the renderer.\fP"
+.ti -1c
+.RI "virtual void \fBInit\fP ()"
+.br
+.RI "\fIInitialized the renderer.\fP"
+.ti -1c
+.RI "virtual void \fBMainLoop\fP (\fBGui\fP *g)"
+.br
+.RI "\fIIf ControlFreak = true, then MainLoop is entered here.\fP"
+.in -1c
+.SS "Static Public Methods"
+
+.in +1c
+.ti -1c
+.RI "void \fBGlutIdleProcessing\fP ()"
+.br
+.ti -1c
+.RI "void \fBGlutDrawEnvironment\fP ()"
+.br
+.ti -1c
+.RI "void \fBGlutReshape\fP (int w, int h)"
+.br
+.ti -1c
+.RI "void \fBGlutMouse\fP (int button, int state, int \fBx\fP, int \fBy\fP)"
+.br
+.ti -1c
+.RI "void \fBGlutMouseMove\fP (int \fBx\fP, int \fBy\fP)"
+.br
+.ti -1c
+.RI "void \fBGlutKeyboard\fP (unsigned char Key, int \fBx\fP, int \fBy\fP)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBGui\fP * \fBG\fP"
+.br
+.in -1c
+.SS "Protected Methods"
+
+.in +1c
+.ti -1c
+.RI "void \fBLoadConfig\fP ()"
+.br
+.ti -1c
+.RI "void \fBAddBodyObject\fP (\fBmslGLObject\fP *obj)"
+.br
+.ti -1c
+.RI "void \fBAddEnvObject\fP (\fBmslGLObject\fP *obj)"
+.br
+.ti -1c
+.RI "\fBmslGLObject\fP * \fBWhichObject\fP (int id)"
+.br
+.ti -1c
+.RI "void \fBSceneRender\fP ()"
+.br
+.ti -1c
+.RI "void \fBSetLightPos\fP ()"
+.br
+.ti -1c
+.RI "void \fBSetSceneOrientationChange\fP (const \fBMSLVector\fP &oric)"
+.br
+.ti -1c
+.RI "void \fBSetScenePositionChange\fP (const \fBMSLVector\fP &posc)"
+.br
+.ti -1c
+.RI "void \fBSetBodyState\fP (const \fBMSLVector\fP &state)"
+.br
+.ti -1c
+.RI "void \fBSetEnvState\fP (const \fBMSLVector\fP &state)"
+.br
+.ti -1c
+.RI "void \fBDrawBoundingBox\fP ()"
+.br
+.ti -1c
+.RI "void \fBDrawPath\fP ()"
+.br
+.RI "\fIDisplay an entire path (the specific renderer determines how).\fP"
+.ti -1c
+.RI "void \fBInitData\fP ()"
+.br
+.ti -1c
+.RI "void \fBInitGeometry\fP (list< \fBMSLTriangle\fP > triangles)"
+.br
+.ti -1c
+.RI "void \fBDrawBodies\fP (const \fBMSLVector\fP &\fBx\fP)"
+.br
+.ti -1c
+.RI "void \fBDrawEnv\fP ()"
+.br
+.ti -1c
+.RI "void \fBNormCrossProduct\fP (float v1[3], float v2[3], float out[3])"
+.br
+.ti -1c
+.RI "void \fBNormalize\fP (float v[3])"
+.br
+.ti -1c
+.RI "void \fBShowCoordinateFrame\fP ()"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "vector< int > \fBEnvIndex\fP"
+.br
+.ti -1c
+.RI "vector< int > \fBBodyIndex\fP"
+.br
+.ti -1c
+.RI "float \fBWindowX\fP"
+.br
+.ti -1c
+.RI "float \fBWindowY\fP"
+.br
+.ti -1c
+.RI "float \fBWindowZ\fP"
+.br
+.ti -1c
+.RI "float \fBBoundingBoxMin\fP [3]"
+.br
+.ti -1c
+.RI "float \fBBoundingBoxMax\fP [3]"
+.br
+.ti -1c
+.RI "float \fBOrientation\fP [3]"
+.br
+.ti -1c
+.RI "float \fBPosition\fP [3]"
+.br
+.ti -1c
+.RI "float \fBFov\fP"
+.br
+.ti -1c
+.RI "float \fBAspectRatio\fP"
+.br
+.ti -1c
+.RI "float \fBNear\fP"
+.br
+.ti -1c
+.RI "float \fBFar\fP"
+.br
+.ti -1c
+.RI "float \fBEyeX\fP"
+.br
+.ti -1c
+.RI "float \fBEyeY\fP"
+.br
+.ti -1c
+.RI "float \fBEyeZ\fP"
+.br
+.ti -1c
+.RI "float \fBVpX\fP"
+.br
+.ti -1c
+.RI "float \fBVpY\fP"
+.br
+.ti -1c
+.RI "float \fBVpZ\fP"
+.br
+.ti -1c
+.RI "float \fBVupX\fP"
+.br
+.ti -1c
+.RI "float \fBVupY\fP"
+.br
+.ti -1c
+.RI "float \fBVupZ\fP"
+.br
+.ti -1c
+.RI "float \fBViewLength\fP"
+.br
+.ti -1c
+.RI "\fBMSLVector\fP \fBVCoordZ\fP"
+.br
+.ti -1c
+.RI "\fBMSLVector\fP \fBVCoordY\fP"
+.br
+.ti -1c
+.RI "\fBMSLVector\fP \fBVCoordX\fP"
+.br
+.ti -1c
+.RI "\fBMSLVector\fP \fBVRpy\fP"
+.br
+.ti -1c
+.RI "\fBMSLVector\fP \fBDefVCoordZ\fP"
+.br
+.ti -1c
+.RI "\fBMSLVector\fP \fBDefVCoordY\fP"
+.br
+.ti -1c
+.RI "\fBMSLVector\fP \fBDefVCoordX\fP"
+.br
+.ti -1c
+.RI "\fBMSLVector\fP \fBDefVRpy\fP"
+.br
+.ti -1c
+.RI "\fBMSLVector\fP \fBRpyModification\fP"
+.br
+.ti -1c
+.RI "\fBMSLVector\fP \fBSCoordZ\fP"
+.br
+.ti -1c
+.RI "\fBMSLVector\fP \fBSCoordY\fP"
+.br
+.ti -1c
+.RI "\fBMSLVector\fP \fBSCoordX\fP"
+.br
+.ti -1c
+.RI "float \fBLightPosX\fP"
+.br
+.ti -1c
+.RI "float \fBLightPosY\fP"
+.br
+.ti -1c
+.RI "float \fBLightPosZ\fP"
+.br
+.ti -1c
+.RI "int \fBNumberOfObject\fP"
+.br
+.ti -1c
+.RI "int \fBNumberOfBody\fP"
+.br
+.ti -1c
+.RI "int \fBNumberOfEnvObj\fP"
+.br
+.ti -1c
+.RI "\fBmslGLObject\fP ** \fBSceneBodyLib\fP"
+.br
+.ti -1c
+.RI "\fBmslGLObject\fP ** \fBSceneEnvObjLib\fP"
+.br
+.ti -1c
+.RI "\fBMSLVector\fP \fBEnvTransform\fP"
+.br
+.ti -1c
+.RI "\fBMSLVector\fP \fBBodyTransform\fP"
+.br
+.ti -1c
+.RI "int \fBMainWindow\fP"
+.br
+.ti -1c
+.RI "int \fBSelectObjectID\fP"
+.br
+.ti -1c
+.RI "int \fBCurrentObject\fP"
+.br
+.ti -1c
+.RI "int \fBCurrentMouseButton\fP"
+.br
+.ti -1c
+.RI "int \fBCurrentMouseState\fP"
+.br
+.ti -1c
+.RI "int \fBCurrentKeyboard\fP"
+.br
+.ti -1c
+.RI "float \fBLastX\fP"
+.br
+.ti -1c
+.RI "float \fBLastY\fP"
+.br
+.ti -1c
+.RI "float \fBChangeRate\fP"
+.br
+.ti -1c
+.RI "float \fBAnimationTimeScaleTmp\fP"
+.br
+.in -1c
+.SH "DETAILED DESCRIPTION"
+.PP 
+Perform 3D rendering using the GL and GLUT libraries.
+.PP
+.SH "CONSTRUCTOR & DESTRUCTOR DOCUMENTATION"
+.PP 
+.SS "RenderGL::RenderGL ()"
+.PP
+.SS "RenderGL::RenderGL (string filepath)"
+.PP
+.SS "RenderGL::RenderGL (\fBScene\fP * s, string filepath)"
+.PP
+.SS "RenderGL::~RenderGL ()\fC [virtual]\fP"
+.PP
+.SH "MEMBER FUNCTION DOCUMENTATION"
+.PP 
+.SS "void RenderGL::AddBodyObject (\fBmslGLObject\fP * obj)\fC [protected]\fP"
+.PP
+.SS "void RenderGL::AddEnvObject (\fBmslGLObject\fP * obj)\fC [protected]\fP"
+.PP
+.SS "void RenderGL::DrawBodies (const \fBMSLVector\fP & x)\fC [protected]\fP"
+.PP
+.SS "void RenderGL::DrawBoundingBox ()\fC [protected]\fP"
+.PP
+.SS "void RenderGL::DrawEnv ()\fC [protected]\fP"
+.PP
+.SS "void RenderGL::DrawPath ()\fC [protected, virtual]\fP"
+.PP
+Display an entire path (the specific renderer determines how).
+.PP
+Reimplemented from \fBRender\fP.
+.SS "void RenderGL::GlutDrawEnvironment ()\fC [static]\fP"
+.PP
+.SS "void RenderGL::GlutIdleProcessing ()\fC [static]\fP"
+.PP
+.SS "void RenderGL::GlutKeyboard (unsigned char Key, int x, int y)\fC [static]\fP"
+.PP
+.SS "void RenderGL::GlutMouse (int button, int state, int x, int y)\fC [static]\fP"
+.PP
+.SS "void RenderGL::GlutMouseMove (int x, int y)\fC [static]\fP"
+.PP
+.SS "void RenderGL::GlutReshape (int w, int h)\fC [static]\fP"
+.PP
+.SS "void RenderGL::Init ()\fC [virtual]\fP"
+.PP
+Initialized the renderer.
+.PP
+Reimplemented from \fBRender\fP.
+.SS "void RenderGL::InitData ()\fC [protected]\fP"
+.PP
+.SS "void RenderGL::InitGeometry (list< \fBMSLTriangle\fP > triangles)\fC [protected]\fP"
+.PP
+.SS "void RenderGL::LoadConfig ()\fC [protected]\fP"
+.PP
+.SS "void RenderGL::MainLoop (\fBGui\fP * g)\fC [virtual]\fP"
+.PP
+If ControlFreak = true, then MainLoop is entered here.
+.PP
+Reimplemented from \fBRender\fP.
+.SS "void RenderGL::Normalize (float v[3])\fC [protected]\fP"
+.PP
+.SS "void RenderGL::NormCrossProduct (float v1[3], float v2[3], float out[3])\fC [protected]\fP"
+.PP
+.SS "void RenderGL::Reset ()\fC [virtual]\fP"
+.PP
+Reset the renderer.
+.PP
+Reimplemented from \fBRender\fP.
+.SS "void RenderGL::SceneRender ()\fC [protected]\fP"
+.PP
+.SS "void RenderGL::SetBodyState (const \fBMSLVector\fP & state)\fC [protected]\fP"
+.PP
+.SS "void RenderGL::SetEnvState (const \fBMSLVector\fP & state)\fC [protected]\fP"
+.PP
+.SS "void RenderGL::SetLightPos ()\fC [protected]\fP"
+.PP
+.SS "void RenderGL::SetSceneOrientationChange (const \fBMSLVector\fP & oric)\fC [protected]\fP"
+.PP
+.SS "void RenderGL::SetScenePositionChange (const \fBMSLVector\fP & posc)\fC [protected]\fP"
+.PP
+.SS "void RenderGL::ShowCoordinateFrame ()\fC [protected]\fP"
+.PP
+.SS "\fBmslGLObject\fP * RenderGL::WhichObject (int id)\fC [protected]\fP"
+.PP
+.SH "MEMBER DATA DOCUMENTATION"
+.PP 
+.SS "float RenderGL::AnimationTimeScaleTmp\fC [protected]\fP"
+.PP
+.SS "float RenderGL::AspectRatio\fC [protected]\fP"
+.PP
+.SS "vector<int> RenderGL::BodyIndex\fC [protected]\fP"
+.PP
+.SS "\fBMSLVector\fP RenderGL::BodyTransform\fC [protected]\fP"
+.PP
+.SS "float RenderGL::BoundingBoxMax[3]\fC [protected]\fP"
+.PP
+.SS "float RenderGL::BoundingBoxMin[3]\fC [protected]\fP"
+.PP
+.SS "float RenderGL::ChangeRate\fC [protected]\fP"
+.PP
+.SS "int RenderGL::CurrentKeyboard\fC [protected]\fP"
+.PP
+.SS "int RenderGL::CurrentMouseButton\fC [protected]\fP"
+.PP
+.SS "int RenderGL::CurrentMouseState\fC [protected]\fP"
+.PP
+.SS "int RenderGL::CurrentObject\fC [protected]\fP"
+.PP
+.SS "\fBMSLVector\fP RenderGL::DefVCoordX\fC [protected]\fP"
+.PP
+.SS "\fBMSLVector\fP RenderGL::DefVCoordY\fC [protected]\fP"
+.PP
+.SS "\fBMSLVector\fP RenderGL::DefVCoordZ\fC [protected]\fP"
+.PP
+.SS "\fBMSLVector\fP RenderGL::DefVRpy\fC [protected]\fP"
+.PP
+.SS "vector<int> RenderGL::EnvIndex\fC [protected]\fP"
+.PP
+.SS "\fBMSLVector\fP RenderGL::EnvTransform\fC [protected]\fP"
+.PP
+.SS "float RenderGL::EyeX\fC [protected]\fP"
+.PP
+.SS "float RenderGL::EyeY\fC [protected]\fP"
+.PP
+.SS "float RenderGL::EyeZ\fC [protected]\fP"
+.PP
+.SS "float RenderGL::Far\fC [protected]\fP"
+.PP
+.SS "float RenderGL::Fov\fC [protected]\fP"
+.PP
+.SS "\fBGui\fP* RenderGL::G"
+.PP
+.SS "float RenderGL::LastX\fC [protected]\fP"
+.PP
+.SS "float RenderGL::LastY\fC [protected]\fP"
+.PP
+.SS "float RenderGL::LightPosX\fC [protected]\fP"
+.PP
+.SS "float RenderGL::LightPosY\fC [protected]\fP"
+.PP
+.SS "float RenderGL::LightPosZ\fC [protected]\fP"
+.PP
+.SS "int RenderGL::MainWindow\fC [protected]\fP"
+.PP
+.SS "float RenderGL::Near\fC [protected]\fP"
+.PP
+.SS "int RenderGL::NumberOfBody\fC [protected]\fP"
+.PP
+.SS "int RenderGL::NumberOfEnvObj\fC [protected]\fP"
+.PP
+.SS "int RenderGL::NumberOfObject\fC [protected]\fP"
+.PP
+.SS "float RenderGL::Orientation[3]\fC [protected]\fP"
+.PP
+.SS "float RenderGL::Position[3]\fC [protected]\fP"
+.PP
+.SS "\fBMSLVector\fP RenderGL::RpyModification\fC [protected]\fP"
+.PP
+.SS "\fBmslGLObject\fP** RenderGL::SceneBodyLib\fC [protected]\fP"
+.PP
+.SS "\fBmslGLObject\fP** RenderGL::SceneEnvObjLib\fC [protected]\fP"
+.PP
+.SS "\fBMSLVector\fP RenderGL::SCoordX\fC [protected]\fP"
+.PP
+.SS "\fBMSLVector\fP RenderGL::SCoordY\fC [protected]\fP"
+.PP
+.SS "\fBMSLVector\fP RenderGL::SCoordZ\fC [protected]\fP"
+.PP
+.SS "int RenderGL::SelectObjectID\fC [protected]\fP"
+.PP
+.SS "\fBMSLVector\fP RenderGL::VCoordX\fC [protected]\fP"
+.PP
+.SS "\fBMSLVector\fP RenderGL::VCoordY\fC [protected]\fP"
+.PP
+.SS "\fBMSLVector\fP RenderGL::VCoordZ\fC [protected]\fP"
+.PP
+.SS "float RenderGL::ViewLength\fC [protected]\fP"
+.PP
+.SS "float RenderGL::VpX\fC [protected]\fP"
+.PP
+.SS "float RenderGL::VpY\fC [protected]\fP"
+.PP
+.SS "float RenderGL::VpZ\fC [protected]\fP"
+.PP
+.SS "\fBMSLVector\fP RenderGL::VRpy\fC [protected]\fP"
+.PP
+.SS "float RenderGL::VupX\fC [protected]\fP"
+.PP
+.SS "float RenderGL::VupY\fC [protected]\fP"
+.PP
+.SS "float RenderGL::VupZ\fC [protected]\fP"
+.PP
+.SS "float RenderGL::WindowX\fC [protected]\fP"
+.PP
+.SS "float RenderGL::WindowY\fC [protected]\fP"
+.PP
+.SS "float RenderGL::WindowZ\fC [protected]\fP"
+.PP
+
+
+.SH "AUTHOR"
+.PP 
+Generated automatically by Doxygen for Motion Strategy Library from the source code.

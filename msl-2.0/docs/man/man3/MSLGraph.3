@@ -1,0 +1,109 @@
+.TH "MSLGraph" 3 "24 Jul 2003" "Motion Strategy Library" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+MSLGraph \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <graph.h>\fP
+.PP
+.SS "Public Methods"
+
+.in +1c
+.ti -1c
+.RI "\fBMSLGraph\fP ()"
+.br
+.ti -1c
+.RI "virtual \fB~MSLGraph\fP ()"
+.br
+.ti -1c
+.RI "\fBMSLVertex\fP * \fBAddVertex\fP (const \fBMSLVector\fP &\fBx\fP)"
+.br
+.ti -1c
+.RI "\fBMSLEdge\fP * \fBAddEdge\fP (\fBMSLVertex\fP *v1, \fBMSLVertex\fP *v2)"
+.br
+.ti -1c
+.RI "\fBMSLEdge\fP * \fBAddEdge\fP (\fBMSLVertex\fP *v1, \fBMSLVertex\fP *v2, double time)"
+.br
+.ti -1c
+.RI "\fBMSLEdge\fP * \fBAddEdge\fP (\fBMSLVertex\fP *v1, \fBMSLVertex\fP *v2, const \fBMSLVector\fP &u, double time)"
+.br
+.ti -1c
+.RI "bool \fBIsEdge\fP (\fBMSLVertex\fP *v1, \fBMSLVertex\fP *v2)"
+.br
+.ti -1c
+.RI "\fBMSLVertex\fP * \fBFindVertex\fP (int nid)"
+.br
+.ti -1c
+.RI "list< \fBMSLVertex\fP * > \fBVertices\fP () const"
+.br
+.ti -1c
+.RI "list< \fBMSLEdge\fP * > \fBEdges\fP () const"
+.br
+.ti -1c
+.RI "int \fBSize\fP ()"
+.br
+.ti -1c
+.RI "int \fBNumVertices\fP () const"
+.br
+.ti -1c
+.RI "int \fBNumEdges\fP () const"
+.br
+.ti -1c
+.RI "void \fBClear\fP ()"
+.br
+.in -1c
+.SS "Friends"
+
+.in +1c
+.ti -1c
+.RI "istream & \fBoperator>>\fP (istream &is, MSLGraph &n)"
+.br
+.ti -1c
+.RI "ostream & \fBoperator<<\fP (ostream &os, const MSLGraph &n)"
+.br
+.in -1c
+.SH "CONSTRUCTOR & DESTRUCTOR DOCUMENTATION"
+.PP 
+.SS "MSLGraph::MSLGraph ()"
+.PP
+.SS "MSLGraph::~MSLGraph ()\fC [virtual]\fP"
+.PP
+.SH "MEMBER FUNCTION DOCUMENTATION"
+.PP 
+.SS "\fBMSLEdge\fP * MSLGraph::AddEdge (\fBMSLVertex\fP * v1, \fBMSLVertex\fP * v2, const \fBMSLVector\fP & u, double time)"
+.PP
+.SS "\fBMSLEdge\fP * MSLGraph::AddEdge (\fBMSLVertex\fP * v1, \fBMSLVertex\fP * v2, double time)"
+.PP
+.SS "\fBMSLEdge\fP * MSLGraph::AddEdge (\fBMSLVertex\fP * v1, \fBMSLVertex\fP * v2)"
+.PP
+.SS "\fBMSLVertex\fP * MSLGraph::AddVertex (const \fBMSLVector\fP & x)"
+.PP
+.SS "void MSLGraph::Clear ()"
+.PP
+.SS "list<\fBMSLEdge\fP*> MSLGraph::Edges () const\fC [inline]\fP"
+.PP
+.SS "\fBMSLVertex\fP * MSLGraph::FindVertex (int nid)"
+.PP
+.SS "bool MSLGraph::IsEdge (\fBMSLVertex\fP * v1, \fBMSLVertex\fP * v2)"
+.PP
+.SS "int MSLGraph::NumEdges () const\fC [inline]\fP"
+.PP
+.SS "int MSLGraph::NumVertices () const\fC [inline]\fP"
+.PP
+.SS "int MSLGraph::Size ()\fC [inline]\fP"
+.PP
+.SS "list<\fBMSLVertex\fP*> MSLGraph::Vertices () const\fC [inline]\fP"
+.PP
+.SH "FRIENDS AND RELATED FUNCTION DOCUMENTATION"
+.PP 
+.SS "ostream& operator<< (ostream & os, const MSLGraph & n)\fC [friend]\fP"
+.PP
+.SS "istream& operator>> (istream & is, MSLGraph & n)\fC [friend]\fP"
+.PP
+
+
+.SH "AUTHOR"
+.PP 
+Generated automatically by Doxygen for Motion Strategy Library from the source code.

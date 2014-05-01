@@ -1,0 +1,59 @@
+.TH "triangle.h" 3 "24 Jul 2003" "Motion Strategy Library" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+triangle.h \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <ctype.h>\fP
+.br
+\fC#include <list>\fP
+.br
+\fC#include <iostream>\fP
+.br
+\fC#include <fstream>\fP
+.br
+\fC#include 'point3d.h'\fP
+.br
+\fC#include 'point.h'\fP
+.br
+\fC#include 'mslio.h'\fP
+.br
+\fC#include 'polygon.h'\fP
+.br
+.SS "Compounds"
+
+.in +1c
+.ti -1c
+.RI "class \fBMSLTriangle\fP"
+.br
+.RI "\fIA 3D triangle, made of 3 3D points.\fP"
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "istream & \fBoperator>>\fP (istream &is, \fBMSLTriangle\fP &tr)"
+.br
+.ti -1c
+.RI "ostream & \fBoperator<<\fP (ostream &os, const \fBMSLTriangle\fP &tr)"
+.br
+.ti -1c
+.RI "list< \fBMSLTriangle\fP > \fBPolygonsToTriangles\fP (const list< \fBMSLPolygon\fP > &pl, double thickness)"
+.br
+.RI "\fIA handy utility for converting 2D geometries into 3D.\fP"
+.in -1c
+.SH "FUNCTION DOCUMENTATION"
+.PP 
+.SS "ostream& operator<< (ostream & os, const \fBMSLTriangle\fP & tr)"
+.PP
+.SS "istream& operator>> (istream & is, \fBMSLTriangle\fP & tr)"
+.PP
+.SS "list<\fBMSLTriangle\fP> PolygonsToTriangles (const list< \fBMSLPolygon\fP > & pl, double thickness)"
+.PP
+A handy utility for converting 2D geometries into 3D.
+.PP
+.SH "AUTHOR"
+.PP 
+Generated automatically by Doxygen for Motion Strategy Library from the source code.

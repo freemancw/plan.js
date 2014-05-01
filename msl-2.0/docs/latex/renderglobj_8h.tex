@@ -1,0 +1,603 @@
+\section{renderglobj.h File Reference}
+\label{renderglobj_8h}\index{renderglobj.h@{renderglobj.h}}
+{\tt \#include $<$cstdio$>$}\par
+{\tt \#include $<$ctype.h$>$}\par
+{\tt \#include $<$cstdlib$>$}\par
+{\tt \#include $<$math.h$>$}\par
+{\tt \#include $<$string$>$}\par
+{\tt \#include $<$algorithm$>$}\par
+{\tt \#include $<$unistd.h$>$}\par
+{\tt \#include \char`\"{}triangle.h\char`\"{}}\par
+{\tt \#include \char`\"{}vector.h\char`\"{}}\par
+{\tt \#include \char`\"{}matrix.h\char`\"{}}\par
+{\tt \#include \char`\"{}point3d.h\char`\"{}}\par
+{\tt \#include \char`\"{}util.h\char`\"{}}\par
+{\tt \#include \char`\"{}../../configs/config\-GL.h\char`\"{}}\par
+\subsection*{Compounds}
+\begin{CompactItemize}
+\item 
+class {\bf Image}
+\begin{CompactList}\small\item\em Used for texture mapping as part of {\bf Render\-GL} {\rm (p.\,\pageref{classRenderGL})}.\item\end{CompactList}\item 
+class {\bf msl\-GLFace}
+\begin{CompactList}\small\item\em An internal class, used only for {\bf Render\-GL} {\rm (p.\,\pageref{classRenderGL})}.\item\end{CompactList}\item 
+class {\bf msl\-GLMaterial}
+\begin{CompactList}\small\item\em An internal class, used only for {\bf Render\-GL} {\rm (p.\,\pageref{classRenderGL})}.\item\end{CompactList}\item 
+class {\bf msl\-GLObject}
+\begin{CompactList}\small\item\em An internal class, used only for {\bf Render\-GL} {\rm (p.\,\pageref{classRenderGL})}.\item\end{CompactList}\end{CompactItemize}
+\subsection*{Defines}
+\begin{CompactItemize}
+\item 
+\#define {\bf BUFFER\_\-SIZE}\ 4096
+\item 
+\#define {\bf FACE\_\-SIZE}\ 2048
+\item 
+\#define {\bf CHUNK}\ 2048
+\item 
+\#define {\bf MAX\_\-MTL\_\-FILES}\ 512
+\item 
+\#define {\bf MAXNAME\_\-LENGTH}\ 50
+\item 
+\#define {\bf Min\-X}\ -100.0
+\item 
+\#define {\bf Min\-Y}\ -100.0
+\item 
+\#define {\bf Max\-X}\ 100.0
+\item 
+\#define {\bf Max\-Y}\ 100.0
+\item 
+\#define {\bf Min\-Z}\ 100.0
+\item 
+\#define {\bf Max\-Z}\ 300.0
+\item 
+\#define {\bf RESET\_\-ID}\ 200
+\item 
+\#define {\bf RADIO\_\-GROUP1}\ 201
+\item 
+\#define {\bf RECORD\_\-PATH\_\-ID}\ 202
+\item 
+\#define {\bf DISPLAY\_\-PATH\_\-ID}\ 203
+\item 
+\#define {\bf NEW\_\-PATH\_\-ID}\ 204
+\item 
+\#define {\bf VIEW\_\-ORIENTATION\_\-ID}\ 205
+\item 
+\#define {\bf BODY\_\-SELECTION\_\-ID}\ 206
+\item 
+\#define {\bf TEXTURE\_\-ON\_\-OFF\_\-ID}\ 207
+\item 
+\#define {\bf SINGLE\_\-MULTI\_\-VIEW\_\-ID}\ 208
+\item 
+\#define {\bf RELOAD\_\-MODEL\_\-ID}\ 209
+\item 
+\#define {\bf TRANSPARENCY\_\-ADJUST\_\-ID}\ 210
+\item 
+\#define {\bf BEGIN\_\-FLIGHT\_\-ID}\ 211
+\item 
+\#define {\bf PLANE\_\-LAND\_\-ID}\ 212
+\item 
+\#define {\bf MODEL\_\-FLY\_\-ID}\ 213
+\item 
+\#define {\bf CREATE\_\-OBJECT\_\-ID}\ 214
+\item 
+\#define {\bf DELETE\_\-OBJECT\_\-ID}\ 215
+\item 
+\#define {\bf CURRENT\_\-OBJECT\_\-ID}\ 216
+\item 
+\#define {\bf CREATE\_\-OBJECT\_\-OVER\_\-ID}\ 217
+\item 
+\#define {\bf CREATE\_\-POINT\_\-ID}\ 218
+\item 
+\#define {\bf CREATE\_\-POINT\_\-OVER\_\-ID}\ 219
+\item 
+\#define {\bf CURRENT\_\-TEXTURE\_\-ID}\ 220
+\item 
+\#define {\bf OBJECT\_\-SELECTION\_\-ID}\ 221
+\item 
+\#define {\bf PLAN\_\-ID}\ 222
+\item 
+\#define {\bf ANIMATE\_\-ID}\ 223
+\item 
+\#define {\bf SET\_\-INITIAL\_\-ID}\ 224
+\item 
+\#define {\bf SAVE\_\-GEOMETRY\_\-ID}\ 225
+\item 
+\#define {\bf SET\_\-GOAL\_\-ID}\ 226
+\item 
+\#define {\bf ANIMATE\_\-PAUSE\_\-ID}\ 227
+\item 
+\#define {\bf SAVE\_\-CONFIG\_\-ID}\ 228
+\item 
+\#define {\bf AUTOMATIC\_\-PLAN\_\-ID}\ 229
+\item 
+\#define {\bf LIGHT\_\-COMPONENT\_\-SELECTION\_\-ID}\ 230
+\item 
+\#define {\bf LIGHT\_\-MODE\_\-SELECTION\_\-ID}\ 231
+\item 
+\#define {\bf ANIMATION\_\-RATE\_\-ID}\ 232
+\item 
+\#define {\bf LOAD\_\-CONFIG\_\-ID}\ 233
+\item 
+\#define {\bf SINGLE\_\-VIEW}\ 300
+\item 
+\#define {\bf MULTI\_\-VIEW}\ 301
+\item 
+\#define {\bf OBSTACLE\_\-MODE}\ 302
+\item 
+\#define {\bf ROBOT\_\-MODE}\ 303
+\item 
+\#define {\bf Z\_\-MOVE\_\-MODE}\ 304
+\item 
+\#define {\bf SCALE\_\-MOVE\_\-MODE}\ 305
+\item 
+\#define {\bf ORI\_\-MOVE\_\-MODE}\ 306
+\item 
+\#define {\bf SELECT\_\-BOUNDINGBOX\_\-ID}\ 307
+\item 
+\#define {\bf SHOW\_\-BOUNDINGBOX\_\-ID}\ 308
+\item 
+\#define {\bf HIDE\_\-BOUNDINGBOX\_\-ID}\ 309
+\item 
+\#define {\bf SUN\_\-LIGHT\_\-MODE}\ 310
+\item 
+\#define {\bf EYE\_\-LIGHT\_\-MODE}\ 311
+\item 
+\#define {\bf SAME}(\_\-a, \_\-b)\ !cmp\_\-nocase(\_\-a, \_\-b)
+\end{CompactItemize}
+\subsection*{Typedefs}
+\begin{CompactItemize}
+\item 
+typedef double {\bf x}
+\end{CompactItemize}
+\subsection*{Functions}
+\begin{CompactItemize}
+\item 
+void {\bf rotate\_\-x\_\-MSLMatrix} (double sita, {\bf MSLMatrix} \&m)
+\item 
+void {\bf rotate\_\-y\_\-MSLMatrix} (double sita, {\bf MSLMatrix} \&m)
+\item 
+void {\bf rotate\_\-z\_\-MSLMatrix} (double sita, {\bf MSLMatrix} \&m)
+\item 
+{\bf MSLVector} {\bf point\_\-x\_\-rotation} (const double \&sita, const {\bf MSLVector} \&p1)
+\item 
+{\bf MSLVector} {\bf point\_\-y\_\-rotation} (const double \&sita, const {\bf MSLVector} \&p1)
+\item 
+{\bf MSLVector} {\bf point\_\-z\_\-rotation} (const double \&sita, const {\bf MSLVector} \&p1)
+\item 
+void {\bf crossproduct} (const {\bf MSLVector} \&v1, const {\bf MSLVector} \&v2, {\bf MSLVector} \&v)
+\item 
+void {\bf normal\-MSLVector} (const {\bf MSLVector} \&v1, const {\bf MSLVector} \&v2, {\bf MSLVector} \&v)
+\item 
+{\bf MSLVector} {\bf irpy} (const {\bf MSLMatrix} \&R)
+\item 
+{\bf MSLMatrix} {\bf rpy} (const {\bf MSLVector} \&v)
+\item 
+{\bf MSLVector} {\bf free\_\-rotate} (const {\bf MSLVector} \&axis, const {\bf MSLVector} \&v, double sita)
+\item 
+{\bf MSLMatrix} {\bf free\_\-rotate} (const {\bf MSLVector} \&axis, const {\bf MSLMatrix} \&m, double sita)
+\item 
+string {\bf UPPER} (string \_\-str)
+\item 
+int {\bf cmp\_\-nocase} (const string \&a, const string \&b)
+\item 
+{\bf msl\-GLNormal} {\bf Normal\-Compute} (const {\bf msl\-GLVertex} \&v1, const {\bf msl\-GLVertex} \&v2, const {\bf msl\-GLVertex} \&v3)
+\end{CompactItemize}
+\subsection*{Variables}
+\begin{CompactItemize}
+\item 
+double {\bf y}
+\item 
+double {\bf z}
+\item 
+{\bf msl\-GLVertex}
+\item 
+{\bf msl\-GLNormal}
+\item 
+{\bf msl\-GLTex\-Coord}
+\end{CompactItemize}
+
+
+\subsection{Define Documentation}
+\index{renderglobj.h@{renderglobj.h}!ANIMATE_ID@{ANIMATE\_\-ID}}
+\index{ANIMATE_ID@{ANIMATE\_\-ID}!renderglobj.h@{renderglobj.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define ANIMATE\_\-ID\ 223}\label{renderglobj_8h_a34}
+
+
+\index{renderglobj.h@{renderglobj.h}!ANIMATE_PAUSE_ID@{ANIMATE\_\-PAUSE\_\-ID}}
+\index{ANIMATE_PAUSE_ID@{ANIMATE\_\-PAUSE\_\-ID}!renderglobj.h@{renderglobj.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define ANIMATE\_\-PAUSE\_\-ID\ 227}\label{renderglobj_8h_a38}
+
+
+\index{renderglobj.h@{renderglobj.h}!ANIMATION_RATE_ID@{ANIMATION\_\-RATE\_\-ID}}
+\index{ANIMATION_RATE_ID@{ANIMATION\_\-RATE\_\-ID}!renderglobj.h@{renderglobj.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define ANIMATION\_\-RATE\_\-ID\ 232}\label{renderglobj_8h_a43}
+
+
+\index{renderglobj.h@{renderglobj.h}!AUTOMATIC_PLAN_ID@{AUTOMATIC\_\-PLAN\_\-ID}}
+\index{AUTOMATIC_PLAN_ID@{AUTOMATIC\_\-PLAN\_\-ID}!renderglobj.h@{renderglobj.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define AUTOMATIC\_\-PLAN\_\-ID\ 229}\label{renderglobj_8h_a40}
+
+
+\index{renderglobj.h@{renderglobj.h}!BEGIN_FLIGHT_ID@{BEGIN\_\-FLIGHT\_\-ID}}
+\index{BEGIN_FLIGHT_ID@{BEGIN\_\-FLIGHT\_\-ID}!renderglobj.h@{renderglobj.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define BEGIN\_\-FLIGHT\_\-ID\ 211}\label{renderglobj_8h_a22}
+
+
+\index{renderglobj.h@{renderglobj.h}!BODY_SELECTION_ID@{BODY\_\-SELECTION\_\-ID}}
+\index{BODY_SELECTION_ID@{BODY\_\-SELECTION\_\-ID}!renderglobj.h@{renderglobj.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define BODY\_\-SELECTION\_\-ID\ 206}\label{renderglobj_8h_a17}
+
+
+\index{renderglobj.h@{renderglobj.h}!BUFFER_SIZE@{BUFFER\_\-SIZE}}
+\index{BUFFER_SIZE@{BUFFER\_\-SIZE}!renderglobj.h@{renderglobj.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define BUFFER\_\-SIZE\ 4096}\label{renderglobj_8h_a0}
+
+
+\index{renderglobj.h@{renderglobj.h}!CHUNK@{CHUNK}}
+\index{CHUNK@{CHUNK}!renderglobj.h@{renderglobj.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define CHUNK\ 2048}\label{renderglobj_8h_a2}
+
+
+\index{renderglobj.h@{renderglobj.h}!CREATE_OBJECT_ID@{CREATE\_\-OBJECT\_\-ID}}
+\index{CREATE_OBJECT_ID@{CREATE\_\-OBJECT\_\-ID}!renderglobj.h@{renderglobj.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define CREATE\_\-OBJECT\_\-ID\ 214}\label{renderglobj_8h_a25}
+
+
+\index{renderglobj.h@{renderglobj.h}!CREATE_OBJECT_OVER_ID@{CREATE\_\-OBJECT\_\-OVER\_\-ID}}
+\index{CREATE_OBJECT_OVER_ID@{CREATE\_\-OBJECT\_\-OVER\_\-ID}!renderglobj.h@{renderglobj.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define CREATE\_\-OBJECT\_\-OVER\_\-ID\ 217}\label{renderglobj_8h_a28}
+
+
+\index{renderglobj.h@{renderglobj.h}!CREATE_POINT_ID@{CREATE\_\-POINT\_\-ID}}
+\index{CREATE_POINT_ID@{CREATE\_\-POINT\_\-ID}!renderglobj.h@{renderglobj.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define CREATE\_\-POINT\_\-ID\ 218}\label{renderglobj_8h_a29}
+
+
+\index{renderglobj.h@{renderglobj.h}!CREATE_POINT_OVER_ID@{CREATE\_\-POINT\_\-OVER\_\-ID}}
+\index{CREATE_POINT_OVER_ID@{CREATE\_\-POINT\_\-OVER\_\-ID}!renderglobj.h@{renderglobj.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define CREATE\_\-POINT\_\-OVER\_\-ID\ 219}\label{renderglobj_8h_a30}
+
+
+\index{renderglobj.h@{renderglobj.h}!CURRENT_OBJECT_ID@{CURRENT\_\-OBJECT\_\-ID}}
+\index{CURRENT_OBJECT_ID@{CURRENT\_\-OBJECT\_\-ID}!renderglobj.h@{renderglobj.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define CURRENT\_\-OBJECT\_\-ID\ 216}\label{renderglobj_8h_a27}
+
+
+\index{renderglobj.h@{renderglobj.h}!CURRENT_TEXTURE_ID@{CURRENT\_\-TEXTURE\_\-ID}}
+\index{CURRENT_TEXTURE_ID@{CURRENT\_\-TEXTURE\_\-ID}!renderglobj.h@{renderglobj.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define CURRENT\_\-TEXTURE\_\-ID\ 220}\label{renderglobj_8h_a31}
+
+
+\index{renderglobj.h@{renderglobj.h}!DELETE_OBJECT_ID@{DELETE\_\-OBJECT\_\-ID}}
+\index{DELETE_OBJECT_ID@{DELETE\_\-OBJECT\_\-ID}!renderglobj.h@{renderglobj.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define DELETE\_\-OBJECT\_\-ID\ 215}\label{renderglobj_8h_a26}
+
+
+\index{renderglobj.h@{renderglobj.h}!DISPLAY_PATH_ID@{DISPLAY\_\-PATH\_\-ID}}
+\index{DISPLAY_PATH_ID@{DISPLAY\_\-PATH\_\-ID}!renderglobj.h@{renderglobj.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define DISPLAY\_\-PATH\_\-ID\ 203}\label{renderglobj_8h_a14}
+
+
+\index{renderglobj.h@{renderglobj.h}!EYE_LIGHT_MODE@{EYE\_\-LIGHT\_\-MODE}}
+\index{EYE_LIGHT_MODE@{EYE\_\-LIGHT\_\-MODE}!renderglobj.h@{renderglobj.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define EYE\_\-LIGHT\_\-MODE\ 311}\label{renderglobj_8h_a56}
+
+
+\index{renderglobj.h@{renderglobj.h}!FACE_SIZE@{FACE\_\-SIZE}}
+\index{FACE_SIZE@{FACE\_\-SIZE}!renderglobj.h@{renderglobj.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FACE\_\-SIZE\ 2048}\label{renderglobj_8h_a1}
+
+
+\index{renderglobj.h@{renderglobj.h}!HIDE_BOUNDINGBOX_ID@{HIDE\_\-BOUNDINGBOX\_\-ID}}
+\index{HIDE_BOUNDINGBOX_ID@{HIDE\_\-BOUNDINGBOX\_\-ID}!renderglobj.h@{renderglobj.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define HIDE\_\-BOUNDINGBOX\_\-ID\ 309}\label{renderglobj_8h_a54}
+
+
+\index{renderglobj.h@{renderglobj.h}!LIGHT_COMPONENT_SELECTION_ID@{LIGHT\_\-COMPONENT\_\-SELECTION\_\-ID}}
+\index{LIGHT_COMPONENT_SELECTION_ID@{LIGHT\_\-COMPONENT\_\-SELECTION\_\-ID}!renderglobj.h@{renderglobj.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define LIGHT\_\-COMPONENT\_\-SELECTION\_\-ID\ 230}\label{renderglobj_8h_a41}
+
+
+\index{renderglobj.h@{renderglobj.h}!LIGHT_MODE_SELECTION_ID@{LIGHT\_\-MODE\_\-SELECTION\_\-ID}}
+\index{LIGHT_MODE_SELECTION_ID@{LIGHT\_\-MODE\_\-SELECTION\_\-ID}!renderglobj.h@{renderglobj.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define LIGHT\_\-MODE\_\-SELECTION\_\-ID\ 231}\label{renderglobj_8h_a42}
+
+
+\index{renderglobj.h@{renderglobj.h}!LOAD_CONFIG_ID@{LOAD\_\-CONFIG\_\-ID}}
+\index{LOAD_CONFIG_ID@{LOAD\_\-CONFIG\_\-ID}!renderglobj.h@{renderglobj.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define LOAD\_\-CONFIG\_\-ID\ 233}\label{renderglobj_8h_a44}
+
+
+\index{renderglobj.h@{renderglobj.h}!MAX_MTL_FILES@{MAX\_\-MTL\_\-FILES}}
+\index{MAX_MTL_FILES@{MAX\_\-MTL\_\-FILES}!renderglobj.h@{renderglobj.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define MAX\_\-MTL\_\-FILES\ 512}\label{renderglobj_8h_a3}
+
+
+\index{renderglobj.h@{renderglobj.h}!MAXNAME_LENGTH@{MAXNAME\_\-LENGTH}}
+\index{MAXNAME_LENGTH@{MAXNAME\_\-LENGTH}!renderglobj.h@{renderglobj.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define MAXNAME\_\-LENGTH\ 50}\label{renderglobj_8h_a4}
+
+
+\index{renderglobj.h@{renderglobj.h}!MaxX@{MaxX}}
+\index{MaxX@{MaxX}!renderglobj.h@{renderglobj.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define Max\-X\ 100.0}\label{renderglobj_8h_a7}
+
+
+\index{renderglobj.h@{renderglobj.h}!MaxY@{MaxY}}
+\index{MaxY@{MaxY}!renderglobj.h@{renderglobj.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define Max\-Y\ 100.0}\label{renderglobj_8h_a8}
+
+
+\index{renderglobj.h@{renderglobj.h}!MaxZ@{MaxZ}}
+\index{MaxZ@{MaxZ}!renderglobj.h@{renderglobj.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define Max\-Z\ 300.0}\label{renderglobj_8h_a10}
+
+
+\index{renderglobj.h@{renderglobj.h}!MinX@{MinX}}
+\index{MinX@{MinX}!renderglobj.h@{renderglobj.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define Min\-X\ -100.0}\label{renderglobj_8h_a5}
+
+
+\index{renderglobj.h@{renderglobj.h}!MinY@{MinY}}
+\index{MinY@{MinY}!renderglobj.h@{renderglobj.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define Min\-Y\ -100.0}\label{renderglobj_8h_a6}
+
+
+\index{renderglobj.h@{renderglobj.h}!MinZ@{MinZ}}
+\index{MinZ@{MinZ}!renderglobj.h@{renderglobj.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define Min\-Z\ 100.0}\label{renderglobj_8h_a9}
+
+
+\index{renderglobj.h@{renderglobj.h}!MODEL_FLY_ID@{MODEL\_\-FLY\_\-ID}}
+\index{MODEL_FLY_ID@{MODEL\_\-FLY\_\-ID}!renderglobj.h@{renderglobj.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define MODEL\_\-FLY\_\-ID\ 213}\label{renderglobj_8h_a24}
+
+
+\index{renderglobj.h@{renderglobj.h}!MULTI_VIEW@{MULTI\_\-VIEW}}
+\index{MULTI_VIEW@{MULTI\_\-VIEW}!renderglobj.h@{renderglobj.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define MULTI\_\-VIEW\ 301}\label{renderglobj_8h_a46}
+
+
+\index{renderglobj.h@{renderglobj.h}!NEW_PATH_ID@{NEW\_\-PATH\_\-ID}}
+\index{NEW_PATH_ID@{NEW\_\-PATH\_\-ID}!renderglobj.h@{renderglobj.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define NEW\_\-PATH\_\-ID\ 204}\label{renderglobj_8h_a15}
+
+
+\index{renderglobj.h@{renderglobj.h}!OBJECT_SELECTION_ID@{OBJECT\_\-SELECTION\_\-ID}}
+\index{OBJECT_SELECTION_ID@{OBJECT\_\-SELECTION\_\-ID}!renderglobj.h@{renderglobj.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define OBJECT\_\-SELECTION\_\-ID\ 221}\label{renderglobj_8h_a32}
+
+
+\index{renderglobj.h@{renderglobj.h}!OBSTACLE_MODE@{OBSTACLE\_\-MODE}}
+\index{OBSTACLE_MODE@{OBSTACLE\_\-MODE}!renderglobj.h@{renderglobj.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define OBSTACLE\_\-MODE\ 302}\label{renderglobj_8h_a47}
+
+
+\index{renderglobj.h@{renderglobj.h}!ORI_MOVE_MODE@{ORI\_\-MOVE\_\-MODE}}
+\index{ORI_MOVE_MODE@{ORI\_\-MOVE\_\-MODE}!renderglobj.h@{renderglobj.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define ORI\_\-MOVE\_\-MODE\ 306}\label{renderglobj_8h_a51}
+
+
+\index{renderglobj.h@{renderglobj.h}!PLAN_ID@{PLAN\_\-ID}}
+\index{PLAN_ID@{PLAN\_\-ID}!renderglobj.h@{renderglobj.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define PLAN\_\-ID\ 222}\label{renderglobj_8h_a33}
+
+
+\index{renderglobj.h@{renderglobj.h}!PLANE_LAND_ID@{PLANE\_\-LAND\_\-ID}}
+\index{PLANE_LAND_ID@{PLANE\_\-LAND\_\-ID}!renderglobj.h@{renderglobj.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define PLANE\_\-LAND\_\-ID\ 212}\label{renderglobj_8h_a23}
+
+
+\index{renderglobj.h@{renderglobj.h}!RADIO_GROUP1@{RADIO\_\-GROUP1}}
+\index{RADIO_GROUP1@{RADIO\_\-GROUP1}!renderglobj.h@{renderglobj.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define RADIO\_\-GROUP1\ 201}\label{renderglobj_8h_a12}
+
+
+\index{renderglobj.h@{renderglobj.h}!RECORD_PATH_ID@{RECORD\_\-PATH\_\-ID}}
+\index{RECORD_PATH_ID@{RECORD\_\-PATH\_\-ID}!renderglobj.h@{renderglobj.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define RECORD\_\-PATH\_\-ID\ 202}\label{renderglobj_8h_a13}
+
+
+\index{renderglobj.h@{renderglobj.h}!RELOAD_MODEL_ID@{RELOAD\_\-MODEL\_\-ID}}
+\index{RELOAD_MODEL_ID@{RELOAD\_\-MODEL\_\-ID}!renderglobj.h@{renderglobj.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define RELOAD\_\-MODEL\_\-ID\ 209}\label{renderglobj_8h_a20}
+
+
+\index{renderglobj.h@{renderglobj.h}!RESET_ID@{RESET\_\-ID}}
+\index{RESET_ID@{RESET\_\-ID}!renderglobj.h@{renderglobj.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define RESET\_\-ID\ 200}\label{renderglobj_8h_a11}
+
+
+\index{renderglobj.h@{renderglobj.h}!ROBOT_MODE@{ROBOT\_\-MODE}}
+\index{ROBOT_MODE@{ROBOT\_\-MODE}!renderglobj.h@{renderglobj.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define ROBOT\_\-MODE\ 303}\label{renderglobj_8h_a48}
+
+
+\index{renderglobj.h@{renderglobj.h}!SAME@{SAME}}
+\index{SAME@{SAME}!renderglobj.h@{renderglobj.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define SAME(\_\-a, \_\-b)\ !cmp\_\-nocase(\_\-a, \_\-b)}\label{renderglobj_8h_a57}
+
+
+\index{renderglobj.h@{renderglobj.h}!SAVE_CONFIG_ID@{SAVE\_\-CONFIG\_\-ID}}
+\index{SAVE_CONFIG_ID@{SAVE\_\-CONFIG\_\-ID}!renderglobj.h@{renderglobj.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define SAVE\_\-CONFIG\_\-ID\ 228}\label{renderglobj_8h_a39}
+
+
+\index{renderglobj.h@{renderglobj.h}!SAVE_GEOMETRY_ID@{SAVE\_\-GEOMETRY\_\-ID}}
+\index{SAVE_GEOMETRY_ID@{SAVE\_\-GEOMETRY\_\-ID}!renderglobj.h@{renderglobj.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define SAVE\_\-GEOMETRY\_\-ID\ 225}\label{renderglobj_8h_a36}
+
+
+\index{renderglobj.h@{renderglobj.h}!SCALE_MOVE_MODE@{SCALE\_\-MOVE\_\-MODE}}
+\index{SCALE_MOVE_MODE@{SCALE\_\-MOVE\_\-MODE}!renderglobj.h@{renderglobj.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define SCALE\_\-MOVE\_\-MODE\ 305}\label{renderglobj_8h_a50}
+
+
+\index{renderglobj.h@{renderglobj.h}!SELECT_BOUNDINGBOX_ID@{SELECT\_\-BOUNDINGBOX\_\-ID}}
+\index{SELECT_BOUNDINGBOX_ID@{SELECT\_\-BOUNDINGBOX\_\-ID}!renderglobj.h@{renderglobj.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define SELECT\_\-BOUNDINGBOX\_\-ID\ 307}\label{renderglobj_8h_a52}
+
+
+\index{renderglobj.h@{renderglobj.h}!SET_GOAL_ID@{SET\_\-GOAL\_\-ID}}
+\index{SET_GOAL_ID@{SET\_\-GOAL\_\-ID}!renderglobj.h@{renderglobj.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define SET\_\-GOAL\_\-ID\ 226}\label{renderglobj_8h_a37}
+
+
+\index{renderglobj.h@{renderglobj.h}!SET_INITIAL_ID@{SET\_\-INITIAL\_\-ID}}
+\index{SET_INITIAL_ID@{SET\_\-INITIAL\_\-ID}!renderglobj.h@{renderglobj.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define SET\_\-INITIAL\_\-ID\ 224}\label{renderglobj_8h_a35}
+
+
+\index{renderglobj.h@{renderglobj.h}!SHOW_BOUNDINGBOX_ID@{SHOW\_\-BOUNDINGBOX\_\-ID}}
+\index{SHOW_BOUNDINGBOX_ID@{SHOW\_\-BOUNDINGBOX\_\-ID}!renderglobj.h@{renderglobj.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define SHOW\_\-BOUNDINGBOX\_\-ID\ 308}\label{renderglobj_8h_a53}
+
+
+\index{renderglobj.h@{renderglobj.h}!SINGLE_MULTI_VIEW_ID@{SINGLE\_\-MULTI\_\-VIEW\_\-ID}}
+\index{SINGLE_MULTI_VIEW_ID@{SINGLE\_\-MULTI\_\-VIEW\_\-ID}!renderglobj.h@{renderglobj.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define SINGLE\_\-MULTI\_\-VIEW\_\-ID\ 208}\label{renderglobj_8h_a19}
+
+
+\index{renderglobj.h@{renderglobj.h}!SINGLE_VIEW@{SINGLE\_\-VIEW}}
+\index{SINGLE_VIEW@{SINGLE\_\-VIEW}!renderglobj.h@{renderglobj.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define SINGLE\_\-VIEW\ 300}\label{renderglobj_8h_a45}
+
+
+\index{renderglobj.h@{renderglobj.h}!SUN_LIGHT_MODE@{SUN\_\-LIGHT\_\-MODE}}
+\index{SUN_LIGHT_MODE@{SUN\_\-LIGHT\_\-MODE}!renderglobj.h@{renderglobj.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define SUN\_\-LIGHT\_\-MODE\ 310}\label{renderglobj_8h_a55}
+
+
+\index{renderglobj.h@{renderglobj.h}!TEXTURE_ON_OFF_ID@{TEXTURE\_\-ON\_\-OFF\_\-ID}}
+\index{TEXTURE_ON_OFF_ID@{TEXTURE\_\-ON\_\-OFF\_\-ID}!renderglobj.h@{renderglobj.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define TEXTURE\_\-ON\_\-OFF\_\-ID\ 207}\label{renderglobj_8h_a18}
+
+
+\index{renderglobj.h@{renderglobj.h}!TRANSPARENCY_ADJUST_ID@{TRANSPARENCY\_\-ADJUST\_\-ID}}
+\index{TRANSPARENCY_ADJUST_ID@{TRANSPARENCY\_\-ADJUST\_\-ID}!renderglobj.h@{renderglobj.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define TRANSPARENCY\_\-ADJUST\_\-ID\ 210}\label{renderglobj_8h_a21}
+
+
+\index{renderglobj.h@{renderglobj.h}!VIEW_ORIENTATION_ID@{VIEW\_\-ORIENTATION\_\-ID}}
+\index{VIEW_ORIENTATION_ID@{VIEW\_\-ORIENTATION\_\-ID}!renderglobj.h@{renderglobj.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define VIEW\_\-ORIENTATION\_\-ID\ 205}\label{renderglobj_8h_a16}
+
+
+\index{renderglobj.h@{renderglobj.h}!Z_MOVE_MODE@{Z\_\-MOVE\_\-MODE}}
+\index{Z_MOVE_MODE@{Z\_\-MOVE\_\-MODE}!renderglobj.h@{renderglobj.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define Z\_\-MOVE\_\-MODE\ 304}\label{renderglobj_8h_a49}
+
+
+
+
+\subsection{Typedef Documentation}
+\index{renderglobj.h@{renderglobj.h}!x@{x}}
+\index{x@{x}!renderglobj.h@{renderglobj.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}typedef struct double x}\label{renderglobj_8h_a58}
+
+
+
+
+\subsection{Function Documentation}
+\index{renderglobj.h@{renderglobj.h}!cmp_nocase@{cmp\_\-nocase}}
+\index{cmp_nocase@{cmp\_\-nocase}!renderglobj.h@{renderglobj.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int cmp\_\-nocase (const string \& {\em a}, const string \& {\em b})}\label{renderglobj_8h_a77}
+
+
+\index{renderglobj.h@{renderglobj.h}!crossproduct@{crossproduct}}
+\index{crossproduct@{crossproduct}!renderglobj.h@{renderglobj.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void crossproduct (const {\bf MSLVector} \& {\em v1}, const {\bf MSLVector} \& {\em v2}, {\bf MSLVector} \& {\em v})}\label{renderglobj_8h_a70}
+
+
+\index{renderglobj.h@{renderglobj.h}!free_rotate@{free\_\-rotate}}
+\index{free_rotate@{free\_\-rotate}!renderglobj.h@{renderglobj.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf MSLMatrix} free\_\-rotate (const {\bf MSLVector} \& {\em axis}, const {\bf MSLMatrix} \& {\em m}, double {\em sita})}\label{renderglobj_8h_a75}
+
+
+\index{renderglobj.h@{renderglobj.h}!free_rotate@{free\_\-rotate}}
+\index{free_rotate@{free\_\-rotate}!renderglobj.h@{renderglobj.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf MSLVector} free\_\-rotate (const {\bf MSLVector} \& {\em axis}, const {\bf MSLVector} \& {\em v}, double {\em sita})}\label{renderglobj_8h_a74}
+
+
+\index{renderglobj.h@{renderglobj.h}!irpy@{irpy}}
+\index{irpy@{irpy}!renderglobj.h@{renderglobj.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf MSLVector} irpy (const {\bf MSLMatrix} \& {\em R})}\label{renderglobj_8h_a72}
+
+
+\index{renderglobj.h@{renderglobj.h}!NormalCompute@{NormalCompute}}
+\index{NormalCompute@{NormalCompute}!renderglobj.h@{renderglobj.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf msl\-GLNormal} Normal\-Compute (const {\bf msl\-GLVertex} \& {\em v1}, const {\bf msl\-GLVertex} \& {\em v2}, const {\bf msl\-GLVertex} \& {\em v3})}\label{renderglobj_8h_a78}
+
+
+\index{renderglobj.h@{renderglobj.h}!normalMSLVector@{normalMSLVector}}
+\index{normalMSLVector@{normalMSLVector}!renderglobj.h@{renderglobj.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void normal\-MSLVector (const {\bf MSLVector} \& {\em v1}, const {\bf MSLVector} \& {\em v2}, {\bf MSLVector} \& {\em v})}\label{renderglobj_8h_a71}
+
+
+\index{renderglobj.h@{renderglobj.h}!point_x_rotation@{point\_\-x\_\-rotation}}
+\index{point_x_rotation@{point\_\-x\_\-rotation}!renderglobj.h@{renderglobj.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf MSLVector} point\_\-x\_\-rotation (const double \& {\em sita}, const {\bf MSLVector} \& {\em p1})}\label{renderglobj_8h_a67}
+
+
+\index{renderglobj.h@{renderglobj.h}!point_y_rotation@{point\_\-y\_\-rotation}}
+\index{point_y_rotation@{point\_\-y\_\-rotation}!renderglobj.h@{renderglobj.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf MSLVector} point\_\-y\_\-rotation (const double \& {\em sita}, const {\bf MSLVector} \& {\em p1})}\label{renderglobj_8h_a68}
+
+
+\index{renderglobj.h@{renderglobj.h}!point_z_rotation@{point\_\-z\_\-rotation}}
+\index{point_z_rotation@{point\_\-z\_\-rotation}!renderglobj.h@{renderglobj.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf MSLVector} point\_\-z\_\-rotation (const double \& {\em sita}, const {\bf MSLVector} \& {\em p1})}\label{renderglobj_8h_a69}
+
+
+\index{renderglobj.h@{renderglobj.h}!rotate_x_MSLMatrix@{rotate\_\-x\_\-MSLMatrix}}
+\index{rotate_x_MSLMatrix@{rotate\_\-x\_\-MSLMatrix}!renderglobj.h@{renderglobj.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void rotate\_\-x\_\-MSLMatrix (double {\em sita}, {\bf MSLMatrix} \& {\em m})}\label{renderglobj_8h_a64}
+
+
+\index{renderglobj.h@{renderglobj.h}!rotate_y_MSLMatrix@{rotate\_\-y\_\-MSLMatrix}}
+\index{rotate_y_MSLMatrix@{rotate\_\-y\_\-MSLMatrix}!renderglobj.h@{renderglobj.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void rotate\_\-y\_\-MSLMatrix (double {\em sita}, {\bf MSLMatrix} \& {\em m})}\label{renderglobj_8h_a65}
+
+
+\index{renderglobj.h@{renderglobj.h}!rotate_z_MSLMatrix@{rotate\_\-z\_\-MSLMatrix}}
+\index{rotate_z_MSLMatrix@{rotate\_\-z\_\-MSLMatrix}!renderglobj.h@{renderglobj.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void rotate\_\-z\_\-MSLMatrix (double {\em sita}, {\bf MSLMatrix} \& {\em m})}\label{renderglobj_8h_a66}
+
+
+\index{renderglobj.h@{renderglobj.h}!rpy@{rpy}}
+\index{rpy@{rpy}!renderglobj.h@{renderglobj.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf MSLMatrix} rpy (const {\bf MSLVector} \& {\em v})}\label{renderglobj_8h_a73}
+
+
+\index{renderglobj.h@{renderglobj.h}!UPPER@{UPPER}}
+\index{UPPER@{UPPER}!renderglobj.h@{renderglobj.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}string UPPER (string {\em \_\-str})}\label{renderglobj_8h_a76}
+
+
+
+
+\subsection{Variable Documentation}
+\index{renderglobj.h@{renderglobj.h}!mslGLNormal@{mslGLNormal}}
+\index{mslGLNormal@{mslGLNormal}!renderglobj.h@{renderglobj.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}msl\-GLNormal}\label{renderglobj_8h_a62}
+
+
+\index{renderglobj.h@{renderglobj.h}!mslGLTexCoord@{mslGLTexCoord}}
+\index{mslGLTexCoord@{mslGLTexCoord}!renderglobj.h@{renderglobj.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}msl\-GLTex\-Coord}\label{renderglobj_8h_a63}
+
+
+\index{renderglobj.h@{renderglobj.h}!mslGLVertex@{mslGLVertex}}
+\index{mslGLVertex@{mslGLVertex}!renderglobj.h@{renderglobj.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}msl\-GLVertex}\label{renderglobj_8h_a61}
+
+
+\index{renderglobj.h@{renderglobj.h}!y@{y}}
+\index{y@{y}!renderglobj.h@{renderglobj.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}double y}\label{renderglobj_8h_a59}
+
+
+\index{renderglobj.h@{renderglobj.h}!z@{z}}
+\index{z@{z}!renderglobj.h@{renderglobj.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}double z}\label{renderglobj_8h_a60}
+
+
