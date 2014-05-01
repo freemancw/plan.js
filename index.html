@@ -16,9 +16,6 @@
     <!-- Bootstrap theme -->
     <link href="css/bootstrap-theme.min.css" rel="stylesheet">
 
-    <!-- Custom styles for this template -->
-    <link href="theme.css" rel="stylesheet">
-
     <!-- Just for debugging purposes. Don't actually copy this line! -->
     <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
 
@@ -89,7 +86,7 @@
 
 		<h3>PQP Demo</h3>
 
-		<p>Insert demo here.</p>
+		<canvas id="canvas-pqp-spinning"></canvas>
 
 
     </div> <!-- /container -->
@@ -100,6 +97,10 @@
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
-    <script src="js/docs.min.js"></script>
+    <script type='text/javascript'>
+    	var Module ={};
+    	Module.canvas = document.getElementById('canvas-pqp-spinning');
+    </script>
+    <script async type="text/javascript" src="spinning.js"></script>
   </body>
 </html>
