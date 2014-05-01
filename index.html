@@ -86,7 +86,10 @@
 
 		<h3>PQP Demo</h3>
 
-		<canvas id="canvas-pqp-spinning"></canvas>
+		<div class="thumbnail">
+			<canvas id="canvas-pqp-spinning" style="float:right;"></canvas>
+			<p id="console-pqp-spinning" style="height:502px"></p>
+		</div>
 
 
     </div> <!-- /container -->
@@ -98,8 +101,36 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script type='text/javascript'>
-    	var Module ={};
-    	Module.canvas = document.getElementById('canvas-pqp-spinning');
+    	var Module = {
+        preRun: [],
+        postRun: [],
+        print: (function() {
+          var element = document.getElementById('console-pqp-spinning');
+          if (element) element.innerHTML = ''; // clear browser cache
+          return function(text) {
+            text = Array.prototype.slice.call(arguments).join(' ');
+            // These replacements are necessary if you render to raw HTML
+            //text = text.replace(/&/g, "&amp;");
+            //text = text.replace(/</g, "&lt;");
+            //text = text.replace(/>/g, "&gt;");
+            //text = text.replace('\n', '<br>', 'g');
+            console.log(text);
+            if (element) {
+              element.innerHTML += text + "<br />";
+              element.scrollTop = element.scrollHeight; // focus on bottom
+            }
+          };
+        })(),
+        printErr: function(text) {
+          text = Array.prototype.slice.call(arguments).join(' ');
+          if (0) { // XXX disabled for safety typeof dump == 'function') {
+            dump(text + '\n'); // fast, straight to the real console
+          } else {
+            console.error(text);
+          }
+        },
+        canvas: document.getElementById('canvas-pqp-spinning'),
+      };
     </script>
     <script async type="text/javascript" src="spinning.js"></script>
   </body>
